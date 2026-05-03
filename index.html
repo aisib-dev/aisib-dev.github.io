@@ -3,613 +3,727 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ResearchMind AI — Citări exacte din PDF-urile tale, fără halucinații</title>
-<meta name="description" content="Asistentul AI pentru cercetare academică: citează pagina exactă, exportă în Word, OCR pentru documente scanate. Nu halucinează. Trial gratuit — 30 cereri.">
-<meta property="og:title" content="ResearchMind AI — Cercetare academică fără halucinații AI">
-<meta property="og:description" content="Găsești orice citare în 10 secunde. Din PDF-urile tale. Export direct în Word. Trial gratuit — 30 cereri, fără card bancar.">
+<title>ResearchMind AI — Scrie lucrări academice de 5× mai rapid</title>
+<meta name="description" content="Analizează PDF-uri, găsește citarea exactă cu pagina și exportă direct în Word. Trial gratuit 7 zile. Fără card bancar.">
+<meta property="og:title" content="ResearchMind AI — Scrie lucrări academice de 5× mai rapid">
+<meta property="og:description" content="Analizează PDF-uri, găsește informația exactă cu pagina și generează citări corecte. Trial gratuit 7 zile, fără card bancar.">
 <meta property="og:url" content="https://aisib-dev.github.io">
 <meta property="og:image" content="https://aisib-dev.github.io/screenshot.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
 <meta property="og:type" content="website">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ResearchMind AI — Cercetare academică fără halucinații AI">
-<meta name="twitter:description" content="Găsești orice citare în 10 secunde. Din PDF-urile tale. Export direct în Word. Trial gratuit — 30 cereri, fără card bancar.">
 <meta name="twitter:image" content="https://aisib-dev.github.io/screenshot.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ─ RESET ─────────────────────────────────────────── */
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
-body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#111827;line-height:1.6;-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth;text-size-adjust:100%;-webkit-text-size-adjust:100%}
+body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#111827;line-height:1.65;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block;height:auto}
-button{font-family:inherit;cursor:pointer}
+button{font-family:inherit}
 
+/* ─ TOKENS ────────────────────────────────────────── */
 :root{
-  --navy:#0a0f1e;--indigo:#4f46e5;--indigo-d:#3730a3;--indigo-l:#eef2ff;
-  --cyan:#06b6d4;--green:#059669;--red:#dc2626;
-  --gray-50:#f9fafb;--gray-100:#f3f4f6;--gray-200:#e5e7eb;
-  --gray-300:#d1d5db;--gray-400:#9ca3af;--gray-500:#6b7280;
-  --gray-600:#4b5563;--gray-700:#374151;--gray-900:#111827;
-  --r:10px;--r-lg:16px;
-  --sh:0 4px 24px rgba(0,0,0,.08);--sh-lg:0 20px 64px rgba(0,0,0,.12);
+  --navy:#0a0f1e;
+  --blue:#2563eb;
+  --blue-d:#1d4ed8;
+  --blue-l:#eff6ff;
+  --orange:#ea580c;
+  --orange-d:#c2410c;
+  --green:#059669;
+  --red:#dc2626;
+  --g50:#f8fafc;
+  --g100:#f1f5f9;
+  --g200:#e2e8f0;
+  --g300:#cbd5e1;
+  --g400:#94a3b8;
+  --g500:#64748b;
+  --g600:#475569;
+  --g700:#334155;
+  --g900:#0f172a;
+  --r:10px;--r-lg:16px;--r-xl:24px;
+  --sh:0 4px 24px rgba(0,0,0,.08);
+  --sh-lg:0 20px 64px rgba(0,0,0,.12);
+  --sh-xl:0 40px 100px rgba(0,0,0,.18);
 }
 
+/* ─ LAYOUT ────────────────────────────────────────── */
 .wrap{max-width:1100px;margin:0 auto;padding:0 40px}
-h1,h2,h3,h4{line-height:1.15;font-weight:800;letter-spacing:-.025em;color:var(--navy)}
-h1{font-size:clamp(2rem,5vw,3.5rem)}
-h2{font-size:clamp(1.6rem,3.5vw,2.4rem)}
-h3{font-size:1.1rem;font-weight:700}
-p{color:var(--gray-600);line-height:1.75}
 
-/* BADGE */
-.badge{display:inline-flex;align-items:center;gap:7px;background:var(--indigo-l);color:var(--indigo);border:1px solid #c7d2fe;border-radius:99px;padding:5px 14px;font-size:.75rem;font-weight:700;letter-spacing:.4px;text-transform:uppercase}
-.dot{width:7px;height:7px;background:var(--indigo);border-radius:50%;animation:blink 2s infinite}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
+/* ─ TYPE ──────────────────────────────────────────── */
+h1,h2,h3{font-family:'Poppins',sans-serif;line-height:1.1;letter-spacing:-.02em;color:var(--navy)}
+h1{font-size:clamp(2.1rem,5.5vw,3.8rem);font-weight:900}
+h2{font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800}
+h3{font-size:1.15rem;font-weight:700}
+p{color:var(--g600);line-height:1.75}
 
-/* BUTTONS */
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:14px 28px;border-radius:var(--r);font-weight:700;font-size:.95rem;transition:all .18s;border:2px solid transparent;white-space:nowrap;line-height:1}
-.btn-primary{background:var(--indigo);color:#fff;border-color:var(--indigo);box-shadow:0 4px 20px rgba(79,70,229,.3)}
-.btn-primary:hover{background:var(--indigo-d);border-color:var(--indigo-d);transform:translateY(-1px);box-shadow:0 8px 30px rgba(79,70,229,.4)}
-.btn-ghost{background:transparent;color:#fff;border-color:rgba(255,255,255,.3)}
-.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.08);transform:translateY(-1px)}
-.btn-outline{background:#fff;color:var(--navy);border-color:var(--gray-200)}
-.btn-outline:hover{border-color:var(--indigo);color:var(--indigo);transform:translateY(-1px)}
-.btn-green{background:var(--green);color:#fff;border-color:var(--green);box-shadow:0 4px 20px rgba(5,150,105,.3)}
-.btn-green:hover{background:#047857;border-color:#047857;transform:translateY(-1px);box-shadow:0 8px 30px rgba(5,150,105,.4)}
-.btn-white{background:#fff;color:var(--indigo);font-weight:800;border-color:#fff}
-.btn-white:hover{background:var(--indigo-l);transform:translateY(-2px);box-shadow:0 12px 36px rgba(0,0,0,.2)}
-.btn-lg{padding:18px 36px;font-size:1.05rem;border-radius:12px}
-.btn-xl{padding:20px 44px;font-size:1.1rem;border-radius:12px}
+/* ─ BADGE ─────────────────────────────────────────── */
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(37,99,235,.1);color:var(--blue);border:1px solid rgba(37,99,235,.25);border-radius:99px;padding:5px 14px;font-size:.74rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+.dot{width:7px;height:7px;background:var(--blue);border-radius:50%;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.4;transform:scale(.8)}}
+
+/* ─ BUTTONS ───────────────────────────────────────── */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:15px 32px;border-radius:var(--r);font-weight:700;font-size:1rem;transition:all .18s;border:2px solid transparent;white-space:nowrap;cursor:pointer;line-height:1}
+.btn-orange{background:var(--orange);color:#fff;border-color:var(--orange);box-shadow:0 4px 20px rgba(234,88,12,.3);animation:ctaPulse 3s ease-in-out infinite}
+.btn-orange:hover{background:var(--orange-d);border-color:var(--orange-d);transform:translateY(-2px);box-shadow:0 8px 32px rgba(234,88,12,.5);animation:none}
+@keyframes ctaPulse{0%,100%{box-shadow:0 4px 20px rgba(234,88,12,.3)}50%{box-shadow:0 4px 32px rgba(234,88,12,.55),0 0 0 6px rgba(234,88,12,.12)}}
+.btn-blue{background:var(--blue);color:#fff;border-color:var(--blue);box-shadow:0 4px 20px rgba(37,99,235,.3)}
+.btn-blue:hover{background:var(--blue-d);border-color:var(--blue-d);transform:translateY(-2px);box-shadow:0 8px 32px rgba(37,99,235,.4)}
+.btn-outline-w{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+.btn-outline-w:hover{border-color:#fff;background:rgba(255,255,255,.1);transform:translateY(-1px)}
+.btn-outline{background:#fff;color:var(--navy);border-color:var(--g200)}
+.btn-outline:hover{border-color:var(--blue);color:var(--blue);transform:translateY(-1px)}
+.btn-white{background:#fff;color:var(--orange);font-weight:800;border-color:#fff;box-shadow:0 8px 32px rgba(0,0,0,.15)}
+.btn-white:hover{background:#fff7ed;transform:translateY(-2px);box-shadow:0 14px 40px rgba(0,0,0,.2)}
+.btn-lg{padding:18px 40px;font-size:1.05rem;border-radius:12px}
+.btn-xl{padding:20px 48px;font-size:1.1rem;border-radius:12px}
 .btn-sm{padding:9px 18px;font-size:.84rem}
+.btn-fw{width:100%;justify-content:center}
 
-/* NAV */
-nav{position:sticky;top:0;z-index:300;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-100)}
-.nav-inner{max-width:1100px;margin:0 auto;padding:0 40px;display:flex;align-items:center;height:64px;gap:24px}
-.logo{font-weight:900;font-size:1.1rem;color:var(--navy);letter-spacing:-.03em;white-space:nowrap}
-.logo em{font-style:normal;color:var(--indigo)}
-.nav-links{display:flex;gap:24px;margin-left:auto;font-size:.875rem;font-weight:500;color:var(--gray-500)}
-.nav-links a:hover{color:var(--indigo)}
-.nav-actions{display:flex;gap:10px;margin-left:20px}
-.hamburger{display:none;background:none;border:none;padding:6px;flex-direction:column;gap:5px;margin-left:auto}
+/* ─ NAV ───────────────────────────────────────────── */
+nav{position:sticky;top:0;z-index:400;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);border-bottom:1px solid var(--g100)}
+.nav-i{max-width:1100px;margin:0 auto;padding:0 40px;display:flex;align-items:center;height:66px;gap:24px}
+.logo{font-family:'Poppins',sans-serif;font-weight:900;font-size:1.15rem;color:var(--navy);letter-spacing:-.02em;white-space:nowrap}
+.logo span{color:var(--blue)}
+.nav-links{display:flex;gap:28px;margin-left:auto;font-size:.875rem;font-weight:500;color:var(--g500)}
+.nav-links a:hover{color:var(--blue)}
+.nav-cta{display:flex;gap:10px;margin-left:24px}
+.hamburger{display:none;background:none;border:none;padding:6px;flex-direction:column;gap:5px;margin-left:auto;cursor:pointer}
 .hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.25s}
-.mob-menu{display:none;background:#fff;border-top:1px solid var(--gray-100);padding:20px 24px;flex-direction:column;gap:4px}
-.mob-menu.open{display:flex}
-.mob-menu a{padding:11px 0;font-size:.97rem;font-weight:500;color:var(--gray-700);border-bottom:1px solid var(--gray-100)}
-.mob-menu .btn{margin-top:8px;width:100%;justify-content:center}
+.mob{display:none;background:#fff;border-top:1px solid var(--g100);padding:20px 24px;flex-direction:column;gap:6px}
+.mob.open{display:flex}
+.mob a{padding:10px 0;font-size:.97rem;font-weight:500;color:var(--g700);border-bottom:1px solid var(--g100)}
+.mob .btn{margin-top:6px;width:100%}
 
-/* HERO */
-.hero{background:linear-gradient(155deg,#060b1a 0%,#111827 40%,#0d1a3a 100%);padding:90px 40px 80px;text-align:center;position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% -10%,rgba(79,70,229,.2) 0%,transparent 65%);pointer-events:none}
+/* ─ HERO ──────────────────────────────────────────── */
+.hero{background:linear-gradient(155deg,#060c1f 0%,#0f1f45 55%,#0a0f1e 100%);padding:96px 40px 80px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 100% 80% at 50% -5%,rgba(37,99,235,.18) 0%,transparent 70%);pointer-events:none}
 .hero-badge{margin-bottom:24px}
-.hero h1{color:#fff;max-width:860px;margin:0 auto 20px;position:relative;z-index:1}
-.hero h1 strong{background:linear-gradient(90deg,#818cf8 0%,#06b6d4 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.65);max-width:620px;margin:0 auto 36px;line-height:1.75;position:relative;z-index:1}
-.hero-sub strong{color:rgba(255,255,255,.9)}
-.hero-pills{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:40px;position:relative;z-index:1}
-.pill{display:flex;align-items:center;gap:7px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);border-radius:99px;padding:7px 16px;color:rgba(255,255,255,.8);font-size:.84rem;font-weight:500}
-.pill-check{width:18px;height:18px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.62rem;font-weight:900;color:#fff;flex-shrink:0}
+.hero h1{color:#fff;max-width:820px;margin:0 auto 22px;position:relative;z-index:1}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,#60a5fa,#fb923c);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-sub{font-size:1.15rem;color:rgba(255,255,255,.65);max-width:640px;margin:0 auto 36px;line-height:1.8;position:relative;z-index:1}
+.hero-bullets{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;margin-bottom:40px;position:relative;z-index:1}
+.hb{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.85);font-size:.9rem;font-weight:500;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:99px;padding:8px 18px}
+.hb-icon{width:20px;height:20px;background:var(--green);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.65rem;font-weight:900;color:#fff;flex-shrink:0}
 .hero-cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:14px;position:relative;z-index:1}
-.hero-note{font-size:.78rem;color:rgba(255,255,255,.35);position:relative;z-index:1}
-.hero-img{max-width:980px;margin:56px auto 0;border-radius:14px;border:1px solid rgba(255,255,255,.08);box-shadow:0 40px 100px rgba(0,0,0,.6);overflow:hidden;position:relative;z-index:1}
+.hero-note{font-size:.78rem;color:rgba(255,255,255,.3);position:relative;z-index:1;letter-spacing:.3px}
 
-/* TRUST BAR */
-.trust-bar{background:var(--gray-50);border-top:1px solid var(--gray-200);border-bottom:1px solid var(--gray-200);padding:18px 40px}
-.trust-inner{max-width:1100px;margin:0 auto;display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:28px}
-.trust-item{display:flex;align-items:center;gap:7px;font-size:.82rem;font-weight:600;color:var(--gray-500)}
-.t-check{color:var(--green);font-weight:900;font-size:.9rem}
+/* ─ TRUST ─────────────────────────────────────────── */
+.trust{background:var(--g50);border-bottom:1px solid var(--g200);padding:18px 40px}
+.trust-i{max-width:1100px;margin:0 auto;display:flex;justify-content:center;flex-wrap:wrap;gap:28px}
+.ti{display:flex;align-items:center;gap:7px;font-size:.82rem;font-weight:600;color:var(--g500)}
+.ti-ok{color:var(--green);font-weight:900}
 
-/* SECTIONS */
-.section{padding:88px 40px}
-.section-alt{background:var(--gray-50)}
-.label{display:block;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--indigo);margin-bottom:10px}
-.section-sub{font-size:1rem;color:var(--gray-500);max-width:580px;line-height:1.7;margin-top:12px}
+/* ─ SECTIONS ──────────────────────────────────────── */
+.section{padding:96px 40px}
+.section-alt{background:var(--g50)}
+.section-dark{background:var(--navy)}
+.label{display:block;font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.section-dark .label{color:#93c5fd}
+.sub{font-size:1.05rem;color:var(--g500);max-width:580px;line-height:1.75;margin-top:12px}
 .center{text-align:center}
-.center .section-sub{margin:12px auto 0}
+.center .sub{margin:12px auto 0}
+.center h2{max-width:760px;margin:0 auto}
 
-/* PAIN */
-.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
-.pain-card{background:#fff;border:1px solid var(--gray-200);border-left:4px solid var(--red);border-radius:var(--r);padding:24px}
-.pain-icon{font-size:1.5rem;margin-bottom:10px}
-.pain-card h4{font-size:.95rem;font-weight:700;color:var(--gray-900);margin-bottom:6px}
-.pain-card p{font-size:.87rem;margin:0;line-height:1.65}
+/* ─ VIDEO BOX ─────────────────────────────────────── */
+.vbox-wrap{max-width:880px;margin:0 auto}
+.vbox-label{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--g200);border-radius:99px;padding:7px 18px;font-size:.8rem;font-weight:700;color:var(--g600);margin-bottom:20px;box-shadow:var(--sh)}
+.vbox-label .vl-dot{width:8px;height:8px;background:var(--red);border-radius:50%}
+.vbox{border-radius:var(--r-xl);overflow:hidden;box-shadow:var(--sh-xl);border:1px solid var(--g200);position:relative;background:#000}
+.vbox iframe{width:100%;height:495px;display:block;border:none}
+.vbox-meta{display:flex;align-items:center;justify-content:space-between;padding:18px 24px;background:#fff;border-top:1px solid var(--g100);flex-wrap:wrap;gap:10px}
+.vbox-meta-title{font-size:.9rem;font-weight:700;color:var(--navy)}
+.vbox-meta-detail{font-size:.8rem;color:var(--g400);font-weight:500}
+.vbox-points{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:28px}
+.vp{background:#fff;border:1px solid var(--g200);border-radius:var(--r);padding:18px;text-align:center}
+.vp-num{font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:900;color:var(--blue);margin-bottom:4px}
+.vp p{font-size:.82rem;margin:0}
 
-/* COMPARISON */
-.compare-wrap{max-width:820px;margin:48px auto 0}
-.cmp-head{display:grid;grid-template-columns:1.4fr 1fr 1fr}
-.cmp-head-cell{padding:14px 18px;font-weight:700;font-size:.88rem;text-align:center}
-.cmp-head-cell:first-child{text-align:left;color:var(--gray-500)}
-.cmp-head-cell.bad{background:#fef2f2;color:var(--red);border-radius:var(--r-lg) var(--r-lg) 0 0;border:1px solid #fee2e2;border-bottom:none}
-.cmp-head-cell.good{background:linear-gradient(135deg,var(--indigo),#0ea5e9);color:#fff;border-radius:var(--r-lg) var(--r-lg) 0 0}
-.cmp-body{border:1px solid var(--gray-200);border-top:none;border-radius:0 0 var(--r-lg) var(--r-lg);overflow:hidden}
-.cmp-row{display:grid;grid-template-columns:1.4fr 1fr 1fr;border-bottom:1px solid var(--gray-100)}
+/* ─ PAIN ──────────────────────────────────────────── */
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:44px}
+.pain{background:#fff;border:1px solid var(--g200);border-left:4px solid var(--red);border-radius:var(--r);padding:24px}
+.pain-ico{font-size:1.6rem;margin-bottom:10px}
+.pain h4{font-size:.97rem;font-weight:700;color:var(--g900);margin-bottom:6px}
+.pain p{font-size:.88rem;margin:0;line-height:1.65}
+
+/* ─ SOLUTION ──────────────────────────────────────── */
+.sol-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;margin-top:48px}
+.sol-list{display:flex;flex-direction:column;gap:20px}
+.sol-item{display:flex;align-items:flex-start;gap:14px}
+.sol-icon{width:44px;height:44px;background:var(--blue-l);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0}
+.sol-item h4{font-size:.97rem;font-weight:700;color:var(--navy);margin-bottom:4px}
+.sol-item p{font-size:.88rem;margin:0;line-height:1.6}
+.sol-demo-box{background:linear-gradient(135deg,#1e3a8a,#1d4ed8 50%,#0284c7);border-radius:var(--r-xl);padding:36px;color:#fff;position:relative;overflow:hidden}
+.sol-demo-box::before{content:'"';position:absolute;top:-20px;right:20px;font-size:200px;font-family:'Poppins',sans-serif;font-weight:900;color:rgba(255,255,255,.05);line-height:1}
+.sol-q{font-size:.9rem;color:rgba(255,255,255,.6);margin-bottom:12px;font-style:italic}
+.sol-a{font-size:1rem;color:#fff;font-weight:600;line-height:1.6;margin-bottom:20px}
+.sol-cite{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.2);border-radius:8px;padding:8px 14px;font-size:.82rem;color:rgba(255,255,255,.85);font-weight:500}
+
+/* ─ COMPARISON ────────────────────────────────────── */
+.cmp-wrap{max-width:800px;margin:48px auto 0}
+.cmp-h{display:grid;grid-template-columns:1.5fr 1fr 1fr}
+.cmp-h-cell{padding:14px 20px;font-weight:700;font-size:.85rem;text-align:center}
+.cmp-h-cell:first-child{text-align:left;color:var(--g400);font-size:.75rem;text-transform:uppercase;letter-spacing:1px}
+.cmp-h-cell.bad{background:#fef2f2;color:var(--red);border-radius:var(--r-lg) var(--r-lg) 0 0;border:1px solid #fee2e2;border-bottom:none}
+.cmp-h-cell.good{background:linear-gradient(135deg,var(--blue-d),#0284c7);color:#fff;border-radius:var(--r-lg) var(--r-lg) 0 0}
+.cmp-body{border:1px solid var(--g200);border-top:none;border-radius:0 0 var(--r-lg) var(--r-lg);overflow:hidden}
+.cmp-row{display:grid;grid-template-columns:1.5fr 1fr 1fr;border-bottom:1px solid var(--g100)}
 .cmp-row:last-child{border-bottom:none}
-.cmp-cell{padding:13px 18px;font-size:.87rem;display:flex;align-items:center;gap:8px}
-.cmp-cell:first-child{font-weight:500;color:var(--gray-700)}
-.cmp-cell:nth-child(2){background:#fef2f2;justify-content:center}
-.cmp-cell:nth-child(3){background:var(--indigo-l);justify-content:center;font-weight:600;color:var(--indigo)}
-.cmark{color:var(--green);font-weight:900}
-.xmark{color:var(--red);font-weight:900}
+.cmp-c{padding:14px 20px;font-size:.87rem;display:flex;align-items:center;gap:8px}
+.cmp-c:first-child{font-weight:500;color:var(--g700)}
+.cmp-c:nth-child(2){background:#fef2f2;justify-content:center;color:var(--red)}
+.cmp-c:nth-child(3){background:var(--blue-l);justify-content:center;color:var(--blue);font-weight:600}
+.ok{color:var(--green);font-weight:900}
+.no{color:var(--red);font-weight:900}
 
-/* STEPS */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:56px;position:relative}
-.steps::before{content:'';position:absolute;top:35px;left:calc(16.6% + 20px);right:calc(16.6% + 20px);height:2px;background:linear-gradient(90deg,var(--indigo),var(--cyan));opacity:.3}
+/* ─ STEPS ─────────────────────────────────────────── */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:32px;margin-top:60px;position:relative}
+.steps::before{content:'';position:absolute;top:36px;left:calc(16.6% + 18px);right:calc(16.6% + 18px);height:2px;background:linear-gradient(90deg,var(--blue),#0284c7);opacity:.25;z-index:0}
 .step{text-align:center;position:relative;z-index:1}
-.step-n{width:70px;height:70px;background:var(--indigo);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-weight:900;color:#fff;margin:0 auto 22px;border:4px solid #fff;box-shadow:0 0 0 4px var(--indigo-l)}
-.step h3{margin-bottom:10px}
+.step-n{width:72px;height:72px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:900;color:#fff;margin:0 auto 22px;border:4px solid #fff;box-shadow:0 0 0 4px var(--blue-l)}
 .step p{font-size:.9rem}
 
-/* FEATURES */
-.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
-.feat{background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg);padding:26px;transition:all .2s;position:relative}
-.feat:hover{transform:translateY(-3px);box-shadow:var(--sh-lg);border-color:var(--indigo)}
-.feat-ico{width:46px;height:46px;background:var(--indigo-l);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:14px}
+/* ─ FEATURES ──────────────────────────────────────── */
+.feats{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:52px}
+.feat{background:#fff;border:1px solid var(--g200);border-radius:var(--r-lg);padding:28px;transition:all .2s}
+.feat:hover{transform:translateY(-4px);box-shadow:var(--sh-lg);border-color:var(--blue)}
+.feat-ico{width:48px;height:48px;background:var(--blue-l);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:16px}
 .feat h3{font-size:.97rem;margin-bottom:8px}
-.feat p{font-size:.86rem;line-height:1.65}
-.feat-tag{display:inline-block;margin-top:10px;background:var(--indigo-l);color:var(--indigo);font-size:.7rem;font-weight:700;letter-spacing:.3px;text-transform:uppercase;padding:3px 10px;border-radius:6px}
+.feat p{font-size:.87rem;line-height:1.65}
+.feat-tag{display:inline-block;margin-top:12px;background:var(--blue-l);color:var(--blue);font-size:.69rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;padding:3px 10px;border-radius:6px}
 
-/* BENEFITS */
-.benefits{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
-.benefit{text-align:center;padding:32px 20px;background:#fff;border:1px solid var(--gray-200);border-radius:var(--r-lg)}
-.benefit-num{font-size:2.6rem;font-weight:900;color:var(--indigo);line-height:1;margin-bottom:8px}
-.benefit h3{font-size:1rem;margin-bottom:8px}
-.benefit p{font-size:.87rem}
+/* ─ PERSONAS ──────────────────────────────────────── */
+.personas{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:48px}
+.persona{background:#fff;border:1px solid var(--g200);border-radius:var(--r-lg);padding:24px 16px;text-align:center;transition:all .2s}
+.persona:hover{border-color:var(--blue);box-shadow:var(--sh);transform:translateY(-2px)}
+.persona-ico{font-size:2.2rem;margin-bottom:12px}
+.persona h4{font-size:.95rem;font-weight:700;color:var(--navy);margin-bottom:6px}
+.persona p{font-size:.82rem;line-height:1.6}
 
-/* SCREENSHOTS SHOWCASE */
-.showcase-tabs{display:flex;gap:8px;justify-content:center;margin-bottom:28px;flex-wrap:wrap}
-.stab{background:#fff;border:2px solid var(--gray-200);border-radius:99px;padding:9px 20px;font-size:.85rem;font-weight:600;color:var(--gray-600);cursor:pointer;transition:all .18s}
-.stab.active,.stab:hover{border-color:var(--indigo);color:var(--indigo);background:var(--indigo-l)}
-.showcase-img-wrap{position:relative;max-width:960px;margin:0 auto;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-lg);border:1px solid var(--gray-200)}
-.showcase-img-wrap img{width:100%;display:block;transition:opacity .2s}
-.showcase-img-wrap img.hidden{display:none}
-
-/* VIDEO */
-.video-box{max-width:860px;margin:0 auto;border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-lg);border:1px solid var(--gray-200)}
-.video-box iframe{width:100%;height:484px;display:block;border:none}
-
-/* TESTIMONIAL */
-.testimonial{max-width:640px;margin:40px auto 0;background:#fff;border:1px solid var(--gray-200);border-radius:20px;padding:40px;text-align:center;box-shadow:var(--sh)}
-.stars{font-size:1.3rem;letter-spacing:3px;margin-bottom:16px}
-.quote{font-size:1.05rem;font-style:italic;color:var(--navy);font-weight:500;line-height:1.75;margin-bottom:20px}
-.tauthor{font-size:.82rem;color:var(--gray-400);font-weight:600;text-transform:uppercase;letter-spacing:.5px}
-
-/* PRICING */
+/* ─ PRICING ───────────────────────────────────────── */
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:920px;margin:52px auto 0}
-.plan{background:#fff;border:2px solid var(--gray-200);border-radius:20px;padding:32px 26px;position:relative;transition:all .2s}
-.plan.highlight{border-color:var(--indigo);box-shadow:0 0 0 4px rgba(79,70,229,.1)}
-.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--indigo);color:#fff;border-radius:99px;padding:4px 16px;font-size:.72rem;font-weight:700;white-space:nowrap;letter-spacing:.5px}
-.plan-name{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--gray-400);margin-bottom:10px}
-.plan-price{font-size:2.8rem;font-weight:900;color:var(--navy);line-height:1;margin-bottom:4px}
-.plan-price sub{font-size:1rem;font-weight:500;color:var(--gray-400);vertical-align:baseline}
-.plan-period{font-size:.82rem;color:var(--gray-400);margin-bottom:26px}
-.plan-features{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
-.plan-features li{display:flex;align-items:flex-start;gap:9px;font-size:.86rem;color:var(--gray-600)}
-.plan-features li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;margin-top:2px}
-.plan-features li.no{color:var(--gray-300)}
-.plan-features li.no::before{content:'—';color:var(--gray-300)}
+.plan{background:#fff;border:2px solid var(--g200);border-radius:var(--r-xl);padding:32px 26px;position:relative;transition:all .2s}
+.plan.hl{border-color:var(--blue);box-shadow:0 0 0 4px rgba(37,99,235,.1)}
+.plan-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;border-radius:99px;padding:4px 16px;font-size:.72rem;font-weight:700;white-space:nowrap;letter-spacing:.5px}
+.plan-name{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:var(--g400);margin-bottom:10px}
+.plan-price{font-family:'Poppins',sans-serif;font-size:3rem;font-weight:900;color:var(--navy);line-height:1;margin-bottom:4px}
+.plan-price sub{font-size:1rem;font-weight:500;color:var(--g400);font-family:'Inter',sans-serif;vertical-align:baseline}
+.plan-period{font-size:.82rem;color:var(--g400);margin-bottom:26px}
+.plan-feats{list-style:none;display:flex;flex-direction:column;gap:9px;margin-bottom:28px}
+.plan-feats li{display:flex;align-items:flex-start;gap:9px;font-size:.87rem;color:var(--g600)}
+.plan-feats li::before{content:'✓';color:var(--green);font-weight:900;flex-shrink:0;margin-top:2px}
+.plan-feats li.dim{color:var(--g300)}
+.plan-feats li.dim::before{content:'—';color:var(--g300)}
 .plan .btn{width:100%;justify-content:center}
-.plan-note{font-size:.77rem;color:var(--gray-400);text-align:center;margin-top:10px}
+.plan-note{font-size:.76rem;color:var(--g400);text-align:center;margin-top:10px}
+.trial-strip{margin-top:28px;background:var(--g50);border:1px solid var(--g200);border-radius:var(--r);padding:16px 24px;text-align:center;display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap}
+.trial-strip p{font-size:.9rem;color:var(--g600);margin:0}
+.trial-strip a{color:var(--blue);font-weight:700}
+.trial-strip a:hover{text-decoration:underline}
 
-/* TRIAL CTA under pricing */
-.trial-cta-box{margin-top:28px;background:var(--gray-100);border:1px solid var(--gray-200);border-radius:var(--r);padding:16px 24px;display:inline-block}
-.trial-cta-box p{color:var(--gray-600);font-size:.9rem;margin:0}
-.trial-link{color:var(--indigo);font-weight:700}
-.trial-link:hover{text-decoration:underline}
-.pricing-note{margin-top:16px;font-size:.82rem;color:var(--gray-400)}
-
-/* FAQ */
+/* ─ FAQ ───────────────────────────────────────────── */
 .faq-list{max-width:720px;margin:48px auto 0;display:flex;flex-direction:column;gap:10px}
-.faq-item{background:#fff;border:1px solid var(--gray-200);border-radius:var(--r)}
+.faq-item{background:#fff;border:1px solid var(--g200);border-radius:var(--r)}
 .faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:18px 22px;font-weight:600;font-size:.93rem;color:var(--navy);background:none;border:none;text-align:left;gap:16px;cursor:pointer;line-height:1.4}
-.faq-q:hover{color:var(--indigo)}
-.faq-icon{width:22px;height:22px;border-radius:50%;background:var(--indigo-l);color:var(--indigo);display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:700;flex-shrink:0;transition:.3s}
-.faq-a{display:none;padding:0 22px 18px;font-size:.9rem;color:var(--gray-600);line-height:1.75}
+.faq-q:hover{color:var(--blue)}
+.faq-icon{width:22px;height:22px;border-radius:50%;background:var(--blue-l);color:var(--blue);display:flex;align-items:center;justify-content:center;font-size:.95rem;font-weight:700;flex-shrink:0;transition:.3s}
+.faq-a{display:none;padding:0 22px 18px;font-size:.9rem;color:var(--g600);line-height:1.75}
 .faq-item.open .faq-a{display:block}
-.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--indigo);color:#fff}
+.faq-item.open .faq-icon{transform:rotate(45deg);background:var(--blue);color:#fff}
 
-/* CTA FINAL */
-.cta-final{background:linear-gradient(135deg,#3730a3 0%,#4f46e5 40%,#0ea5e9 100%);padding:100px 40px;text-align:center;position:relative;overflow:hidden}
-.cta-final::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 100%,rgba(0,0,0,.2),transparent)}
-.cta-final h2{color:#fff;max-width:680px;margin:0 auto 16px;font-size:clamp(1.8rem,4vw,2.8rem)}
-.cta-final p{color:rgba(255,255,255,.75);font-size:1.05rem;max-width:500px;margin:0 auto 40px}
-.cta-note{font-size:.78rem;color:rgba(255,255,255,.4);margin-top:16px}
+/* ─ CTA FINAL ─────────────────────────────────────── */
+.cta-final{background:linear-gradient(135deg,#1e3a8a 0%,#2563eb 50%,#0369a1 100%);padding:104px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-final::before{content:'';position:absolute;bottom:0;left:0;right:0;height:200px;background:linear-gradient(0deg,rgba(0,0,0,.15),transparent);pointer-events:none}
+.cta-final h2{color:#fff;font-size:clamp(1.9rem,4.5vw,3rem);max-width:700px;margin:0 auto 16px}
+.cta-final p{color:rgba(255,255,255,.7);font-size:1.05rem;max-width:480px;margin:0 auto 44px}
+.cta-note{font-size:.78rem;color:rgba(255,255,255,.35);margin-top:16px;letter-spacing:.3px}
 
-/* FOOTER */
-footer{background:var(--navy);padding:52px 40px 32px}
-.footer-inner{max-width:1100px;margin:0 auto}
-.footer-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:40px}
-.footer-brand .logo{margin-bottom:10px}
-.footer-brand p{font-size:.84rem;color:rgba(255,255,255,.4);max-width:280px;line-height:1.6}
-.footer-col h4{font-size:.77rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.3);margin-bottom:14px}
-.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
-.footer-col a{font-size:.85rem;color:rgba(255,255,255,.45);transition:.2s}
-.footer-col a:hover{color:#818cf8}
-.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.8rem;color:rgba(255,255,255,.3)}
-.footer-bottom a{color:rgba(255,255,255,.4)}
-.footer-bottom a:hover{color:#818cf8}
+/* ─ FOOTER ────────────────────────────────────────── */
+footer{background:var(--navy);padding:56px 40px 32px}
+.foot-i{max-width:1100px;margin:0 auto}
+.foot-top{display:flex;justify-content:space-between;gap:40px;flex-wrap:wrap;margin-bottom:44px}
+.foot-brand .logo{font-size:1rem;margin-bottom:10px}
+.foot-brand p{font-size:.84rem;color:rgba(255,255,255,.38);max-width:260px;line-height:1.65}
+.foot-col h4{font-size:.74rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.28);margin-bottom:14px}
+.foot-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.foot-col a{font-size:.85rem;color:rgba(255,255,255,.42);transition:.2s}
+.foot-col a:hover{color:#93c5fd}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.8rem;color:rgba(255,255,255,.25)}
+.foot-bottom a{color:rgba(255,255,255,.38)}
+.foot-bottom a:hover{color:#93c5fd}
 
-/* RESPONSIVE */
+/* ─ SOCIAL PROOF HERO ────────────────────────────── */
+.hero-social{display:flex;align-items:center;justify-content:center;gap:12px;margin-top:24px;position:relative;z-index:1}
+.hero-avatars{display:flex}
+.hero-avatars span{width:28px;height:28px;border-radius:50%;border:2px solid rgba(255,255,255,.4);background:linear-gradient(135deg,#60a5fa,#a78bfa);margin-left:-8px;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:700;color:#fff}
+.hero-avatars span:first-child{margin-left:0}
+.hero-social-text{font-size:.82rem;color:rgba(255,255,255,.5)}
+.hero-social-text strong{color:rgba(255,255,255,.8)}
+
+/* ─ CHATGPT EXAMPLE ──────────────────────────────── */
+.chatgpt-example{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:820px;margin:32px auto 0}
+.ex-box{border-radius:var(--r-lg);padding:22px;position:relative}
+.ex-box.bad{background:#fef2f2;border:2px solid #fee2e2}
+.ex-box.good{background:var(--blue-l);border:2px solid #bfdbfe}
+.ex-tag{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px;display:block}
+.ex-box.bad .ex-tag{color:var(--red)}
+.ex-box.good .ex-tag{color:var(--blue)}
+.ex-q{font-size:.83rem;font-style:italic;color:var(--g600);margin-bottom:10px;background:rgba(0,0,0,.04);border-radius:6px;padding:8px 10px}
+.ex-a{font-size:.85rem;line-height:1.6}
+.ex-box.bad .ex-a{color:var(--red)}
+.ex-box.good .ex-a{color:#1e3a8a;font-weight:600}
+.ex-verdict{display:flex;align-items:center;gap:6px;margin-top:12px;font-size:.78rem;font-weight:700}
+.ex-box.bad .ex-verdict{color:var(--red)}
+.ex-box.good .ex-verdict{color:var(--green)}
+
+/* ─ STICKY MOBILE CTA ────────────────────────────── */
+.sticky-cta{display:none;position:fixed;bottom:0;left:0;right:0;z-index:500;background:#fff;border-top:2px solid var(--orange);padding:12px 20px;box-shadow:0 -8px 32px rgba(0,0,0,.15)}
+.sticky-cta.show{display:flex;gap:8px;align-items:center}
+.sticky-cta a{flex:1;text-align:center;padding:14px 16px;border-radius:var(--r);font-weight:700;font-size:.97rem}
+.sticky-cta-dl{background:var(--orange);color:#fff}
+.sticky-cta-buy{background:var(--blue-l);color:var(--blue);border:2px solid #bfdbfe}
+
+/* ─ RESPONSIVE ────────────────────────────────────── */
 @media(max-width:960px){
+  .sol-grid{grid-template-columns:1fr;gap:32px}
+  .feats{grid-template-columns:repeat(2,1fr)}
+  .personas{grid-template-columns:repeat(3,1fr)}
   .pricing-grid{grid-template-columns:1fr;max-width:420px;margin-left:auto;margin-right:auto}
-  .features{grid-template-columns:repeat(2,1fr)}
-  .benefits{grid-template-columns:1fr 1fr}
+  .vbox-points{grid-template-columns:1fr}
 }
 @media(max-width:768px){
   .wrap{padding:0 20px}
-  .nav-inner{padding:0 20px}
-  .nav-links,.nav-actions{display:none}
+  .nav-i{padding:0 20px}
+  .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
-  .hero{padding:60px 20px 52px}
-  .hero h1{font-size:clamp(1.85rem,7.5vw,2.5rem)}
+  .hero{padding:56px 20px 48px}
+  .hero h1{font-size:clamp(1.9rem,8vw,2.6rem)}
   .hero-sub{font-size:.97rem}
-  .hero-pills{flex-direction:column;align-items:center;gap:8px}
+  .hero-bullets{flex-direction:column;align-items:center;gap:8px}
   .hero-cta{flex-direction:column;align-items:stretch;gap:12px}
   .hero-cta .btn{justify-content:center}
   .btn-xl,.btn-lg{padding:17px 28px;font-size:1rem}
-  .hero-img{margin-top:40px}
-  .trust-bar{padding:16px 20px}
-  .trust-inner{gap:16px}
+  .hero-social{flex-direction:column;gap:8px}
+  .trust{padding:14px 20px}
+  .trust-i{gap:14px}
+  .ti{font-size:.77rem}
   .section{padding:60px 20px}
-  h2{font-size:clamp(1.4rem,6vw,2rem)}
+  h2{font-size:clamp(1.5rem,6.5vw,2.2rem)}
   .pain-grid{grid-template-columns:1fr}
-  .compare-wrap{margin:28px auto 0}
-  .cmp-head,.cmp-row{font-size:.8rem}
-  .cmp-cell,.cmp-head-cell{padding:10px 10px}
+  .sol-grid{grid-template-columns:1fr;gap:28px}
+  .chatgpt-example{grid-template-columns:1fr;gap:14px;margin:24px auto 0}
   .steps{grid-template-columns:1fr;gap:28px}
   .steps::before{display:none}
-  .features{grid-template-columns:1fr}
-  .benefits{grid-template-columns:1fr}
-  .video-box iframe{height:52vw;min-height:200px}
-  .pricing-grid{grid-template-columns:1fr;max-width:100%;padding:0}
+  .feats{grid-template-columns:1fr}
+  .personas{grid-template-columns:repeat(2,1fr)}
+  .pricing-grid{grid-template-columns:1fr;max-width:100%}
   .plan{padding:26px 20px}
-  .faq-q{padding:16px 18px;font-size:.9rem}
-  .faq-a{padding:0 18px 16px}
+  .cmp-h,.cmp-row{font-size:.79rem}
+  .cmp-c,.cmp-h-cell{padding:10px 10px}
+  .vbox iframe{height:52vw;min-height:200px}
+  .vbox-points{grid-template-columns:1fr}
+  .vbox-meta{flex-direction:column;gap:4px;padding:14px 18px}
   .cta-final{padding:72px 20px}
-  footer{padding:48px 20px 28px}
-  .footer-top{flex-direction:column;gap:28px}
-  .footer-bottom{flex-direction:column;text-align:center}
-  .testimonial{padding:28px 20px}
+  footer{padding:48px 20px 28px;padding-bottom:88px}
+  .foot-top{flex-direction:column;gap:28px}
+  .foot-bottom{flex-direction:column;text-align:center}
+  .trial-strip{flex-direction:column;gap:8px}
+}
+@media(max-width:480px){
+  .personas{grid-template-columns:1fr 1fr}
+  .hero h1{font-size:clamp(1.75rem,9vw,2.2rem)}
 }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
+<!-- ──────── NAV ──────────────────────────────────── -->
 <nav>
-<div class="nav-inner">
-  <div class="logo">Research<em>Mind</em> AI</div>
+<div class="nav-i">
+  <div class="logo">Research<span>Mind</span> AI</div>
   <div class="nav-links">
+    <a href="#demo">Demo</a>
     <a href="#de-ce">De ce ResearchMind</a>
     <a href="#cum">Cum funcționează</a>
     <a href="#pricing">Prețuri</a>
     <a href="#faq">FAQ</a>
   </div>
-  <div class="nav-actions">
+  <div class="nav-cta">
     <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Cumpără licență</a>
-    <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-primary btn-sm">↓ Descarcă gratuit</a>
+    <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-orange btn-sm">↓ Descarcă gratuit</a>
   </div>
   <button class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Meniu" type="button">
     <span></span><span></span><span></span>
   </button>
 </div>
-<div class="mob-menu" id="mob">
+<div class="mob" id="mob">
+  <a href="#demo">Demo</a>
   <a href="#de-ce">De ce ResearchMind</a>
   <a href="#cum">Cum funcționează</a>
   <a href="#pricing">Prețuri</a>
   <a href="#faq">FAQ</a>
   <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Cumpără licență</a>
-  <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-primary">↓ Descarcă gratuit</a>
+  <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-orange">↓ Descarcă gratuit</a>
 </div>
 </nav>
 
-<!-- HERO -->
+<!-- ──────── HERO ──────────────────────────────────── -->
 <section class="hero">
   <div class="hero-badge"><div class="badge"><span class="dot"></span>ResearchMind AI v3.1 — disponibil acum</div></div>
-  <h1>Găsești orice citare în&nbsp;10&nbsp;secunde.<br><strong>Din PDF-urile tale.</strong></h1>
-  <p class="hero-sub">
-    ChatGPT inventează surse. ResearchMind AI citează <strong>pagina exactă</strong> din documentul tău, generează nota de subsol și exportă în Word — în câteva secunde.
-  </p>
-  <div class="hero-pills">
-    <div class="pill"><span class="pill-check">✓</span>Pagina exactă din PDF</div>
-    <div class="pill"><span class="pill-check">✓</span>Export direct în Word cu citări formatate</div>
-    <div class="pill"><span class="pill-check">✓</span>OCR pentru documente scanate</div>
-    <div class="pill"><span class="pill-check">✓</span>Nu halucinează surse</div>
+  <h1>Scrie lucrări academice<br>de <em>5× mai rapid</em></h1>
+  <p class="hero-sub">Analizează PDF-uri, găsește informația exactă cu pagina și generează citări corecte — totul într-un singur loc. Fără halucinații AI.</p>
+  <div class="hero-bullets">
+    <div class="hb"><span class="hb-icon">✓</span>Răspunsuri cu pagina exactă din PDF</div>
+    <div class="hb"><span class="hb-icon">✓</span>Citări academice generate automat</div>
+    <div class="hb"><span class="hb-icon">✓</span>Export direct în Word, gata de depus</div>
   </div>
   <div class="hero-cta">
-    <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-green btn-xl">↓ Descarcă gratuit — Trial 7 zile</a>
-    <a href="https://youtu.be/cDlOtpVMvlA" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-xl">▶ Vezi demo (60 sec)</a>
+    <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-orange btn-xl">↓ Descarcă gratuit — Trial 7 zile</a>
+    <a href="#demo" class="btn btn-outline-w btn-xl">▶ Vezi demo</a>
   </div>
-  <p class="hero-note">Trial 7 zile gratuit &nbsp;·&nbsp; Fără card bancar &nbsp;·&nbsp; Fără instalare Python &nbsp;·&nbsp; Windows 10/11</p>
-  <div class="hero-img">
-    <img src="screenshot.png" alt="ResearchMind AI — interfața principală" loading="eager">
+  <p class="hero-note">Trial 7 zile &nbsp;·&nbsp; Fără card bancar &nbsp;·&nbsp; Fără instalare Python &nbsp;·&nbsp; Windows 10/11</p>
+  <div class="hero-social">
+    <div class="hero-avatars">
+      <span>DR</span><span>AS</span><span>MC</span><span>IP</span><span>+</span>
+    </div>
+    <p class="hero-social-text"><strong>Folosit de cercetători și doctoranzi</strong> din universități din România</p>
   </div>
 </section>
 
-<!-- TRUST BAR -->
-<div class="trust-bar">
-  <div class="trust-inner">
-    <div class="trust-item"><span class="t-check">✓</span> Trial gratuit 7 zile</div>
-    <div class="trust-item"><span class="t-check">✓</span> Fără card bancar</div>
-    <div class="trust-item"><span class="t-check">✓</span> PDF-urile tale rămân locale</div>
-    <div class="trust-item"><span class="t-check">✓</span> Garanție 30 zile returnare bani</div>
-    <div class="trust-item"><span class="t-check">✓</span> Windows 10 / 11</div>
+<!-- ──────── TRUST BAR ────────────────────────────── -->
+<div class="trust">
+  <div class="trust-i">
+    <div class="ti"><span class="ti-ok">✓</span>Trial gratuit 7 zile</div>
+    <div class="ti"><span class="ti-ok">✓</span>Fără card bancar</div>
+    <div class="ti"><span class="ti-ok">✓</span>PDF-urile rămân pe calculatorul tău</div>
+    <div class="ti"><span class="ti-ok">✓</span>Garanție 30 zile returnare bani</div>
+    <div class="ti"><span class="ti-ok">✓</span>Windows 10 / 11</div>
   </div>
 </div>
 
-<!-- PROBLEMA -->
-<section class="section" id="problema">
+<!-- ──────── VIDEO 1 — DEMO ───────────────────────── -->
+<section class="section" id="demo">
+<div class="wrap center">
+  <span class="label">Demo live</span>
+  <h2>Vezi ResearchMind AI în acțiune</h2>
+  <p class="sub" style="margin:12px auto 36px">De la PDF la răspuns cu citare și export Word — în mai puțin de 30 de secunde. Nici o sursă inventată.</p>
+  <div class="vbox-wrap">
+    <div class="vbox-label"><span class="vl-dot"></span> Demo live — aplicație reală</div>
+    <div class="vbox">
+      <!-- VIDEO 1: Demo aplicație -->
+      <iframe src="https://www.youtube.com/embed/hIsTUVC5d-I" title="ResearchMind AI — Demo complet" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
+    </div>
+    <div class="vbox-meta">
+      <span class="vbox-meta-title">ResearchMind AI — Demo funcționalități complete</span>
+      <span class="vbox-meta-detail">Aplicație reală · Documente reale · Fără editare</span>
+    </div>
+    <div class="vbox-points">
+      <div class="vp"><div class="vp-num">10 sec</div><p>De la întrebare la răspuns cu pagina exactă</p></div>
+      <div class="vp"><div class="vp-num">1 click</div><p>Export Word cu citările deja formatate</p></div>
+      <div class="vp"><div class="vp-num">0</div><p>Surse inventate — numai din PDF-urile tale</p></div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ──────── PROBLEMA ─────────────────────────────── -->
+<section class="section section-alt" id="problema">
 <div class="wrap">
-  <span class="label">Problema</span>
-  <h2>Câte ore pierzi pe lucruri care se pot automatiza?</h2>
-  <p class="section-sub">Cercetătorii și doctorazii pierd 60–70% din timp pe sarcini administrative, nu pe gândire reală.</p>
+  <span class="label">Problema reală</span>
+  <h2>Recunoști această rutină?</h2>
+  <p class="sub">Cercetătorii și doctorazii pierd 60–70% din timp pe sarcini care se pot automatiza. Nu pe gândire reală.</p>
   <div class="pain-grid">
-    <div class="pain-card">
-      <div class="pain-icon">📚</div>
-      <h4>Cauți o citare 2 ore prin 300 de pagini</h4>
-      <p>Știi că ai citit acel pasaj undeva. Deschizi PDF după PDF. Nu-l găsești. Renunți sau citezi din memorie — și riști.</p>
+    <div class="pain">
+      <div class="pain-ico">📚</div>
+      <h4>Cauți 2 ore o citare pe care știi că ai văzut-o</h4>
+      <p>Deschizi PDF după PDF. Parcurgi sute de pagini. Nu o găsești. Renunți sau citezi din memorie — și riști să îți compromiți lucrarea.</p>
     </div>
-    <div class="pain-card">
-      <div class="pain-icon">🤖</div>
+    <div class="pain">
+      <div class="pain-ico">🤖</div>
       <h4>ChatGPT îți dă surse care nu există</h4>
-      <p>Folosești AI pentru cercetare și primești autori reali, titluri reale — dar combinații fictive. Îți dai seama la 2 noaptea, înainte de predare.</p>
+      <p>Autori reali, titluri reale — dar combinații fictive. Îți dai seama la 2 noaptea, înainte de predare. Ai 3 pagini de refăcut.</p>
     </div>
-    <div class="pain-card">
-      <div class="pain-icon">✍️</div>
+    <div class="pain">
+      <div class="pain-ico">✍️</div>
       <h4>Formatezi manual 80 de note de subsol</h4>
-      <p>Chicago, APA, Chicago-Turabian... fiecare citare manuală. O eroare și tot capitolul e de refăcut la ora 1 noaptea.</p>
+      <p>Chicago, APA, Chicago-Turabian. Fiecare cu regulile ei. O literă greșită și toată citarea e invalidă. Ore pierdute pe formatare.</p>
     </div>
-    <div class="pain-card">
-      <div class="pain-icon">🕐</div>
-      <h4>Deadline mâine, documentare abia la jumătate</h4>
-      <p>Materialul e acolo, în bibliotecă. Dar să-l găsești, să-l verifici, să-l citezi corect durează mai mult decât să-l scrii.</p>
+    <div class="pain">
+      <div class="pain-ico">🕐</div>
+      <h4>Deadline mâine, documentarea abia la jumătate</h4>
+      <p>Informația există în bibliotecă. Dar să o găsești, să o verifici și să o citezi corect durează mai mult decât să o scrii.</p>
     </div>
   </div>
 </div>
 </section>
 
-<!-- DE CE NU CHATGPT -->
+<!-- ──────── SOLUTIA ──────────────────────────────── -->
+<section class="section">
+<div class="wrap">
+  <span class="label">Soluția</span>
+  <h2>ResearchMind AI face în 10 secunde<br>ce tu faci în 2 ore</h2>
+  <div class="sol-grid">
+    <div class="sol-list">
+      <div class="sol-item">
+        <div class="sol-icon">🧠</div>
+        <div>
+          <h4>Răspunde din documentele tale, cu pagina exactă</h4>
+          <p>Nu halucinează. Nu inventează. Citează textual din PDF-ul tău și îți arată exact unde să găsești pasajul.</p>
+        </div>
+      </div>
+      <div class="sol-item">
+        <div class="sol-icon">✍️</div>
+        <div>
+          <h4>Generează citarea gata formatată</h4>
+          <p>Nota de subsol în stilul Chicago, APA sau alt format — generată automat, corectă, gata de inserat.</p>
+        </div>
+      </div>
+      <div class="sol-item">
+        <div class="sol-icon">📝</div>
+        <div>
+          <h4>Export Word în 1 click</h4>
+          <p>Răspunsul cu toate citările și notele de subsol exportat direct în .docx. Gata de inserat în teză.</p>
+        </div>
+      </div>
+      <div class="sol-item">
+        <div class="sol-icon">📄</div>
+        <div>
+          <h4>Citește și cărțile scanate</h4>
+          <p>OCR cu Tesseract: română, greacă, latină, 16+ limbi. Manuscrise digitizate, cărți vechi, teze tipărite — toate indexate.</p>
+        </div>
+      </div>
+    </div>
+    <div>
+      <div class="sol-demo-box">
+        <p class="sol-q">Întrebare pusă în aplicație:</p>
+        <p class="sol-a">"Care este definiția teologică a harului la Evagrie Ponticul în Practikos?"</p>
+        <div class="sol-cite">📄 Evagrie Ponticul, Practikos, cap. 78, p. 114</div>
+        <p style="color:rgba(255,255,255,.5);font-size:.82rem;margin-top:16px;margin-bottom:0">Răspuns generat din PDF-ul tău · pagina exactă · citare gata</p>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- ──────── VS CHATGPT ───────────────────────────── -->
 <section class="section section-alt" id="de-ce">
 <div class="wrap">
   <div class="center">
     <span class="label">Diferența esențială</span>
-    <h2>De ce ChatGPT nu e suficient pentru cercetare</h2>
-    <p class="section-sub">ChatGPT e bun pentru multe lucruri. Cercetarea academică serioasă nu e una dintre ele.</p>
+    <h2>De ce nu ChatGPT?</h2>
+    <p class="sub">ChatGPT e bun pentru multe lucruri. Cercetarea academică cu surse verificate nu e una dintre ele.</p>
   </div>
-  <div class="compare-wrap">
-    <div class="cmp-head">
-      <div class="cmp-head-cell">Funcționalitate</div>
-      <div class="cmp-head-cell bad">ChatGPT</div>
-      <div class="cmp-head-cell good">ResearchMind AI</div>
+  <div class="chatgpt-example">
+    <div class="ex-box bad">
+      <span class="ex-tag">❌ ChatGPT — răspuns tipic</span>
+      <p class="ex-q">"Care este conceptul de isihasm la Grigorie Palama?"</p>
+      <p class="ex-a">"Sursa: Grigorie Palama, <em>Triads</em>, 1338, p. 47 — în care el definește isihia ca..."</p>
+      <div class="ex-verdict">⚠ Pagina 47 nu există în ediția citată. Sursă inventată.</div>
+    </div>
+    <div class="ex-box good">
+      <span class="ex-tag">✓ ResearchMind AI — din PDF-ul tău</span>
+      <p class="ex-q">"Care este conceptul de isihasm la Grigorie Palama?"</p>
+      <p class="ex-a">"Conform Palama, <em>Triade</em>, trad. Dumitru Stăniloae, p. 112: «Isihia este liniștea..."</p>
+      <div class="ex-verdict">✓ Citat textual din PDF-ul tău, pagina 112, verificabil.</div>
+    </div>
+  </div>
+  <div class="cmp-wrap">
+    <div class="cmp-h">
+      <div class="cmp-h-cell">Funcționalitate</div>
+      <div class="cmp-h-cell bad">ChatGPT</div>
+      <div class="cmp-h-cell good">ResearchMind AI</div>
     </div>
     <div class="cmp-body">
       <div class="cmp-row">
-        <div class="cmp-cell">Cunoaște PDF-urile tale specifice</div>
-        <div class="cmp-cell"><span class="xmark">✕</span></div>
-        <div class="cmp-cell"><span class="cmark">✓</span>&nbsp;Da, toate</div>
+        <div class="cmp-c">Cunoaște PDF-urile tale specifice</div>
+        <div class="cmp-c"><span class="no">✕</span>&nbsp;Nu</div>
+        <div class="cmp-c"><span class="ok">✓</span>&nbsp;Da, toate</div>
       </div>
       <div class="cmp-row">
-        <div class="cmp-cell">Citează pagina exactă din document</div>
-        <div class="cmp-cell"><span class="xmark">✕</span></div>
-        <div class="cmp-cell"><span class="cmark">✓</span>&nbsp;Pagina exactă</div>
+        <div class="cmp-c">Citează pagina exactă din documentul tău</div>
+        <div class="cmp-c"><span class="no">✕</span>&nbsp;Nu poate</div>
+        <div class="cmp-c"><span class="ok">✓</span>&nbsp;Pagina exactă</div>
       </div>
       <div class="cmp-row">
-        <div class="cmp-cell">Generează note de subsol formatate</div>
-        <div class="cmp-cell"><span class="xmark">✕</span></div>
-        <div class="cmp-cell"><span class="cmark">✓</span>&nbsp;Chicago, APA</div>
+        <div class="cmp-c">Generează note de subsol formatate</div>
+        <div class="cmp-c"><span class="no">✕</span>&nbsp;Nu</div>
+        <div class="cmp-c"><span class="ok">✓</span>&nbsp;Chicago, APA</div>
       </div>
       <div class="cmp-row">
-        <div class="cmp-cell">Export direct în Word (.docx)</div>
-        <div class="cmp-cell"><span class="xmark">✕</span></div>
-        <div class="cmp-cell"><span class="cmark">✓</span>&nbsp;1 click</div>
+        <div class="cmp-c">Export direct în Word (.docx)</div>
+        <div class="cmp-c"><span class="no">✕</span>&nbsp;Nu</div>
+        <div class="cmp-c"><span class="ok">✓</span>&nbsp;1 click</div>
       </div>
       <div class="cmp-row">
-        <div class="cmp-cell">OCR documente scanate (16+ limbi)</div>
-        <div class="cmp-cell"><span class="xmark">✕</span></div>
-        <div class="cmp-cell"><span class="cmark">✓</span>&nbsp;Română, greacă, latină...</div>
+        <div class="cmp-c">OCR pentru documente scanate</div>
+        <div class="cmp-c"><span class="no">✕</span>&nbsp;Nu</div>
+        <div class="cmp-c"><span class="ok">✓</span>&nbsp;16+ limbi</div>
       </div>
       <div class="cmp-row">
-        <div class="cmp-cell">PDF-urile rămân private pe calculatorul tău</div>
-        <div class="cmp-cell" style="color:var(--red);font-weight:600"><span class="xmark">✕</span>&nbsp;Trimise pe servere</div>
-        <div class="cmp-cell"><span class="cmark">✓</span>&nbsp;100% locale</div>
+        <div class="cmp-c">PDF-urile tale rămân private</div>
+        <div class="cmp-c" style="background:#fef2f2"><span class="no">✕</span>&nbsp;Trimise pe servere OpenAI</div>
+        <div class="cmp-c"><span class="ok">✓</span>&nbsp;Locale, pe calculatorul tău</div>
       </div>
       <div class="cmp-row">
-        <div class="cmp-cell">Inventează surse (halucinații)</div>
-        <div class="cmp-cell" style="color:var(--red);font-weight:600"><span class="xmark">✕</span>&nbsp;Adesea</div>
-        <div class="cmp-cell" style="color:var(--green);font-weight:600"><span class="cmark">✓</span>&nbsp;Niciodată din PDF-urile tale</div>
+        <div class="cmp-c">Inventează surse (halucinații)</div>
+        <div class="cmp-c" style="background:#fef2f2;color:var(--red);font-weight:600"><span class="no">✕</span>&nbsp;Frecvent</div>
+        <div class="cmp-c" style="background:var(--blue-l);color:var(--green);font-weight:600"><span class="ok">✓</span>&nbsp;Niciodată din PDF-urile tale</div>
       </div>
     </div>
   </div>
 </div>
 </section>
 
-<!-- CUM FUNCTIONEAZA -->
+<!-- ──────── CUM FUNCTIONEAZA ────────────────────── -->
 <section class="section" id="cum">
 <div class="wrap center">
   <span class="label">Proces simplu</span>
   <h2>3 pași. De la PDF la citare în Word.</h2>
-  <p class="section-sub">Fără configurări complicate. Fără abonamente cloud. Fără Python.</p>
+  <p class="sub">Fără configurări complicate. Fără abonamente cloud. Fără Python instalat.</p>
   <div class="steps">
     <div class="step">
       <div class="step-n">1</div>
-      <h3>Adaugi PDF-urile tale</h3>
-      <p>Selectezi folderul cu documentele academice — cărți, articole, teze, manuscrise scanate. Indexarea se face o singură dată și persistă.</p>
+      <h3>Încarci PDF-urile tale</h3>
+      <p>Selectezi folderul cu documentele academice — cărți, articole, teze, manuscrise scanate. Indexarea se face o singură dată.</p>
     </div>
     <div class="step">
       <div class="step-n">2</div>
       <h3>Pui întrebarea în română</h3>
-      <p>Scrii întrebarea ca și cum ai vorbi cu un coleg expert. AI-ul caută în toate documentele simultan și identifică pasajele relevante.</p>
+      <p>Scrii întrebarea ca și cum ai vorbi cu un expert. AI-ul caută în toate documentele simultan și identifică pasajele relevante.</p>
     </div>
     <div class="step">
       <div class="step-n">3</div>
-      <h3>Primești răspuns cu pagina exactă</h3>
-      <p>Fiecare răspuns vine cu documentul, numărul paginii și nota de subsol gata formatată. Export în Word cu un singur click.</p>
+      <h3>Primești răspuns + pagina + citare</h3>
+      <p>Răspuns cu documentul sursă, numărul paginii și nota de subsol formatată. Export în Word cu un singur click.</p>
     </div>
   </div>
 </div>
 </section>
 
-<!-- SCREENSHOTS SHOWCASE -->
-<section class="section section-alt" id="interfata">
-<div class="wrap center">
-  <span class="label">Interfața reală</span>
-  <h2>Vedere din interior — aplicația ta de cercetare</h2>
-  <p class="section-sub" style="margin:12px auto 32px">Nu promisiuni. Interfața reală pe care o vei folosi zilnic.</p>
-  <div class="showcase-tabs">
-    <button type="button" class="stab active" onclick="showTab('t1')">Mod Simplu — start rapid</button>
-    <button type="button" class="stab" onclick="showTab('t2')">Chat cercetare — RAG</button>
-    <button type="button" class="stab" onclick="showTab('t3')">Instrumente scriere</button>
-  </div>
-  <div class="showcase-img-wrap">
-    <img id="t1" src="img-simple.png" alt="ResearchMind AI — Mod Simplu" loading="lazy">
-    <img id="t2" src="img-chat.png" alt="ResearchMind AI — Chat cercetare" loading="lazy" class="hidden">
-    <img id="t3" src="img-tools.png" alt="ResearchMind AI — Instrumente scriere" loading="lazy" class="hidden">
-  </div>
-</div>
-</section>
-
-<!-- DEMO VIDEO -->
-<section class="section" id="demo">
-<div class="wrap center">
-  <span class="label">Demo</span>
-  <h2>De la zero la primul răspuns academic — în 2 minute</h2>
-  <p class="section-sub" style="margin:12px auto 40px">Vezi cum funcționează pe documente reale.</p>
-  <div class="video-box">
-    <iframe src="https://www.youtube.com/embed/hIsTUVC5d-I" title="ResearchMind AI Demo" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
-  </div>
-  <p style="margin-top:20px;font-size:.88rem">
-    <a href="https://youtu.be/cDlOtpVMvlA" target="_blank" rel="noopener noreferrer" style="color:var(--indigo);font-weight:600">▶ Tutorial de instalare pas cu pas →</a>
-  </p>
-</div>
-</section>
-
-<!-- FEATURES -->
-<section class="section" id="functionalitati">
+<!-- ──────── FUNCTIONALITATI ─────────────────────── -->
+<section class="section section-alt" id="functii">
 <div class="wrap">
   <span class="label">Funcționalități</span>
   <h2>Tot ce ai nevoie pentru cercetare serioasă</h2>
-  <p class="section-sub">Fiecare funcție e construită cu un singur scop: să-ți economisești timp real.</p>
-  <div class="features">
+  <p class="sub">Fiecare funcție construită cu un singur scop: să-ți economisești timp real.</p>
+  <div class="feats">
 
     <div class="feat">
       <div class="feat-ico">🧠</div>
-      <h3>Chat AI pe documentele tale (RAG)</h3>
-      <p>Pui întrebări complexe și primești răspunsuri din documentele tale reale — nu inventate. Fiecare răspuns citat din sursă, cu pagina exactă.</p>
+      <h3>Chat AI pe documentele tale</h3>
+      <p>Pui întrebări complexe și primești răspunsuri din documentele tale reale. Fiecare afirmație — citată cu sursa și pagina exactă.</p>
       <span class="feat-tag">CORE</span>
     </div>
 
     <div class="feat">
       <div class="feat-ico">📄</div>
       <h3>OCR — citești orice document scanat</h3>
-      <p>Cărți vechi, teze tipărite, manuscrise digitizate — le indexează automat cu Tesseract OCR. Română, greacă, latină și 16+ limbi.</p>
+      <p>Cărți vechi, teze tipărite, manuscrise — indexate automat cu Tesseract OCR. Română, greacă, latină, 16+ limbi suportate.</p>
       <span class="feat-tag">OCR</span>
     </div>
 
     <div class="feat">
+      <div class="feat-ico">✍️</div>
+      <h3>Citări academice automate</h3>
+      <p>Note de subsol în stil Chicago, APA sau alt format — generate automat, corecte, gata de inserat. Zero formatare manuală.</p>
+      <span class="feat-tag">CITĂRI</span>
+    </div>
+
+    <div class="feat">
       <div class="feat-ico">📝</div>
-      <h3>Export Word cu citări formatate</h3>
-      <p>Răspunsul cu notele de subsol exportat direct în .docx, gata de inserat în teză. Economisești ore de formatare manuală.</p>
+      <h3>Export Word direct</h3>
+      <p>Răspunsul cu toate citările și notele de subsol exportat în .docx — gata de inserat în teză sau articol. Economisești ore.</p>
       <span class="feat-tag">WORD</span>
     </div>
 
     <div class="feat">
       <div class="feat-ico">🌐</div>
       <h3>Căutare academică online</h3>
-      <p>OpenAlex, Crossref, Semantic Scholar, PubMed direct din aplicație. Surse verificate academic, nu Wikipedia sau bloguri.</p>
+      <p>Caută simultan în OpenAlex, Crossref, Semantic Scholar, PubMed direct din aplicație. Surse verificate academic.</p>
       <span class="feat-tag">ONLINE</span>
     </div>
 
     <div class="feat">
-      <div class="feat-ico">🔗</div>
-      <h3>Import Zotero automat</h3>
-      <p>Importă toată biblioteca Zotero cu autori, DOI, jurnal, an — fără copiere manuală. Gata de citat în secunde.</p>
-      <span class="feat-tag">ZOTERO</span>
-    </div>
-
-    <div class="feat">
       <div class="feat-ico">🔒</div>
-      <h3>PDF-urile tale rămân pe calculatorul tău</h3>
-      <p>Niciun document nu ajunge pe servere externe. Numai textul întrebărilor tale merge la AI. Date private, GDPR compliant.</p>
+      <h3>Date private, procesate local</h3>
+      <p>Niciun PDF nu ajunge pe servere externe. Numai textul întrebărilor merge la AI. GDPR compliant prin design.</p>
       <span class="feat-tag">PRIVAT</span>
     </div>
 
-    <div class="feat">
-      <div class="feat-ico">✍️</div>
-      <h3>Rezumate și abstract academic</h3>
-      <p>Generează rezumat, abstract, cuvinte cheie din documentele tale — în stilul tău, în română sau altă limbă.</p>
-      <span class="feat-tag">AI WRITING</span>
-    </div>
-
-    <div class="feat">
-      <div class="feat-ico">🎓</div>
-      <h3>Profile specializate pe rol</h3>
-      <p>Doctorand, Student, Profesor, Cercetător — fiecare profil cu instrumente și sugestii adaptate nevoilor specifice.</p>
-      <span class="feat-tag">ACADEMIC</span>
-    </div>
-
-    <div class="feat">
-      <div class="feat-ico">🎙️</div>
-      <h3>Voce — dictezi, nu scrii</h3>
-      <p>Dictezi întrebarea sau asculți rezumatul documentului în timp ce lucrezi altceva. Productivitate fără compromisuri.</p>
-      <span class="feat-tag">VOCE</span>
-    </div>
-
   </div>
 </div>
 </section>
 
-<!-- BENEFICII -->
-<section class="section section-alt">
+<!-- ──────── VIDEO 2 — TUTORIAL ───────────────────── -->
+<section class="section" id="tutorial">
 <div class="wrap center">
-  <span class="label">Rezultate concrete</span>
-  <h2>Ce se schimbă după prima săptămână</h2>
-  <p class="section-sub">Nu promitem magie. Promitem ore recuperate și mai puțin stres.</p>
-  <div class="benefits">
-    <div class="benefit">
-      <div class="benefit-num">10×</div>
-      <h3>Mai rapid la găsit citări</h3>
-      <p>Ce dura 2 ore durează acum 10 minute. Cauți o idee, primești pasajul și pagina exactă.</p>
+  <span class="label">Tutorial complet</span>
+  <h2>Cum te ajută în lucrul academic</h2>
+  <p class="sub" style="margin:12px auto 36px">Instalare și primii pași — de la descărcare la primul răspuns cu citare, în mai puțin de 5 minute.</p>
+  <div class="vbox-wrap">
+    <div class="vbox-label"><span class="vl-dot" style="background:#059669"></span> Tutorial pas cu pas — instalare și utilizare</div>
+    <div class="vbox">
+      <!-- VIDEO 2: Tutorial instalare -->
+      <iframe src="https://www.youtube.com/embed/cDlOtpVMvlA" title="ResearchMind AI — Tutorial instalare" allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
-    <div class="benefit">
-      <div class="benefit-num">0</div>
-      <h3>Surse inventate</h3>
-      <p>Răspunsurile vin exclusiv din documentele tale reale. Zero halucinații pe propriile PDF-uri.</p>
-    </div>
-    <div class="benefit">
-      <div class="benefit-num">1 click</div>
-      <h3>De la răspuns la Word</h3>
-      <p>Exportul în .docx cu notele de subsol formatate — gata de inserat în teză.</p>
+    <div class="vbox-meta">
+      <span class="vbox-meta-title">Tutorial complet — instalare și primii pași</span>
+      <span class="vbox-meta-detail">Pas cu pas · Explicat simplu · Fără cunoștințe tehnice</span>
     </div>
   </div>
 </div>
 </section>
 
-<!-- TESTIMONIAL -->
-<section class="section">
+<!-- ──────── PENTRU CINE ──────────────────────────── -->
+<section class="section section-alt" id="pentru-cine">
 <div class="wrap center">
-  <span class="label">Recenzii</span>
-  <h2>Ce spun cei care îl folosesc</h2>
-  <div class="testimonial">
-    <div class="stars">⭐⭐⭐⭐⭐</div>
-    <p class="quote">"Aplicația m-a ajutat enorm în cercetarea mea. Găsesc informații din sute de articole în câteva secunde și citările sunt generate automat. Nu mai pierd ore întregi căutând manual prin PDF-uri."</p>
-    <p class="tauthor">Utilizator verificat &nbsp;·&nbsp; Recenzie 5/5 pe Gumroad</p>
+  <span class="label">Audiență</span>
+  <h2>Construit pentru cercetătorii serioși</h2>
+  <p class="sub">Nu pentru toată lumea. Pentru cei care lucrează cu sute de pagini și au nevoie de precizie academică.</p>
+  <div class="personas">
+    <div class="persona">
+      <div class="persona-ico">🎓</div>
+      <h4>Doctoranzi</h4>
+      <p>Mii de pagini, citări complexe, deadline-uri imposibile. ResearchMind transformă ani de frustrare în luni de productivitate.</p>
+    </div>
+    <div class="persona">
+      <div class="persona-ico">📚</div>
+      <h4>Masteranzi</h4>
+      <p>Lucrări de disertație cu bibliografie extinsă. Găsești exact ce ai nevoie, formatezi corect, predai la timp.</p>
+    </div>
+    <div class="persona">
+      <div class="persona-ico">👨‍🏫</div>
+      <h4>Profesori & Cercetători</h4>
+      <p>Articole, proiecte de cercetare, peer review. Ai propria bibliotecă academică accesibilă în 10 secunde.</p>
+    </div>
+    <div class="persona">
+      <div class="persona-ico">✍️</div>
+      <h4>Studenți licență</h4>
+      <p>Primele lucrări academice, stiluri de citare necunoscute. ResearchMind îți ghidează fiecare pas.</p>
+    </div>
+    <div class="persona">
+      <div class="persona-ico">✝️</div>
+      <h4>Teologi & Umaniste</h4>
+      <p>Texte vechi, manuscrise, greacă și latină, biblioteci patristice. OCR și indexare completă pentru orice document.</p>
+    </div>
   </div>
 </div>
 </section>
 
-<!-- PRICING -->
-<section class="section section-alt" id="pricing">
+<!-- ──────── PRICING ──────────────────────────────── -->
+<section class="section" id="pricing">
 <div class="wrap center">
   <span class="label">Prețuri</span>
   <h2>Simplu. Transparent. Fără surprize.</h2>
-  <p class="section-sub">Plătești o singură dată și folosești nelimitat. Fără abonamente ascunse. Fără costuri per cerere.</p>
+  <p class="sub">Plătești o dată, folosești cât ai nevoie. Fără abonamente lunare. Fără costuri per cerere.</p>
   <div class="pricing-grid">
 
     <div class="plan">
       <div class="plan-name">Anual</div>
       <div class="plan-price">39 <sub>€</sub></div>
       <div class="plan-period">/ an · valabil 1 an</div>
-      <ul class="plan-features">
+      <ul class="plan-feats">
         <li>500 cereri AI incluse</li>
         <li>Toate funcționalitățile PRO</li>
         <li>OCR, Word export, Zotero</li>
@@ -617,16 +731,16 @@ footer{background:var(--navy);padding:52px 40px 32px}
         <li>Suport email</li>
         <li>Transfer licență gratuit</li>
       </ul>
-      <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Cumpără Anual →</a>
+      <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-fw">Cumpără Anual →</a>
       <p class="plan-note">Plată securizată · Garanție 30 zile</p>
     </div>
 
-    <div class="plan highlight">
+    <div class="plan hl">
       <div class="plan-badge">⚡ CEL MAI BUN RAPORT</div>
       <div class="plan-name">Multi Anual</div>
       <div class="plan-price">69 <sub>€</sub></div>
       <div class="plan-period">o plată · valabil 4 ani</div>
-      <ul class="plan-features">
+      <ul class="plan-feats">
         <li>1000 cereri AI incluse</li>
         <li>Toate funcționalitățile PRO</li>
         <li>OCR, Word export, Zotero</li>
@@ -634,7 +748,7 @@ footer{background:var(--navy);padding:52px 40px 32px}
         <li>Suport email prioritar</li>
         <li>Transfer licență gratuit</li>
       </ul>
-      <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Cumpără acum →</a>
+      <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-blue btn-fw">Cumpără acum →</a>
       <p class="plan-note">Plată securizată · Garanție 30 zile</p>
     </div>
 
@@ -642,7 +756,7 @@ footer{background:var(--navy);padding:52px 40px 32px}
       <div class="plan-name">Lifetime</div>
       <div class="plan-price">99 <sub>€</sub></div>
       <div class="plan-period">o singură plată · pentru totdeauna</div>
-      <ul class="plan-features">
+      <ul class="plan-feats">
         <li>2000 cereri AI incluse</li>
         <li>Toate funcționalitățile PRO</li>
         <li>Update-uri pe viață</li>
@@ -650,112 +764,106 @@ footer{background:var(--navy);padding:52px 40px 32px}
         <li>Suport prioritar</li>
         <li>Transfer licență gratuit</li>
       </ul>
-      <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Cumpără Lifetime →</a>
+      <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-fw">Cumpără Lifetime →</a>
       <p class="plan-note">Plată securizată · Garanție 30 zile</p>
     </div>
 
   </div>
-  <div class="trial-cta-box">
-    <p>Vrei să testezi înainte? <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="trial-link">↓ Descarcă gratuit — trial 7 zile, fără card bancar</a></p>
+  <div class="trial-strip">
+    <p>Vrei să testezi înainte să cumperi?</p>
+    <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc">↓ Descarcă gratuit — Trial 7 zile, fără card bancar</a>
   </div>
-  <p class="pricing-note">Toate planurile includ aceleași funcționalități complete &nbsp;·&nbsp; Garanție 30 zile returnare bani, fără întrebări &nbsp;·&nbsp; Plată securizată prin Gumroad</p>
+  <p style="margin-top:16px;font-size:.82rem;color:var(--g400)">Toate planurile includ aceleași funcționalități &nbsp;·&nbsp; Garanție 30 zile returnare bani, fără întrebări &nbsp;·&nbsp; Plată securizată prin Gumroad</p>
 </div>
 </section>
 
-<!-- FAQ -->
-<section class="section" id="faq">
+<!-- ──────── FAQ ───────────────────────────────────── -->
+<section class="section section-alt" id="faq">
 <div class="wrap center">
   <span class="label">Întrebări frecvente</span>
   <h2>Ai întrebări? Le-am anticipat.</h2>
-  <p class="section-sub" style="margin:12px auto 0">Nu găsești răspunsul? Scrie-ne la <a href="mailto:aisib@proton.me" style="color:var(--indigo);font-weight:600">aisib@proton.me</a></p>
+  <p class="sub" style="margin:12px auto 0">Nu găsești răspunsul? <a href="mailto:aisib@proton.me" style="color:var(--blue);font-weight:600">aisib@proton.me</a></p>
   <div class="faq-list">
+
+    <div class="faq-item">
+      <button type="button" class="faq-q" onclick="faq(this)">
+        Este mai bun decât ChatGPT pentru cercetare?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Pentru cercetare academică — da, complet diferit. ChatGPT nu cunoaște PDF-urile tale, inventează surse și nu poate cita pagina exactă. ResearchMind AI răspunde exclusiv din documentele tale, cu pagina exactă și citarea gata formatată. ChatGPT e mai bun pentru alte sarcini; ResearchMind e construit exclusiv pentru cercetare cu surse verificabile.</div>
+    </div>
+
+    <div class="faq-item">
+      <button type="button" class="faq-q" onclick="faq(this)">
+        Funcționează pe PDF-uri scanate sau fotografiate?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Da. ResearchMind AI include Tesseract OCR care recunoaște text din imagini și documente scanate. Suportă 16+ limbi inclusiv română, greacă, latină, germană, franceză, italiană. Cărțile vechi, tezele tipărite și manuscrisele digitizate sunt indexate la fel ca orice PDF text.</div>
+    </div>
+
+    <div class="faq-item">
+      <button type="button" class="faq-q" onclick="faq(this)">
+        Pot exporta răspunsul direct în Word cu citările incluse?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Da, acesta este unul din punctele forte ale aplicației. Cu un singur click, răspunsul AI împreună cu toate notele de subsol formatate se exportă direct în format .docx, compatibil cu Microsoft Word și LibreOffice. Gata de inserat în teză sau articol, fără formatare manuală.</div>
+    </div>
+
+    <div class="faq-item">
+      <button type="button" class="faq-q" onclick="faq(this)">
+        Există demo gratuit? Trebuie card bancar?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Da, trialul gratuit de 7 zile nu necesită card bancar. Descarci aplicația, o instalezi și ai acces complet la toate funcționalitățile timp de 7 zile. Dacă ești mulțumit, cumperi licența. Dacă nu — nu te costă nimic. Garanție 30 zile returnare bani după achiziție.</div>
+    </div>
+
+    <div class="faq-item">
+      <button type="button" class="faq-q" onclick="faq(this)">
+        Funcționează doar pe Windows?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">Da, ResearchMind AI este o aplicație desktop pentru Windows 10 și Windows 11. Nu necesită instalare Python sau alte dependențe — vine ca un singur fișier executabil (.exe). Versiune Mac sau web nu există în prezent.</div>
+    </div>
 
     <div class="faq-item">
       <button type="button" class="faq-q" onclick="faq(this)">
         PDF-urile mele ajung pe internet?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-a">Nu. PDF-urile tale rămân pe calculatorul tău. Singurele date trimise la internet sunt textul întrebărilor tale (la OpenAI/Groq/Claude) și căutarea academică online, dacă o activezi explicit. Niciun document nu iese din calculatorul tău.</div>
-    </div>
-
-    <div class="faq-item">
-      <button type="button" class="faq-q" onclick="faq(this)">
-        Am nevoie de un abonament OpenAI sau Groq?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">Nu este obligatoriu. Groq oferă un plan gratuit generos (fără card bancar) care funcționează excelent cu ResearchMind AI. OpenAI, Claude și Ollama (complet local, fără internet) sunt de asemenea suportate. Trialul include propriul API pentru testare.</div>
-    </div>
-
-    <div class="faq-item">
-      <button type="button" class="faq-q" onclick="faq(this)">
-        Funcționează cu documente în română, greacă, latină?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">Da. OCR-ul suportă 16+ limbi inclusiv română, greacă, latină, germană, franceză, italiană, ebraică. Căutarea semantică funcționează în orice limbă. Există și buton de traducere rapidă a întrebărilor direct în aplicație.</div>
-    </div>
-
-    <div class="faq-item">
-      <button type="button" class="faq-q" onclick="faq(this)">
-        Câte PDF-uri pot indexa?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">Nu există limită hardcodată. Am testat cu sute de PDF-uri. Performanța depinde de puterea calculatorului. Indexarea se face o singură dată și persistă — nu trebuie refăcută la fiecare deschidere. Un update al aplicației nu șterge indexul.</div>
-    </div>
-
-    <div class="faq-item">
-      <button type="button" class="faq-q" onclick="faq(this)">
-        Dacă reinstalezi aplicația, pierzi documentele indexate?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">Nu. Indexul este salvat în AppData, complet separat de fișierul executabil. Un update sau reinstalare nu afectează documentele indexate. Există funcție de backup/restore ZIP dacă vrei să muți totul pe alt calculator.</div>
-    </div>
-
-    <div class="faq-item">
-      <button type="button" class="faq-q" onclick="faq(this)">
-        Pot folosi aplicația pe mai multe calculatoare?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">Fiecare licență este activată pe un singur calculator. Dacă schimbi calculatorul, scrie-ne la aisib@proton.me și îți transferăm licența fără costuri suplimentare.</div>
-    </div>
-
-    <div class="faq-item">
-      <button type="button" class="faq-q" onclick="faq(this)">
-        Ce se întâmplă dacă nu sunt mulțumit?
-        <span class="faq-icon">+</span>
-      </button>
-      <div class="faq-a">Oferim garanție 30 de zile returnare bani, fără întrebări. Scrie la aisib@proton.me sau direct prin Gumroad și primești rambursarea în 1–2 zile lucrătoare. Trialul gratuit de 7 zile există tocmai ca să testezi înainte să cumperi.</div>
+      <div class="faq-a">Nu. PDF-urile tale rămân pe calculatorul tău. Numai textul întrebărilor tale este trimis la serviciul AI (OpenAI/Groq/Claude). Niciun document nu iese din calculatorul tău. Poți folosi și Ollama pentru funcționare complet locală, fără niciun trafic de internet.</div>
     </div>
 
   </div>
 </div>
 </section>
 
-<!-- CTA FINAL -->
+<!-- ──────── CTA FINAL ────────────────────────────── -->
 <section class="cta-final">
-  <h2>Începe să cercetezi mai inteligent — astăzi</h2>
-  <p>Trial 7 zile gratuit. Fără card bancar. Fără instalare Python. Rulează pe orice Windows 10/11.</p>
-  <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-white btn-xl">↓ Descarcă ResearchMind AI — Trial Gratuit</a>
-  <p class="cta-note">Fără surprize &nbsp;·&nbsp; Garanție 30 zile &nbsp;·&nbsp; Plată securizată prin Gumroad</p>
+  <h2>Începe să scrii mai rapid chiar de azi</h2>
+  <p>Trial gratuit 7 zile. Fără card bancar. Fără instalare Python. Pe orice Windows 10/11.</p>
+  <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-white btn-xl">↓ Descarcă ResearchMind AI — Gratuit</a>
+  <p class="cta-note">Fără surprize &nbsp;·&nbsp; Garanție 30 zile &nbsp;·&nbsp; Plată securizată prin Gumroad dacă alegi să cumperi</p>
 </section>
 
-<!-- FOOTER -->
+<!-- ──────── FOOTER ────────────────────────────────── -->
 <footer>
-<div class="footer-inner">
-  <div class="footer-top">
-    <div class="footer-brand">
-      <div class="logo">Research<em>Mind</em> AI</div>
+<div class="foot-i">
+  <div class="foot-top">
+    <div class="foot-brand">
+      <div class="logo">Research<span>Mind</span> AI</div>
       <p>Asistent AI pentru cercetare academică. Construit pentru doctoranzi, cercetători și profesori din România.</p>
     </div>
-    <div class="footer-col">
+    <div class="foot-col">
       <h4>Produs</h4>
       <ul>
+        <li><a href="#demo">Demo video</a></li>
         <li><a href="#cum">Cum funcționează</a></li>
-        <li><a href="#functionalitati">Funcționalități</a></li>
+        <li><a href="#functii">Funcționalități</a></li>
         <li><a href="#pricing">Prețuri</a></li>
         <li><a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc">Descarcă</a></li>
       </ul>
     </div>
-    <div class="footer-col">
+    <div class="foot-col">
       <h4>Suport</h4>
       <ul>
         <li><a href="#faq">FAQ</a></li>
@@ -763,7 +871,7 @@ footer{background:var(--navy);padding:52px 40px 32px}
         <li><a href="https://youtu.be/cDlOtpVMvlA" target="_blank" rel="noopener noreferrer">Tutorial instalare</a></li>
       </ul>
     </div>
-    <div class="footer-col">
+    <div class="foot-col">
       <h4>Legal</h4>
       <ul>
         <li><a href="#">Termeni și condiții</a></li>
@@ -772,30 +880,41 @@ footer{background:var(--navy);padding:52px 40px 32px}
       </ul>
     </div>
   </div>
-  <div class="footer-bottom">
+  <div class="foot-bottom">
     <span>© 2025 ResearchMind AI · Toate drepturile rezervate</span>
     <span>Construit cu ❤ pentru cercetătorii din România</span>
   </div>
 </div>
 </footer>
 
+<!-- Sticky Mobile CTA -->
+<div class="sticky-cta" id="stickyCta">
+  <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="sticky-cta-dl">↓ Descarcă gratuit</a>
+  <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="sticky-cta-buy">Cumpără licență</a>
+</div>
+
 <script>
 function faq(btn){
   var item=btn.closest('.faq-item');
-  var open=item.classList.contains('open');
+  var isOpen=item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open')});
-  if(!open)item.classList.add('open');
+  if(!isOpen)item.classList.add('open');
 }
-function showTab(id){
-  ['t1','t2','t3'].forEach(function(tid){
-    var img=document.getElementById(tid);
-    if(img)img.classList.toggle('hidden', tid!==id);
-  });
-  document.querySelectorAll('.stab').forEach(function(btn){
-    btn.classList.remove('active');
-    if(btn.getAttribute('onclick').includes("'"+id+"'"))btn.classList.add('active');
-  });
-}
+
+// Sticky mobile CTA — apare după ce se derulează peste hero
+(function(){
+  var cta=document.getElementById('stickyCta');
+  var hero=document.querySelector('.hero');
+  function check(){
+    if(window.innerWidth<=768 && window.scrollY > (hero ? hero.offsetHeight : 400)){
+      cta.classList.add('show');
+    } else {
+      cta.classList.remove('show');
+    }
+  }
+  window.addEventListener('scroll',check,{passive:true});
+  window.addEventListener('resize',check,{passive:true});
+})();
 </script>
 </body>
 </html>
