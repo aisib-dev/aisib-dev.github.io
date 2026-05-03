@@ -60,7 +60,7 @@ p{color:var(--gray-600);line-height:1.7}
 .btn-sm{padding:10px 20px;font-size:.85rem}
 
 /* ── Nav ─────────────────────────────────────────────────── */
-nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-100);padding:0 40px}
+nav{position:sticky;top:0;z-index:200;background:rgba(255,255,255,.95);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-100);padding:0 40px}
 .nav-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;height:68px;gap:32px}
 .nav-logo{font-weight:800;font-size:1.15rem;color:var(--navy);white-space:nowrap}
 .nav-logo span{color:var(--indigo)}
@@ -241,10 +241,10 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
       <a href="#faq">FAQ</a>
     </div>
     <div class="nav-cta">
-      <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" class="btn btn-outline btn-sm">Cumpără licență</a>
+      <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Cumpără licență</a>
       <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-primary btn-sm">⬇ Descarcă gratuit</a>
     </div>
-    <button class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Menu">
+    <button type="button" class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
   </div>
@@ -253,7 +253,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
     <a href="#functionalitati">Funcționalități</a>
     <a href="#pricing">Prețuri</a>
     <a href="#faq">FAQ</a>
-    <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" class="btn btn-outline">Cumpără licență</a>
+    <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Cumpără licență</a>
     <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-primary">⬇ Descarcă gratuit</a>
   </div>
 </nav>
@@ -271,11 +271,11 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
   </div>
   <div class="hero-cta">
     <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-white btn-lg">⬇ Descarcă gratuit — Trial 30 cereri</a>
-    <a href="https://youtu.be/cDlOtpVMvlA" target="_blank" class="btn btn-outline btn-lg" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.25)">▶ Vezi demo (60 sec)</a>
+    <a href="https://youtu.be/cDlOtpVMvlA" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-lg" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.25)">▶ Vezi demo (60 sec)</a>
   </div>
   <p class="hero-note">Fără card bancar · Fără instalare Python · Windows 10/11</p>
   <div class="hero-screenshot">
-    <div class="screenshot-placeholder">[ Screenshot aplicație — se va adăuga ]</div>
+    <img src="screenshot.png" alt="ResearchMind AI — interfața principală" loading="lazy">
   </div>
 </section>
 
@@ -456,7 +456,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
       <iframe src="https://www.youtube.com/embed/hIsTUVC5d-I" title="ResearchMind AI Demo" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>
     </div>
     <p style="margin-top:20px;font-size:.9rem">
-      <a href="https://youtu.be/cDlOtpVMvlA" target="_blank" style="color:var(--indigo);font-weight:600">▶ Vezi și tutorialul de instalare →</a>
+      <a href="https://youtu.be/cDlOtpVMvlA" target="_blank" rel="noopener noreferrer" style="color:var(--indigo);font-weight:600">▶ Vezi și tutorialul de instalare →</a>
     </p>
   </div>
 </section>
@@ -511,7 +511,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
           <div class="pf">Suport email</div>
           <div class="pf no">Multi-calculator</div>
         </div>
-        <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" class="btn btn-primary">Cumpără acum →</a>
+        <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Cumpără acum →</a>
       </div>
 
       <div class="price-card">
@@ -526,7 +526,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
           <div class="pf">Suport prioritar</div>
           <div class="pf">Cel mai bun raport calitate/preț</div>
         </div>
-        <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" class="btn btn-outline">Cumpără Lifetime →</a>
+        <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Cumpără Lifetime →</a>
       </div>
 
     </div>
@@ -543,7 +543,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
     <div class="faq-list">
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
           Documentele mele sunt în siguranță? Ajung pe internet?
           <span class="faq-icon">+</span>
         </button>
@@ -551,7 +551,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
           Am nevoie de un abonament OpenAI sau Groq?
           <span class="faq-icon">+</span>
         </button>
@@ -559,7 +559,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
           Funcționează cu documente în română, greacă, latină?
           <span class="faq-icon">+</span>
         </button>
@@ -567,7 +567,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
           Câte PDF-uri pot indexa?
           <span class="faq-icon">+</span>
         </button>
@@ -575,7 +575,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
           Dacă reinstaleze aplicația, pierd documentele indexate?
           <span class="faq-icon">+</span>
         </button>
@@ -583,7 +583,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
           Pot folosi aplicația pe mai multe calculatoare?
           <span class="faq-icon">+</span>
         </button>
@@ -591,7 +591,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
       </div>
 
       <div class="faq-item">
-        <button class="faq-q" onclick="toggleFaq(this)">
+        <button type="button" class="faq-q" onclick="toggleFaq(this)">
           Ce se întâmplă dacă nu sunt mulțumit?
           <span class="faq-icon">+</span>
         </button>
@@ -629,8 +629,8 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
       <div class="footer-links">
         <h4>RESURSE</h4>
         <ul>
-          <li><a href="https://youtu.be/cDlOtpVMvlA" target="_blank">Tutorial instalare</a></li>
-          <li><a href="https://www.youtube.com/@ResearchMindAssistant" target="_blank">Canal YouTube</a></li>
+          <li><a href="https://youtu.be/cDlOtpVMvlA" target="_blank" rel="noopener noreferrer">Tutorial instalare</a></li>
+          <li><a href="https://www.youtube.com/@ResearchMindAssistant" target="_blank" rel="noopener noreferrer">Canal YouTube</a></li>
           <li><a href="#faq">FAQ</a></li>
           <li><a href="mailto:aisib@proton.me">Contact</a></li>
         </ul>
@@ -638,16 +638,16 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
       <div class="footer-links">
         <h4>CUMPĂRĂ</h4>
         <ul>
-          <li><a href="https://aisibra.gumroad.com/l/researchmind" target="_blank">Licență anuală — 39€</a></li>
-          <li><a href="https://aisibra.gumroad.com/l/researchmind" target="_blank">Licență lifetime — 99€</a></li>
+          <li><a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer">Licență anuală — 39€</a></li>
+          <li><a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer">Licență lifetime — 99€</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
       <span>© 2026 ResearchMind AI · aisib@proton.me</span>
       <div class="footer-social">
-        <a href="https://www.youtube.com/@ResearchMindAssistant" target="_blank" class="social-btn" title="YouTube">▶</a>
-        <a href="https://www.facebook.com/profile.php?id=61589044826856" target="_blank" class="social-btn" title="Facebook">f</a>
+        <a href="https://www.youtube.com/@ResearchMindAssistant" target="_blank" rel="noopener noreferrer" class="social-btn" title="YouTube">▶</a>
+        <a href="https://www.facebook.com/profile.php?id=61589044826856" target="_blank" rel="noopener noreferrer" class="social-btn" title="Facebook">f</a>
         <a href="mailto:aisib@proton.me" class="social-btn" title="Email">@</a>
       </div>
     </div>
