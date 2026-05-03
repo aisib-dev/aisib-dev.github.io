@@ -6,8 +6,16 @@
 <title>ResearchMind AI — Asistentul AI pentru Cercetare Academică</title>
 <meta name="description" content="Analizează sute de PDF-uri în secunde. Răspunsuri din documentele tale, citări automate, export Word. Trial gratuit — fără card bancar.">
 <meta property="og:title" content="ResearchMind AI — Cercetare academică de 10× mai rapidă">
-<meta property="og:description" content="AI care îți citește biblioteca academică și răspunde cu surse exacte. Trial gratuit inclus.">
+<meta property="og:description" content="AI care îți citește biblioteca academică și răspunde cu surse exacte. Trial gratuit — 30 cereri, fără card bancar.">
 <meta property="og:url" content="https://aisib-dev.github.io">
+<meta property="og:image" content="https://aisib-dev.github.io/screenshot.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="ResearchMind AI — Cercetare academică de 10× mai rapidă">
+<meta name="twitter:description" content="AI care îți citește biblioteca academică și răspunde cu surse exacte. Trial gratuit — 30 cereri, fără card bancar.">
+<meta name="twitter:image" content="https://aisib-dev.github.io/screenshot.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -201,26 +209,47 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
 
 /* ── Responsive ──────────────────────────────────────────── */
 @media(max-width:768px){
-  nav{padding:0 20px}
+  nav{padding:0 16px}
   .nav-links,.nav-cta{display:none}
   .hamburger{display:flex}
   .mobile-nav{background:#fff;border-top:1px solid var(--gray-100);padding:20px;flex-direction:column;gap:16px}
   .mobile-nav.open{display:flex}
-  .mobile-nav a{font-size:1rem;font-weight:500;color:var(--navy);padding:8px 0;border-bottom:1px solid var(--gray-100)}
-  .mobile-nav .btn{width:100%;justify-content:center;margin-top:4px}
-  .hero{padding:60px 20px 48px}
-  .hero h1{font-size:2rem}
-  .stats-bar{padding:24px 20px}
-  .stats-inner{gap:16px}
-  .section{padding:60px 20px}
+  .mobile-nav a{font-size:1rem;font-weight:500;color:var(--navy);padding:10px 0;border-bottom:1px solid var(--gray-100)}
+  .mobile-nav .btn{width:100%;justify-content:center;margin-top:6px;padding:14px 20px}
+  .hero{padding:56px 20px 44px}
+  .hero h1{font-size:clamp(1.8rem,8vw,2.4rem);line-height:1.2}
+  .hero-sub{font-size:.97rem;margin-bottom:28px}
+  .hero-bullets{flex-direction:column;align-items:flex-start;max-width:300px;margin:0 auto 32px;gap:10px}
+  .hero-cta{flex-direction:column;align-items:stretch;gap:12px}
+  .hero-cta .btn{justify-content:center;text-align:center}
+  .btn-lg{padding:16px 24px;font-size:1rem}
+  .stats-bar{padding:24px 16px}
+  .stats-inner{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+  .stat-num{font-size:1.6rem}
+  .section{padding:56px 20px}
+  h2{font-size:clamp(1.4rem,6vw,2rem)}
+  .section-sub{font-size:.93rem;margin-bottom:40px}
   .problem-grid{grid-template-columns:1fr}
+  .solution-box{padding:28px 20px}
   .steps-grid{grid-template-columns:1fr;gap:24px}
   .steps-grid::before{display:none}
+  .step-card{padding:0 8px}
   .features-grid{grid-template-columns:1fr}
-  .pricing-grid{grid-template-columns:1fr;max-width:400px}
-  .video-wrap iframe{height:220px}
-  .footer-top{flex-direction:column}
+  .feat-card{padding:22px 18px}
+  .pricing-grid{grid-template-columns:1fr;max-width:100%;padding:0 4px}
+  .price-card{padding:28px 20px}
+  .price-amount{font-size:2.2rem}
+  .video-wrap iframe{height:56vw;min-height:200px}
+  .testimonial-card{padding:28px 18px}
+  .faq-q{padding:16px 18px;font-size:.92rem;gap:12px}
+  .faq-a{padding:0 18px 16px;font-size:.88rem}
+  footer{padding:40px 20px 24px}
+  .footer-top{flex-direction:column;gap:28px}
   .footer-bottom{flex-direction:column;text-align:center}
+  .cta-section{padding:64px 20px}
+}
+@media(max-width:900px){
+  .pricing-grid{grid-template-columns:1fr;max-width:440px;margin:0 auto}
 }
 @media(max-width:1024px){
   .features-grid{grid-template-columns:repeat(2,1fr)}
@@ -266,7 +295,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
   <div class="hero-bullets">
     <div class="hero-bullet">Răspunsuri cu pagina exactă din document</div>
     <div class="hero-bullet">Export automat în Word cu citări</div>
-    <div class="hero-bullet">Funcționează 100% offline</div>
+    <div class="hero-bullet">Documente private, procesate local</div>
     <div class="hero-bullet">OCR pentru PDF-uri scanate</div>
   </div>
   <div class="hero-cta">
@@ -283,7 +312,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
 <div class="stats-bar">
   <div class="stats-inner">
     <div class="stat-item"><span class="stat-num">30</span><span class="stat-label">Cereri AI incluse în trial</span></div>
-    <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Funcționează offline</span></div>
+    <div class="stat-item"><span class="stat-num">100%</span><span class="stat-label">Date procesate local</span></div>
     <div class="stat-item"><span class="stat-num">16+</span><span class="stat-label">Limbi OCR suportate</span></div>
     <div class="stat-item"><span class="stat-num">⭐ 5/5</span><span class="stat-label">Recenzie utilizatori</span></div>
   </div>
@@ -337,7 +366,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
             <div class="sol-feat">Generează citări automate în orice format</div>
             <div class="sol-feat">Exportă direct în Word, gata de depus</div>
             <div class="sol-feat">Caută simultan în biblioteca ta și online</div>
-            <div class="sol-feat">Funcționează fără internet, date private</div>
+            <div class="sol-feat">PDF-urile tale rămân locale, niciodată pe cloud</div>
           </div>
         </div>
       </div>
@@ -423,8 +452,8 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
 
       <div class="feat-card">
         <div class="feat-icon">🔒</div>
-        <h3>100% offline și privat</h3>
-        <p>Documentele tale rămân pe calculatorul tău. Niciun PDF nu ajunge pe servere externe. GDPR compliant prin design.</p>
+        <h3>Date private, procesate local</h3>
+        <p>PDF-urile tale nu ajung niciodată pe servere externe. Numai textul întrebărilor tale ajunge la AI (OpenAI/Groq). GDPR compliant prin design.</p>
         <span class="feat-tag">PRIVAT</span>
       </div>
 
@@ -502,14 +531,13 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
         <div class="price-badge">⚡ CEL MAI POPULAR</div>
         <div class="price-name">Anual</div>
         <div class="price-amount">39 <span>€</span></div>
-        <div class="price-period">/ an · 1 calculator</div>
+        <div class="price-period">/ an</div>
         <div class="price-features">
           <div class="pf">Cereri AI nelimitate</div>
           <div class="pf">Toate funcționalitățile PRO</div>
           <div class="pf">OCR, Word export, Zotero</div>
           <div class="pf">Update-uri incluse 1 an</div>
-          <div class="pf">Suport email</div>
-          <div class="pf no">Multi-calculator</div>
+          <div class="pf">Suport email prioritar</div>
         </div>
         <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Cumpără acum →</a>
       </div>
@@ -522,7 +550,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
           <div class="pf">Cereri AI nelimitate</div>
           <div class="pf">Toate funcționalitățile PRO</div>
           <div class="pf">Update-uri pe viață</div>
-          <div class="pf">Multi-calculator inclus</div>
+          <div class="pf">Backup și transfer inclus</div>
           <div class="pf">Suport prioritar</div>
           <div class="pf">Cel mai bun raport calitate/preț</div>
         </div>
@@ -587,7 +615,7 @@ footer{background:var(--navy);padding:48px 40px 32px;color:rgba(255,255,255,.5)}
           Pot folosi aplicația pe mai multe calculatoare?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-a">Planul Anual (39€) este pentru 1 calculator. Planul Lifetime (99€) include utilizare pe mai multe calculatoare cu aceeași licență. Planul Multi (69€) este o opțiune intermediară pentru 2-3 calculatoare.</div>
+        <div class="faq-a">Fiecare licență este activată pe un singur calculator. Dacă schimbi calculatorul, scrie-ne la aisib@proton.me și îți transferăm licența fără costuri suplimentare.</div>
       </div>
 
       <div class="faq-item">
