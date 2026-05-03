@@ -20,7 +20,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400&display=swap" rel="stylesheet">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;text-size-adjust:100%}
 body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#111827;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 img{max-width:100%;display:block;height:auto}
@@ -65,7 +65,7 @@ p{color:var(--gray-600);line-height:1.75}
 .btn-sm{padding:9px 18px;font-size:.84rem}
 
 /* NAV */
-nav{position:sticky;top:0;z-index:300;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-100)}
+nav{position:sticky;top:0;z-index:300;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--gray-100)}
 .nav-inner{max-width:1100px;margin:0 auto;padding:0 40px;display:flex;align-items:center;height:64px;gap:24px}
 .logo{font-weight:900;font-size:1.1rem;color:var(--navy);letter-spacing:-.03em;white-space:nowrap}
 .logo em{font-style:normal;color:var(--indigo)}
@@ -191,6 +191,13 @@ nav{position:sticky;top:0;z-index:300;background:rgba(255,255,255,.97);backdrop-
 .plan .btn{width:100%;justify-content:center}
 .plan-note{font-size:.77rem;color:var(--gray-400);text-align:center;margin-top:10px}
 
+/* TRIAL CTA under pricing */
+.trial-cta-box{margin-top:28px;background:var(--gray-100);border:1px solid var(--gray-200);border-radius:var(--r);padding:16px 24px;display:inline-block}
+.trial-cta-box p{color:var(--gray-600);font-size:.9rem;margin:0}
+.trial-link{color:var(--indigo);font-weight:700}
+.trial-link:hover{text-decoration:underline}
+.pricing-note{margin-top:16px;font-size:.82rem;color:var(--gray-400)}
+
 /* FAQ */
 .faq-list{max-width:720px;margin:48px auto 0;display:flex;flex-direction:column;gap:10px}
 .faq-item{background:#fff;border:1px solid var(--gray-200);border-radius:var(--r)}
@@ -310,10 +317,10 @@ footer{background:var(--navy);padding:52px 40px 32px}
     <div class="pill"><span class="pill-check">✓</span>Nu halucinează surse</div>
   </div>
   <div class="hero-cta">
-    <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-green btn-xl">↓ Descarcă gratuit — 30 cereri incluse</a>
+    <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-green btn-xl">↓ Descarcă gratuit — Trial 7 zile</a>
     <a href="https://youtu.be/cDlOtpVMvlA" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-xl">▶ Vezi demo (60 sec)</a>
   </div>
-  <p class="hero-note">Fără card bancar &nbsp;·&nbsp; Fără instalare Python &nbsp;·&nbsp; Windows 10/11</p>
+  <p class="hero-note">Trial 7 zile gratuit &nbsp;·&nbsp; Fără card bancar &nbsp;·&nbsp; Fără instalare Python &nbsp;·&nbsp; Windows 10/11</p>
   <div class="hero-img">
     <img src="screenshot.png" alt="ResearchMind AI — interfața principală" loading="eager">
   </div>
@@ -322,8 +329,8 @@ footer{background:var(--navy);padding:52px 40px 32px}
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-inner">
-    <div class="trust-item"><span class="t-check">✓</span> 30 cereri AI gratuite</div>
-    <div class="trust-item"><span class="t-check">✓</span> Fără limită de timp pe trial</div>
+    <div class="trust-item"><span class="t-check">✓</span> Trial gratuit 7 zile</div>
+    <div class="trust-item"><span class="t-check">✓</span> Fără card bancar</div>
     <div class="trust-item"><span class="t-check">✓</span> PDF-urile tale rămân locale</div>
     <div class="trust-item"><span class="t-check">✓</span> Garanție 30 zile returnare bani</div>
     <div class="trust-item"><span class="t-check">✓</span> Windows 10 / 11</div>
@@ -599,31 +606,31 @@ footer{background:var(--navy);padding:52px 40px 32px}
   <div class="pricing-grid">
 
     <div class="plan">
-      <div class="plan-name">Trial Gratuit</div>
-      <div class="plan-price">0 <sub>€</sub></div>
-      <div class="plan-period">fără card bancar · fără limită de timp</div>
-      <ul class="plan-features">
-        <li>30 cereri AI incluse</li>
-        <li>Toate funcționalitățile active</li>
-        <li>OCR, Word export, Zotero</li>
-        <li>Indexare nelimitată PDF-uri</li>
-        <li class="no">Cereri nelimitate</li>
-        <li class="no">Suport email</li>
-      </ul>
-      <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-outline">↓ Descarcă gratuit</a>
-      <p class="plan-note">Niciun card necesar</p>
-    </div>
-
-    <div class="plan highlight">
-      <div class="plan-badge">⚡ CEL MAI ALES</div>
       <div class="plan-name">Anual</div>
-      <div class="plan-price">39 <sub>€/an</sub></div>
-      <div class="plan-period">~3,25 €/lună · reînnoire opțională</div>
+      <div class="plan-price">39 <sub>€</sub></div>
+      <div class="plan-period">/ an · valabil 1 an</div>
       <ul class="plan-features">
-        <li>Cereri AI nelimitate</li>
+        <li>500 cereri AI incluse</li>
         <li>Toate funcționalitățile PRO</li>
         <li>OCR, Word export, Zotero</li>
         <li>Update-uri incluse 1 an</li>
+        <li>Suport email</li>
+        <li>Transfer licență gratuit</li>
+      </ul>
+      <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Cumpără Anual →</a>
+      <p class="plan-note">Plată securizată · Garanție 30 zile</p>
+    </div>
+
+    <div class="plan highlight">
+      <div class="plan-badge">⚡ CEL MAI BUN RAPORT</div>
+      <div class="plan-name">Multi Anual</div>
+      <div class="plan-price">69 <sub>€</sub></div>
+      <div class="plan-period">o plată · valabil 4 ani</div>
+      <ul class="plan-features">
+        <li>1000 cereri AI incluse</li>
+        <li>Toate funcționalitățile PRO</li>
+        <li>OCR, Word export, Zotero</li>
+        <li>Update-uri incluse 4 ani</li>
         <li>Suport email prioritar</li>
         <li>Transfer licență gratuit</li>
       </ul>
@@ -636,19 +643,22 @@ footer{background:var(--navy);padding:52px 40px 32px}
       <div class="plan-price">99 <sub>€</sub></div>
       <div class="plan-period">o singură plată · pentru totdeauna</div>
       <ul class="plan-features">
-        <li>Cereri AI nelimitate</li>
+        <li>2000 cereri AI incluse</li>
         <li>Toate funcționalitățile PRO</li>
         <li>Update-uri pe viață</li>
         <li>Backup și restore inclus</li>
         <li>Suport prioritar</li>
-        <li>Cel mai bun raport preț/valoare</li>
+        <li>Transfer licență gratuit</li>
       </ul>
       <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline">Cumpără Lifetime →</a>
       <p class="plan-note">Plată securizată · Garanție 30 zile</p>
     </div>
 
   </div>
-  <p style="margin-top:24px;font-size:.82rem;color:var(--gray-400)">Toate planurile includ aceleași funcționalități complete &nbsp;·&nbsp; Garanție 30 zile returnare bani, fără întrebări &nbsp;·&nbsp; Plată securizată prin Gumroad</p>
+  <div class="trial-cta-box">
+    <p>Vrei să testezi înainte? <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="trial-link">↓ Descarcă gratuit — trial 7 zile, fără card bancar</a></p>
+  </div>
+  <p class="pricing-note">Toate planurile includ aceleași funcționalități complete &nbsp;·&nbsp; Garanție 30 zile returnare bani, fără întrebări &nbsp;·&nbsp; Plată securizată prin Gumroad</p>
 </div>
 </section>
 
@@ -713,7 +723,7 @@ footer{background:var(--navy);padding:52px 40px 32px}
         Ce se întâmplă dacă nu sunt mulțumit?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-a">Oferim garanție 30 de zile returnare bani, fără întrebări. Scrie la aisib@proton.me sau direct prin Gumroad și primești rambursarea în 1–2 zile lucrătoare. Trialul gratuit există tocmai ca să testezi înainte să cumperi.</div>
+      <div class="faq-a">Oferim garanție 30 de zile returnare bani, fără întrebări. Scrie la aisib@proton.me sau direct prin Gumroad și primești rambursarea în 1–2 zile lucrătoare. Trialul gratuit de 7 zile există tocmai ca să testezi înainte să cumperi.</div>
     </div>
 
   </div>
@@ -723,8 +733,8 @@ footer{background:var(--navy);padding:52px 40px 32px}
 <!-- CTA FINAL -->
 <section class="cta-final">
   <h2>Începe să cercetezi mai inteligent — astăzi</h2>
-  <p>30 de cereri AI gratuite. Fără card bancar. Fără instalare Python. Rulează pe orice Windows 10/11.</p>
-  <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-white btn-xl">↓ Descarcă ResearchMind AI — Gratuit</a>
+  <p>Trial 7 zile gratuit. Fără card bancar. Fără instalare Python. Rulează pe orice Windows 10/11.</p>
+  <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn btn-white btn-xl">↓ Descarcă ResearchMind AI — Trial Gratuit</a>
   <p class="cta-note">Fără surprize &nbsp;·&nbsp; Garanție 30 zile &nbsp;·&nbsp; Plată securizată prin Gumroad</p>
 </section>
 
