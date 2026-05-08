@@ -3,11 +3,11 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ResearchMind AI — Scrie lucrări academice de 5× mai rapid</title>
-<meta name="description" content="Analizează PDF-uri, găsește citarea exactă cu pagina și exportă direct în Word. Trial gratuit 7 zile. Fără card bancar.">
+<title>ResearchMind AI — Nu mai pierzi ore căutând prin PDF-uri</title>
+<meta name="description" content="Pui o întrebare, ResearchMind AI găsește răspunsul și pagina exactă din PDF-urile tale. Citări corecte, export direct în Word. Trial gratuit 7 zile.">
 <!-- Open Graph — previzualizare la share pe Facebook, WhatsApp, Telegram, LinkedIn -->
-<meta property="og:title" content="ResearchMind AI — Scrie lucrări academice de 5× mai rapid">
-<meta property="og:description" content="Analizează PDF-uri, găsește informația exactă cu pagina și generează citări corecte. Trial gratuit 7 zile, fără card bancar.">
+<meta property="og:title" content="Nu mai pierzi ore căutând prin PDF-uri — ResearchMind AI">
+<meta property="og:description" content="Pui o întrebare și găsești răspunsul cu pagina exactă din documentele tale. Citări automate, export Word. Trial gratuit 7 zile, fără card bancar.">
 <meta property="og:url" content="https://researchmind.org">
 <meta property="og:image" content="https://researchmind.org/ss-chat-response.png">
 <meta property="og:image:width" content="1280">
@@ -18,8 +18,8 @@
 <meta property="og:locale" content="ro_RO">
 <!-- Twitter / X card -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="ResearchMind AI — Scrie lucrări academice de 5× mai rapid">
-<meta name="twitter:description" content="Analizează PDF-uri, găsește informația exactă cu pagina și generează citări corecte. Trial gratuit 7 zile.">
+<meta name="twitter:title" content="Nu mai pierzi ore căutând prin PDF-uri — ResearchMind AI">
+<meta name="twitter:description" content="Pui o întrebare și găsești răspunsul cu pagina exactă din documentele tale. Citări automate, export Word. Trial gratuit 7 zile.">
 <meta name="twitter:image" content="https://researchmind.org/ss-chat-response.png">
 <link rel="canonical" href="https://researchmind.org">
 <script defer src="https://cloud.umami.is/script.js" data-website-id="0eddf714-7452-4bb8-a482-852b1a8d6d42"></script>
@@ -389,6 +389,17 @@ footer{background:var(--navy);padding:56px 40px 32px}
 .sticky-cta-dl{background:var(--orange);color:#fff}
 .sticky-cta-buy{background:var(--blue-l);color:var(--blue);border:2px solid #bfdbfe}
 
+/* ─ MOBILE WINDOWS NOTICE ───────────────────────── */
+.mob-win-notice{display:none;margin:20px auto 0;max-width:480px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:var(--r-lg);padding:16px 20px;text-align:left;gap:12px;align-items:flex-start}
+.mob-win-notice-ico{font-size:1.6rem;flex-shrink:0;line-height:1}
+.mob-win-notice-body{flex:1}
+.mob-win-notice-body p{font-size:.86rem;color:rgba(255,255,255,.7);line-height:1.6;margin:0 0 12px}
+.mob-win-notice-body strong{color:#fff}
+.mob-win-copy{display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.25);color:#fff;font-size:.82rem;font-weight:700;padding:9px 16px;border-radius:8px;cursor:pointer;border:none;font-family:inherit;transition:.2s}
+.mob-win-copy:hover{background:rgba(255,255,255,.25)}
+.mob-win-copy.copied{background:var(--green);border-color:var(--green)}
+@media(max-width:768px){.mob-win-notice{display:flex}}
+
 /* ─ RESPONSIVE ────────────────────────────────────── */
 @media(max-width:960px){
   .sol-grid{grid-template-columns:1fr;gap:32px}
@@ -480,8 +491,8 @@ footer{background:var(--navy);padding:56px 40px 32px}
 <!-- ──────── HERO ──────────────────────────────────── -->
 <section class="hero">
   <div class="hero-badge"><div class="badge"><span class="dot"></span>ResearchMind AI v3.1 — disponibil acum</div></div>
-  <h1>Scrie lucrări academice<br>de <em>5× mai rapid</em></h1>
-  <p class="hero-sub">Analizează PDF-uri, găsește informația exactă cu pagina și generează citări corecte — totul într-un singur loc. Fiecare răspuns vine din documentele tale, cu sursa verificabilă.</p>
+  <h1>Nu mai pierzi ore<br>căutând prin <em>PDF-uri</em></h1>
+  <p class="hero-sub">Pui o întrebare — ResearchMind AI găsește răspunsul și pagina exactă din documentele tale. Citări corecte generate automat, export direct în Word.</p>
   <div class="hero-bullets">
     <div class="hb"><span class="hb-icon">✓</span>Răspunsuri cu pagina exactă din PDF</div>
     <div class="hb"><span class="hb-icon">✓</span>Citări academice generate automat</div>
@@ -492,6 +503,23 @@ footer{background:var(--navy);padding:56px 40px 32px}
     <a href="#demo" class="btn btn-outline-w btn-xl">▶ Vezi demo</a>
   </div>
   <p class="hero-note">Trial 7 zile &nbsp;·&nbsp; Fără card bancar &nbsp;·&nbsp; Fără instalare Python &nbsp;·&nbsp; Windows 10/11</p>
+
+  <!-- Banner vizibil DOAR pe mobile — informeaza ca aplicatia e pentru Windows -->
+  <div class="mob-win-notice">
+    <div class="mob-win-notice-ico">💻</div>
+    <div class="mob-win-notice-body">
+      <p><strong>Aplicația rulează pe Windows 10/11.</strong><br>
+      Copiază linkul și deschide-l de pe laptop sau PC pentru a descărca.</p>
+      <button class="mob-win-copy" onclick="
+        navigator.clipboard.writeText('https://researchmind.org').then(()=>{
+          this.textContent='✓ Link copiat!';
+          this.classList.add('copied');
+          setTimeout(()=>{this.textContent='📋 Copiază linkul';this.classList.remove('copied')},2500);
+        });
+      ">📋 Copiază linkul</button>
+    </div>
+  </div>
+
   <div class="hero-social">
     <div class="hero-avatars">
       <span>DR</span><span>AS</span><span>MC</span><span>IP</span><span>+</span>
