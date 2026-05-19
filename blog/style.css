@@ -32,7 +32,7 @@ li{margin-bottom:6px}
 .callout.green{background:#f0fdf4;border-color:#059669}.callout.green p{color:#14532d}
 .callout.purple{background:#faf5ff;border-color:#8b5cf6}.callout.purple p{color:#4c1d95}
 .callout.orange{background:#fff7ed;border-color:#ea580c}.callout.orange p{color:#7c2d12}
-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.9rem}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.9rem;display:block;overflow-x:auto}
 thead tr{background:#0a0f1e;color:#fff}
 th{padding:12px 16px;text-align:left}
 td{padding:11px 16px;border-bottom:1px solid #e2e8f0}
@@ -54,4 +54,4 @@ footer{background:#0a0f1e;color:rgba(255,255,255,.45);padding:28px 40px;text-ali
 footer a{color:rgba(255,255,255,.55)}
 footer a:hover{color:#fff}
 .fl{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-bottom:12px}
-@media(max-width:640px){nav{padding:12px 16px}.hero-art{padding:44px 20px 40px}.art{padding:36px 16px}}
+@media(max-width:640px){nav{padding:12px 16px}.hero-art{padding:44px 20px 40px}.art{padding:36px 16px}.cta-box{padding:28px 20px}.footer{padding:20px 16px}.step{flex-direction:column;gap:10px}}
