@@ -1,0 +1,57 @@
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',system-ui,sans-serif;color:#1e293b;background:#fff;line-height:1.75}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%;display:block}
+nav{background:#0a0f1e;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo{font-family:'Poppins',sans-serif;font-weight:800;color:#fff;font-size:1.1rem;white-space:nowrap}
+.logo span{color:#60a5fa}
+.nav-right{display:flex;align-items:center;gap:12px}
+.nav-lang{font-size:.8rem;color:rgba(255,255,255,.5);border:1px solid rgba(255,255,255,.2);padding:5px 12px;border-radius:99px}
+.nav-lang:hover{color:#fff;border-color:rgba(255,255,255,.5);text-decoration:none}
+.nav-lang.active{color:#fff;border-color:#60a5fa;background:rgba(96,165,250,.1)}
+.nav-cta{background:#ea580c;color:#fff;padding:9px 20px;border-radius:8px;font-weight:700;font-size:.88rem}
+.nav-cta:hover{background:#c2410c;text-decoration:none}
+.hero-art{padding:64px 40px 54px;text-align:center;color:#fff}
+.tag{display:inline-block;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.8);padding:4px 14px;border-radius:99px;font-size:.75rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:16px}
+h1{font-family:'Poppins',sans-serif;font-size:clamp(1.7rem,4vw,2.6rem);font-weight:800;max-width:760px;margin:0 auto 16px;line-height:1.15}
+h1 em{font-style:normal;opacity:.85}
+.hero-sub{color:rgba(255,255,255,.7);font-size:1rem;max-width:580px;margin:0 auto 28px}
+.btn-dl{display:inline-block;background:#ea580c;color:#fff;padding:12px 30px;border-radius:10px;font-weight:700;font-size:.95rem}
+.btn-dl:hover{background:#c2410c;text-decoration:none}
+.hero-note{font-size:.75rem;color:rgba(255,255,255,.35);margin-top:10px}
+.art{max-width:760px;margin:0 auto;padding:56px 24px 48px}
+h2{font-family:'Poppins',sans-serif;font-size:1.5rem;font-weight:800;color:#0a0f1e;margin:44px 0 14px}
+h3{font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:700;color:#0a0f1e;margin:26px 0 8px}
+p{color:#475569;margin-bottom:14px}
+ul,ol{color:#475569;padding-left:20px;margin-bottom:14px}
+li{margin-bottom:6px}
+.callout{border-left:4px solid;padding:16px 18px;border-radius:0 8px 8px 0;margin:24px 0}
+.callout p{margin:0;font-weight:500}
+.callout.blue{background:#eff6ff;border-color:#2563eb}.callout.blue p{color:#1e3a5f}
+.callout.green{background:#f0fdf4;border-color:#059669}.callout.green p{color:#14532d}
+.callout.purple{background:#faf5ff;border-color:#8b5cf6}.callout.purple p{color:#4c1d95}
+.callout.orange{background:#fff7ed;border-color:#ea580c}.callout.orange p{color:#7c2d12}
+table{width:100%;border-collapse:collapse;margin:24px 0;font-size:.9rem}
+thead tr{background:#0a0f1e;color:#fff}
+th{padding:12px 16px;text-align:left}
+td{padding:11px 16px;border-bottom:1px solid #e2e8f0}
+tr:nth-child(even) td{background:#f8fafc}
+.yes{color:#059669;font-weight:700}
+.no{color:#dc2626}
+.partial{color:#d97706}
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:16px;margin:24px 0}
+.step{display:flex;gap:16px;align-items:flex-start;background:#f8fafc;border:1px solid #e2e8f0;border-radius:10px;padding:20px}
+.step-n{min-width:36px;height:36px;background:#0a0f1e;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem}
+.step-body h3{margin-top:0}
+.step-body p{margin:0;font-size:.9rem}
+.cta-box{background:linear-gradient(135deg,#0a0f1e,#1e3a5f);color:#fff;padding:44px 36px;border-radius:16px;text-align:center;margin:44px 0}
+.cta-box h2{color:#fff;margin:0 0 10px;font-size:1.4rem}
+.cta-box p{color:rgba(255,255,255,.7);margin-bottom:20px;font-size:.95rem}
+.art-footer{border-top:1px solid #e2e8f0;padding-top:28px;margin-top:20px;display:flex;flex-wrap:wrap;gap:12px;font-size:.85rem}
+.art-footer a{color:#2563eb}
+footer{background:#0a0f1e;color:rgba(255,255,255,.45);padding:28px 40px;text-align:center;font-size:.82rem}
+footer a{color:rgba(255,255,255,.55)}
+footer a:hover{color:#fff}
+.fl{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-bottom:12px}
+@media(max-width:640px){nav{padding:12px 16px}.hero-art{padding:44px 20px 40px}.art{padding:36px 16px}}
