@@ -221,6 +221,15 @@ footer{background:var(--navy);padding:56px 40px 32px}
   h1{font-size:clamp(1.7rem,8vw,2.6rem)}
   .gdpr-box{padding:24px 20px}
 }
+
+/* WHITE BUTTON (for dark section backgrounds) */
+.btn-white{background:#fff;color:var(--navy);border-color:#fff;box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.btn-white:hover{background:rgba(255,255,255,.92);border-color:rgba(255,255,255,.92);transform:translateY(-2px);box-shadow:0 8px 32px rgba(0,0,0,.2)}
+
+/* STEP 1 CTA */
+.step-cta{display:inline-flex;align-items:center;gap:6px;margin-top:14px;background:var(--blue);color:#fff;padding:9px 18px;border-radius:8px;font-size:.82rem;font-weight:700;text-decoration:none}
+.step-cta:hover{background:var(--blue-d);text-decoration:none}
+.step-free{font-size:.74rem;color:var(--g400);margin-top:6px}
 </style>
 </head>
 <body>
@@ -286,8 +295,10 @@ footer{background:var(--navy);padding:56px 40px 32px}
     <div class="steps">
       <div class="step">
         <div class="step-n">1</div>
-        <h3>Înregistrează-te</h3>
+        <h3>Înregistrează-te gratuit</h3>
         <p>Creează cont gratuit pe Gumroad și accesează pagina de afiliere ResearchMind AI.</p>
+        <a href="https://aisibra.gumroad.com/affiliates" target="_blank" rel="noopener" class="step-cta">🔗 Înscrie-te pe Gumroad</a>
+        <p class="step-free">Gratuit · Fără card bancar</p>
       </div>
       <div class="step">
         <div class="step-n">2</div>
