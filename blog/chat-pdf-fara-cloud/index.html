@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chat cu PDF fără cloud: cum funcționează ResearchMind AI pe calculatorul tău</title>
+<meta name="description" content="Cum poți pune întrebări unui PDF fără să îl uploadezi nicăieri. Căutare semantică locală, pagina exactă, citare academică — totul pe PC-ul tău. Windows 10/11.">
+<meta name="keywords" content="chat PDF fara cloud, chat cu PDF local Windows, program cercetare academic local, AI analiza PDF local, chat PDF offline, aplicatie cercetare academica privata, PDF cercetare fara upload">
+<link rel="canonical" href="https://researchmind.org/blog/chat-pdf-fara-cloud/">
+<meta property="og:title" content="Chat cu PDF fără cloud: cum funcționează ResearchMind AI pe calculatorul tău">
+<meta property="og:description" content="Cum să pui întrebări unui PDF fără să îl uploadezi nicăieri. Căutare semantică locală, pagina exactă, citare academică — pe PC-ul tău.">
+<meta property="og:url" content="https://researchmind.org/blog/chat-pdf-fara-cloud/">
+<meta property="og:image" content="https://researchmind.org/og-image.png">
+<meta property="og:type" content="article">
+<meta property="og:locale" content="ro_RO">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="0eddf714-7452-4bb8-a482-852b1a8d6d42"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "Chat cu PDF fără cloud: cum funcționează ResearchMind AI pe calculatorul tău",
+  "description": "Ghid tehnic și practic despre cum funcționează căutarea semantică locală în PDF-uri academice fără upload pe servere externe.",
+  "inLanguage": "ro",
+  "author": {"@type": "Organization", "name": "ResearchMind AI", "url": "https://researchmind.org"},
+  "publisher": {"@type": "Organization", "name": "ResearchMind AI", "url": "https://researchmind.org"},
+  "datePublished": "2026-05-22",
+  "dateModified": "2026-05-22",
+  "mainEntityOfPage": {"@type": "WebPage", "@id": "https://researchmind.org/blog/chat-pdf-fara-cloud/"}
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Pot face chat cu un PDF fără să îl uploadez pe internet?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Da. ResearchMind AI indexează PDF-urile local pe calculatorul tău folosind ChromaDB. Când pui o întrebare, căutarea semantică se face pe PC — niciun document nu pleacă pe server. Doar textul întrebării tale merge la AI, nu documentul."}
+    },
+    {
+      "@type": "Question",
+      "name": "Cum funcționează căutarea semantică în PDF-uri local?",
+      "acceptedAnswer": {"@type": "Answer", "text": "PDF-ul este procesat în fragmente de text (chunks), care sunt transformate în vectori numerici (embeddings) și stocați local în ChromaDB. Când pui o întrebare, aceasta este și ea transformată în vector, iar aplicația caută fragmentele cele mai similare semantic — totul pe PC, fără internet."}
+    },
+    {
+      "@type": "Question",
+      "name": "Funcționează și pentru PDF-uri scanate sau fotografiate?",
+      "acceptedAnswer": {"@type": "Answer", "text": "Da. ResearchMind AI include Tesseract OCR care extrage textul din PDF-uri scanate sau fotografiate înainte de indexare. Suportă română, greacă, latină și 16+ limbi. Cărțile vechi și manuscrisele digitizate sunt indexate la fel ca orice PDF text."}
+    }
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Inter',sans-serif;color:#1e293b;background:#fff;line-height:1.75}
+a{color:#2563eb;text-decoration:none}
+a:hover{text-decoration:underline}
+nav{background:#0a0f1e;padding:16px 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Poppins',sans-serif;font-weight:800;color:#fff;font-size:1.1rem}
+.logo span{color:#60a5fa}
+.nav-cta{background:#ea580c;color:#fff;padding:9px 22px;border-radius:8px;font-weight:700;font-size:.9rem}
+.nav-cta:hover{background:#c2410c;text-decoration:none}
+.hero-article{background:linear-gradient(135deg,#0a0f1e,#1e3a8a);color:#fff;padding:70px 40px 60px;text-align:center}
+.tag{display:inline-block;background:rgba(37,99,235,.3);border:1px solid rgba(37,99,235,.5);color:#93c5fd;padding:4px 14px;border-radius:99px;font-size:.78rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:18px}
+h1{font-family:'Poppins',sans-serif;font-size:clamp(1.8rem,4vw,2.6rem);font-weight:800;max-width:800px;margin:0 auto 18px;line-height:1.15}
+h1 em{font-style:normal;color:#60a5fa}
+.hero-sub{color:rgba(255,255,255,.75);font-size:1.05rem;max-width:600px;margin:0 auto 30px}
+.btn-cta{display:inline-block;background:#ea580c;color:#fff;padding:13px 32px;border-radius:10px;font-weight:700;font-size:1rem}
+.btn-cta:hover{background:#c2410c;text-decoration:none}
+.note{font-size:.8rem;color:rgba(255,255,255,.4);margin-top:12px}
+.container{max-width:780px;margin:0 auto;padding:60px 24px}
+h2{font-family:'Poppins',sans-serif;font-size:1.6rem;font-weight:800;color:#0a0f1e;margin:48px 0 16px}
+h3{font-family:'Poppins',sans-serif;font-size:1.1rem;font-weight:700;color:#0a0f1e;margin:28px 0 10px}
+p{color:#475569;margin-bottom:16px}
+ul,ol{color:#475569;padding-left:22px;margin-bottom:16px}
+ul li,ol li{margin-bottom:8px}
+.callout{background:#eff6ff;border-left:4px solid #2563eb;padding:18px 20px;border-radius:0 8px 8px 0;margin:28px 0}
+.callout p{margin:0;color:#1e3a8a;font-weight:500}
+.callout-green{background:#f0fdf4;border-left:4px solid #059669;padding:18px 20px;border-radius:0 8px 8px 0;margin:28px 0}
+.callout-green p{margin:0;color:#065f46;font-weight:500}
+.flow-box{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:24px 28px;margin:28px 0}
+.flow-step{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px}
+.flow-step:last-child{margin-bottom:0}
+.step-n{width:32px;height:32px;background:#2563eb;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:.9rem;flex-shrink:0}
+.step-n.green{background:#059669}
+.cta-box{background:linear-gradient(135deg,#0a0f1e,#1e3a8a);color:#fff;border-radius:16px;padding:40px;text-align:center;margin:48px 0}
+.cta-box h3{color:#fff;font-size:1.4rem;margin:0 0 12px}
+.cta-box p{color:rgba(255,255,255,.7);margin-bottom:24px}
+.toc{background:#f8fafc;border:1px solid #e2e8f0;border-radius:12px;padding:24px 28px;margin:32px 0}
+.toc h4{font-family:'Poppins',sans-serif;font-weight:700;font-size:.95rem;color:#0a0f1e;margin-bottom:12px}
+.toc ol{margin:0;padding-left:20px}
+.toc li{margin-bottom:6px;font-size:.9rem}
+.toc a{color:#2563eb}
+@media(max-width:640px){nav{padding:14px 20px}.hero-article{padding:48px 20px 40px}.container{padding:40px 20px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="/" class="logo">Research<span>Mind</span> AI</a>
+  <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="nav-cta">↓ Descarcă gratuit</a>
+</nav>
+
+<div class="hero-article">
+  <span class="tag">Ghid tehnic · Română</span>
+  <h1>Chat cu PDF <em>fără cloud</em>: cum funcționează ResearchMind AI pe calculatorul tău</h1>
+  <p class="hero-sub">Cum pui întrebări unui PDF fără să îl uploadezi nicăieri. Căutare semantică locală, pagina exactă, citare academică — totul pe PC-ul tău.</p>
+  <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn-cta">↓ Descarcă gratuit — fără card bancar</a>
+  <p class="note">Trial gratuit 30 zile · Windows 10/11 · Fără instalare Python</p>
+</div>
+
+<div class="container">
+
+  <div class="toc">
+    <h4>📋 Cuprins</h4>
+    <ol>
+      <li><a href="#problema">De ce contează să nu uploadezi PDF-ul</a></li>
+      <li><a href="#cum-functioneaza">Cum funcționează chat cu PDF local</a></li>
+      <li><a href="#tehnic">Explicație tehnică simplă</a></li>
+      <li><a href="#ocr">OCR pentru PDF-uri scanate</a></li>
+      <li><a href="#exemplu">Exemplu practic</a></li>
+      <li><a href="#concluzie">De ce ResearchMind față de alternativele cloud</a></li>
+    </ol>
+  </div>
+
+  <h2 id="problema">De ce contează să nu uploadezi PDF-ul</h2>
+  <p>Există zeci de servicii online care promit „chat cu PDF". Toate funcționează la fel: <strong>uploadezi documentul, el ajunge pe serverele lor</strong>, iar tu primești răspunsuri.</p>
+  <p>Pentru un document oarecare, asta poate fi acceptabil. Dar pentru un doctorand care lucrează cu:</p>
+  <ul>
+    <li>Capitole din teză nepublicată</li>
+    <li>Date brute de cercetare</li>
+    <li>Manuscrise ale altor autori (pentru peer review)</li>
+    <li>Documente cu clauze de confidențialitate</li>
+    <li>Date cu caracter personal (interviuri, chestionare)</li>
+  </ul>
+  <p>...uploadarea pe un server extern nu e o opțiune. <strong>ResearchMind AI funcționează altfel</strong>: documentele tale rămân pe calculatorul tău, iar căutarea semantică se face local.</p>
+
+  <h2 id="cum-functioneaza">Cum funcționează chat cu PDF local — pas cu pas</h2>
+
+  <div class="flow-box">
+    <div class="flow-step">
+      <div class="step-n">1</div>
+      <div><strong>Adaugi PDF-urile în bibliotecă</strong><p style="margin:4px 0 0;font-size:.9rem;color:#64748b">Tragi fișierele în aplicație sau selectezi un folder. Documentele rămân exact unde sunt — nu se copiază nicăieri.</p></div>
+    </div>
+    <div class="flow-step">
+      <div class="step-n">2</div>
+      <div><strong>Indexare locală automată</strong><p style="margin:4px 0 0;font-size:.9rem;color:#64748b">Aplicația procesează textul PDF-urilor, îl împarte în fragmente și creează o bază de date vectorială locală (ChromaDB) pe PC-ul tău.</p></div>
+    </div>
+    <div class="flow-step">
+      <div class="step-n">3</div>
+      <div><strong>Pui o întrebare în română</strong><p style="margin:4px 0 0;font-size:.9rem;color:#64748b">Scrii întrebarea în câmpul de chat — ca și cum ai vorbi cu cineva care a citit toate documentele tale.</p></div>
+    </div>
+    <div class="flow-step">
+      <div class="step-n">4</div>
+      <div><strong>Căutare semantică pe PC</strong><p style="margin:4px 0 0;font-size:.9rem;color:#64748b">Aplicația caută local fragmentele cele mai relevante din toate PDF-urile tale. Niciun document nu pleacă pe internet.</p></div>
+    </div>
+    <div class="flow-step">
+      <div class="step-n green">5</div>
+      <div><strong>Răspuns cu pagina exactă + citare</strong><p style="margin:4px 0 0;font-size:.9rem;color:#64748b">Primești răspunsul cu sursa exactă, numărul paginii și citarea academică gata formatată. Export direct în Word cu un click.</p></div>
+    </div>
+  </div>
+
+  <div class="callout-green">
+    <p>✅ <strong>Singurul lucru care merge pe internet:</strong> textul fragmentului relevant + întrebarea ta. Niciodată documentul complet.</p>
+  </div>
+
+  <h2 id="tehnic">Explicație tehnică simplă</h2>
+  <p>Dacă ești curios cum funcționează tehnic, iată o explicație fără jargon excesiv:</p>
+
+  <h3>Ce sunt embeddings-urile?</h3>
+  <p>Fiecare fragment de text din PDF-urile tale este transformat într-un vector numeric — o reprezentare matematică a sensului acelui text. Vectorii similari semantic sunt „apropiați" în spațiul matematic.</p>
+  <p>Când pui o întrebare, aceasta e transformată și ea în vector. Aplicația găsește vectorii cei mai apropiați — adică fragmentele cu sensul cel mai apropiat de întrebarea ta.</p>
+
+  <h3>Ce este ChromaDB?</h3>
+  <p>ChromaDB este o bază de date vectorială open-source care rulează local pe PC-ul tău. Stochează toți vectorii documentelor tale și permite căutare semantică rapidă fără conexiune la internet.</p>
+
+  <h3>Ce merge la API?</h3>
+  <p>Fragmentul relevant identificat local + întrebarea ta → OpenAI sau Groq → răspuns formulat. <strong>Documentul complet nu ajunge niciodată la API</strong> — doar fragmentul de câteva sute de cuvinte identificat ca relevant.</p>
+
+  <h2 id="ocr">OCR pentru PDF-uri scanate sau fotografiate</h2>
+  <p>Nu toate PDF-urile academice sunt text selectabil. Cărțile vechi, tezele tipărite și scanate, manuscrisele digitizate — toate sunt imagini, nu text.</p>
+  <p>ResearchMind AI include <strong>Tesseract OCR</strong> integrat, care:</p>
+  <ul>
+    <li>Extrage textul din PDF-uri scanate sau fotografiate</li>
+    <li>Suportă <strong>română, greacă, latină, germană, franceză, italiană</strong> și 16+ limbi</li>
+    <li>Procesează toate paginile automat la indexare</li>
+    <li>Funcționează 100% local — nici OCR-ul nu trimite imagini pe server</li>
+  </ul>
+
+  <div class="callout">
+    <p>💡 <strong>Util pentru teologi și umaniști:</strong> Textele patristice, manuscrisele medievale digitizate, ediții critice scanate — toate pot fi indexate și interogabile în aceeași sesiune cu sursele moderne.</p>
+  </div>
+
+  <h2 id="exemplu">Exemplu practic</h2>
+  <p>Ai 47 de PDF-uri în biblioteca ta: articole din reviste academice, capitole din monografii, propria teză în lucru. Vrei să găsești toate locurile unde autorii discută despre „apofatism și limbaj".</p>
+  <p><strong>Cu un serviciu cloud:</strong> uploadezi 47 de PDF-uri, aștepți procesarea, primești răspunsuri — dar documentele tale, inclusiv teza nepublicată, sunt acum pe serverele lor.</p>
+  <p><strong>Cu ResearchMind AI:</strong> indexarea se face o singură dată, local. Pui întrebarea și în 3-5 secunde primești toate fragmentele relevante cu pagina exactă, din toate cele 47 de documente. Teza ta rămâne pe PC-ul tău.</p>
+
+  <h2 id="concluzie">De ce ResearchMind față de alternativele cloud</h2>
+  <p>Diferența nu e doar tehnică — e filosofică. <strong>ResearchMind AI a fost construit de un doctorand</strong>, cu înțelegerea că cercetarea academică serioasă presupune control total asupra datelor.</p>
+  <p>Nu e un produs de corporație care încearcă să colecteze date. E un instrument construit pentru a face un singur lucru bine: să te ajute să găsești informația din documentele tale, fără să compromită confidențialitatea acelei cercetări.</p>
+
+  <div class="cta-box">
+    <h3>📄 Chat cu PDF-urile tale, fără cloud</h3>
+    <p>Indexare locală · Pagina exactă · Citare academică automată · Export Word</p>
+    <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" class="btn-cta">↓ Descarcă ResearchMind AI gratuit</a>
+    <p style="margin-top:12px;font-size:.8rem;color:rgba(255,255,255,.4)">Trial 30 zile · Fără card bancar · Windows 10/11</p>
+  </div>
+
+  <p style="font-size:.85rem;color:#94a3b8;text-align:center;margin-top:0">← <a href="/blog/cercetare-academica-privata/">Cercetare academică privată</a> &nbsp;·&nbsp; <a href="/">Înapoi la ResearchMind AI →</a></p>
+</div>
+</body>
+</html>
