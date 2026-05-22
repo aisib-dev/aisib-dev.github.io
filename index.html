@@ -1735,6 +1735,18 @@ function faq(btn){
   if(!isOpen)item.classList.add('open');
 }
 
+// Închide meniul hamburger la click pe orice link din #mob
+(function(){
+  var mob=document.getElementById('mob');
+  var btn=document.getElementById('hamburgerBtn');
+  mob.addEventListener('click',function(e){
+    if(e.target.closest('a')){
+      mob.classList.remove('open');
+      btn.classList.remove('open');
+    }
+  });
+})();
+
 // Sticky mobile CTA — apare după ce se derulează peste hero
 (function(){
   var cta=document.getElementById('stickyCta');
