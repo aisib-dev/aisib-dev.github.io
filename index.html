@@ -476,6 +476,54 @@ footer{background:var(--navy);padding:56px 40px 32px}
   .personas{grid-template-columns:1fr 1fr}
   .hero h1{font-size:clamp(1.75rem,9vw,2.2rem)}
 }
+
+/* ─ HERO FEATURE TABS (desktop only) ──────────────── */
+.hero-tabs{position:relative;z-index:1;max-width:760px;margin:0 auto 36px}
+.htab-nav{display:flex;gap:6px;justify-content:center;flex-wrap:wrap;margin-bottom:18px}
+.htab-btn{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.13);color:rgba(255,255,255,.6);font-size:.78rem;font-weight:600;padding:7px 16px;border-radius:99px;cursor:pointer;transition:all .2s;font-family:inherit;white-space:nowrap}
+.htab-btn:hover{background:rgba(255,255,255,.14);color:#fff;border-color:rgba(255,255,255,.28)}
+.htab-btn.active{background:rgba(37,99,235,.45);color:#fff;border-color:rgba(37,99,235,.65)}
+.htab-panels{min-height:120px}
+.htab-panel{display:none;animation:htabFade .3s ease}
+.htab-panel.active{display:block}
+@keyframes htabFade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.htab-desc{font-size:.95rem;color:rgba(255,255,255,.78);line-height:1.7;margin-bottom:14px;text-align:center}
+.htab-feats{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.htab-feats span{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.11);color:rgba(255,255,255,.72);font-size:.8rem;padding:6px 14px;border-radius:99px}
+@media(max-width:768px){.hero-tabs{display:none}}
+
+/* ─ MOBILE FEATURE TOUR ───────────────────────────── */
+.mob-tour{display:none;margin:20px auto 0;max-width:460px;text-align:center}
+@media(max-width:768px){.mob-tour{display:block}.mob-win-notice{display:none!important}}
+.mft-slides{min-height:230px;position:relative;touch-action:pan-y}
+.mft-slide{display:none;animation:htabFade .3s ease;padding:0 4px 8px}
+.mft-slide.active{display:block}
+.mft-ico{font-size:2.2rem;margin-bottom:6px;line-height:1}
+.mft-cat{font-size:.69rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:#60a5fa;margin-bottom:6px}
+.mft-title{font-family:'Poppins',sans-serif;font-size:1.05rem;font-weight:800;color:#fff;margin-bottom:8px}
+.mft-desc{font-size:.86rem;color:rgba(255,255,255,.68);line-height:1.65;margin-bottom:12px}
+.mft-list{display:flex;flex-direction:column;gap:5px;text-align:left;max-width:320px;margin:0 auto}
+.mft-list span{font-size:.81rem;color:rgba(255,255,255,.78);display:flex;align-items:flex-start;gap:7px;line-height:1.5}
+.mft-list span::before{content:'✓';color:#4ade80;font-weight:900;flex-shrink:0;margin-top:1px}
+.mft-nav-row{display:flex;align-items:center;justify-content:center;gap:14px;margin:14px 0 10px}
+.mft-dots{display:flex;gap:5px;align-items:center}
+.mft-dot{width:7px;height:7px;border-radius:4px;background:rgba(255,255,255,.22);cursor:pointer;transition:all .25s}
+.mft-dot.active{background:#60a5fa;width:20px}
+.mft-arr{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:.95rem;display:flex;align-items:center;justify-content:center;font-family:inherit;transition:.2s;line-height:1}
+.mft-arr:hover{background:rgba(255,255,255,.22)}
+.mft-email-wrap{background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:16px;margin-top:4px}
+.mft-email-wrap p{font-size:.83rem;color:rgba(255,255,255,.65);margin-bottom:12px;line-height:1.5}
+.mft-email-wrap p strong{color:#fff}
+.mft-form{display:flex;flex-direction:column;gap:8px}
+.mft-input{padding:11px 14px;border-radius:8px;border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.08);color:#fff;font-size:.88rem;font-family:inherit;outline:none;width:100%}
+.mft-input::placeholder{color:rgba(255,255,255,.3)}
+.mft-input:focus{border-color:rgba(37,99,235,.7)}
+.mft-submit{padding:12px;border-radius:8px;background:var(--orange);color:#fff;font-weight:700;font-size:.88rem;border:none;cursor:pointer;font-family:inherit;transition:.18s}
+.mft-submit:hover{background:var(--orange-d)}
+.mft-fnote{font-size:.71rem;color:rgba(255,255,255,.28);margin-top:6px;margin-bottom:0;text-align:center}
+.mft-success{display:none;padding:16px 8px}
+.mft-success-ico{font-size:1.8rem;margin-bottom:8px}
+.mft-success p{font-size:.88rem;color:rgba(255,255,255,.8);margin:0;line-height:1.6}
 </style>
 </head>
 <body>
@@ -528,14 +576,158 @@ footer{background:var(--navy);padding:56px 40px 32px}
     <div class="hb"><span class="hb-icon">✓</span>Citări academice generate automat</div>
     <div class="hb"><span class="hb-icon">✓</span>Export direct în Word, gata de depus</div>
   </div>
+
+  <!-- Feature tabs — desktop only, auto-rotatie 5s -->
+  <div class="hero-tabs" id="heroTabs">
+    <div class="htab-nav">
+      <button class="htab-btn active" onclick="htabClick(0)">📄 Chat cu PDF</button>
+      <button class="htab-btn" onclick="htabClick(1)">🔍 Căutare online</button>
+      <button class="htab-btn" onclick="htabClick(2)">✍️ Text &amp; Word</button>
+      <button class="htab-btn" onclick="htabClick(3)">🎬 Media</button>
+      <button class="htab-btn" onclick="htabClick(4)">🧠 Organizare</button>
+    </div>
+    <div class="htab-panels">
+      <div class="htab-panel active">
+        <p class="htab-desc">Pui o întrebare în română — primești răspunsul cu <strong style="color:#fff">pagina exactă</strong> și citarea academică gata formatată.</p>
+        <div class="htab-feats">
+          <span>✓ Căutare semantică în toate PDF-urile tale</span>
+          <span>✓ Citare Chicago / APA automată</span>
+          <span>✓ Preview PDF cu text evidențiat</span>
+          <span>✓ OCR pentru PDF-uri scanate</span>
+        </div>
+      </div>
+      <div class="htab-panel">
+        <p class="htab-desc">Caută simultan în <strong style="color:#fff">9 baze academice internaționale</strong> și descarcă PDF-uri cu acces liber.</p>
+        <div class="htab-feats">
+          <span>✓ OpenAlex, CrossRef, Semantic Scholar, ArXiv, CORE</span>
+          <span>✓ Internet Archive — texte patristice și istorice</span>
+          <span>✓ DOAJ — 20.000+ reviste open access</span>
+          <span>✓ Unpaywall — versiunea gratuită găsită automat</span>
+        </div>
+      </div>
+      <div class="htab-panel">
+        <p class="htab-desc">Selectezi din Word, trimiți în ResearchMind — în <strong style="color:#fff">10 secunde</strong> textul e reformulat academic cu surse din biblioteca ta.</p>
+        <div class="htab-feats">
+          <span>✓ Reformulare și corecție stil academic</span>
+          <span>✓ Argumentare academică cu surse citate</span>
+          <span>✓ Rezumat și structurare text</span>
+          <span>✓ Export .docx cu citările incluse</span>
+        </div>
+      </div>
+      <div class="htab-panel">
+        <p class="htab-desc">Transcrie orice <strong style="color:#fff">videoclip, conferință sau predică</strong> — cu diacritice corecte, direct în Word.</p>
+        <div class="htab-feats">
+          <span>✓ Transcriere video și audio (YouTube, fișiere locale)</span>
+          <span>✓ Diacritice corecte, 16+ limbi</span>
+          <span>✓ Export Word gata de editat</span>
+          <span>✓ Ideal pentru conferințe, predici, interviuri</span>
+        </div>
+      </div>
+      <div class="htab-panel">
+        <p class="htab-desc"><strong style="color:#fff">Zettelkasten, Graf cunoaștere, Dashboard doctorand</strong> — tot ce ai nevoie pentru teză, într-un singur loc.</p>
+        <div class="htab-feats">
+          <span>✓ Zettelkasten — notițe semantice conectate automat</span>
+          <span>✓ Graf cunoaștere — similaritate documente</span>
+          <span>✓ Dashboard doctorand — progres teză</span>
+          <span>✓ Funcționare complet offline cu Ollama</span>
+        </div>
+      </div>
+    </div>
+  </div>
   <div class="hero-cta">
     <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" data-umami-event="Descarcare" class="btn btn-orange btn-xl">↓ Descarcă gratuit</a>
     <a href="#demo" class="btn btn-outline-w btn-xl">▶ Vezi demo</a>
   </div>
   <p class="hero-note">Trial gratuit &nbsp;·&nbsp; Fără card bancar &nbsp;·&nbsp; Fără instalare Python &nbsp;·&nbsp; Windows 10/11</p>
 
-  <!-- Banner vizibil DOAR pe mobile — informeaza ca aplicatia e pentru Windows -->
-  <div class="mob-win-notice">
+  <!-- Mobile feature tour + email capture — vizibil doar pe mobile -->
+  <div class="mob-tour">
+    <div class="mft-slides" id="mftSlides">
+      <div class="mft-slide active">
+        <div class="mft-ico">📄</div>
+        <div class="mft-cat">Chat cu PDF</div>
+        <div class="mft-title">Pagina exactă, în 10 secunde</div>
+        <p class="mft-desc">Pui o întrebare — aplicația caută semantic în toate PDF-urile tale și îți dă răspunsul cu pagina exactă.</p>
+        <div class="mft-list">
+          <span>Citare Chicago / APA generată automat</span>
+          <span>Preview PDF cu textul evidențiat</span>
+          <span>OCR pentru cărți scanate sau fotografiate</span>
+        </div>
+      </div>
+      <div class="mft-slide">
+        <div class="mft-ico">🔍</div>
+        <div class="mft-cat">Căutare academică online</div>
+        <div class="mft-title">9 baze academice simultan</div>
+        <p class="mft-desc">OpenAlex, DOAJ, Internet Archive, Unpaywall — găsești și descarci articole cu acces liber fără să deschizi browserul.</p>
+        <div class="mft-list">
+          <span>250M+ articole indexate (OpenAlex)</span>
+          <span>Texte patristice și istorice (Internet Archive)</span>
+          <span>PDF-uri gratuite pentru articole cu paywall</span>
+        </div>
+      </div>
+      <div class="mft-slide">
+        <div class="mft-ico">✍️</div>
+        <div class="mft-cat">Text &amp; Word</div>
+        <div class="mft-title">Reformulat academic în 10 secunde</div>
+        <p class="mft-desc">Selectezi din Word, trimiți în ResearchMind — reformulare, rezumat, argumentare cu surse citate din biblioteca ta.</p>
+        <div class="mft-list">
+          <span>Argumentare academică cu surse din PDF-urile tale</span>
+          <span>Corecție stil academic și restructurare</span>
+          <span>Export .docx cu note de subsol incluse</span>
+        </div>
+      </div>
+      <div class="mft-slide">
+        <div class="mft-ico">🎬</div>
+        <div class="mft-cat">Media &amp; Transcriere</div>
+        <div class="mft-title">Conferința ta, în Word în minute</div>
+        <p class="mft-desc">Transcrie videoclipuri, conferințe, predici sau interviuri — cu diacritice corecte, direct în Word gata de editat.</p>
+        <div class="mft-list">
+          <span>YouTube, fișiere MP4, MP3, WAV</span>
+          <span>Diacritice corecte, 16+ limbi</span>
+          <span>Export Word cu un singur click</span>
+        </div>
+      </div>
+      <div class="mft-slide">
+        <div class="mft-ico">🧠</div>
+        <div class="mft-cat">Organizare cercetare</div>
+        <div class="mft-title">Teza ta, structurată complet</div>
+        <p class="mft-desc">Zettelkasten semantic, Graf cunoaștere, Dashboard doctorand — toate instrumentele pentru o teză bine organizată.</p>
+        <div class="mft-list">
+          <span>Zettelkasten — notițe conectate semantic</span>
+          <span>Graf cunoaștere — vizualizare documente</span>
+          <span>Dashboard progres teză</span>
+        </div>
+      </div>
+    </div>
+    <div class="mft-nav-row">
+      <button class="mft-arr" onclick="mftPrev()" aria-label="Anterior">&#8249;</button>
+      <div class="mft-dots" id="mftDots">
+        <span class="mft-dot active" onclick="mftShow(0)"></span>
+        <span class="mft-dot" onclick="mftShow(1)"></span>
+        <span class="mft-dot" onclick="mftShow(2)"></span>
+        <span class="mft-dot" onclick="mftShow(3)"></span>
+        <span class="mft-dot" onclick="mftShow(4)"></span>
+      </div>
+      <button class="mft-arr" onclick="mftNext()" aria-label="Următor">&#8250;</button>
+    </div>
+    <div class="mft-email-wrap">
+      <p><strong>Aplicația rulează pe Windows 10/11.</strong><br>Trimite-ți linkul pe email — îl deschizi de pe PC când ești gata.</p>
+      <div id="mftEmailForm">
+        <form class="mft-form" onsubmit="mftSubmit(event)">
+          <input type="email" class="mft-input" placeholder="adresa ta de email" required autocomplete="email">
+          <button type="submit" class="mft-submit">Trimite-mi linkul gratuit &#8594;</button>
+        </form>
+        <p class="mft-fnote">Trial gratuit &nbsp;·&nbsp; Fără card bancar &nbsp;·&nbsp; Fără spam</p>
+      </div>
+      <div class="mft-success" id="mftSuccess">
+        <div class="mft-success-ico">&#10003;</div>
+        <p><strong style="color:#fff">Gata!</strong><br>Verifică emailul — linkul de descărcare e acolo.<br><span style="font-size:.8rem;color:rgba(255,255,255,.5)">Trial gratuit · Fără card bancar</span></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Banner fallback pentru browsere foarte vechi -->
+  <div class="mob-win-notice" style="display:none">
     <div class="mob-win-notice-ico">💻</div>
     <div class="mob-win-notice-body">
       <p><strong>Aplicația rulează pe Windows 10/11.</strong><br>
@@ -1331,6 +1523,67 @@ footer{background:var(--navy);padding:56px 40px 32px}
 </div>
 
 <script>
+// ─ Hero feature tabs (desktop, auto-rotatie 5s) ─────
+(function(){
+  var current=0,n=5,timer;
+  function show(i){
+    document.querySelectorAll('.htab-btn').forEach(function(b,j){b.classList.toggle('active',j===i)});
+    document.querySelectorAll('.htab-panel').forEach(function(p,j){p.classList.toggle('active',j===i)});
+    current=i;
+  }
+  window.htabClick=function(i){
+    clearInterval(timer);
+    show(i);
+    timer=setInterval(function(){show((current+1)%n)},5000);
+  };
+  var tabs=document.getElementById('heroTabs');
+  if(tabs){
+    tabs.addEventListener('mouseenter',function(){clearInterval(timer)});
+    tabs.addEventListener('mouseleave',function(){timer=setInterval(function(){show((current+1)%n)},5000)});
+  }
+  timer=setInterval(function(){show((current+1)%n)},5000);
+})();
+
+// ─ Mobile feature tour ──────────────────────────────
+(function(){
+  var current=0,n=5;
+  function show(i){
+    document.querySelectorAll('.mft-slide').forEach(function(s,j){s.classList.toggle('active',j===i)});
+    document.querySelectorAll('.mft-dot').forEach(function(d,j){d.classList.toggle('active',j===i)});
+    current=i;
+  }
+  window.mftShow=function(i){show(i)};
+  window.mftNext=function(){show((current+1)%n)};
+  window.mftPrev=function(){show((current-1+n)%n)};
+  var el=document.getElementById('mftSlides');
+  if(el){
+    var sx=0;
+    el.addEventListener('touchstart',function(e){sx=e.touches[0].clientX},{passive:true});
+    el.addEventListener('touchend',function(e){
+      var dx=e.changedTouches[0].clientX-sx;
+      if(Math.abs(dx)>40){dx<0?mftNext():mftPrev();}
+    },{passive:true});
+  }
+  // Auto-avans la fiecare 4s pe mobile
+  setInterval(function(){
+    if(window.innerWidth<=768) mftNext();
+  },4000);
+})();
+
+// ─ Email capture (mobile tour) ──────────────────────
+// TODO: creează cont gratuit pe formspree.io și înlocuiește FORMSPREE_ID cu ID-ul tău
+window.mftSubmit=function(e){
+  e.preventDefault();
+  var email=e.target.querySelector('input').value;
+  fetch('https://formspree.io/f/FORMSPREE_ID',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','Accept':'application/json'},
+    body:JSON.stringify({email:email,sursa:'mobile-hero-tour'})
+  }).catch(function(){});
+  document.getElementById('mftEmailForm').style.display='none';
+  document.getElementById('mftSuccess').style.display='block';
+};
+
 function faq(btn){
   var item=btn.closest('.faq-item');
   var isOpen=item.classList.contains('open');
