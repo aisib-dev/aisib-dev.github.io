@@ -221,7 +221,10 @@ nav{position:sticky;top:0;z-index:400;background:rgba(255,255,255,.97);-webkit-b
 .nav-lang{font-size:.78rem;font-weight:600;color:var(--g500);border:1px solid var(--g200);padding:5px 12px;border-radius:99px;transition:.18s}
 .nav-lang:hover{color:var(--blue);border-color:var(--blue)}
 .hamburger{display:none;background:none;border:none;padding:6px;flex-direction:column;gap:5px;margin-left:auto;cursor:pointer}
-.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.25s}
+.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.25s;transform-origin:center}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0)}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
 .mob{display:none;background:#fff;border-top:1px solid var(--g100);padding:20px 24px;flex-direction:column;gap:6px}
 .mob.open{display:flex}
 .mob a{padding:10px 0;font-size:.97rem;font-weight:500;color:var(--g700);border-bottom:1px solid var(--g100)}
@@ -547,7 +550,7 @@ footer{background:var(--navy);padding:56px 40px 32px}
     <a href="https://aisibra.gumroad.com/l/researchmind" target="_blank" rel="noopener noreferrer" class="btn btn-outline btn-sm">Cumpără licență</a>
     <a href="https://drive.google.com/uc?export=download&confirm=t&id=1dURKUekiSunwZ8bFfLq9MEcyBF4NtbXc" data-umami-event="Descarcare" class="btn btn-orange btn-sm">↓ Descarcă gratuit</a>
   </div>
-  <button class="hamburger" onclick="document.getElementById('mob').classList.toggle('open')" aria-label="Meniu" type="button">
+  <button class="hamburger" id="hamburgerBtn" onclick="(function(){var m=document.getElementById('mob'),b=document.getElementById('hamburgerBtn');m.classList.toggle('open');b.classList.toggle('open');})()" aria-label="Meniu" type="button">
     <span></span><span></span><span></span>
   </button>
 </div>
