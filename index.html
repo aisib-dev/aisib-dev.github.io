@@ -1575,7 +1575,7 @@ footer{background:var(--navy);padding:56px 40px 32px}
 window.mftSubmit=function(e){
   e.preventDefault();
   var email=e.target.querySelector('input').value;
-  fetch('https://formspree.io/f/FORMSPREE_ID',{
+  fetch('https://formspree.io/f/mykvjpoo',{
     method:'POST',
     headers:{'Content-Type':'application/json','Accept':'application/json'},
     body:JSON.stringify({email:email,sursa:'mobile-hero-tour'})
