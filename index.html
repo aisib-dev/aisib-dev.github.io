@@ -43,7 +43,7 @@
     {
       "@type": "Offer",
       "name": "Licență Anuală",
-      "price": "29",
+      "price": "39",
       "priceCurrency": "EUR",
       "availability": "https://schema.org/InStock"
     },
@@ -103,7 +103,7 @@
       "name": "Este ResearchMind AI mai bun decât ChatGPT pentru cercetare?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Pentru cercetare academică — da, complet diferit. ChatGPT nu cunoaște PDF-urile tale, inventează surse și nu poate cita pagina exactă. ResearchMind AI răspunde exclusiv din documentele tale, cu pagina exactă și citarea gata formatată."
+        "text": "Pentru cercetare academică — da, complet diferit. ChatGPT nu cunoaște PDF-urile tale și poate genera referințe care nu pot fi verificate în sursele originale. ResearchMind AI răspunde din documentele tale, cu pagina exactă și citarea gata formatată."
       }
     },
     {
@@ -811,11 +811,11 @@ footer{background:var(--navy);padding:56px 40px 32px}
     <div>
       <span class="label">Confidențialitate</span>
       <h2>Cercetarea ta rămâne<br>pe calculatorul tău</h2>
-      <p class="sub" style="max-width:100%;margin-top:12px">Teza ta, manuscrisele nepublicate, datele de cercetare sensibile — <strong>niciun document nu ajunge pe server extern</strong>. ResearchMind AI procesează totul local, pe PC-ul tău.</p>
+      <p class="sub" style="max-width:100%;margin-top:12px">Teza ta, manuscrisele nepublicate, datele de cercetare sensibile — <strong>PDF-urile nu sunt încărcate pe servere externe</strong>. ResearchMind AI indexează documentele local, pe PC-ul tău. Pentru funcțiile AI online, se trimit întrebarea și fragmentele relevante extrase, necesare generării răspunsului.</p>
       <div style="display:flex;flex-direction:column;gap:16px;margin-top:28px">
         <div style="display:flex;gap:14px;align-items:flex-start">
           <div style="width:42px;height:42px;background:#f0fdf4;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0">🔒</div>
-          <div><strong style="color:#0a0f1e;font-size:.97rem">PDF-urile rămân pe PC, fără excepție</strong><p style="margin:4px 0 0;font-size:.88rem">Niciun fișier nu se uploadează. Documentele tale nu părăsesc calculatorul tău niciodată.</p></div>
+          <div><strong style="color:#0a0f1e;font-size:.97rem">PDF-urile nu sunt încărcate pe servere externe</strong><p style="margin:4px 0 0;font-size:.88rem">Fișierele tale rămân pe calculatorul tău. La interogările AI, se trimit întrebarea și fragmentele de text relevante — nu documentul întreg.</p></div>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start">
           <div style="width:42px;height:42px;background:#f0fdf4;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0">🛡️</div>
@@ -823,7 +823,7 @@ footer{background:var(--navy);padding:56px 40px 32px}
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start">
           <div style="width:42px;height:42px;background:#f0fdf4;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0">📡</div>
-          <div><strong style="color:#0a0f1e;font-size:.97rem">Minim trafic de rețea</strong><p style="margin:4px 0 0;font-size:.88rem">Doar textul întrebărilor tale merge la AI. Niciun document, niciun PDF, nicio pagină scanată nu iese din PC.</p></div>
+          <div><strong style="color:#0a0f1e;font-size:.97rem">Control local al documentelor</strong><p style="margin:4px 0 0;font-size:.88rem">Indexarea și căutarea se fac local. La interogările AI se trimit fragmentele relevante și întrebarea ta — nu documentul întreg. Cu Ollama: zero trafic.</p></div>
         </div>
         <div style="display:flex;gap:14px;align-items:flex-start">
           <div style="width:42px;height:42px;background:#f0fdf4;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.25rem;flex-shrink:0">💻</div>
@@ -891,8 +891,8 @@ footer{background:var(--navy);padding:56px 40px 32px}
     </div>
     <div class="pain">
       <div class="pain-ico">🤖</div>
-      <h4>ChatGPT îți dă surse care nu există</h4>
-      <p>Autori reali, titluri reale — dar combinații fictive. Îți dai seama la 2 noaptea, înainte de predare. Ai 3 pagini de refăcut.</p>
+      <h4>ChatGPT poate genera referințe pe care nu le găsești în surse</h4>
+      <p>Autori reali, titluri plauzibile — dar combinații care nu se regăsesc în ediția pe care o cauți. Îți dai seama la 2 noaptea, înainte de predare.</p>
     </div>
     <div class="pain">
       <div class="pain-ico">✍️</div>
@@ -993,7 +993,7 @@ footer{background:var(--navy);padding:56px 40px 32px}
       <span class="ex-tag">❌ ChatGPT — răspuns tipic</span>
       <p class="ex-q">"Care este conceptul de isihasm la Grigorie Palama?"</p>
       <p class="ex-a">"Sursa: Grigorie Palama, <em>Triads</em>, 1338, p. 47 — în care el definește isihia ca..."</p>
-      <div class="ex-verdict">⚠ Pagina 47 nu există în ediția citată. Sursă inventată.</div>
+      <div class="ex-verdict">⚠ Pagina citată nu poate fi verificată în ediția de referință.</div>
     </div>
     <div class="ex-box good">
       <span class="ex-tag">✓ ResearchMind AI — din PDF-ul tău</span>
@@ -1313,7 +1313,11 @@ footer{background:var(--navy);padding:56px 40px 32px}
       <div>✓ Funcționează pe 1 calculator Windows 10/11</div>
     </div>
   </div>
-  <p style="margin-top:16px;font-size:.82rem;color:var(--g400)">Toate planurile includ aceleași funcționalități &nbsp;·&nbsp; Plată securizată prin Gumroad &nbsp;·&nbsp; Prețurile nu includ TVA — valoarea finală poate varia în funcție de țara ta</p>
+  <div style="margin:16px auto 0;max-width:720px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:var(--r-lg);padding:16px 22px;font-size:.86rem;color:var(--g600);line-height:1.65">
+    <strong style="color:var(--g900);display:block;margin-bottom:6px">Despre creditele AI incluse</strong>
+    Fiecare plan include un număr de cereri AI cadou (500 / 1.000 / 2.000). După epuizarea acestora, poți continua folosind propria cheie API (OpenAI, Groq sau alt furnizor compatibil) — setată direct în aplicație. Funcțiile locale (OCR, indexare, căutare semantică) funcționează fără credite, fără limită.
+  </div>
+  <p style="margin-top:12px;font-size:.82rem;color:var(--g400)">Toate planurile includ aceleași funcționalități &nbsp;·&nbsp; Plată securizată prin Gumroad &nbsp;·&nbsp; Prețurile nu includ TVA — valoarea finală poate varia în funcție de țara ta</p>
 </div>
 </section>
 
@@ -1481,7 +1485,7 @@ footer{background:var(--navy);padding:56px 40px 32px}
         Este mai bun decât ChatGPT pentru cercetare?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-a">Pentru cercetare academică — da, complet diferit. ChatGPT nu cunoaște PDF-urile tale, inventează surse și nu poate cita pagina exactă. ResearchMind AI răspunde exclusiv din documentele tale, cu pagina exactă și citarea gata formatată. ChatGPT e mai bun pentru alte sarcini; ResearchMind e construit exclusiv pentru cercetare cu surse verificabile.</div>
+      <div class="faq-a">Pentru cercetare academică — da, complet diferit. ChatGPT nu cunoaște PDF-urile tale și poate genera referințe care nu se regăsesc în sursele originale. ResearchMind AI răspunde din documentele tale, cu pagina exactă și citarea gata formatată. ChatGPT e util pentru alte sarcini; ResearchMind e construit exclusiv pentru cercetare cu surse verificabile din biblioteca ta.</div>
     </div>
 
     <div class="faq-item">
@@ -1537,7 +1541,23 @@ footer{background:var(--navy);padding:56px 40px 32px}
         PDF-urile mele ajung pe internet?
         <span class="faq-icon">+</span>
       </button>
-      <div class="faq-a">Nu. PDF-urile tale rămân pe calculatorul tău. Numai textul întrebărilor tale este trimis la serviciul AI (OpenAI/Groq/Claude). Niciun document nu iese din calculatorul tău. Poți folosi și Ollama pentru funcționare complet locală, fără niciun trafic de internet.</div>
+      <div class="faq-a">PDF-urile tale nu sunt încărcate pe niciun server. Fișierele rămân pe calculatorul tău. La interogările AI, aplicația trimite întrebarea ta și fragmentele de text relevante extrase din documente — necesare pentru a genera un răspuns precis. Documentele integrale nu ies din PC. Pentru zero trafic de internet, poți folosi modul local cu Ollama.</div>
+    </div>
+
+    <div class="faq-item">
+      <button type="button" class="faq-q" onclick="faq(this)">
+        Ce trebuie să știu înainte să cumpăr?
+        <span class="faq-icon">+</span>
+      </button>
+      <div class="faq-a">
+        <ul style="margin:0;padding-left:20px;line-height:1.9">
+          <li>Funcționează pe <strong>Windows 10 și Windows 11</strong> (64-bit). Nu există versiune Mac sau web.</li>
+          <li>Exportul avansat în Word necesită <strong>Microsoft Word instalat</strong> pe calculator.</li>
+          <li>AI-ul poate face greșeli de interpretare — <strong>verificarea finală aparține cercetătorului</strong>.</li>
+          <li>Aplicația te ajută să cauți, să structurezi și să citezi mai rapid. <strong>Nu scrie lucrarea în locul tău.</strong></li>
+          <li>La prima rulare, Windows SmartScreen poate afișa un avertisment — <strong>este normal</strong>. Descarcă exclusiv de pe site-ul oficial.</li>
+        </ul>
+      </div>
     </div>
 
   </div>
