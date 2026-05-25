@@ -433,11 +433,18 @@ footer{background:var(--navy);padding:56px 40px 32px}
 @media(max-width:768px){.mob-win-notice{display:flex}}
 
 /* ─ RESPONSIVE ────────────────────────────────────── */
-@media(max-width:1100px){
-  .nav-links a[href="#testimoniale"],.nav-links a[href="#despre"],.nav-links a[href="#blog"]{display:none}
+nav{overflow:hidden}
+.nav-cta{flex-shrink:0}
+@media(max-width:1400px){
   .nav-social{display:none}
 }
-nav{overflow:hidden}
+@media(max-width:1200px){
+  .nav-links a[href="#testimoniale"],.nav-links a[href="#despre"],.nav-links a[href="#blog"],.nav-links a[href="#articole"]{display:none}
+  .nav-lang{display:none}
+}
+@media(max-width:1100px){
+  .nav-links a[href="#testimoniale"],.nav-links a[href="#despre"],.nav-links a[href="#blog"]{display:none}
+}
 @media(max-width:960px){
   .nav-social{display:none}
   .sol-grid{grid-template-columns:1fr;gap:32px}
