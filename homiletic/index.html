@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="ro" prefix="og: https://ogp.me/ns#">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ResearchMind Homiletic — Cercetare omiletică ortodoxă cu AI</title>
+<meta name="description" content="Pregătire predică ortodoxă cu AI: surse patristice, liturgice și teologice reale. Generează interogări, caută surse și exportă raportul în Word. Demo gratuit.">
+<meta property="og:title" content="ResearchMind Homiletic — Cercetare omiletică ortodoxă cu AI">
+<meta property="og:description" content="Pregătire predică ortodoxă cu AI: surse patristice, liturgice și teologice reale. Demo gratuit, fără instalare.">
+<meta property="og:url" content="https://researchmind.org/homiletic/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="ResearchMind">
+<meta property="og:locale" content="ro_RO">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://researchmind.org/homiletic/">
+<script defer src="https://cloud.umami.is/script.js" data-website-id="0eddf714-7452-4bb8-a482-852b1a8d6d42"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;background:#fff;color:#111827;line-height:1.65;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+:root{
+  --gold:#c9a96e;--gold-d:#b8923a;--gold-l:#f8f3ea;
+  --dark:#0e0e1a;--dark2:#1a1a2e;--dark3:#2d1b69;
+  --cream:#e8d5b7;
+  --navy:#0a0f1e;--blue:#2563eb;
+  --g200:#e2e8f0;--g500:#64748b;--g600:#475569;--g700:#334155;
+  --r:10px;--r-lg:16px;
+}
+.wrap{max-width:1100px;margin:0 auto;padding:0 40px}
+h1,h2,h3{font-family:'Poppins',sans-serif;line-height:1.1;letter-spacing:-.02em;color:var(--dark)}
+h1{font-size:clamp(2rem,5vw,3.4rem);font-weight:900}
+h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:800}
+h3{font-size:1.1rem;font-weight:700}
+p{color:var(--g600);line-height:1.75}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:400;background:rgba(14,14,26,.97);backdrop-filter:blur(14px);border-bottom:1px solid rgba(201,169,110,.15)}
+.nav-i{max-width:1100px;margin:0 auto;padding:0 40px;display:flex;align-items:center;height:66px;gap:24px}
+.logo{font-family:'Poppins',sans-serif;font-weight:900;font-size:1.05rem;color:#fff;letter-spacing:-.02em}
+.logo em{color:var(--gold);font-style:normal}
+.nav-links{display:flex;gap:24px;margin-left:auto;font-size:.875rem;font-weight:500;color:rgba(255,255,255,.6)}
+.nav-links a:hover{color:var(--gold)}
+.btn-gold{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:var(--r);font-weight:700;font-size:.9rem;background:var(--gold);color:var(--dark);border:none;cursor:pointer;transition:all .18s;white-space:nowrap}
+.btn-gold:hover{background:var(--gold-d);transform:translateY(-2px);box-shadow:0 8px 28px rgba(201,169,110,.4)}
+.btn-demo{display:inline-flex;align-items:center;gap:8px;padding:11px 24px;border-radius:var(--r);font-weight:700;font-size:.9rem;background:transparent;color:rgba(255,255,255,.7);border:1px solid rgba(255,255,255,.25);cursor:pointer;transition:all .18s;white-space:nowrap}
+.btn-demo:hover{border-color:var(--gold);color:var(--gold)}
+.hamburger{display:none;background:none;border:none;padding:6px;flex-direction:column;gap:5px;margin-left:auto;cursor:pointer}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px}
+.mob{display:none;background:var(--dark2);border-top:1px solid rgba(201,169,110,.15);padding:20px 24px;flex-direction:column;gap:6px}
+.mob.open{display:flex}
+.mob a{padding:10px 0;font-size:.97rem;font-weight:500;color:rgba(255,255,255,.75);border-bottom:1px solid rgba(255,255,255,.08)}
+.mob .btn-gold{margin-top:6px;width:100%;justify-content:center}
+
+/* HERO */
+.hero{background:linear-gradient(155deg,#060c1f 0%,#1a1a2e 55%,#0e0e1a 100%);padding:100px 40px 88px;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 70% at 50% -5%,rgba(201,169,110,.12) 0%,transparent 70%);pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:7px;background:rgba(201,169,110,.12);color:var(--gold);border:1px solid rgba(201,169,110,.3);border-radius:99px;padding:6px 16px;font-size:.75rem;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:28px}
+.hero h1{color:#fff;max-width:780px;margin:0 auto 22px;position:relative;z-index:1}
+.hero h1 em{font-style:normal;color:var(--gold)}
+.hero-sub{font-size:1.1rem;color:rgba(255,255,255,.6);max-width:600px;margin:0 auto 36px;line-height:1.85;position:relative;z-index:1}
+.hero-chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-bottom:40px;position:relative;z-index:1}
+.chip{display:flex;align-items:center;gap:8px;color:rgba(255,255,255,.8);font-size:.88rem;font-weight:500;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:99px;padding:8px 16px}
+.chip-icon{width:18px;height:18px;background:var(--gold);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.6rem;font-weight:900;color:var(--dark);flex-shrink:0}
+.hero-cta{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;position:relative;z-index:1}
+.btn-hero{display:inline-flex;align-items:center;gap:8px;padding:18px 40px;border-radius:12px;font-weight:800;font-size:1.05rem;transition:all .18s;cursor:pointer;border:none;white-space:nowrap}
+.btn-hero-gold{background:var(--gold);color:var(--dark);box-shadow:0 8px 32px rgba(201,169,110,.35);animation:goldPulse 3s ease-in-out infinite}
+@keyframes goldPulse{0%,100%{box-shadow:0 8px 32px rgba(201,169,110,.35)}50%{box-shadow:0 8px 40px rgba(201,169,110,.55),0 0 0 6px rgba(201,169,110,.1)}}
+.btn-hero-gold:hover{background:var(--gold-d);transform:translateY(-2px);animation:none}
+.btn-hero-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.3)}
+.btn-hero-outline:hover{border-color:var(--gold);color:var(--gold);transform:translateY(-1px)}
+.hero-note{font-size:.78rem;color:rgba(255,255,255,.3);margin-top:14px;position:relative;z-index:1}
+
+/* SECTIONS */
+.section{padding:88px 40px}
+.section-alt{background:var(--gold-l)}
+.label{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold-d);margin-bottom:12px}
+.sub{font-size:1.05rem;color:var(--g500);max-width:600px;margin:14px 0 0;line-height:1.75}
+
+/* FEATURES GRID */
+.feat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;margin-top:48px}
+.feat-card{background:#fff;border:1px solid var(--g200);border-radius:var(--r-lg);padding:32px;transition:.18s}
+.feat-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 12px 40px rgba(201,169,110,.15)}
+.feat-icon{font-size:2rem;margin-bottom:16px}
+.feat-card h3{color:var(--dark2);margin-bottom:10px}
+.feat-card p{font-size:.9rem;color:var(--g500);margin:0}
+
+/* HOW IT WORKS */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:32px;margin-top:48px;counter-reset:step}
+.step{text-align:center;position:relative}
+.step-num{width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,var(--dark2),var(--dark3));color:var(--gold);font-family:'Poppins',sans-serif;font-weight:900;font-size:1.3rem;display:flex;align-items:center;justify-content:center;margin:0 auto 20px;box-shadow:0 8px 24px rgba(45,27,105,.3)}
+.step h3{color:var(--dark2);margin-bottom:8px}
+.step p{font-size:.9rem}
+
+/* PRICING */
+.price-card{max-width:480px;margin:48px auto 0;background:linear-gradient(135deg,var(--dark2),var(--dark));border-radius:24px;padding:48px;text-align:center;box-shadow:0 24px 80px rgba(14,14,26,.4);border:1px solid rgba(201,169,110,.25)}
+.price-badge{display:inline-block;background:rgba(201,169,110,.15);color:var(--gold);border:1px solid rgba(201,169,110,.3);border-radius:99px;padding:5px 16px;font-size:.75rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:20px}
+.price-main{font-family:'Poppins',sans-serif;font-weight:900;font-size:3.5rem;color:#fff;line-height:1;margin-bottom:4px}
+.price-main span{font-size:1.6rem;vertical-align:super;font-weight:700}
+.price-per{color:rgba(255,255,255,.4);font-size:.9rem;margin-bottom:28px}
+.price-list{list-style:none;margin-bottom:36px;text-align:left}
+.price-list li{padding:10px 0;border-bottom:1px solid rgba(255,255,255,.07);color:rgba(255,255,255,.8);font-size:.92rem;display:flex;align-items:center;gap:10px}
+.price-list li::before{content:'✓';color:var(--gold);font-weight:900;flex-shrink:0}
+.price-list li:last-child{border-bottom:none}
+.btn-price{display:block;width:100%;padding:18px;border-radius:12px;background:var(--gold);color:var(--dark);font-weight:800;font-size:1.1rem;border:none;cursor:pointer;transition:all .18s;text-align:center}
+.btn-price:hover{background:var(--gold-d);transform:translateY(-2px);box-shadow:0 8px 32px rgba(201,169,110,.4)}
+.price-note{color:rgba(255,255,255,.3);font-size:.8rem;margin-top:16px}
+
+/* DEMO STRIP */
+.demo-strip{background:linear-gradient(135deg,var(--dark2),var(--dark3));padding:72px 40px;text-align:center}
+.demo-strip h2{color:#fff;margin-bottom:16px}
+.demo-strip p{color:rgba(255,255,255,.6);max-width:520px;margin:0 auto 36px}
+
+/* TARGET */
+.target-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px;margin-top:40px}
+.target-card{background:#fff;border:2px solid var(--g200);border-radius:var(--r-lg);padding:24px;text-align:center;transition:.18s}
+.target-card:hover{border-color:var(--gold);box-shadow:0 8px 28px rgba(201,169,110,.12)}
+.target-icon{font-size:2.2rem;margin-bottom:12px}
+.target-card h3{font-size:.95rem;color:var(--dark2);margin-bottom:6px}
+.target-card p{font-size:.85rem;color:var(--g500);margin:0}
+
+/* CTA FINAL */
+.cta-final{background:linear-gradient(135deg,var(--dark2),#0e0e1a);padding:96px 40px;text-align:center}
+.cta-final h2{color:#fff;margin-bottom:16px}
+.cta-final p{color:rgba(255,255,255,.5);max-width:480px;margin:0 auto 36px}
+
+/* FOOTER */
+footer{background:var(--dark);padding:48px 40px;border-top:1px solid rgba(201,169,110,.15)}
+.foot-i{max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:40px;justify-content:space-between;align-items:flex-start}
+.foot-brand .logo{margin-bottom:10px}
+.foot-brand p{font-size:.88rem;color:rgba(255,255,255,.4);max-width:260px}
+.foot-col h4{color:rgba(255,255,255,.6);font-size:.8rem;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.foot-col ul{list-style:none}
+.foot-col li{margin-bottom:8px}
+.foot-col a{color:rgba(255,255,255,.5);font-size:.88rem;transition:.18s}
+.foot-col a:hover{color:var(--gold)}
+.foot-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:24px;margin-top:40px;max-width:1100px;margin-left:auto;margin-right:auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:.82rem;color:rgba(255,255,255,.25)}
+
+@media(max-width:768px){
+  .wrap,.hero,.section,.demo-strip,.cta-final{padding-left:20px;padding-right:20px}
+  .hero{padding-top:72px;padding-bottom:64px}
+  .nav-links,.nav-cta-d{display:none}
+  .hamburger{display:flex;margin-left:auto}
+  .price-card{padding:32px 24px}
+  footer{padding:40px 20px}
+  .foot-bottom{padding-left:0;padding-right:0}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+<div class="nav-i">
+  <a href="/" class="logo">Research<em>Mind</em> · <span style="color:rgba(255,255,255,.5);font-size:.9em">Homiletic</span></a>
+  <div class="nav-links" style="margin-left:auto">
+    <a href="#functii">Funcționalități</a>
+    <a href="#cum-functioneaza">Cum funcționează</a>
+    <a href="#pentru-cine">Pentru cine</a>
+    <a href="#pret">Prețuri</a>
+  </div>
+  <div style="display:flex;gap:10px;margin-left:24px" class="nav-cta-d">
+    <a href="https://researchmind-homiletic-6xkzkdafwha37jdw5g7mapp.streamlit.app" target="_blank" rel="noopener" class="btn-demo">Demo gratuit</a>
+    <a href="https://buy.stripe.com/bJe28rcFJbAi7uo0wIgUM00" target="_blank" rel="noopener" class="btn-gold" data-umami-event="Cumparare-Homiletic">Cumpără — €30/an</a>
+  </div>
+  <button class="hamburger" id="hbBtn" onclick="(function(){var m=document.getElementById('mobMenu'),b=document.getElementById('hbBtn');m.classList.toggle('open');b.classList.toggle('open');})()" aria-label="Meniu">
+    <span></span><span></span><span></span>
+  </button>
+</div>
+<div class="mob" id="mobMenu">
+  <a href="#functii">Funcționalități</a>
+  <a href="#cum-functioneaza">Cum funcționează</a>
+  <a href="#pentru-cine">Pentru cine</a>
+  <a href="#pret">Prețuri</a>
+  <a href="https://researchmind-homiletic-6xkzkdafwha37jdw5g7mapp.streamlit.app" target="_blank" rel="noopener" class="btn-demo" style="text-align:center;margin-top:4px">Demo gratuit</a>
+  <a href="https://buy.stripe.com/bJe28rcFJbAi7uo0wIgUM00" target="_blank" rel="noopener" class="btn-gold" data-umami-event="Cumparare-Homiletic-mob">Cumpără — €30/an</a>
+</div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">✝ Instrument pentru slujitorii Bisericii</div>
+  <h1>Predică mai bine.<br>Cercetează <em>mai profund</em>.</h1>
+  <p class="hero-sub">AI specializat pentru omilitică ortodoxă — găsești surse patristice, liturgice și teologice reale pentru fiecare duminică și sărbătoare.</p>
+  <div class="hero-chips">
+    <div class="chip"><div class="chip-icon">✓</div>Surse patristice reale</div>
+    <div class="chip"><div class="chip-icon">✓</div>Raport structurat în română</div>
+    <div class="chip"><div class="chip-icon">✓</div>Export Word cu un click</div>
+    <div class="chip"><div class="chip-icon">✓</div>Demo gratuit — fără card</div>
+    <div class="chip"><div class="chip-icon">✓</div>Funcționează din browser</div>
+  </div>
+  <div class="hero-cta">
+    <a href="https://researchmind-homiletic-6xkzkdafwha37jdw5g7mapp.streamlit.app" target="_blank" rel="noopener" class="btn-hero btn-hero-outline" data-umami-event="Demo-Homiletic-Hero">▶ Încearcă Demo Gratuit</a>
+    <a href="https://buy.stripe.com/bJe28rcFJbAi7uo0wIgUM00" target="_blank" rel="noopener" class="btn-hero btn-hero-gold" data-umami-event="Cumparare-Homiletic-Hero">Cumpără licență PRO — €30/an</a>
+  </div>
+  <p class="hero-note">Demo: 2 căutări gratuite · Fără instalare · Fără card bancar</p>
+</section>
+
+<!-- FUNCTII -->
+<section class="section" id="functii">
+<div class="wrap">
+  <span class="label">Funcționalități</span>
+  <h2>Tot ce ai nevoie pentru o predică documentată</h2>
+  <p class="sub">De la pericopele liturgice până la raportul final — ResearchMind Homiletic automatizează cercetarea teologică.</p>
+  <div class="feat-grid">
+
+    <div class="feat-card">
+      <div class="feat-icon">📅</div>
+      <h3>Date liturgice integrate</h3>
+      <p>Introduci duminica, Evanghelia și Apostolul — aplicația știe contextul liturgic și orientează automat cercetarea.</p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">🔍</div>
+      <h3>Interogări omiletice generate</h3>
+      <p>AI-ul generează întrebări teologice profunde din pericopele alese — nu mai pierzi timp cu formularea căutărilor.</p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📚</div>
+      <h3>Surse academice reale</h3>
+      <p>Caută în baze de date academice: OpenAlex, Semantic Scholar, CORE, Internet Archive — surse patristice și teologice verificabile.</p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">✝</div>
+      <h3>Context patristic și liturgic</h3>
+      <p>Rezultatele sunt filtrate și prioritizate pentru relevanță omiletică ortodoxă — Sfinții Părinți, comentarii biblice, tipic liturgic.</p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📄</div>
+      <h3>Raport structurat în română</h3>
+      <p>Generează automat un raport cu introducere, dezvoltare tematică, citate patristice și concluzii — gata de folosit ca bază pentru predică.</p>
+    </div>
+
+    <div class="feat-card">
+      <div class="feat-icon">📝</div>
+      <h3>Export Word cu un click</h3>
+      <p>Raportul complet se exportă în format .docx — compatibil cu Microsoft Word și LibreOffice, cu notele formatate corect.</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- CUM FUNCTIONEAZA -->
+<section class="section section-alt" id="cum-functioneaza">
+<div class="wrap">
+  <span class="label">Proces</span>
+  <h2>De la pericope la raport — în câteva minute</h2>
+  <p class="sub">Un flux simplu, gândit special pentru pregătirea predicii săptămânale.</p>
+  <div class="steps">
+
+    <div class="step">
+      <div class="step-num">1</div>
+      <h3>Introduci datele liturgice</h3>
+      <p>Titlul duminicii, Evanghelia, Apostolul și tema principală — aplicația știe contextul imediat.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-num">2</div>
+      <h3>Generezi interogări</h3>
+      <p>AI-ul creează automat întrebări teologice profunde din pericopele alese pentru o cercetare sistematică.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-num">3</div>
+      <h3>Cauți surse reale</h3>
+      <p>Aplicația caută în baze de date academice și returnează surse patristice și teologice verificabile cu link-uri.</p>
+    </div>
+
+    <div class="step">
+      <div class="step-num">4</div>
+      <h3>Exporți raportul</h3>
+      <p>Un raport structurat în română — cu citate, surse și structura predicii — gata de exportat în Word.</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- DEMO STRIP -->
+<section class="demo-strip">
+<div style="max-width:700px;margin:0 auto">
+  <h2>Încearcă gratuit acum</h2>
+  <p>2 căutări gratuite în modul Demo — fără instalare, fără cont, fără card bancar. Funcționează direct din browser.</p>
+  <a href="https://researchmind-homiletic-6xkzkdafwha37jdw5g7mapp.streamlit.app" target="_blank" rel="noopener" class="btn-hero btn-hero-gold" style="display:inline-flex" data-umami-event="Demo-Homiletic-Strip">▶ Deschide aplicația Demo</a>
+</div>
+</section>
+
+<!-- PENTRU CINE -->
+<section class="section" id="pentru-cine">
+<div class="wrap">
+  <span class="label">Pentru cine</span>
+  <h2>Construit pentru slujitorii Bisericii</h2>
+  <p class="sub">Oricine pregătește cuvântul lui Dumnezeu pentru comunitate.</p>
+  <div class="target-grid">
+
+    <div class="target-card">
+      <div class="target-icon">⛪</div>
+      <h3>Preoți parohi</h3>
+      <p>Predici duminicale și de sărbătoare documentate cu surse patristice în timp minim.</p>
+    </div>
+
+    <div class="target-card">
+      <div class="target-icon">🎓</div>
+      <h3>Studenți teologie</h3>
+      <p>Eseuri și referate omiletice cu surse academice reale și citate verificabile.</p>
+    </div>
+
+    <div class="target-card">
+      <div class="target-icon">✍️</div>
+      <h3>Doctoranzi teologie</h3>
+      <p>Cercetare sistematică pentru teze despre omilitică, predicare și retorică sacră.</p>
+    </div>
+
+    <div class="target-card">
+      <div class="target-icon">📖</div>
+      <h3>Cateheți și profesori</h3>
+      <p>Materiale documentate pentru cateheza adulților și orele de religie.</p>
+    </div>
+
+    <div class="target-card">
+      <div class="target-icon">🕊️</div>
+      <h3>Misionari și diaconi</h3>
+      <p>Conținut teologic solid pentru activitățile misionare și pastorale.</p>
+    </div>
+
+    <div class="target-card">
+      <div class="target-icon">🏛️</div>
+      <h3>Seminariști</h3>
+      <p>Pregătire practică pentru examenele de omilitică și predicare.</p>
+    </div>
+
+  </div>
+</div>
+</section>
+
+<!-- PRICING -->
+<section class="section section-alt" id="pret">
+<div class="wrap" style="text-align:center">
+  <span class="label">Prețuri</span>
+  <h2>Un preț simplu. Acces complet.</h2>
+  <p class="sub" style="margin:14px auto 0">Fără abonamente complicate. Plătești o dată pe an și ai acces nelimitat la toate funcționalitățile.</p>
+
+  <div class="price-card">
+    <div class="price-badge">✝ Licență PRO — Acces complet</div>
+    <div class="price-main"><span>€</span>30</div>
+    <p class="price-per">pe an · plată securizată prin Stripe</p>
+    <ul class="price-list">
+      <li>Căutări nelimitate</li>
+      <li>Până la 25 surse per căutare</li>
+      <li>Raport complet structurat în română</li>
+      <li>Export Word (.docx)</li>
+      <li>Toate duminicile și sărbătorile anului liturgic</li>
+      <li>Actualizări incluse pe durata licenței</li>
+      <li>Licență activată pe email — instant</li>
+    </ul>
+    <a href="https://buy.stripe.com/bJe28rcFJbAi7uo0wIgUM00" target="_blank" rel="noopener" class="btn-price" data-umami-event="Cumparare-Homiletic-Pricing">Cumpără licență PRO — €30/an</a>
+    <p class="price-note">🔒 Plată securizată prin Stripe · Licența se trimite imediat pe email</p>
+  </div>
+
+  <p style="margin-top:32px;font-size:.9rem;color:var(--g500)">
+    Vrei să încerci întâi? <a href="https://researchmind-homiletic-6xkzkdafwha37jdw5g7mapp.streamlit.app" target="_blank" rel="noopener" style="color:var(--gold-d);font-weight:600" data-umami-event="Demo-Homiletic-Pricing">Deschide demo gratuit →</a>
+  </p>
+</div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div style="max-width:600px;margin:0 auto">
+    <h2 style="color:#fff">Pregătește predica de duminică cu surse reale</h2>
+    <p>Fără improvizații. Fără ore de căutare manuală. Raport documentat în câteva minute.</p>
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap">
+      <a href="https://researchmind-homiletic-6xkzkdafwha37jdw5g7mapp.streamlit.app" target="_blank" rel="noopener" class="btn-hero btn-hero-outline" data-umami-event="Demo-Homiletic-CTA">▶ Demo gratuit</a>
+      <a href="https://buy.stripe.com/bJe28rcFJbAi7uo0wIgUM00" target="_blank" rel="noopener" class="btn-hero btn-hero-gold" data-umami-event="Cumparare-Homiletic-CTA">Cumpără — €30/an</a>
+    </div>
+    <p style="color:rgba(255,255,255,.25);font-size:.8rem;margin-top:20px">Licența se activează instant pe email · Plată securizată Stripe</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="foot-i">
+  <div class="foot-brand">
+    <div class="logo" style="margin-bottom:10px">Research<em style="color:var(--gold);font-style:normal">Mind</em> Homiletic</div>
+    <p>Instrument AI pentru cercetare omiletică ortodoxă. Surse reale. Raport în română. Export Word.</p>
+  </div>
+  <div class="foot-col">
+    <h4>Produs</h4>
+    <ul>
+      <li><a href="#functii">Funcționalități</a></li>
+      <li><a href="#cum-functioneaza">Cum funcționează</a></li>
+      <li><a href="#pret">Prețuri</a></li>
+      <li><a href="https://researchmind-homiletic-6xkzkdafwha37jdw5g7mapp.streamlit.app" target="_blank" rel="noopener">Demo gratuit</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Familia ResearchMind</h4>
+    <ul>
+      <li><a href="/">ResearchMind AI — Desktop</a></li>
+      <li><a href="/homiletic/">ResearchMind Homiletic</a></li>
+    </ul>
+  </div>
+  <div class="foot-col">
+    <h4>Legal</h4>
+    <ul>
+      <li><a href="/politica-de-confidentialitate/">Politică confidențialitate</a></li>
+      <li><a href="/termeni-si-conditii/">Termeni și condiții</a></li>
+      <li><a href="mailto:aisib@proton.me">Contact</a></li>
+    </ul>
+  </div>
+</div>
+<div class="foot-bottom">
+  <span>© 2026 ResearchMind · Toate drepturile rezervate</span>
+  <span>Construit pentru slujitorii Bisericii Ortodoxe</span>
+</div>
+</footer>
+
+<script>
+// Back to top
+(function(){
+  var btn=document.createElement('button');
+  btn.innerHTML='↑';
+  btn.setAttribute('aria-label','Sus');
+  btn.style.cssText='display:none;position:fixed;bottom:28px;right:28px;z-index:600;width:46px;height:46px;border-radius:50%;background:var(--dark2);color:var(--gold);border:1px solid rgba(201,169,110,.3);cursor:pointer;font-size:1.3rem;box-shadow:0 4px 20px rgba(0,0,0,.3);transition:all .2s';
+  btn.onclick=function(){window.scrollTo({top:0,behavior:'smooth'})};
+  document.body.appendChild(btn);
+  window.addEventListener('scroll',function(){btn.style.display=window.scrollY>400?'block':'none'},{passive:true});
+})();
+</script>
+</body>
+</html>
