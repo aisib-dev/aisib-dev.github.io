@@ -122,6 +122,22 @@ nav{position:sticky;top:0;z-index:400;background:rgba(14,14,26,.97);backdrop-fil
 .target-card h3{font-size:.95rem;color:var(--dark2);margin-bottom:6px}
 .target-card p{font-size:.85rem;color:var(--g500);margin:0}
 
+/* FAQ */
+.faq-list{max-width:720px;margin:48px auto 0}
+.faq-item{border:1px solid var(--g200);border-radius:var(--r-lg);margin-bottom:12px;overflow:hidden;transition:.18s}
+.faq-item:hover{border-color:var(--gold)}
+.faq-item summary{padding:20px 24px;font-weight:600;color:var(--dark2);cursor:pointer;list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;font-size:.97rem}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:1.3rem;color:var(--gold);font-weight:700;flex-shrink:0;transition:.2s}
+.faq-item[open] summary::after{content:'−'}
+.faq-item[open]{border-color:var(--gold);box-shadow:0 4px 20px rgba(201,169,110,.1)}
+.faq-body{padding:0 24px 20px;color:var(--g600);font-size:.93rem;line-height:1.8}
+.faq-body a{color:var(--gold-d);font-weight:600}
+.faq-steps{margin:12px 0 0;padding-left:0;list-style:none}
+.faq-steps li{padding:6px 0;display:flex;gap:10px;align-items:flex-start}
+.faq-steps li::before{content:counter(faq-step);counter-increment:faq-step;background:var(--gold);color:var(--dark);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0;margin-top:2px}
+.faq-steps{counter-reset:faq-step}
+
 /* CTA FINAL */
 .cta-final{background:linear-gradient(135deg,var(--dark2),#0e0e1a);padding:96px 40px;text-align:center}
 .cta-final h2{color:#fff;margin-bottom:16px}
@@ -367,6 +383,59 @@ footer{background:var(--dark);padding:48px 40px;border-top:1px solid rgba(201,16
   <p style="margin-top:32px;font-size:.9rem;color:var(--g500)">
     Vrei să încerci întâi? <a href="https://researchmind-homiletic-6xkzkdafwha37jdw5g7mapp.streamlit.app" target="_blank" rel="noopener" style="color:var(--gold-d);font-weight:600" data-umami-event="Demo-Homiletic-Pricing">Deschide demo gratuit →</a>
   </p>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section" id="faq">
+<div class="wrap" style="text-align:center">
+  <span class="label">Întrebări frecvente</span>
+  <h2>Ai întrebări? Avem răspunsuri.</h2>
+
+  <div class="faq-list">
+
+    <details class="faq-item">
+      <summary>De ce am nevoie de o cheie API Groq?</summary>
+      <div class="faq-body">
+        ResearchMind Homiletic folosește inteligența artificială <strong>Groq</strong> pentru a analiza sursele și a genera raportul de cercetare. Serverul aplicației are o limită de procesare partajată între toți utilizatorii activi. Când mai mulți preoți generează un raport în același timp, pot apărea întârzieri de 1-2 minute.<br><br>
+        Prin introducerea propriei chei gratuite Groq, tu primești o <strong>limită dedicată, separată</strong> — raportul tău se generează imediat, indiferent de ceilalți utilizatori.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Cum obțin cheia Groq? Este cu adevărat gratuită?</summary>
+      <div class="faq-body">
+        Da, complet gratuit, fără card bancar. Durează aproximativ 2 minute:
+        <ol class="faq-steps">
+          <li>Mergi la <a href="https://console.groq.com" target="_blank" rel="noopener">console.groq.com</a> și creează un cont (cu GitHub sau email)</li>
+          <li>Apasă <strong>API Keys</strong> → <strong>Create API Key</strong> → dai un nume orice</li>
+          <li>Copiezi cheia generată (începe cu <code>gsk_</code>) și o lipești în aplicație la secțiunea <em>„Cheie API Groq"</em> din sidebar</li>
+        </ol>
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Cheia mea API este în siguranță?</summary>
+      <div class="faq-body">
+        Da. Cheia ta este transmisă <strong>direct și criptat</strong> de la browser-ul tău la serverele Groq — ResearchMind nu o vede, nu o stochează și nu o accesează. Cheia dispare automat la reîncărcarea paginii. Poți verifica oricând sau revoca cheia din contul Groq.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Ce se întâmplă dacă nu introduc nicio cheie?</summary>
+      <div class="faq-body">
+        Aplicația funcționează în continuare — va folosi cheia serverului ResearchMind, partajată între toți utilizatorii. În orele de vârf, raportul poate dura cu 1-2 minute mai mult sau poate apărea un mesaj de așteptare. Pentru <strong>utilizare optimă</strong>, recomandăm introducerea propriei chei gratuite.
+      </div>
+    </details>
+
+    <details class="faq-item">
+      <summary>Ce este Groq și de ce nu OpenAI sau alt AI?</summary>
+      <div class="faq-body">
+        Groq este o platformă AI care rulează modelul <strong>Llama 3.3</strong> (Meta) extrem de rapid — de 5-10× mai repede decât OpenAI pentru texte lungi. Acest lucru înseamnă că raportul tău de cercetare se generează în câteva zeci de secunde, nu în minute. Planul gratuit Groq este mai mult decât suficient pentru uz homiletic.
+      </div>
+    </details>
+
+  </div>
 </div>
 </section>
 
