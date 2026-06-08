@@ -138,6 +138,33 @@ nav{position:sticky;top:0;z-index:400;background:rgba(14,14,26,.97);backdrop-fil
 .faq-steps li::before{content:counter(faq-step);counter-increment:faq-step;background:var(--gold);color:var(--dark);border-radius:50%;width:22px;height:22px;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-weight:800;flex-shrink:0;margin-top:2px}
 .faq-steps{counter-reset:faq-step}
 
+/* COMPARISON SECTION */
+.comp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:48px 0 52px}
+.comp-stat{text-align:center;padding:32px 20px;background:#fff;border:1px solid var(--g200);border-radius:var(--r-lg)}
+.comp-stat-num{font-family:'Poppins',sans-serif;font-size:2.6rem;font-weight:900;color:var(--gold-d);line-height:1;margin-bottom:10px}
+.comp-stat-desc{font-size:.88rem;color:var(--g500);line-height:1.6}
+.comp-table-wrap{overflow-x:auto;border-radius:var(--r-lg);border:1px solid var(--g200);margin-top:0}
+.comp-table{width:100%;border-collapse:collapse;font-size:.9rem}
+.comp-table th,.comp-table td{padding:14px 18px;text-align:left;border-bottom:1px solid var(--g200)}
+.comp-table th{background:var(--dark2);color:rgba(255,255,255,.8);font-weight:600}
+.comp-table th.col-rmh{background:var(--gold);color:var(--dark);font-weight:800}
+.comp-table td.col-rmh{background:var(--gold-l);font-weight:600;color:var(--dark2)}
+.comp-table tr:last-child td{border-bottom:none}
+.comp-table .check{color:#16a34a;font-weight:800}
+.comp-table .cross{color:#dc2626}
+.comp-table .partial{color:#d97706}
+.comp-cta-box{background:linear-gradient(135deg,var(--dark2),var(--dark3));border-radius:var(--r-lg);padding:36px 40px;margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap}
+.comp-cta-box h3{color:#fff;font-size:1.2rem;margin-bottom:6px}
+.comp-cta-box p{color:rgba(255,255,255,.55);font-size:.9rem;margin:0}
+.comp-cta-btns{display:flex;gap:12px;flex-shrink:0;flex-wrap:wrap}
+.gold-em{color:var(--gold-d)}
+@media(max-width:768px){
+  .comp-stats{grid-template-columns:1fr;gap:14px}
+  .comp-stat{padding:20px 16px}
+  .comp-stat-num{font-size:2rem}
+  .comp-cta-box{padding:24px 20px;flex-direction:column;text-align:center}
+}
+
 /* CTA FINAL */
 .cta-final{background:linear-gradient(135deg,var(--dark2),#0e0e1a);padding:96px 40px;text-align:center}
 .cta-final h2{color:#fff;margin-bottom:16px}
@@ -212,7 +239,105 @@ footer{background:var(--dark);padding:48px 40px;border-top:1px solid rgba(201,16
     <a href="https://researchmind-homiletic-6xkzkdafwha37jdw5g7mapp.streamlit.app" target="_blank" rel="noopener" class="btn-hero btn-hero-outline" data-umami-event="Demo-Homiletic-Hero">▶ Încearcă Demo Gratuit</a>
     <a href="https://buy.stripe.com/bJe28rcFJbAi7uo0wIgUM00" target="_blank" rel="noopener" class="btn-hero btn-hero-gold" data-umami-event="Cumparare-Homiletic-Hero">Cumpără licență PRO — €30/an</a>
   </div>
-  <p class="hero-note">Demo: 2 căutări gratuite · Fără instalare · Fără card bancar</p>
+  <p class="hero-note">Demo: 2 rapoarte complete gratuit · Fără instalare · Fără card bancar</p>
+</section>
+
+<!-- DE CE RESEARCHMIND -->
+<section class="section section-alt" id="de-ce">
+<div class="wrap">
+  <span class="label">De ce ResearchMind?</span>
+  <h2>Singurul instrument AI construit pentru <em class="gold-em">preoții ortodocși</em></h2>
+  <p class="sub">Instrumentele occidentale nu știu ce este Apostolul duminicii, nu găsesc Sfinții Părinți în română și costă de 10× mai mult. ResearchMind schimbă asta.</p>
+
+  <div class="comp-stats">
+    <div class="comp-stat">
+      <div class="comp-stat-num">12.500+</div>
+      <div class="comp-stat-desc">preoți ortodocși în România care pregătesc o predică în fiecare duminică și sărbătoare</div>
+    </div>
+    <div class="comp-stat">
+      <div class="comp-stat-num">€30/an</div>
+      <div class="comp-stat-desc">față de $240–360/an la SermonAI sau Sermonly — de <strong>8–12× mai accesibil</strong></div>
+    </div>
+    <div class="comp-stat">
+      <div class="comp-stat-num">0</div>
+      <div class="comp-stat-desc">concurenți direcți în spațiul ortodox românesc — niciun alt instrument similar nu există</div>
+    </div>
+  </div>
+
+  <div class="comp-table-wrap">
+  <table class="comp-table">
+    <thead>
+      <tr>
+        <th>Caracteristică</th>
+        <th class="col-rmh">✝ ResearchMind</th>
+        <th>SermonAI ($29/lună)</th>
+        <th>ChatGPT ($20/lună)</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Calendar liturgic BOR</td>
+        <td class="col-rmh"><span class="check">✓</span> Complet (2026–2027)</td>
+        <td><span class="cross">✗</span> Nu</td>
+        <td><span class="cross">✗</span> Nu</td>
+      </tr>
+      <tr>
+        <td>Pericope evanghelie + apostol</td>
+        <td class="col-rmh"><span class="check">✓</span> Import automat</td>
+        <td><span class="partial">~</span> Parțial</td>
+        <td><span class="cross">✗</span> Manual</td>
+      </tr>
+      <tr>
+        <td>Surse patristice în română</td>
+        <td class="col-rmh"><span class="check">✓</span> Prioritizate</td>
+        <td><span class="cross">✗</span> Nu</td>
+        <td><span class="cross">✗</span> Nu</td>
+      </tr>
+      <tr>
+        <td>Verificare citate patristice</td>
+        <td class="col-rmh"><span class="check">✓</span> Anti-halucinate</td>
+        <td><span class="cross">✗</span> Nu</td>
+        <td><span class="cross">✗</span> Nu</td>
+      </tr>
+      <tr>
+        <td>Raport structurat în română</td>
+        <td class="col-rmh"><span class="check">✓</span> 12 secțiuni</td>
+        <td><span class="partial">~</span> Structură simplă</td>
+        <td><span class="partial">~</span> Necesită prompt</td>
+      </tr>
+      <tr>
+        <td>Export Word (.docx)</td>
+        <td class="col-rmh"><span class="check">✓</span> Inclus</td>
+        <td><span class="check">✓</span> Inclus</td>
+        <td><span class="cross">✗</span> Nu</td>
+      </tr>
+      <tr>
+        <td>Fără instalare</td>
+        <td class="col-rmh"><span class="check">✓</span> Browser</td>
+        <td><span class="check">✓</span> Browser</td>
+        <td><span class="check">✓</span> Browser</td>
+      </tr>
+      <tr>
+        <td><strong>Preț anual</strong></td>
+        <td class="col-rmh"><strong>€30/an</strong></td>
+        <td>$348/an</td>
+        <td>$240/an</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="comp-cta-box">
+    <div>
+      <h3>Pregătire completă pentru €2,50/lună</h3>
+      <p>Acces nelimitat la toate funcționalitățile · Calendar BOR · Raport în română · Export Word</p>
+    </div>
+    <div class="comp-cta-btns">
+      <a href="https://researchmind-homiletic-6xkzkdafwha37jdw5g7mapp.streamlit.app" target="_blank" rel="noopener" class="btn-demo" data-umami-event="Demo-DeCe">Demo gratuit</a>
+      <a href="https://buy.stripe.com/bJe28rcFJbAi7uo0wIgUM00" target="_blank" rel="noopener" class="btn-gold" data-umami-event="Cumparare-DeCe">Cumpără — €30/an</a>
+    </div>
+  </div>
+</div>
 </section>
 
 <!-- FUNCTII -->
