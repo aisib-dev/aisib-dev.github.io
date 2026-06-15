@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ResearchMind Homiletic — prezentare</title>
+<meta name="description" content="Asistent de cercetare omiletică ortodoxă: predici, cuvinte pastorale și documente, cu surse reale și export Word.">
+<style>
+  /* Paleta EXACTĂ a aplicației (.streamlit/config.toml + CSS app) */
+  :root{ --gold:#b8923a; --gold-l:#c9a96e; --gold-d:#a07840; --navy:#1a1a2e; --bg:#fbf9f5; --bg2:#f3ece1; --card:#fff; --ink:#262320; --muted:#6b6257; --cream:#e8d5b7; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  body{ font-family:-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--ink); line-height:1.6; }
+  .wrap{ max-width:880px; margin:0 auto; padding:0 18px; }
+  /* Header — identic cu .rmh-header din aplicație */
+  header{ background:linear-gradient(135deg,#1a1a2e 0%,#2d1b69 100%); color:#fff; padding:34px 18px 30px; text-align:center; border-bottom:3px solid var(--gold); }
+  header h1{ font-size:1.7rem; color:var(--cream); margin-bottom:6px; }
+  header p{ color:var(--gold-l); font-size:.98rem; }
+  header .sub{ color:rgba(255,255,255,.6); font-size:.82rem; margin-top:10px; max-width:600px; margin-left:auto; margin-right:auto; }
+  /* Sections */
+  section{ padding:34px 0; }
+  section:nth-of-type(even){ background:var(--bg2); }
+  h2{ font-size:1.35rem; color:var(--navy); margin-bottom:6px; text-align:center; }
+  h2::after{ content:""; display:block; width:46px; height:3px; background:var(--gold); border-radius:3px; margin:9px auto 0; }
+  .lead{ text-align:center; color:var(--muted); max-width:640px; margin:0 auto 22px; }
+  /* Feature pills */
+  .pills{ display:flex; flex-wrap:wrap; gap:8px; justify-content:center; margin:8px 0 4px; }
+  .pill{ background:#f3ece1; border:1px solid #e3d6bf; color:#5a4f3f; border-radius:20px; padding:6px 14px; font-size:.9rem; }
+  /* Videos */
+  .videos{ display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+  @media(max-width:640px){ .videos{ grid-template-columns:1fr; } }
+  .vcard{ background:var(--card); border:1px solid #ece3d2; border-radius:14px; overflow:hidden; box-shadow:0 4px 18px rgba(0,0,0,.05); }
+  .vcard video{ width:100%; display:block; background:#000; }
+  .vcard .vlabel{ padding:11px 14px; font-weight:700; color:var(--navy); border-top:1px solid #f0e9da; }
+  .vcard .vlabel small{ display:block; font-weight:400; color:var(--muted); font-size:.82rem; margin-top:2px; }
+  /* Carousel */
+  .carousel{ position:relative; background:var(--card); border:1px solid #ece3d2; border-radius:14px; overflow:hidden; box-shadow:0 4px 18px rgba(0,0,0,.05); }
+  .slides{ display:flex; transition:transform .35s ease; }
+  .slides img{ min-width:100%; width:100%; display:block; object-fit:contain; max-height:560px; background:#fbf9f5; }
+  .cbtn{ position:absolute; top:50%; transform:translateY(-50%); background:rgba(26,26,46,.62); color:#fff; border:none; width:42px; height:42px; border-radius:50%; font-size:1.3rem; cursor:pointer; display:flex; align-items:center; justify-content:center; }
+  .cbtn:hover{ background:var(--gold); }
+  .prev{ left:10px; } .next{ right:10px; }
+  .dots{ display:flex; gap:7px; justify-content:center; padding:12px 0 2px; }
+  .dot{ width:9px; height:9px; border-radius:50%; background:#ddd2bd; border:none; cursor:pointer; }
+  .dot.active{ background:var(--gold); }
+  /* CTA */
+  .cta{ text-align:center; background:#f3ece1; border-radius:16px; padding:30px 18px; }
+  .btn{ display:inline-block; background:linear-gradient(135deg,#c9a96e,#a07840); color:#1a1a2e; font-weight:800; text-decoration:none; padding:15px 34px; border-radius:12px; font-size:1.08rem; box-shadow:0 4px 16px rgba(184,146,58,.35); }
+  .btn:hover{ filter:brightness(1.05); }
+  .install{ margin-top:18px; font-size:.9rem; color:var(--muted); max-width:600px; margin-left:auto; margin-right:auto; text-align:left; background:#fff; border:1px solid #ece3d2; border-radius:10px; padding:12px 16px; }
+  .install b{ color:var(--ink); }
+  footer{ text-align:center; color:var(--muted); font-size:.8rem; padding:26px 18px 40px; border-top:1px solid #ece3d2; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <h1>✝️ ResearchMind Homiletic</h1>
+    <p>Cercetare omiletică ortodoxă · Surse reale · Export Word</p>
+    <p class="sub">Un ajutor privat pentru pregătirea predicii și a cuvintelor pastorale — nu este o aplicație oficială și nu este girată de Biserica Ortodoxă Română.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <h2>Ce face, pe scurt</h2>
+    <p class="lead">Alegeți materialul, completați câteva date și în câteva minute primiți o bază de lucru — pe care o verificați, o adaptați și o tipăriți în Word.</p>
+    <div class="pills">
+      <span class="pill">📖 Predică duminicală</span>
+      <span class="pill">💍 Cununie</span>
+      <span class="pill">🕯️ Înmormântare</span>
+      <span class="pill">🙏 Maslu · Parastas</span>
+      <span class="pill">🕊️ Necrolog</span>
+      <span class="pill">📋 Raport activitate</span>
+      <span class="pill">📜 Adeverințe</span>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:6px">
+  <div class="wrap">
+    <h2>Vedeți cum funcționează</h2>
+    <p class="lead">Două înregistrări scurte, de pe telefon.</p>
+    <div class="videos">
+      <div class="vcard">
+        <video controls preload="metadata" playsinline poster="app1.jpg">
+          <source src="predica.mp4" type="video/mp4">
+        </video>
+        <div class="vlabel">🎥 Generarea unei predici<small>de la alegerea duminicii până la export Word</small></div>
+      </div>
+      <div class="vcard">
+        <video controls preload="metadata" playsinline poster="desktop.png">
+          <source src="adeverinta.mp4" type="video/mp4">
+        </video>
+        <div class="vlabel">🎥 Generarea unei adeverințe<small>document oficial, pe șablon fix</small></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:6px">
+  <div class="wrap">
+    <h2>Din aplicație</h2>
+    <p class="lead">Câteva imagini.</p>
+    <div class="carousel">
+      <div class="slides" id="slides">
+        <img src="desktop.png" alt="Aplicația — varianta desktop">
+        <img src="app1.jpg" alt="Aplicația — captură 1">
+        <img src="app2.jpg" alt="Aplicația — captură 2">
+        <img src="app3.jpg" alt="Aplicația — captură 3">
+        <img src="app4.jpg" alt="Aplicația — captură 4">
+        <img src="app5.jpg" alt="Aplicația — captură 5">
+      </div>
+      <button class="cbtn prev" onclick="move(-1)" aria-label="Înapoi">‹</button>
+      <button class="cbtn next" onclick="move(1)" aria-label="Înainte">›</button>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="cta">
+      <h2 style="margin-bottom:10px">Încercați gratuit</h2>
+      <p class="lead" style="margin-bottom:18px">Fără nicio obligație. Deschideți pe telefon sau pe calculator.</p>
+      <a class="btn" href="https://app.researchmind.org" target="_blank" rel="noopener">▶ Deschide aplicația</a>
+      <div class="install">
+        📱 <b>Ca s-o aveți ca aplicație pe telefon:</b><br>
+        • <b>Android</b> (Chrome): deschideți linkul → meniul <b>⋮</b> → „Adaugă pe ecranul principal".<br>
+        • <b>iPhone</b> (Safari): deschideți linkul → butonul <b>Share</b> → „Adaugă la ecranul principal".
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    ResearchMind Homiletic — instrument privat de sprijin pastoral. Nu este o aplicație oficială și nu este realizată, avizată sau girată de Biserica Ortodoxă Română. Materialele generate trebuie verificate, adaptate și asumate de utilizator.
+  </div>
+</footer>
+
+<script>
+  const slides = document.getElementById('slides');
+  const total  = slides.children.length;
+  const dotsEl = document.getElementById('dots');
+  let idx = 0;
+  for(let i=0;i<total;i++){
+    const d=document.createElement('button');
+    d.className='dot'+(i===0?' active':'');
+    d.onclick=()=>go(i);
+    dotsEl.appendChild(d);
+  }
+  function render(){
+    slides.style.transform='translateX(-'+(idx*100)+'%)';
+    [...dotsEl.children].forEach((d,i)=>d.classList.toggle('active',i===idx));
+  }
+  function go(i){ idx=(i+total)%total; render(); }
+  function move(s){ go(idx+s); }
+</script>
+
+</body>
+</html>
