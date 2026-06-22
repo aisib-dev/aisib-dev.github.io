@@ -4,6 +4,8 @@
   <url><loc>https://researchmind.org/</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
   <url><loc>https://researchmind.org/en/</loc><lastmod>2026-06-04</lastmod><changefreq>weekly</changefreq><priority>0.95</priority></url>
   <url><loc>https://researchmind.org/afiliere/</loc><lastmod>2026-06-04</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <!-- Homiletic -->
+  <url><loc>https://researchmind.org/homiletic/prezentare/</loc><lastmod>2026-06-22</lastmod><changefreq>monthly</changefreq><priority>0.95</priority></url>
   <!-- Articole blog română -->
   <url><loc>https://researchmind.org/blog/ai-pentru-doctorat/</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
   <url><loc>https://researchmind.org/blog/chat-cu-pdf-cercetare/</loc><lastmod>2026-05-15</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
