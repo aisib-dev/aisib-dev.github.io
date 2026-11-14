@@ -169,5 +169,6 @@ form.order .small{font-size:14px;color:var(--muted);margin-top:12px}
 function setL(l){document.documentElement.lang=l;['en','ro','es'].forEach(function(x){var b=document.getElementById('b-'+x);if(b)b.setAttribute('aria-pressed',x===l?'true':'false')});document.getElementById('b-en').classList.toggle('on',l==='en');document.getElementById('b-ro').classList.toggle('on',l==='ro');document.getElementById('b-es').classList.toggle('on',l==='es');try{localStorage.setItem('cp-lang',l)}catch(e){}}
 (function(){var l;try{l=localStorage.getItem('cp-lang')}catch(e){}if(!l){var n=(navigator.language||'').slice(0,2);l=(n==='ro'||n==='es')?n:'en'}setL(l)})();
 </script>
+<script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
