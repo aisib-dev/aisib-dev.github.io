@@ -3,143 +3,204 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Candela Parohiei · Orthodox parish templates</title>
+<title>Candela Parohiei · Orthodox materials for children, families and parishes</title>
 <link rel="canonical" href="https://researchmind.org/">
-<meta property="og:title" content="Candela Parohiei · Orthodox parish templates">
-<meta property="og:image" content="https://researchmind.org/craciun.png">
-<meta name="description" content="Editable Canva templates for Orthodox parishes: service schedules, Nativity Fast, Theophany house blessings, carolers' diplomas. In Romanian and English; more languages coming.">
+<meta property="og:title" content="Candela Parohiei · Orthodox materials for children, families and parishes">
+<meta property="og:image" content="https://researchmind.org/pin/01.jpg">
+<meta name="description" content="Orthodox activity books for the Nativity Fast, word searches and parish templates. «My Road to Bethlehem» in Romanian (free), English, Italian, Spanish, French and German.">
 <meta name="p:domain_verify" content="dd4819493c5a8605da06d35e5d2343ef"/>
 <link rel="icon" type="image/png" href="/favicon.png">
-<meta property="og:description" content="Orthodox activity books, posters and catechesis for parishes and families. Independent project.">
+<meta property="og:description" content="Orthodox activity books, word searches and parish templates. Independent project.">
 <meta property="og:url" content="https://researchmind.org/">
 <meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
-:root{--ivory:#FBF6EC;--navy:#0F2B54;--bronze:#8E6420;--wine:#7F2113;--line:#E4D6B8;--muted:#4A5568}
+:root{--lapis:#14234A;--lapis2:#1E3566;--text:#1B2A4A;--perg:#F7F0E1;--hartie:#FFFBF2;--aur:#B8892E;--aurl:#E3C77E;--aurt:#8A6420;--porfir:#5B2840;--cinabru:#9E2B25;--line:#E4D7BC;--muted:#4A5568}
 *{box-sizing:border-box}
-body{margin:0;background:var(--ivory);color:var(--navy);font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:18px;line-height:1.6}
-.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
-header{border-bottom:1px solid var(--line)}
-.top{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px}
-.brand{font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;font-size:28px;font-weight:700;color:var(--navy);text-decoration:none}
-.brand span{color:var(--bronze)}
-.lang button{min-height:44px;min-width:44px;background:none;border:1px solid var(--line);color:var(--navy);padding:6px 12px;border-radius:20px;cursor:pointer;font:inherit;font-size:15px}
-.lang button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
-.hero{text-align:center;padding:64px 0 40px}
-.star{width:46px;height:46px;fill:var(--bronze)}
-h1{font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;font-size:clamp(34px,5vw,54px);line-height:1.15;margin:14px 0}
-.lead{max-width:680px;margin:0 auto;color:var(--muted)}
-.btn{display:inline-block;margin-top:26px;background:var(--wine);color:#fff;text-decoration:none;padding:14px 28px;border-radius:6px;font-weight:600}
-.btn:focus,.btn:hover{background:#5f170d}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:28px;padding:30px 0}
-.card{background:#fff;border:1px solid var(--line);border-radius:10px;overflow:hidden}
-.card img{width:100%;display:block;border-bottom:1px solid var(--line)}
-.card div{padding:16px 18px}
-.card h3{font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;font-size:24px;margin:0 0 4px}
-section h2{font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;font-size:34px;text-align:center;margin:48px 0 8px}
-.langs{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:18px 0 6px;padding:0;list-style:none}
-.langs li{border:1px solid var(--line);background:#fff;border-radius:20px;padding:6px 14px;font-size:16px}
-.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin:26px 0}
-.why p{margin:0;color:var(--muted)}
-.why b{display:block;color:var(--navy)}
-.despre{max-width:760px;margin:10px auto 26px;padding:18px 22px;background:#fff;border:1px solid var(--line);border-radius:10px}.despre h2{font-size:26px;margin:0 0 8px}.despre p{color:var(--muted);margin:0 0 10px}
-.caietband{display:flex;gap:18px;align-items:center;max-width:760px;margin:0 auto 26px;padding:14px 18px;background:#fff;border:1.5px solid #B89A5E;border-radius:10px;text-decoration:none;color:inherit}.caietband img{border-radius:4px;flex:none}.caietband b{display:block;font-size:19px;color:#7F2113}
-footer{border-top:1px solid var(--line);margin-top:60px;padding:26px 0;text-align:center;font-size:15px;color:var(--muted)}
-footer a{color:var(--navy)}
+body{margin:0;background:var(--perg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.6}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+a{color:var(--cinabru)}
+.kicker{font-family:'Cinzel',serif;font-weight:600;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--aurt)}
+.kicker:before,.kicker:after{content:'';display:inline-block;width:7px;height:7px;margin:0 14px 3px;background:currentColor;transform:rotate(45deg)}
+h1,h2,h3{font-family:'EB Garamond',Georgia,serif;font-weight:700;line-height:1.1;margin:0}
+/* antet */
+.topbar{position:absolute;left:0;right:0;top:0;z-index:3}
+.top{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;flex-wrap:wrap;gap:10px}
+.brand{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.12em;font-size:18px;color:#F6EFDD;text-decoration:none}
+.brand span{color:var(--aurl)}
+.lang button{min-height:40px;min-width:44px;background:none;border:1px solid rgba(227,199,126,.55);color:#F6EFDD;padding:4px 12px;border-radius:20px;cursor:pointer;font:inherit;font-size:15px;margin-left:4px}
+.lang button.on{background:var(--aurl);color:var(--lapis);border-color:var(--aurl)}
+/* hero */
+.hero{position:relative;overflow:hidden;color:#F6EFDD;text-align:center;padding:96px 20px 70px;
+ background:radial-gradient(ellipse 70% 45% at 50% 38%,rgba(227,199,126,.10),transparent 70%),radial-gradient(ellipse 120% 80% at 50% 0%,var(--lapis2) 0%,var(--lapis) 62%,#0F1A38 100%)}
+.hero:before{content:'';position:absolute;inset:14px;border:1.5px solid rgba(227,199,126,.6);pointer-events:none}
+.hero:after{content:'';position:absolute;inset:21px;border:1px solid rgba(227,199,126,.3);pointer-events:none}
+.hero .kicker{color:var(--aurl)}
+.hero h1{font-size:clamp(38px,6vw,66px);margin:14px auto 10px;max-width:820px}
+.hero h1 em{display:block;font-style:italic;font-weight:500;color:var(--aurl);font-size:.6em;margin-top:8px}
+.hero .lead{max-width:640px;margin:0 auto;color:#E9E2D2}
+.hero-art{position:relative;width:min(340px,80vw);height:330px;margin:34px auto 0}
+.absida{position:absolute;inset:0;border-radius:9999px 9999px 0 0;
+ -webkit-mask-image:linear-gradient(to bottom,#000 0%,#000 40%,transparent 82%);mask-image:linear-gradient(to bottom,#000 0%,#000 40%,transparent 82%);
+ background:
+  radial-gradient(circle at 40% 40%,rgba(255,248,215,.85) 0 1.4px,transparent 2.4px) 3px 5px/41px 37px,
+  repeating-linear-gradient(0deg,rgba(60,38,8,.26) 0 1px,transparent 1px 12px),
+  repeating-linear-gradient(90deg,rgba(60,38,8,.15) 0 1px,transparent 1px 13px),
+  conic-gradient(rgba(255,255,255,.07) 0 25%,rgba(0,0,0,.06) 0 50%,rgba(255,240,200,.05) 0 75%,rgba(0,0,0,.09) 0) 0 0/26px 24px,
+  radial-gradient(ellipse 75% 65% at 42% 22%,#F2D88E 0%,#D6AC4A 32%,#B8892E 62%,#8A6524 100%)}
+.hero-art img{position:absolute;left:50%;top:44px;transform:translateX(-50%);width:62%;box-shadow:0 0 0 2px var(--aurl),0 16px 34px rgba(0,0,0,.4)}
+.btns{margin-top:30px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-block;text-decoration:none;font-weight:600;padding:13px 26px;border-radius:4px;font-size:18px}
+.btn.aur{background:var(--aurl);color:var(--lapis)}
+.btn.contur{border:1.5px solid var(--aurl);color:#F6EFDD}
+.btn.aur:hover{background:#F2D88E}.btn.contur:hover{background:rgba(227,199,126,.12)}
+/* sectiuni */
+section{padding:56px 0 10px}
+.sec-h{text-align:center;margin-bottom:28px}
+.sec-h h2{font-size:clamp(30px,4vw,42px);margin-top:10px}
+.sec-h p{max-width:640px;margin:10px auto 0;color:var(--muted)}
+.cruce{display:block;margin:0 auto 6px;width:26px;height:26px;color:var(--aur)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,440px),1fr));gap:28px;max-width:960px;margin:0 auto}
+.prod{background:var(--hartie);border:1px solid var(--line);display:flex;flex-direction:column;position:relative}
+.prod:before{content:'';position:absolute;inset:6px;border:1px solid var(--line);pointer-events:none}
+.prod .img{background:var(--lapis);display:flex;align-items:center;justify-content:center;padding:22px;min-height:260px}
+.prod .img img{max-height:250px;width:auto;box-shadow:0 10px 24px rgba(0,0,0,.35)}
+.prod .body{padding:20px 24px 24px;display:flex;flex-direction:column;flex:1}
+.prod h3{font-size:27px;margin:8px 0 6px}
+.prod p{margin:0 0 14px;color:var(--muted);font-size:18px}
+.eticheta{font-family:'Cinzel',serif;font-size:12px;letter-spacing:.18em;color:var(--aurt)}
+.pret{font-weight:700;color:var(--cinabru);margin-bottom:14px}
+.prod .go{margin-top:auto;align-self:flex-start;background:var(--lapis);color:#F6EFDD;text-decoration:none;padding:11px 22px;border-radius:4px;font-weight:600}
+.prod .go:hover{background:var(--lapis2)}
+.prod .go.alt{background:none;border:1.5px solid var(--aur);color:var(--text)}
+.limbi{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 14px}
+.limbi a{border:1px solid var(--aur);border-radius:3px;padding:4px 10px;text-decoration:none;color:var(--text);font-size:16px;background:#fff}
+.limbi a:hover{background:var(--perg)}
+.curand{position:absolute;top:16px;right:16px;z-index:2;background:var(--porfir);color:#F6EFDD;font-family:'Cinzel',serif;font-size:11px;letter-spacing:.16em;padding:5px 10px}
+.despre{max-width:780px;margin:0 auto;text-align:center}
+.despre p{color:var(--muted)}
+.why{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:22px;margin:10px 0}
+.why p{margin:0;color:var(--muted);text-align:center}
+.why b{display:block;color:var(--text);font-size:21px;margin-bottom:4px}
+.why b:before{content:'';display:block;width:8px;height:8px;margin:0 auto 10px;background:var(--aur);transform:rotate(45deg)}
+form.order{max-width:640px;margin:20px auto 0;background:var(--hartie);border:1px solid var(--line);padding:24px}
+form.order label{display:block;font-weight:600;margin:14px 0 4px}
+form.order input,form.order select,form.order textarea{width:100%;padding:10px 12px;border:1.5px solid var(--aur);border-radius:3px;font:inherit;font-size:17px;background:#fff;color:var(--text)}
+form.order textarea{min-height:110px}
+form.order button{margin-top:20px;background:var(--lapis);color:#F6EFDD;border:0;padding:13px 28px;border-radius:4px;font:inherit;font-weight:600;cursor:pointer}
+.small{font-size:15px;color:var(--muted)}
+.hp{position:absolute;left:-9999px}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:26px 0;text-align:center;font-size:16px;color:var(--muted)}
+footer a{color:var(--text)}
 [data-l]{display:none}
 html[lang=en] [data-l=en],html[lang=ro] [data-l=ro],html[lang=es] [data-l=es]{display:revert}
-html[lang=en] .btn[data-l=en],html[lang=ro] .btn[data-l=ro],html[lang=es] .btn[data-l=es]{display:inline-block}
-
-.top{flex-wrap:wrap;gap:10px}
 img{max-width:100%;height:auto}
-h1{overflow-wrap:anywhere}
-form.order{max-width:640px;margin:20px auto 0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px}
-form.order label{display:block;font-weight:600;margin:14px 0 4px}
-form.order input,form.order select,form.order textarea{width:100%;padding:10px 12px;border:1.5px solid #8E6420;border-radius:6px;font:inherit;font-size:16px;background:var(--ivory);color:var(--navy)}
-form.order textarea{min-height:120px}
-form.order button{margin-top:20px;background:var(--wine);color:#fff;border:0;padding:14px 28px;border-radius:6px;font:inherit;font-weight:600;cursor:pointer}
-form.order .small{font-size:14px;color:var(--muted);margin-top:12px}
-.hp{position:absolute;left:-9999px}
+@media (max-width:600px){.hero{padding-top:110px}.hero-art{height:280px}}
 </style>
 </head>
 <body>
-<header><div class="wrap top">
+<div class="topbar"><div class="wrap top">
   <a class="brand" href="#">Candela <span>Parohiei</span></a>
   <div class="lang" role="group" aria-label="Language">
-    <button type="button" id="b-en" class="on" aria-pressed="true" onclick="setL('en')">EN</button>
-    <button type="button" id="b-ro" aria-pressed="false" onclick="setL('ro')">RO</button>
-    <button type="button" id="b-es" aria-pressed="false" onclick="setL('es')">ES</button>
+    <button type="button" id="b-en" class="on" aria-pressed="true" onclick="setL('en')">EN</button><button type="button" id="b-ro" aria-pressed="false" onclick="setL('ro')">RO</button><button type="button" id="b-es" aria-pressed="false" onclick="setL('es')">ES</button>
   </div>
-</div></header>
+</div></div>
+
+<header class="hero">
+  <div class="kicker"><span data-l="ro">Postul Nașterii Domnului</span><span data-l="en">The Nativity Fast</span><span data-l="es">Ayuno de la Natividad</span></div>
+  <h1><span data-l="ro">Materiale ortodoxe pentru copii, familii și parohii<em>simple, verificate, cu frumusețea Bisericii</em></span><span data-l="en">Orthodox materials for children, families and parishes<em>simple, carefully checked, with the beauty of the Church</em></span><span data-l="es">Materiales ortodoxos para niños, familias y parroquias<em>sencillos, revisados, con la belleza de la Iglesia</em></span></h1>
+  <p class="lead"><span data-l="ro">Caiete pentru serile din post, careuri cu versete și șabloane de afișe, în duh bizantin.</span><span data-l="en">Activity books for the evenings of the Fast, word searches with Bible verses and poster templates, in a Byzantine spirit.</span><span data-l="es">Cuadernos para las noches del Ayuno, sopas de letras con versículos y plantillas de carteles, con espíritu bizantino.</span></p>
+  <div class="hero-art"><div class="absida"></div><img src="/caiet/coperta.jpg" alt="" width="211" height="300"></div>
+  <div class="btns">
+    <a class="btn aur" href="/caiet/"><span data-l="ro">Caietul gratuit</span><span data-l="en">The free activity book</span><span data-l="es">El cuaderno gratuito</span></a>
+    <a class="btn contur" href="#materiale"><span data-l="ro">Toate materialele</span><span data-l="en">All materials</span><span data-l="es">Todos los materiales</span></a>
+  </div>
+</header>
 
 <main class="wrap">
-  <div class="hero">
-    <svg class="star" viewBox="0 0 100 100" aria-hidden="true"><path d="M50 0L58.4 29.7 85.4 14.6 70.3 41.6 100 50 70.3 58.4 85.4 85.4 58.4 70.3 50 100 41.6 70.3 14.6 85.4 29.7 58.4 0 50 29.7 41.6 14.6 14.6 41.6 29.7Z"/></svg>
-    <h1 data-l="en">Beautiful, simple templates for Orthodox parishes</h1>
-    <h1 data-l="ro">Șabloane frumoase și simple pentru parohiile ortodoxe</h1>
-    <h1 data-l="es">Plantillas bellas y sencillas para parroquias ortodoxas</h1>
-    <p class="lead" data-l="en">Service schedules, feast-day posters, carolers' diplomas and social media posts. Byzantine in spirit, liturgically accurate, editable for free in Canva in two minutes.</p>
-    <p class="lead" data-l="ro">Programul slujbelor, afișe de praznic, diplome pentru colindători și postări pentru rețele. În duh bizantin, corecte liturgic, editabile gratuit în Canva în două minute.</p>
-    <p class="lead" data-l="es">Horarios de oficios, carteles para las fiestas, diplomas para los grupos de villancicos y publicaciones para redes sociales. De espíritu bizantino, litúrgicamente correctas, editables gratis en Canva en dos minutos.</p>
-    <!-- butoanele spre sabloane: ascunse pana e gata kitul de parohie (14 nov)
-    <a class="btn" href="https://candelaparohiei.gumroad.com" data-l="en">See the templates</a>
-    <a class="btn" href="https://candelaparohiei.gumroad.com" data-l="ro">Vezi șabloanele</a>
-    <a class="btn" href="https://candelaparohiei.gumroad.com" data-l="es">Ver las plantillas</a>
-    -->
-  </div>
+  <section id="materiale">
+    <div class="sec-h">
+      <svg class="cruce" viewBox="0 0 100 100" aria-hidden="true"><path fill="currentColor" d="M43 4h14l-3 33 6 6 33-3v14l-33-3-6 6 3 33H43l3-33-6-6-33 3V43l33 3 6-6z"/></svg>
+      <div class="kicker"><span data-l="ro">Materialele noastre</span><span data-l="en">Our materials</span><span data-l="es">Nuestros materiales</span></div>
+      <h2><span data-l="ro">Pentru drumul spre Betleem</span><span data-l="en">For the road to Bethlehem</span><span data-l="es">Para el camino a Belén</span></h2>
+    </div>
+    <div class="grid">
+
+      <article class="prod">
+        <div class="img"><img src="/caiet/coperta.jpg" alt="Drumul meu spre Betleem" loading="lazy" width="176" height="250"></div>
+        <div class="body">
+          <div class="eticheta"><span data-l="ro">Caiet · 4-11 ani</span><span data-l="en">Activity book · ages 4-11</span><span data-l="es">Cuaderno · 4-11 años</span></div>
+          <h3>Drumul meu spre Betleem</h3>
+          <p><span data-l="ro">40 de seri spre Crăciun: un gând, Scriptura, sfântul zilei, o faptă bună și o stea de colorat. Pe telefon sau de tipărit.</span><span data-l="en">40 evenings to Christmas: a thought, Scripture, the saint of the day, a good deed and a star to colour. Romanian edition.</span><span data-l="es">40 noches hacia la Navidad: un pensamiento, la Escritura, el santo del día, una buena obra y una estrella. Edición en rumano.</span></p>
+          <div class="pret"><span data-l="ro">Gratuit</span><span data-l="en">Free</span><span data-l="es">Gratis</span></div>
+          <a class="go" href="/caiet/"><span data-l="ro">Descarcă</span><span data-l="en">Download</span><span data-l="es">Descargar</span></a>
+        </div>
+      </article>
+
+      <article class="prod">
+        <div class="img"><img src="/img/editie-EN.jpg" alt="My Road to Bethlehem" loading="lazy" width="250" height="250"></div>
+        <div class="body">
+          <div class="eticheta"><span data-l="ro">În 5 limbi · diaspora</span><span data-l="en">In 5 languages</span><span data-l="es">En 5 idiomas</span></div>
+          <h3><span data-l="ro">Caietul în alte limbi</span><span data-l="en">The book in your language</span><span data-l="es">El cuaderno en su idioma</span></h3>
+          <p><span data-l="ro">Același caiet, cu textul în limba țării în care cresc copiii; colindele rămân în română, cu traducere.</span><span data-l="en">The same book in the language your children speak at school; the carols stay in Romanian, with a translation.</span><span data-l="es">El mismo cuaderno en el idioma de la escuela de sus hijos; los villancicos quedan en rumano, con traducción.</span></p>
+          <div class="limbi">
+            <a href="https://candelaparohiei.gumroad.com/l/yvdqw">English</a><a href="https://candelaparohiei.gumroad.com/l/vczzep">Italiano</a><a href="https://candelaparohiei.gumroad.com/l/zvutxi">Español</a><a href="https://candelaparohiei.gumroad.com/l/idgzjj">Français</a><a href="https://candelaparohiei.gumroad.com/l/eadhj">Deutsch</a>
+          </div>
+          <div class="pret"><span data-l="ro">Plătiți cât doriți, chiar 0</span><span data-l="en">Pay what you want, even 0</span><span data-l="es">Pague lo que quiera, incluso 0</span></div>
+        </div>
+      </article>
+
+      <article class="prod">
+        <span class="curand"><span data-l="ro">În curând</span><span data-l="en">Coming soon</span><span data-l="es">Muy pronto</span></span>
+        <div class="img"><img src="/img/gaseste.jpg" alt="Găsește cuvântul pe drumul spre Betleem" loading="lazy" width="250" height="250"></div>
+        <div class="body">
+          <div class="eticheta"><span data-l="ro">Careuri · 7-11 ani</span><span data-l="en">Word search · ages 7-11</span><span data-l="es">Sopa de letras · 7-11 años</span></div>
+          <h3>Găsește cuvântul</h3>
+          <p><span data-l="ro">20 de careuri pentru Postul Nașterii, cu verset din Biblia Sinodală, 10 cuvinte și o întrebare pentru seara aceea. Alb-negru, ușor de tipărit.</span><span data-l="en">20 word searches for the Nativity Fast, each with a Bible verse, 10 words and a question for the evening. Romanian edition.</span><span data-l="es">20 sopas de letras para el Ayuno de la Natividad, con versículo, 10 palabras y una pregunta. Edición en rumano.</span></p>
+          <div class="pret"><span data-l="ro">Preț de lansare: 1,90 €</span><span data-l="en">Launch price: €1.90</span><span data-l="es">Precio de lanzamiento: 1,90 €</span></div>
+          <a class="go alt" href="/caiet/#abonare"><span data-l="ro">Anunțați-mă</span><span data-l="en">Notify me</span><span data-l="es">Avísenme</span></a>
+        </div>
+      </article>
+
+      <article class="prod">
+        <span class="curand"><span data-l="ro">În curând</span><span data-l="en">Coming soon</span><span data-l="es">Muy pronto</span></span>
+        <div class="img"><img src="/craciun.png" alt="Afiș cu programul slujbelor de Crăciun" loading="lazy" width="176" height="250"></div>
+        <div class="body">
+          <div class="eticheta"><span data-l="ro">Pentru parohii · Canva</span><span data-l="en">For parishes · Canva</span><span data-l="es">Para parroquias · Canva</span></div>
+          <h3><span data-l="ro">Kitul de parohie</span><span data-l="en">The parish kit</span><span data-l="es">El kit parroquial</span></h3>
+          <p><span data-l="ro">Programul slujbelor de Crăciun și din post, diploma pentru colindători, postări și felicitări, editabile gratuit în Canva.</span><span data-l="en">Christmas and Fast service schedules, a carolers' diploma, social posts and cards, editable for free in Canva.</span><span data-l="es">Horarios de oficios de Navidad y del Ayuno, diploma para los niños, publicaciones y tarjetas, editables gratis en Canva.</span></p>
+          <a class="go alt" href="/caiet/#abonare"><span data-l="ro">Anunțați-mă</span><span data-l="en">Notify me</span><span data-l="es">Avísenme</span></a>
+        </div>
+      </article>
+
+    </div>
+  </section>
 
   <section class="despre" id="despre">
-    <h2 data-l="ro">Despre acest proiect</h2><h2 data-l="en">About this project</h2><h2 data-l="es">Sobre este proyecto</h2>
+    <div class="sec-h"><div class="kicker"><span data-l="ro">Despre noi</span><span data-l="en">About us</span><span data-l="es">Sobre nosotros</span></div></div>
     <p data-l="ro"><b>Candela Parohiei este un proiect independent.</b> Nu ține de nicio eparhie, parohie sau instituție bisericească și nu vorbește în numele lor. Suntem creștini ortodocși și ne dorim ca, prin aceste mijloace simple, cuvântul lui Dumnezeu să fie ziditor în inimile copiilor și în parohiile la care ajung materialele noastre.</p>
     <p data-l="en"><b>Candela Parohiei is an independent project.</b> It does not belong to any diocese, parish or church institution and does not speak on their behalf. We are Orthodox Christians, and our hope is that, through these simple means, the word of God may build up the hearts of children and the parishes our materials reach.</p>
     <p data-l="es"><b>Candela Parohiei es un proyecto independiente.</b> No pertenece a ninguna diócesis, parroquia o institución eclesiástica y no habla en su nombre. Somos cristianos ortodoxos y deseamos que, por estos medios sencillos, la palabra de Dios edifique los corazones de los niños y las parroquias a las que llegan nuestros materiales.</p>
-    <p data-l="ro">Fiecare text e verificat înainte să ajungă la dumneavoastră: versetele, cuvânt cu cuvânt, pe Biblia ortodoxă; rugăciunile, după Ceaslov; citirile zilei, după calendarul Bisericii. Nu folosim chipuri de sfinți desenate sau generate de calculator; icoanele care apar sunt icoane vechi, în domeniul public.</p>
-    <p data-l="en">Every text is checked before it reaches you: Bible verses word by word, prayers against the Horologion, daily readings against the Church calendar. We never use drawn or computer-generated faces of saints; the icons you see are historic icons in the public domain.</p>
-    <p data-l="es">Cada texto se revisa antes de llegar a usted: los versículos, palabra por palabra; las oraciones, según el Horologion; las lecturas del día, según el calendario de la Iglesia. No usamos rostros de santos dibujados ni generados por ordenador; los iconos que aparecen son iconos antiguos de dominio público.</p>
-  </section>
-
-  <a class="caietband" href="/caiet/"><img src="/caiet/coperta.jpg" alt="" width="90" height="127"><span><b data-l="ro">Gratuit: caietul «Drumul meu spre Betleem»</b><b data-l="en">Free (Romanian): «My Road to Bethlehem» activity book</b><b data-l="es">Gratis (en rumano): cuaderno «Mi camino a Belén»</b><span data-l="ro">40 de seri spre Crăciun, pentru copii de 4-11 ani. Descărcați PDF-ul pentru telefon sau pentru tipar.</span><span data-l="en">40 evenings to Christmas for children aged 4-11. Also in English, Italian, Spanish, French and German.</span><span data-l="es">40 noches hacia la Navidad, para niños de 4 a 11 años. También en español, italiano, francés, alemán e inglés.</span></span></a>
-
-  <div class="cards">
-    <div class="card"><img src="craciun.png" alt="Christmas service schedule poster with Byzantine border" loading="lazy" width="424" height="600">
-      <div><h3 data-l="en">Nativity service schedule</h3><h3 data-l="ro">Programul slujbelor de Crăciun</h3><h3 data-l="es">Horario de la Natividad</h3>
-      <p data-l="en">Christmas Eve to St Stephen, with space for your parish logo.</p>
-      <p data-l="ro">De la Ajun până la Sfântul Ștefan, cu loc pentru sigla parohiei.</p>
-      <p data-l="es">De la Nochebuena a San Esteban, con espacio para el logo de la parroquia.</p></div></div>
-    <div class="card"><img src="post.png" alt="Nativity Fast poster with Greek key border" loading="lazy" width="424" height="600">
-      <div><h3 data-l="en">Nativity Fast</h3><h3 data-l="ro">Postul Nașterii Domnului</h3><h3 data-l="es">Ayuno de la Natividad</h3>
-      <p data-l="en">Weekly services, confession times and a gentle word about the fast.</p>
-      <p data-l="ro">Slujbele din săptămână, Spovedania și un cuvânt despre post.</p>
-      <p data-l="es">Oficios de la semana, horario de confesiones y una palabra sobre el ayuno.</p></div></div>
-  </div>
-
-  <section>
-    <h2 data-l="en">In your parish's language</h2><h2 data-l="ro">În limba parohiei dumneavoastră</h2><h2 data-l="es">En la lengua de su parroquia</h2>
-    <ul class="langs"><li>Română</li><li>English</li><li>Italiano · <i data-l="en">soon</i><i data-l="ro">în curând</i><i data-l="es">pronto</i></li><li>Español · <i data-l="en">soon</i><i data-l="ro">în curând</i><i data-l="es">pronto</i></li><li>Français · <i data-l="en">soon</i><i data-l="ro">în curând</i><i data-l="es">pronto</i></li><li>Deutsch · <i data-l="en">soon</i><i data-l="ro">în curând</i><i data-l="es">pronto</i></li></ul>
-    <p class="lead" style="text-align:center" data-l="en">Bilingual editions for Romanian parishes in the UK, Italy, Spain, France and Germany. More languages and editions are coming.</p>
-    <p class="lead" style="text-align:center" data-l="ro">Ediții bilingve pentru parohiile românești din Marea Britanie, Italia, Spania, Franța și Germania. Alte limbi și ediții vin în curând.</p>
-    <p class="lead" style="text-align:center" data-l="es">Ediciones bilingües para las parroquias rumanas del Reino Unido, Italia, España, Francia y Alemania. Pronto, más idiomas y ediciones.</p>
-  </section>
-
-  <section>
-    <h2 data-l="en">Why Candela Parohiei</h2><h2 data-l="ro">De ce Candela Parohiei</h2><h2 data-l="es">Por qué Candela Parohiei</h2>
     <div class="why">
-      <p data-l="en"><b>Liturgically checked</b>Every service name and feast title is verified against the liturgical books.</p>
-      <p data-l="ro"><b>Verificate liturgic</b>Fiecare slujbă și titulatură e verificată după cărțile de cult.</p>
-    <p data-l="es"><b>Revisadas litúrgicamente</b>Cada oficio y cada título de fiesta se comprueba con los libros litúrgicos.</p>
-      <p data-l="en"><b>Byzantine, not commercial</b>Stars, crosses and meanders. No snowflakes, no reindeer.</p>
-      <p data-l="ro"><b>Bizantine, nu comerciale</b>Stele, cruci și meandre. Fără fulgi și fără reni.</p>
-    <p data-l="es"><b>Bizantinas, no comerciales</b>Estrellas, cruces y meandros. Sin copos de nieve ni renos.</p>
-      <p data-l="en"><b>Readable from the church door</b>High contrast, large type, tested on phones.</p>
-      <p data-l="ro"><b>Lizibile de la ușa bisericii</b>Contrast mare, litere mari, verificate pe telefon.</p>
-    <p data-l="es"><b>Legibles desde la puerta de la iglesia</b>Alto contraste, letra grande, probadas en el móvil.</p>
-      <p data-l="en"><b>Free Canva account is enough</b>Change the name, times and address in minutes.</p>
-      <p data-l="ro"><b>Ajunge contul gratuit de Canva</b>Schimbați numele, orele și adresa în câteva minute.</p>
-    <p data-l="es"><b>Basta una cuenta gratuita de Canva</b>Cambie el nombre, los horarios y la dirección en minutos.</p>
+      <p data-l="ro"><b>Verificate</b>Versetele, cuvânt cu cuvânt, pe Biblia Sinodală; sfinții și sărbătorile, după calendarul Bisericii.</p>
+      <p data-l="en"><b>Checked</b>Bible verses word by word; saints and feasts against the Church calendar.</p>
+      <p data-l="es"><b>Revisados</b>Versículos palabra por palabra; santos y fiestas según el calendario de la Iglesia.</p>
+      <p data-l="ro"><b>Bizantine, nu comerciale</b>Aurul mozaicurilor și culorile icoanelor. Fără reni și fără sclipici.</p>
+      <p data-l="en"><b>Byzantine, not commercial</b>The gold of mosaics and the colours of icons. No reindeer, no glitter.</p>
+      <p data-l="es"><b>Bizantinos, no comerciales</b>El oro de los mosaicos y los colores de los iconos. Sin renos ni purpurina.</p>
+      <p data-l="ro"><b>Icoane vechi</b>Nu folosim chipuri de sfinți desenate sau generate de calculator.</p>
+      <p data-l="en"><b>Historic icons</b>We never use drawn or computer-generated faces of saints.</p>
+      <p data-l="es"><b>Iconos antiguos</b>No usamos rostros de santos dibujados ni generados por ordenador.</p>
+      <p data-l="ro"><b>În limba copiilor</b>Română, engleză, italiană, spaniolă, franceză și germană.</p>
+      <p data-l="en"><b>In your children's language</b>Romanian, English, Italian, Spanish, French and German.</p>
+      <p data-l="es"><b>En el idioma de sus hijos</b>Rumano, inglés, italiano, español, francés y alemán.</p>
     </div>
   </section>
+
   <section id="order">
-    <h2 data-l="en">Questions and requests</h2><h2 data-l="ro">Întrebări și cereri</h2><h2 data-l="es">Preguntas y solicitudes</h2>
-    <p class="lead" style="text-align:center"><span data-l="en">Need your parish's own schedule, another language or a template for a different feast? Write to us.</span><span data-l="ro">Aveți nevoie de programul parohiei dumneavoastră, de altă limbă sau de un șablon pentru alt praznic? Scrieți-ne.</span><span data-l="es">¿Necesita el horario de su parroquia, otro idioma o una plantilla para otra fiesta? Escríbanos.</span></p>
+    <div class="sec-h"><div class="kicker"><span data-l="ro">Scrieți-ne</span><span data-l="en">Write to us</span><span data-l="es">Escríbanos</span></div>
+    <h2><span data-l="en">Questions and requests</span><span data-l="ro">Întrebări și cereri</span><span data-l="es">Preguntas y solicitudes</span></h2>
+    <p><span data-l="en">Need your parish's own schedule, another language or a template for a different feast? Write to us.</span><span data-l="ro">Aveți nevoie de programul parohiei dumneavoastră, de altă limbă sau de un șablon pentru alt praznic? Scrieți-ne.</span><span data-l="es">¿Necesita el horario de su parroquia, otro idioma o una plantilla para otra fiesta? Escríbanos.</span></p></div>
     <form class="order" action="https://formsubmit.co/aisib@proton.me" method="POST">
       <input type="hidden" name="_subject" value="Candela Parohiei: întrebare nouă">
       <input type="hidden" name="_template" value="table">
@@ -150,25 +211,21 @@ form.order .small{font-size:14px;color:var(--muted);margin-top:12px}
       <input id="f-name" name="name" required autocomplete="name">
       <label for="f-email">E-mail</label>
       <input id="f-email" name="email" type="email" required autocomplete="email">
-      <label for="f-parish"><span data-l="en">Parish and city</span><span data-l="ro">Parohia și localitatea</span><span data-l="es">Parroquia y ciudad</span></label>
+      <label for="f-parish"><span data-l="en">Parish and city (optional)</span><span data-l="ro">Parohia și localitatea (opțional)</span><span data-l="es">Parroquia y ciudad (opcional)</span></label>
       <input id="f-parish" name="parish">
-      <label for="f-lang"><span data-l="en">Language of the template</span><span data-l="ro">Limba șablonului</span><span data-l="es">Idioma de la plantilla</span></label>
-      <select id="f-lang" name="language"><option>English</option><option>Română</option><option>Español</option><option>Italiano</option><option>Français</option><option>Deutsch</option><option>Română + Italiano</option><option>Română + Español</option><option>Română + Français</option><option>Română + Deutsch</option></select>
       <label for="f-msg"><span data-l="en">What do you need?</span><span data-l="ro">Ce vă trebuie?</span><span data-l="es">¿Qué necesita?</span></label>
       <textarea id="f-msg" name="message" required></textarea>
-      <p class="small"><span data-l="ro">Toate cumpărăturile se fac exclusiv prin platforma Gumroad, care este vânzătorul și emite documentele de plată. Formularul este doar pentru întrebări.</span><span data-l="en">All purchases are made only through the Gumroad platform, which is the seller and issues the receipts. This form is for questions only.</span><span data-l="es">Todas las compras se hacen solo a través de la plataforma Gumroad, que es el vendedor y emite los recibos. Este formulario es solo para preguntas.</span></p>
-      <p class="small"><span data-l="ro">Trimițând formularul, sunteți de acord cu <a href="/confidentialitate/">Politica de confidențialitate</a>.</span><span data-l="en">By sending this form you agree to our <a href="/confidentialitate/">Privacy policy</a>.</span><span data-l="es">Al enviar el formulario acepta nuestra <a href="/confidentialitate/">Política de privacidad</a>.</span></p>
+      <p class="small"><span data-l="ro">Toate cumpărăturile se fac exclusiv prin platforma Gumroad, care este vânzătorul și emite documentele de plată. Formularul este doar pentru întrebări. Trimițând formularul, sunteți de acord cu <a href="/confidentialitate/">Politica de confidențialitate</a>.</span><span data-l="en">All purchases are made only through Gumroad, which is the seller and issues the receipts. This form is for questions only. By sending it you agree to our <a href="/confidentialitate/">Privacy policy</a>.</span><span data-l="es">Todas las compras se hacen solo a través de Gumroad, que es el vendedor y emite los recibos. Este formulario es solo para preguntas. Al enviarlo acepta nuestra <a href="/confidentialitate/">Política de privacidad</a>.</span></p>
       <button type="submit"><span data-l="en">Send</span><span data-l="ro">Trimite</span><span data-l="es">Enviar</span></button>
-      <p class="small"><span data-l="en">We reply by e-mail, usually within two days. Your details are used only to answer you.</span><span data-l="ro">Răspundem pe e-mail, de obicei în două zile. Datele dumneavoastră sunt folosite doar pentru răspuns.</span><span data-l="es">Respondemos por correo, normalmente en dos días. Sus datos solo se usan para responderle.</span></p>
     </form>
   </section>
 </main>
 
 <footer><div class="wrap">
-  <p>Candela Parohiei · <a href="mailto:aisib@proton.me">aisib@proton.me</a> · <a href="/confidentialitate/">Confidențialitate / Privacy</a> · <a href="/termeni/">Termeni / Terms</a> · <a href="/parere/">Părerea dumneavoastră</a></p><p style="font-size:13px">Proiect independent, fără legătură cu vreo eparhie sau parohie. / Independent project, not affiliated with any diocese or parish.</p>
+  <p>Candela Parohiei · <a href="mailto:aisib@proton.me">aisib@proton.me</a> · <a href="/confidentialitate/">Confidențialitate / Privacy</a> · <a href="/termeni/">Termeni / Terms</a> · <a href="/parere/">Părerea dumneavoastră</a></p><p style="font-size:14px">Proiect independent, fără legătură cu vreo eparhie sau parohie. / Independent project, not affiliated with any diocese or parish.</p>
 </div></footer>
 <script>
-function setL(l){document.documentElement.lang=l;['en','ro','es'].forEach(function(x){var b=document.getElementById('b-'+x);if(b)b.setAttribute('aria-pressed',x===l?'true':'false')});document.getElementById('b-en').classList.toggle('on',l==='en');document.getElementById('b-ro').classList.toggle('on',l==='ro');document.getElementById('b-es').classList.toggle('on',l==='es');try{localStorage.setItem('cp-lang',l)}catch(e){}}
+function setL(l){document.documentElement.lang=l;['en','ro','es'].forEach(function(x){var b=document.getElementById('b-'+x);if(b){b.setAttribute('aria-pressed',x===l?'true':'false');b.classList.toggle('on',x===l)}});try{localStorage.setItem('cp-lang',l)}catch(e){}}
 (function(){var l;try{l=localStorage.getItem('cp-lang')}catch(e){}if(!l){var n=(navigator.language||'').slice(0,2);l=(n==='ro'||n==='es')?n:'en'}setL(l)})();
 </script>
 <script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
