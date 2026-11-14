@@ -1,4 +1,64 @@
-<!doctype html><html lang="ro"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Mulțumim · Candela Parohiei</title><meta name="robots" content="noindex">
-<style>body{margin:0;background:#FBF6EC;color:#0F2B54;font-family:Georgia,serif;font-size:19px;text-align:center;padding:60px 20px}h1{color:#7F2113}a{color:#7F2113}</style></head>
-<body><h1>Vă mulțumim!</h1><p>Mesajul dumneavoastră a ajuns la noi. Dacă ne-ați lăsat o părere, ne ajută să facem materiale mai bune; dacă v-ați abonat sau ne-ați pus o întrebare, vă scriem pe e-mail.</p><p>Drum bun spre Betleem!</p><p><a href="/">Candela Parohiei</a></p><script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-</body></html>
+<!doctype html>
+<html lang="ro" data-doctitle-ro="Mulțumim · Candela Parohiei" data-doctitle-en="Thank you · Candela Parohiei" data-doctitle-es="Gracias · Candela Parohiei">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mulțumim · Candela Parohiei</title>
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<style>
+:root{--lapis:#14234A;--lapis2:#1E3566;--text:#1B2A4A;--perg:#F7F0E1;--hartie:#FFFBF2;--aur:#B8892E;--aurl:#E3C77E;--aurt:#8A6420;--cinabru:#9E2B25;--line:#E4D7BC;--muted:#4A5568}
+*{box-sizing:border-box}
+body{margin:0;background:var(--perg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.6}
+a{color:var(--cinabru)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.topbar{background:var(--lapis);border-bottom:4px double var(--aurl)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;flex-wrap:wrap;gap:10px}
+.brand{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.12em;font-size:18px;color:#F6EFDD;text-decoration:none}
+.brand span{color:var(--aurl)}
+.lang button{min-height:40px;min-width:44px;background:none;border:1px solid rgba(227,199,126,.55);color:#F6EFDD;padding:4px 12px;border-radius:20px;cursor:pointer;font:inherit;font-size:15px;margin-left:4px}
+.lang button.on{background:var(--aurl);color:var(--lapis);border-color:var(--aurl)}
+.kicker{font-family:'Cinzel',serif;font-weight:600;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--aurt)}
+.kicker:before,.kicker:after{content:'';display:inline-block;width:7px;height:7px;margin:0 14px 3px;background:currentColor;transform:rotate(45deg)}
+h1{font-family:'EB Garamond',Georgia,serif;font-weight:700;line-height:1.15;color:var(--lapis);margin:10px 0 18px;font-size:clamp(36px,5vw,50px)}
+.page{max-width:640px;margin:0 auto;padding:70px 20px 10px;text-align:center}
+.page p{margin:0 0 14px}
+.drum{font-style:italic;font-weight:500;color:var(--aurt);font-size:22px}
+.btn{display:inline-block;margin-top:14px;background:var(--lapis);color:#F6EFDD;text-decoration:none;padding:12px 26px;border-radius:4px;font-weight:600}
+.btn:hover{background:var(--lapis2)}
+footer{border-top:1px solid var(--line);margin-top:70px;padding:26px 0;text-align:center;font-size:16px;color:var(--muted)}
+footer a{color:var(--text)}
+[data-l]{display:none}
+html[lang=en] [data-l=en],html[lang=ro] [data-l=ro],html[lang=es] [data-l=es]{display:revert}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap top">
+  <a class="brand" href="/">Candela <span>Parohiei</span></a>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" id="b-en" aria-pressed="false" onclick="setL('en')">EN</button><button type="button" id="b-ro" class="on" aria-pressed="true" onclick="setL('ro')">RO</button><button type="button" id="b-es" aria-pressed="false" onclick="setL('es')">ES</button>
+  </div>
+</div></div>
+
+<main class="page">
+  <div class="kicker"><span data-l="ro">Mulțumim</span><span data-l="en">Thank you</span><span data-l="es">Gracias</span></div>
+  <h1><span data-l="ro">Vă mulțumim!</span><span data-l="en">Thank you!</span><span data-l="es">¡Muchas gracias!</span></h1>
+  <p data-l="ro">Mesajul dumneavoastră a ajuns la noi. Dacă ne-ați lăsat o părere, ne ajută să facem materiale mai bune; dacă v-ați abonat sau ne-ați pus o întrebare, vă scriem pe e-mail.</p>
+  <p data-l="en">Your message has reached us. If you left us your feedback, it helps us make better materials; if you subscribed or asked us a question, we will write to you by e-mail.</p>
+  <p data-l="es">Su mensaje nos ha llegado. Si nos ha dejado su opinión, nos ayuda a hacer mejores materiales; si se ha suscrito o nos ha hecho una pregunta, le escribiremos por correo electrónico.</p>
+  <p class="drum"><span data-l="ro">Drum bun spre Betleem!</span><span data-l="en">Safe journey to Bethlehem!</span><span data-l="es">¡Buen camino hacia Belén!</span></p>
+  <a class="btn" href="/"><span data-l="ro">Înapoi la prima pagină</span><span data-l="en">Back to the home page</span><span data-l="es">Volver a la página principal</span></a>
+</main>
+
+<footer><div class="wrap">
+  <p>Candela Parohiei · <a href="mailto:aisib@proton.me">aisib@proton.me</a> · <a href="/confidentialitate/"><span data-l="ro">Confidențialitate</span><span data-l="en">Privacy</span><span data-l="es">Privacidad</span></a> · <a href="/termeni/"><span data-l="ro">Termeni</span><span data-l="en">Terms</span><span data-l="es">Términos</span></a> · <a href="/parere/"><span data-l="ro">Părerea dumneavoastră</span><span data-l="en">Your feedback</span><span data-l="es">Su opinión</span></a></p>
+  <p style="font-size:14px"><span data-l="ro">Proiect independent, fără legătură cu vreo eparhie sau parohie.</span><span data-l="en">Independent project, not affiliated with any diocese or parish.</span><span data-l="es">Proyecto independiente, sin relación con ninguna diócesis o parroquia.</span></p>
+</div></footer>
+<script>
+function setL(l){if(['en','ro','es'].indexOf(l)<0)l='en';var d=document.documentElement;d.lang=l;['en','ro','es'].forEach(function(x){var b=document.getElementById('b-'+x);if(b){b.setAttribute('aria-pressed',x===l?'true':'false');b.classList.toggle('on',x===l)}});var t=d.getAttribute('data-doctitle-'+l);if(t)document.title=t;['alt','title','placeholder','aria-label'].forEach(function(a){var s=document.querySelectorAll('[data-'+a+'-'+l+']');for(var i=0;i<s.length;i++)s[i].setAttribute(a,s[i].getAttribute('data-'+a+'-'+l))});var o=document.querySelectorAll('[data-text-'+l+']');for(var j=0;j<o.length;j++)o[j].textContent=o[j].getAttribute('data-text-'+l);try{localStorage.setItem('cp-lang',l)}catch(e){}}
+(function(){var l=null;try{l=new URLSearchParams(location.search).get('l')}catch(e){}if(['en','ro','es'].indexOf(l)<0){l=null;try{l=localStorage.getItem('cp-lang')}catch(e){}}if(!l){var n=(navigator.language||'').slice(0,2);l=(n==='ro'||n==='es')?n:'en'}setL(l)})();
+</script>
+<script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

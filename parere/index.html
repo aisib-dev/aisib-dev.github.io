@@ -1,64 +1,107 @@
 <!doctype html>
-<html lang="ro">
+<html lang="ro" data-doctitle-ro="Părerea dumneavoastră · Candela Parohiei" data-doctitle-en="Your feedback · Candela Parohiei" data-doctitle-es="Su opinión · Candela Parohiei">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Părerea dumneavoastră · Candela Parohiei</title>
 <meta name="robots" content="noindex">
 <link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
-:root{--ivory:#FBF6EC;--navy:#0F2B54;--bronze:#8E6420;--wine:#7F2113;--line:#E4D6B8}
+:root{--lapis:#14234A;--lapis2:#1E3566;--text:#1B2A4A;--perg:#F7F0E1;--hartie:#FFFBF2;--aur:#B8892E;--aurl:#E3C77E;--aurt:#8A6420;--cinabru:#9E2B25;--line:#E4D7BC;--muted:#4A5568}
 *{box-sizing:border-box}
-body{margin:0;background:var(--ivory);color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.55}
-.w{max-width:620px;margin:0 auto;padding:28px 18px 50px}
-h1{color:var(--wine);font-size:28px;margin:6px 0 6px;text-align:center}
-p.l{text-align:center;color:#4A5568;margin-top:0}
-form{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px}
-label{display:block;font-weight:bold;margin:16px 0 6px}
-select,textarea,input[type=email]{width:100%;padding:11px 12px;border:1.5px solid #8E6420;border-radius:6px;font:inherit;font-size:16px;background:var(--ivory);color:var(--navy)}
+body{margin:0;background:var(--perg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.6}
+a{color:var(--cinabru)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.topbar{background:var(--lapis);border-bottom:4px double var(--aurl)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;flex-wrap:wrap;gap:10px}
+.brand{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.12em;font-size:18px;color:#F6EFDD;text-decoration:none}
+.brand span{color:var(--aurl)}
+.lang button{min-height:40px;min-width:44px;background:none;border:1px solid rgba(227,199,126,.55);color:#F6EFDD;padding:4px 12px;border-radius:20px;cursor:pointer;font:inherit;font-size:15px;margin-left:4px}
+.lang button.on{background:var(--aurl);color:var(--lapis);border-color:var(--aurl)}
+.kicker{font-family:'Cinzel',serif;font-weight:600;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--aurt)}
+.kicker:before,.kicker:after{content:'';display:inline-block;width:7px;height:7px;margin:0 14px 3px;background:currentColor;transform:rotate(45deg)}
+h1,h2,h3{font-family:'EB Garamond',Georgia,serif;font-weight:700;line-height:1.15;color:var(--lapis);margin:0}
+.page{max-width:660px;margin:0 auto;padding:44px 20px 10px}
+.page-h{text-align:center;margin-bottom:24px}
+.page-h h1{font-size:clamp(34px,5vw,46px);margin-top:10px}
+.page-h p{color:var(--muted);margin:10px 0 0}
+form{background:var(--hartie);border:1px solid var(--line);padding:24px;position:relative}
+form:before{content:'';position:absolute;inset:6px;border:1px solid var(--line);pointer-events:none}
+form>*{position:relative}
+form>label,.lbl{display:block;font-weight:600;margin:16px 0 6px}
+select,textarea,input[type=email]{width:100%;padding:10px 12px;border:1.5px solid var(--aur);border-radius:3px;font:inherit;font-size:17px;background:#fff;color:var(--text)}
 textarea{min-height:96px}
 .stele{display:flex;flex-direction:row-reverse;justify-content:center;gap:6px}
 .stele input{position:absolute;opacity:0;width:1px;height:1px}
-.stele label{margin:0;font-size:42px;line-height:1;color:#B8A77A;cursor:pointer;font-weight:normal}
-.stele input:checked ~ label,.stele label:hover,.stele label:hover ~ label{color:#C9A24E}
-.stele input:focus-visible + label{outline:2px solid var(--navy);border-radius:4px}
-button{margin-top:20px;width:100%;background:var(--wine);color:#fff;border:0;padding:14px;border-radius:6px;font:inherit;font-weight:bold;cursor:pointer}
-.mic{font-size:14px;color:#4A5568;margin-top:12px}
-.hp{position:absolute;left:-9999px}.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.stele label{margin:0;font-size:42px;line-height:1;color:#C9BC98;cursor:pointer;font-weight:normal}
+.stele input:checked ~ label,.stele label:hover,.stele label:hover ~ label{color:var(--aur)}
+.stele input:focus-visible + label{outline:2px solid var(--lapis);border-radius:4px}
+form button{margin-top:22px;width:100%;background:var(--lapis);color:#F6EFDD;border:0;padding:14px;border-radius:4px;font:inherit;font-weight:600;cursor:pointer;min-height:44px}
+form button:hover{background:var(--lapis2)}
+.small{font-size:15px;color:var(--muted);margin-top:12px}
+.hp{position:absolute!important;left:-9999px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:26px 0;text-align:center;font-size:16px;color:var(--muted)}
+footer a{color:var(--text)}
+[data-l]{display:none}
+html[lang=en] [data-l=en],html[lang=ro] [data-l=ro],html[lang=es] [data-l=es]{display:revert}
 </style>
 </head>
-<body><div class="w">
-<h1>Ne spuneți părerea?</h1>
-<p class="l">Ne ajută să facem materialele mai bune pentru copiii și familiile ortodoxe. Durează un minut.</p>
+<body>
+<div class="topbar"><div class="wrap top">
+  <a class="brand" href="/">Candela <span>Parohiei</span></a>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" id="b-en" aria-pressed="false" onclick="setL('en')">EN</button><button type="button" id="b-ro" class="on" aria-pressed="true" onclick="setL('ro')">RO</button><button type="button" id="b-es" aria-pressed="false" onclick="setL('es')">ES</button>
+  </div>
+</div></div>
+
+<main class="page">
+<div class="page-h">
+  <div class="kicker"><span data-l="ro">Părerea dumneavoastră</span><span data-l="en">Your feedback</span><span data-l="es">Su opinión</span></div>
+  <h1><span data-l="ro">Ne spuneți părerea?</span><span data-l="en">Will you tell us what you think?</span><span data-l="es">¿Nos da su opinión?</span></h1>
+  <p><span data-l="ro">Ne ajută să facem materialele mai bune pentru copiii și familiile ortodoxe. Durează un minut.</span><span data-l="en">It helps us make the materials better for Orthodox children and families. It takes a minute.</span><span data-l="es">Nos ayuda a mejorar los materiales para los niños y las familias ortodoxas. Le llevará un minuto.</span></p>
+</div>
 <form action="https://formsubmit.co/aisib@proton.me" method="POST">
 <input type="hidden" name="_subject" value="Candela Parohiei: părere nouă">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_next" value="https://researchmind.org/parere/multumim.html">
 <input type="hidden" name="_captcha" value="false">
-      <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
-<label for="prod">Despre ce material?</label>
+<input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label for="prod"><span data-l="ro">Despre ce material?</span><span data-l="en">Which material is it about?</span><span data-l="es">¿Sobre qué material?</span></label>
 <select id="prod" name="produs">
-<option>Drumul meu spre Betleem 2026 (caietul copiilor)</option>
-<option>Afișele de Crăciun și de Post</option>
-<option>Diploma colindătorilor</option>
-<option>Alt material</option>
+<option value="Drumul meu spre Betleem 2026 (caietul copiilor)" data-text-ro="Drumul meu spre Betleem 2026 (caietul copiilor)" data-text-en="Drumul meu spre Betleem 2026 (children's book)" data-text-es="Drumul meu spre Betleem 2026 (cuaderno infantil)">Drumul meu spre Betleem 2026 (caietul copiilor)</option>
+<option value="Afișele de Crăciun și de Post" data-text-ro="Afișele de Crăciun și de Post" data-text-en="The Christmas and Fast posters" data-text-es="Los carteles de Navidad y del Ayuno">Afișele de Crăciun și de Post</option>
+<option value="Diploma colindătorilor" data-text-ro="Diploma colindătorilor" data-text-en="The carollers' diploma" data-text-es="El diploma para los cantores de villancicos">Diploma colindătorilor</option>
+<option value="Alt material" data-text-ro="Alt material" data-text-en="Another material" data-text-es="Otro material">Alt material</option>
 </select>
-<label>Câte stele îi dați?</label>
-<div class="stele" role="radiogroup" aria-label="Nota de la 1 la 5 stele">
-<input type="radio" id="s5" name="stele" value="5" required><label for="s5" title="5 stele"><span aria-hidden="true">★</span><span class="sr">5 stele</span></label>
-<input type="radio" id="s4" name="stele" value="4"><label for="s4" title="4 stele"><span aria-hidden="true">★</span><span class="sr">4 stele</span></label>
-<input type="radio" id="s3" name="stele" value="3"><label for="s3" title="3 stele"><span aria-hidden="true">★</span><span class="sr">3 stele</span></label>
-<input type="radio" id="s2" name="stele" value="2"><label for="s2" title="2 stele"><span aria-hidden="true">★</span><span class="sr">2 stele</span></label>
-<input type="radio" id="s1" name="stele" value="1"><label for="s1" title="o stea"><span aria-hidden="true">★</span><span class="sr">o stea</span></label>
+<div class="lbl" id="lbl-stele"><span data-l="ro">Câte stele îi dați?</span><span data-l="en">How many stars would you give it?</span><span data-l="es">¿Cuántas estrellas le da?</span></div>
+<div class="stele" role="radiogroup" aria-labelledby="lbl-stele">
+<input type="radio" id="s5" name="stele" value="5" required><label for="s5" title="5 stele" data-title-ro="5 stele" data-title-en="5 stars" data-title-es="5 estrellas"><span aria-hidden="true">★</span><span class="sr"><span data-l="ro">5 stele</span><span data-l="en">5 stars</span><span data-l="es">5 estrellas</span></span></label>
+<input type="radio" id="s4" name="stele" value="4"><label for="s4" title="4 stele" data-title-ro="4 stele" data-title-en="4 stars" data-title-es="4 estrellas"><span aria-hidden="true">★</span><span class="sr"><span data-l="ro">4 stele</span><span data-l="en">4 stars</span><span data-l="es">4 estrellas</span></span></label>
+<input type="radio" id="s3" name="stele" value="3"><label for="s3" title="3 stele" data-title-ro="3 stele" data-title-en="3 stars" data-title-es="3 estrellas"><span aria-hidden="true">★</span><span class="sr"><span data-l="ro">3 stele</span><span data-l="en">3 stars</span><span data-l="es">3 estrellas</span></span></label>
+<input type="radio" id="s2" name="stele" value="2"><label for="s2" title="2 stele" data-title-ro="2 stele" data-title-en="2 stars" data-title-es="2 estrellas"><span aria-hidden="true">★</span><span class="sr"><span data-l="ro">2 stele</span><span data-l="en">2 stars</span><span data-l="es">2 estrellas</span></span></label>
+<input type="radio" id="s1" name="stele" value="1"><label for="s1" title="o stea" data-title-ro="o stea" data-title-en="1 star" data-title-es="1 estrella"><span aria-hidden="true">★</span><span class="sr"><span data-l="ro">o stea</span><span data-l="en">1 star</span><span data-l="es">1 estrella</span></span></label>
 </div>
-<label for="bun">Ce v-a plăcut?</label>
+<label for="bun"><span data-l="ro">Ce v-a plăcut?</span><span data-l="en">What did you like?</span><span data-l="es">¿Qué le gustó?</span></label>
 <textarea id="bun" name="ce_a_placut"></textarea>
-<label for="rau">Ce n-a mers sau ce ar trebui îmbunătățit?</label>
+<label for="rau"><span data-l="ro">Ce n-a mers sau ce ar trebui îmbunătățit?</span><span data-l="en">What did not work, or what should be improved?</span><span data-l="es">¿Qué no funcionó o qué habría que mejorar?</span></label>
 <textarea id="rau" name="de_imbunatatit"></textarea>
-<label for="em">E-mail (doar dacă vreți răspuns)</label>
+<label for="em"><span data-l="ro">E-mail (doar dacă vreți răspuns)</span><span data-l="en">E-mail (only if you would like a reply)</span><span data-l="es">Correo electrónico (solo si desea respuesta)</span></label>
 <input type="email" id="em" name="email" autocomplete="email">
-<button type="submit">Trimite părerea</button>
-<p class="mic">Nu publicăm nimic fără acordul dumneavoastră. E-mailul îl folosim doar ca să vă răspundem. Trimițând, sunteți de acord cu <a href="/confidentialitate/">Politica de confidențialitate</a>.</p>
+<button type="submit"><span data-l="ro">Trimite părerea</span><span data-l="en">Send your feedback</span><span data-l="es">Enviar la opinión</span></button>
+<p class="small"><span data-l="ro">Nu publicăm nimic fără acordul dumneavoastră. E-mailul îl folosim doar ca să vă răspundem. Trimițând, sunteți de acord cu <a href="/confidentialitate/">Politica de confidențialitate</a>.</span><span data-l="en">We publish nothing without your consent. We use your e-mail only to reply to you. By sending, you agree to our <a href="/confidentialitate/">Privacy policy</a>.</span><span data-l="es">No publicamos nada sin su consentimiento. Usamos el correo electrónico solo para responderle. Al enviar, acepta nuestra <a href="/confidentialitate/">Política de privacidad</a>.</span></p>
 </form>
-</div><script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-</body></html>
+</main>
+
+<footer><div class="wrap">
+  <p>Candela Parohiei · <a href="mailto:aisib@proton.me">aisib@proton.me</a> · <a href="/confidentialitate/"><span data-l="ro">Confidențialitate</span><span data-l="en">Privacy</span><span data-l="es">Privacidad</span></a> · <a href="/termeni/"><span data-l="ro">Termeni</span><span data-l="en">Terms</span><span data-l="es">Términos</span></a> · <a href="/parere/"><span data-l="ro">Părerea dumneavoastră</span><span data-l="en">Your feedback</span><span data-l="es">Su opinión</span></a></p>
+  <p style="font-size:14px"><span data-l="ro">Proiect independent, fără legătură cu vreo eparhie sau parohie.</span><span data-l="en">Independent project, not affiliated with any diocese or parish.</span><span data-l="es">Proyecto independiente, sin relación con ninguna diócesis o parroquia.</span></p>
+</div></footer>
+<script>
+function setL(l){if(['en','ro','es'].indexOf(l)<0)l='en';var d=document.documentElement;d.lang=l;['en','ro','es'].forEach(function(x){var b=document.getElementById('b-'+x);if(b){b.setAttribute('aria-pressed',x===l?'true':'false');b.classList.toggle('on',x===l)}});var t=d.getAttribute('data-doctitle-'+l);if(t)document.title=t;['alt','title','placeholder','aria-label'].forEach(function(a){var s=document.querySelectorAll('[data-'+a+'-'+l+']');for(var i=0;i<s.length;i++)s[i].setAttribute(a,s[i].getAttribute('data-'+a+'-'+l))});var o=document.querySelectorAll('[data-text-'+l+']');for(var j=0;j<o.length;j++)o[j].textContent=o[j].getAttribute('data-text-'+l);try{localStorage.setItem('cp-lang',l)}catch(e){}}
+(function(){var l=null;try{l=new URLSearchParams(location.search).get('l')}catch(e){}if(['en','ro','es'].indexOf(l)<0){l=null;try{l=localStorage.getItem('cp-lang')}catch(e){}}if(!l){var n=(navigator.language||'').slice(0,2);l=(n==='ro'||n==='es')?n:'en'}setL(l)})();
+</script>
+<script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

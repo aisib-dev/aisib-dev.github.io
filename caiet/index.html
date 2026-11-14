@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="ro">
+<html lang="ro" data-doctitle-ro="Drumul meu spre Betleem: caiet gratuit pentru copii · Candela Parohiei" data-doctitle-en="Drumul meu spre Betleem: free Romanian activity book for children · Candela Parohiei" data-doctitle-es="Drumul meu spre Betleem: cuaderno gratuito en rumano para niños · Candela Parohiei">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,83 +10,141 @@
 <meta property="og:image" content="https://researchmind.org/caiet/coperta.jpg">
 <meta property="og:url" content="https://researchmind.org/caiet/">
 <link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
 <style>
-:root{--navy:#2A3B4C;--gold:#B89A5E;--goldd:#8E7440;--cream:#FBF6EC;--line:#E4D6B8;--wine:#7F2113}
+:root{--lapis:#14234A;--lapis2:#1E3566;--text:#1B2A4A;--perg:#F7F0E1;--hartie:#FFFBF2;--aur:#B8892E;--aurl:#E3C77E;--aurt:#8A6420;--cinabru:#9E2B25;--line:#E4D7BC;--muted:#4A5568}
 *{box-sizing:border-box}
-body{margin:0;background:var(--cream);color:var(--navy);font-family:"Segoe UI",Roboto,Arial,sans-serif;font-size:17px;line-height:1.6}
-.w{max-width:980px;margin:0 auto;padding:22px 18px 60px}
-a{color:var(--wine)}
-h1,h2{font-family:"Palatino Linotype","Book Antiqua",Georgia,serif;color:var(--navy);line-height:1.2}
-h1{font-size:36px;margin:8px 0 6px}h2{font-size:25px;margin:34px 0 10px}
-.sus{font-size:14px}
-.hero{display:flex;gap:32px;align-items:flex-start;margin-top:14px}
-.hero img{width:300px;max-width:100%;border-radius:6px;box-shadow:0 12px 30px rgba(42,59,76,.22);border:1px solid var(--line)}
-.lead{font-size:19px}
-.gratuit{display:inline-block;background:var(--wine);color:#fff;font-weight:600;padding:3px 12px;border-radius:20px;font-size:14px;letter-spacing:.05em}
+body{margin:0;background:var(--perg);color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.6}
+a{color:var(--cinabru)}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.topbar{background:var(--lapis);border-bottom:4px double var(--aurl)}
+.top{display:flex;justify-content:space-between;align-items:center;padding:12px 20px;flex-wrap:wrap;gap:10px}
+.brand{font-family:'Cinzel',serif;font-weight:600;letter-spacing:.12em;font-size:18px;color:#F6EFDD;text-decoration:none}
+.brand span{color:var(--aurl)}
+.lang button{min-height:40px;min-width:44px;background:none;border:1px solid rgba(227,199,126,.55);color:#F6EFDD;padding:4px 12px;border-radius:20px;cursor:pointer;font:inherit;font-size:15px;margin-left:4px}
+.lang button.on{background:var(--aurl);color:var(--lapis);border-color:var(--aurl)}
+.kicker{font-family:'Cinzel',serif;font-weight:600;font-size:14px;letter-spacing:.22em;text-transform:uppercase;color:var(--aurt)}
+.kicker:before,.kicker:after{content:'';display:inline-block;width:7px;height:7px;margin:0 14px 3px;background:currentColor;transform:rotate(45deg)}
+h1,h2,h3{font-family:'EB Garamond',Georgia,serif;font-weight:700;line-height:1.15;color:var(--lapis);margin:0}
+.page{max-width:980px;margin:0 auto;padding:44px 20px 10px}
+.txt{max-width:780px;margin:0 auto}
+.txt p{margin:0 0 14px}
+h2{font-size:clamp(26px,3.4vw,32px);margin:42px 0 12px}
+.hero{display:flex;gap:42px;align-items:flex-start}
+.hero .cov{flex:none;width:290px;margin-top:8px}
+.hero .cov img{display:block;width:100%;box-shadow:0 0 0 2px var(--aurl),0 14px 30px rgba(20,35,74,.3)}
+.gratuit{display:inline-block;font-family:'Cinzel',serif;font-weight:600;font-size:12px;letter-spacing:.18em;background:var(--cinabru);color:#F6EFDD;padding:4px 12px}
+.hero h1{font-size:clamp(36px,5vw,52px);margin:12px 0 10px}
+.lead{font-size:21px;margin:0 0 12px}
+.hero p{margin:0 0 12px}
+.nota{background:var(--hartie);border:1px solid var(--aur);border-left:4px solid var(--aur);padding:12px 16px;font-size:18px;margin:16px 0}
 .dl{display:grid;gap:10px;margin:18px 0}
-.dl a{display:block;padding:14px 18px;border-radius:8px;text-decoration:none;background:#fff;border:1.5px solid var(--gold);color:var(--navy)}
-.dl a b{display:block;font-size:18px}
-.dl a span{font-size:14px;color:#5b6876}
-.dl a.prim{background:var(--navy);border-color:var(--navy);color:#fff}
-.dl a.prim span{color:#dfe6ee}
-.box{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px 22px}
-ul{padding-left:20px}
-form label{display:block;margin:10px 0 4px;font-weight:600}
-input[type=email],input[type=text]{width:100%;padding:12px;border:1.5px solid #8E6420;border-radius:6px;font:inherit;font-size:16px}
-.ck{display:flex;gap:10px;align-items:flex-start;font-weight:400!important}
-.ck input{margin-top:6px;width:20px;height:20px;flex:none}
-button{margin-top:14px;background:var(--navy);color:#fff;border:0;border-radius:6px;padding:13px 22px;font:inherit;font-weight:600;cursor:pointer;min-height:44px}
-.mic{font-size:14px;color:#5b6876}
-.hp{position:absolute;left:-9999px}
-footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-size:14px;color:#5b6876}
-@media (max-width:700px){.hero{flex-direction:column;align-items:center}.hero img{width:240px}h1{font-size:29px}}
+.dl a{display:block;padding:12px 18px;text-decoration:none;background:var(--hartie);border:1px solid var(--aur);border-radius:3px;color:var(--text)}
+.dl a:hover{background:#fff}
+.dl a b{display:block;font-size:20px}
+.dl a .d{display:block;font-size:16px;color:var(--muted);line-height:1.45}
+.dl a.prim{background:var(--lapis);border-color:var(--lapis);color:#F6EFDD}
+.dl a.prim:hover{background:var(--lapis2)}
+.dl a.prim .d{color:#DCD3BE}
+.limbi{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0 14px;padding:0;list-style:none}
+.limbi a{display:inline-block;border:1px solid var(--aur);border-radius:3px;padding:5px 12px;text-decoration:none;color:var(--text);font-size:17px;background:#fff}
+.limbi a:hover{background:var(--hartie)}
+.limbi a i{color:var(--muted)}
+ul.cine{padding-left:22px}
+ul.cine li{margin-bottom:8px}
+.box{background:var(--hartie);border:1px solid var(--line);padding:22px 24px;position:relative}
+.box:before{content:'';position:absolute;inset:6px;border:1px solid var(--line);pointer-events:none}
+.box form label{display:block;font-weight:600;margin:14px 0 4px}
+.box input[type=email],.box input[type=text]{width:100%;padding:10px 12px;border:1.5px solid var(--aur);border-radius:3px;font:inherit;font-size:17px;background:#fff;color:var(--text)}
+.box .ck{display:flex;gap:10px;align-items:flex-start;font-weight:400;position:relative}
+.box .ck input{margin-top:6px;width:20px;height:20px;flex:none}
+.box button{position:relative;margin-top:18px;background:var(--lapis);color:#F6EFDD;border:0;padding:13px 28px;border-radius:4px;font:inherit;font-weight:600;cursor:pointer;min-height:44px}
+.box button:hover{background:var(--lapis2)}
+.box input,.box label,.box p{position:relative}
+.small{font-size:15px;color:var(--muted)}
+.hp{position:absolute!important;left:-9999px}
+footer{border-top:1px solid var(--line);margin-top:60px;padding:26px 0;text-align:center;font-size:16px;color:var(--muted)}
+footer a{color:var(--text)}
+[data-l]{display:none}
+html[lang=en] [data-l=en],html[lang=ro] [data-l=ro],html[lang=es] [data-l=es]{display:revert}
+img{max-width:100%;height:auto}
+@media (max-width:760px){.hero{flex-direction:column;align-items:center;gap:22px}.hero .cov{width:230px}.page{padding-top:30px}}
 </style>
 </head>
-<body><div class="w">
-<p class="sus"><a href="/">← Candela Parohiei</a></p>
+<body>
+<div class="topbar"><div class="wrap top">
+  <a class="brand" href="/">Candela <span>Parohiei</span></a>
+  <div class="lang" role="group" aria-label="Language">
+    <button type="button" id="b-en" aria-pressed="false" onclick="setL('en')">EN</button><button type="button" id="b-ro" class="on" aria-pressed="true" onclick="setL('ro')">RO</button><button type="button" id="b-es" aria-pressed="false" onclick="setL('es')">ES</button>
+  </div>
+</div></div>
 
+<main class="page">
 <div class="hero">
-  <img src="coperta.jpg" alt="Coperta caietului «Drumul meu spre Betleem: 40 de seri spre Crăciun»">
+  <div class="cov"><img src="coperta.jpg" width="290" height="410" alt="Coperta caietului «Drumul meu spre Betleem: 40 de seri spre Crăciun»" data-alt-ro="Coperta caietului «Drumul meu spre Betleem: 40 de seri spre Crăciun»" data-alt-en="Cover of the Romanian activity book «Drumul meu spre Betleem» (My Road to Bethlehem: 40 evenings to Christmas)" data-alt-es="Portada del cuaderno en rumano «Drumul meu spre Betleem» (Mi camino a Belén: 40 noches hacia la Navidad)"></div>
   <div>
-    <span class="gratuit">GRATUIT</span>
+    <span class="gratuit"><span data-l="ro">Gratuit</span><span data-l="en">Free</span><span data-l="es">Gratis</span></span>
     <h1>Drumul meu spre Betleem</h1>
-    <p class="lead"><b>40 de seri spre Crăciun.</b> Caiet ortodox de activități pentru copii de 4-11 ani, pentru Postul Nașterii Domnului (15 noiembrie - 24 decembrie 2026).</p>
-    <p>În fiecare seară, cinci minute cu părinții: un gând pe înțelesul copiilor, trimiterea la Sfânta Scriptură cu o repovestire scurtă, sfântul zilei, o faptă bună, o întrebare și o stea de colorat. Fiecare zi vă trimite la Biblia de acasă, ca să citiți împreună.</p>
+    <p class="lead" data-l="ro"><b>40 de seri spre Crăciun.</b> Caiet ortodox de activități pentru copii de 4-11 ani, pentru Postul Nașterii Domnului (15 noiembrie - 24 decembrie 2026).</p>
+    <p class="lead" data-l="en"><b>40 evenings to Christmas.</b> An Orthodox activity book for children aged 4-11, for the Nativity Fast (15 November - 24 December 2026).</p>
+    <p class="lead" data-l="es"><b>40 noches hacia la Navidad.</b> Cuaderno ortodoxo de actividades para niños de 4 a 11 años, para el Ayuno de la Natividad (15 de noviembre - 24 de diciembre de 2026).</p>
+    <p data-l="ro">În fiecare seară, cinci minute cu părinții: un gând pe înțelesul copiilor, trimiterea la Sfânta Scriptură cu o repovestire scurtă, sfântul zilei, o faptă bună, o întrebare și o stea de colorat. Fiecare zi vă trimite la Biblia de acasă, ca să citiți împreună.</p>
+    <p data-l="en">Every evening, five minutes with the parents: a thought children can understand, a Scripture reference with a short retelling, the saint of the day, a good deed, a question and a star to colour. Each day sends you to the Bible you have at home, so that you read it together.</p>
+    <p data-l="es">Cada noche, cinco minutos con los padres: un pensamiento al alcance de los niños, la referencia a la Sagrada Escritura con un breve relato, el santo del día, una buena obra, una pregunta y una estrella para colorear. Cada día les remite a la Biblia de casa, para que la lean juntos.</p>
+    <p class="nota" data-l="en"><b>Please note:</b> the files on this page are the <b>Romanian edition</b>. The same book in English, «My Road to Bethlehem», is on Gumroad: <a href="https://candelaparohiei.gumroad.com/l/yvdqw">get the English edition</a> (pay what you want, even 0). Other languages are listed below.</p>
+    <p class="nota" data-l="es"><b>Atención:</b> los archivos de esta página son la <b>edición en rumano</b>. El mismo cuaderno en español, «Mi camino a Belén», está en Gumroad: <a href="https://candelaparohiei.gumroad.com/l/zvutxi">obtener la edición en español</a> (pague lo que quiera, incluso 0). Más abajo están los demás idiomas.</p>
     <div class="dl">
-      <a class="prim" href="drumul-spre-betleem-2026-ecran.pdf" download><b>Pentru telefon sau tabletă</b><span>PDF interactiv, A5: bifați fapta bună și colorați steaua direct pe ecran (deschideți-l în Adobe Acrobat Reader)</span></a>
-      <a href="drumul-spre-betleem-2026-a4.pdf" download><b>De tipărit acasă (A4)</b><span>2 pagini pe foaie; alb-negru ajunge</span></a>
-      <a href="drumul-spre-betleem-2026-brosura-1.pdf" download><b>Broșură, caietul 1 (zilele 1-21)</b><span>A4 față-verso, îndoit la mijloc</span></a>
-      <a href="drumul-spre-betleem-2026-brosura-2.pdf" download><b>Broșură, caietul 2 (zilele 22-40)</b><span>A4 față-verso, îndoit la mijloc</span></a>
-      <a href="drumul-spre-betleem-2026-letter.pdf" download><b>Letter (SUA, Canada)</b><span>2 pagini pe foaie</span></a>
+      <a class="prim" href="drumul-spre-betleem-2026-ecran.pdf" download><b><span data-l="ro">Pentru telefon sau tabletă</span><span data-l="en">For phone or tablet (Romanian)</span><span data-l="es">Para móvil o tableta (en rumano)</span></b><span class="d"><span data-l="ro">PDF interactiv, A5: bifați fapta bună și colorați steaua direct pe ecran (deschideți-l în Adobe Acrobat Reader)</span><span data-l="en">Interactive PDF, A5: tick the good deed and colour the star right on the screen (open it in Adobe Acrobat Reader)</span><span data-l="es">PDF interactivo, A5: marque la buena obra y coloree la estrella directamente en la pantalla (ábralo en Adobe Acrobat Reader)</span></span></a>
+      <a href="drumul-spre-betleem-2026-a4.pdf" download><b><span data-l="ro">De tipărit acasă (A4)</span><span data-l="en">To print at home (A4, Romanian)</span><span data-l="es">Para imprimir en casa (A4, en rumano)</span></b><span class="d"><span data-l="ro">2 pagini pe foaie; alb-negru ajunge</span><span data-l="en">2 pages per sheet; black and white is enough</span><span data-l="es">2 páginas por hoja; basta en blanco y negro</span></span></a>
+      <a href="drumul-spre-betleem-2026-brosura-1.pdf" download><b><span data-l="ro">Broșură, caietul 1 (zilele 1-21)</span><span data-l="en">Booklet, part 1 (days 1-21, Romanian)</span><span data-l="es">Folleto, cuaderno 1 (días 1-21, en rumano)</span></b><span class="d"><span data-l="ro">A4 față-verso, îndoit la mijloc</span><span data-l="en">A4 double-sided, folded in the middle</span><span data-l="es">A4 a doble cara, doblado por la mitad</span></span></a>
+      <a href="drumul-spre-betleem-2026-brosura-2.pdf" download><b><span data-l="ro">Broșură, caietul 2 (zilele 22-40)</span><span data-l="en">Booklet, part 2 (days 22-40, Romanian)</span><span data-l="es">Folleto, cuaderno 2 (días 22-40, en rumano)</span></b><span class="d"><span data-l="ro">A4 față-verso, îndoit la mijloc</span><span data-l="en">A4 double-sided, folded in the middle</span><span data-l="es">A4 a doble cara, doblado por la mitad</span></span></a>
+      <a href="drumul-spre-betleem-2026-letter.pdf" download><b><span data-l="ro">Letter (SUA, Canada)</span><span data-l="en">Letter (USA, Canada; Romanian)</span><span data-l="es">Carta (EE. UU., Canadá; en rumano)</span></b><span class="d"><span data-l="ro">2 pagini pe foaie</span><span data-l="en">2 pages per sheet</span><span data-l="es">2 páginas por hoja</span></span></a>
     </div>
   </div>
 </div>
 
-<h2>În alte limbi, pentru copiii care cresc în diaspora</h2>
-<p>Același caiet, cu textul în limba țării în care cresc copiii; colindele rămân în română, cu traducere. Le descărcați gratuit sau lăsați o contribuție, cât doriți.</p>
-<ul>
-  <li><a href="https://candelaparohiei.gumroad.com/l/vczzep">Italiano: «Il mio cammino verso Betlemme»</a></li>
-  <li><a href="https://candelaparohiei.gumroad.com/l/zvutxi">Español: «Mi camino a Belén»</a></li>
-  <li><a href="https://candelaparohiei.gumroad.com/l/idgzjj">Français: «Mon chemin vers Bethléem»</a></li>
-  <li><a href="https://candelaparohiei.gumroad.com/l/eadhj">Deutsch: «Mein Weg nach Betlehem»</a></li>
-  <li><a href="https://candelaparohiei.gumroad.com/l/yvdqw">English: «My Road to Bethlehem»</a></li>
+<div class="txt">
+<h2><span data-l="ro">În alte limbi, pentru copiii care cresc în diaspora</span><span data-l="en">In other languages, for children growing up abroad</span><span data-l="es">En otros idiomas, para los niños que crecen fuera de Rumanía</span></h2>
+<p data-l="ro">Același caiet, cu textul în limba țării în care cresc copiii; colindele rămân în română, cu traducere. Le descărcați gratuit sau lăsați o contribuție, cât doriți.</p>
+<p data-l="en">The same book, with the text in the language of the country where your children are growing up; the carols stay in Romanian, with a translation. You can download them free of charge or leave a contribution, as much as you wish.</p>
+<p data-l="es">El mismo cuaderno, con el texto en el idioma del país donde crecen los niños; los villancicos quedan en rumano, con traducción. Puede descargarlos gratis o dejar una contribución, la que desee.</p>
+<ul class="limbi">
+  <li><a href="https://candelaparohiei.gumroad.com/l/yvdqw">English: <i>My Road to Bethlehem</i></a></li>
+  <li><a href="https://candelaparohiei.gumroad.com/l/zvutxi">Español: <i>Mi camino a Belén</i></a></li>
+  <li><a href="https://candelaparohiei.gumroad.com/l/vczzep">Italiano: <i>Il mio cammino verso Betlemme</i></a></li>
+  <li><a href="https://candelaparohiei.gumroad.com/l/idgzjj">Français: <i>Mon chemin vers Bethléem</i></a></li>
+  <li><a href="https://candelaparohiei.gumroad.com/l/eadhj">Deutsch: <i>Mein Weg nach Betlehem</i></a></li>
 </ul>
 
-<h2>40 de seri spre Peștera Betleemului</h2>
-<p>Vă mai amintiți serile de dinaintea Crăciunului, acasă? Mirosul de cozonac, colindătorii la poartă, steaua purtată din casă în casă și bunica spunând povestea Nașterii Domnului. Pentru mulți dintre noi, aceste amintiri au rămas departe, în satul sau în orașul de unde am plecat.</p>
-<p>Copiii noștri cresc acum, de multe ori, în altă țară, cu altă limbă și cu alte obiceiuri. Credința nu a rămas însă în satul de acasă: am primit-o de la părinți, o trăim și o dăruim mai departe. Ea ne apropie de Dumnezeu și ne ține aproape unii de alții, oriunde ne-ar fi casa.</p>
-<p>De aceea am ales să ne strângem în jurul copiilor noștri și să le spunem, seară de seară, povestea iubirii lui Dumnezeu, Care ni L-a dăruit pe Însuși Fiul Său, venit la noi ca Prunc.</p>
+<h2><span data-l="ro">40 de seri spre Peștera Betleemului</span><span data-l="en">40 evenings toward the Cave of Bethlehem</span><span data-l="es">40 noches hacia la Cueva de Belén</span></h2>
+<p data-l="ro">Vă mai amintiți serile de dinaintea Crăciunului, acasă? Mirosul de cozonac, colindătorii la poartă, steaua purtată din casă în casă și bunica spunând povestea Nașterii Domnului. Pentru mulți dintre noi, aceste amintiri au rămas departe, în satul sau în orașul de unde am plecat.</p>
+<p data-l="ro">Copiii noștri cresc acum, de multe ori, în altă țară, cu altă limbă și cu alte obiceiuri. Credința nu a rămas însă în satul de acasă: am primit-o de la părinți, o trăim și o dăruim mai departe. Ea ne apropie de Dumnezeu și ne ține aproape unii de alții, oriunde ne-ar fi casa.</p>
+<p data-l="ro">De aceea am ales să ne strângem în jurul copiilor noștri și să le spunem, seară de seară, povestea iubirii lui Dumnezeu, Care ni L-a dăruit pe Însuși Fiul Său, venit la noi ca Prunc.</p>
+<p data-l="en">Do you still remember the evenings before Christmas, back home? The smell of <i>cozonac</i>, the carollers at the gate, the star carried from house to house and grandmother telling the story of the Nativity of the Lord. For many of us, these memories have stayed far away, in the village or the town we left.</p>
+<p data-l="en">Our children now often grow up in another country, with another language and other customs. Yet our faith did not stay behind in the village back home: we received it from our parents, we live it and we pass it on. It draws us closer to God and keeps us close to one another, wherever our home may be.</p>
+<p data-l="en">That is why we have chosen to gather around our children and tell them, evening after evening, the story of the love of God, Who gave us His own Son, Who came to us as a Child.</p>
+<p data-l="es">¿Recuerda todavía las noches antes de la Navidad, en casa? El olor del <i>cozonac</i>, los cantores de villancicos a la puerta, la estrella llevada de casa en casa y la abuela contando la historia del Nacimiento del Señor. Para muchos de nosotros, estos recuerdos se han quedado lejos, en el pueblo o en la ciudad de donde partimos.</p>
+<p data-l="es">Hoy nuestros hijos crecen muchas veces en otro país, con otro idioma y otras costumbres. Pero la fe no se quedó en el pueblo de casa: la recibimos de nuestros padres, la vivimos y la transmitimos. Ella nos acerca a Dios y nos mantiene cerca unos de otros, dondequiera que esté nuestro hogar.</p>
+<p data-l="es">Por eso hemos elegido reunirnos en torno a nuestros hijos y contarles, noche tras noche, la historia del amor de Dios, que nos dio a Su propio Hijo, venido a nosotros como Niño.</p>
 
-<h2>Pe cine ajută</h2>
-<ul>
-  <li><b>Familiile</b>, acasă sau în diaspora: un obicei de seară simplu, care leagă copilul de Biserică și de tradițiile de acasă.</li>
-  <li><b>Preoții și cateheții:</b> îl puteți tipări pentru toți copiii parohiei sau ai grupei, gratuit. Vă rugăm doar să nu-l vindeți și să nu-l publicați ca al dumneavoastră.</li>
-  <li><b>Bunicii</b> care vor să petreacă postul cu nepoții, chiar și de departe.</li>
+<h2><span data-l="ro">Pe cine ajută</span><span data-l="en">Who it helps</span><span data-l="es">A quién ayuda</span></h2>
+<ul class="cine">
+  <li data-l="ro"><b>Familiile</b>, acasă sau în diaspora: un obicei de seară simplu, care leagă copilul de Biserică și de tradițiile de acasă.</li>
+  <li data-l="ro"><b>Preoții și cateheții:</b> îl puteți tipări pentru toți copiii parohiei sau ai grupei, gratuit. Vă rugăm doar să nu-l vindeți și să nu-l publicați ca al dumneavoastră.</li>
+  <li data-l="ro"><b>Bunicii</b> care vor să petreacă postul cu nepoții, chiar și de departe.</li>
+  <li data-l="en"><b>Families</b>, in Romania or abroad: a simple evening habit that ties the child to the Church and to the traditions of home.</li>
+  <li data-l="en"><b>Priests and catechists:</b> you may print it free of charge for all the children of your parish or group. We only ask you not to sell it and not to publish it as your own.</li>
+  <li data-l="en"><b>Grandparents</b> who want to spend the Fast with their grandchildren, even from far away.</li>
+  <li data-l="es"><b>Las familias</b>, en Rumanía o en el extranjero: una costumbre sencilla para la noche, que une al niño con la Iglesia y con las tradiciones de casa.</li>
+  <li data-l="es"><b>Los sacerdotes y catequistas:</b> pueden imprimirlo gratis para todos los niños de la parroquia o del grupo. Solo les pedimos que no lo vendan ni lo publiquen como propio.</li>
+  <li data-l="es"><b>Los abuelos</b> que quieren pasar el Ayuno con sus nietos, aunque sea desde lejos.</li>
 </ul>
 
-<h2 id="abonare">Vreți să vă anunțăm când apar materialele noi?</h2>
+<h2 id="abonare"><span data-l="ro">Vreți să vă anunțăm când apar materialele noi?</span><span data-l="en">Would you like us to tell you when new materials come out?</span><span data-l="es">¿Quiere que le avisemos cuando salgan materiales nuevos?</span></h2>
 <div class="box">
-  <p>Pregătim un caiet pentru <b>Postul Mare 2027</b> și materiale pentru cateheză. Dacă vreți, vă scriem când apar. Caietul de mai sus îl descărcați oricum, fără să lăsați nimic.</p>
+  <p data-l="ro">Pregătim un caiet pentru <b>Postul Mare 2027</b> și materiale pentru cateheză. Dacă vreți, vă scriem când apar. Caietul de mai sus îl descărcați oricum, fără să lăsați nimic.</p>
+  <p data-l="en">We are preparing an activity book for <b>Great Lent 2027</b> and materials for catechesis. If you wish, we will write to you when they come out. You can download the book above anyway, without leaving anything.</p>
+  <p data-l="es">Preparamos un cuaderno para la <b>Gran Cuaresma 2027</b> y materiales para la catequesis. Si lo desea, le escribimos cuando salgan. El cuaderno de arriba lo puede descargar de todos modos, sin dejar nada.</p>
   <form action="https://formsubmit.co/aisib@proton.me" method="POST">
     <input type="hidden" name="_subject" value="Candela Parohiei: abonare la noutăți (caiet)">
     <input type="hidden" name="_captcha" value="false">
@@ -95,20 +153,32 @@ footer{margin-top:44px;padding-top:16px;border-top:1px solid var(--line);font-si
     <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off">
     <label for="e">E-mail</label>
     <input id="e" type="email" name="email" required autocomplete="email">
-    <label for="p">Sunteți (opțional)</label>
-    <input id="p" type="text" name="cine" placeholder="părinte, bunic, preot, catehet...">
-    <label class="ck"><input type="checkbox" name="acord" value="Da, sunt de acord" required> Sunt de acord să primesc pe e-mail vești despre materialele Candela Parohiei. Mă pot dezabona oricând, printr-un simplu răspuns.</label>
-    <button type="submit">Anunțați-mă</button>
-    <p class="mic">Folosim adresa doar pentru aceste vești; nu o dăm nimănui. Detalii în <a href="/confidentialitate/">Politica de confidențialitate</a>.</p>
+    <label for="p"><span data-l="ro">Sunteți (opțional)</span><span data-l="en">You are (optional)</span><span data-l="es">Usted es (opcional)</span></label>
+    <input id="p" type="text" name="cine" placeholder="părinte, bunic, preot, catehet..." data-placeholder-ro="părinte, bunic, preot, catehet..." data-placeholder-en="parent, grandparent, priest, catechist..." data-placeholder-es="padre o madre, abuelo, sacerdote, catequista...">
+    <label class="ck"><input type="checkbox" name="acord" value="Da, sunt de acord" required> <span><span data-l="ro">Sunt de acord să primesc pe e-mail vești despre materialele Candela Parohiei. Mă pot dezabona oricând, printr-un simplu răspuns.</span><span data-l="en">I agree to receive news by e-mail about the Candela Parohiei materials. I can unsubscribe at any time with a simple reply.</span><span data-l="es">Acepto recibir por correo electrónico noticias sobre los materiales de Candela Parohiei. Puedo darme de baja en cualquier momento con una simple respuesta.</span></span></label>
+    <button type="submit"><span data-l="ro">Anunțați-mă</span><span data-l="en">Notify me</span><span data-l="es">Avísenme</span></button>
+    <p class="small"><span data-l="ro">Folosim adresa doar pentru aceste vești; nu o dăm nimănui. Detalii în <a href="/confidentialitate/">Politica de confidențialitate</a>.</span><span data-l="en">We use your address only for this news; we never give it to anyone. Details in our <a href="/confidentialitate/">Privacy policy</a>.</span><span data-l="es">Usamos la dirección solo para estas noticias; no se la damos a nadie. Detalles en la <a href="/confidentialitate/">Política de privacidad</a>.</span></p>
   </form>
 </div>
 
-<h2>Despre caiet</h2>
-<p>Trimiterile la Sfânta Scriptură sunt exacte; repovestirile pentru copii sunt scrise de noi și urmează sensul Bibliei ortodoxe. Invocațiile scurte sunt cele din Ceaslov, iar colindele sunt colinde populare tradiționale. Icoana Nașterii Domnului (sec. al XV-lea, atribuită lui Andrei Rubliov) este în domeniul public. Nu folosim chipuri de sfinți desenate sau generate de calculator.</p>
-<p>Ați găsit o greșeală sau aveți o propunere? <a href="/parere/">Spuneți-ne părerea</a>; ne ajută să îl facem mai bun.</p>
+<h2><span data-l="ro">Despre caiet</span><span data-l="en">About the book</span><span data-l="es">Sobre el cuaderno</span></h2>
+<p data-l="ro">Trimiterile la Sfânta Scriptură sunt exacte; repovestirile pentru copii sunt scrise de noi și urmează sensul Bibliei ortodoxe. Invocațiile scurte sunt cele din Ceaslov, iar colindele sunt colinde populare tradiționale. Icoana Nașterii Domnului (sec. al XV-lea, atribuită lui Andrei Rubliov) este în domeniul public. Nu folosim chipuri de sfinți desenate sau generate de calculator.</p>
+<p data-l="en">The references to Holy Scripture are exact; the retellings for children are our own and follow the meaning of the Orthodox Bible. The short invocations are those of the Horologion (Book of Hours), and the carols are traditional folk carols. The icon of the Nativity of the Lord (15th century, attributed to Andrei Rublev) is in the public domain. We never use drawn or computer-generated faces of saints.</p>
+<p data-l="es">Las referencias a la Sagrada Escritura son exactas; los relatos para niños los hemos escrito nosotros y siguen el sentido de la Biblia ortodoxa. Las invocaciones breves son las del Horologion (Libro de las Horas), y los villancicos son villancicos populares tradicionales. El icono de la Natividad del Señor (siglo XV, atribuido a Andréi Rubliov) es de dominio público. No usamos rostros de santos dibujados ni generados por ordenador.</p>
+<p data-l="ro">Ați găsit o greșeală sau aveți o propunere? <a href="/parere/">Spuneți-ne părerea</a>; ne ajută să îl facem mai bun.</p>
+<p data-l="en">Have you found a mistake or do you have a suggestion? <a href="/parere/">Tell us what you think</a>; it helps us make it better.</p>
+<p data-l="es">¿Ha encontrado un error o tiene una propuesta? <a href="/parere/">Díganos su opinión</a>; nos ayuda a mejorarlo.</p>
+</div>
+</main>
 
-<footer>
-  <p>Candela Parohiei este un proiect independent al unor creștini ortodocși, fără legătură cu vreo eparhie sau parohie. Materialele nu înlocuiesc îndrumarea preotului paroh. · <a href="/confidentialitate/">Confidențialitate</a> · <a href="/termeni/">Termeni</a></p>
-</footer>
-</div><script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-</body></html>
+<footer><div class="wrap">
+  <p>Candela Parohiei · <a href="mailto:aisib@proton.me">aisib@proton.me</a> · <a href="/confidentialitate/"><span data-l="ro">Confidențialitate</span><span data-l="en">Privacy</span><span data-l="es">Privacidad</span></a> · <a href="/termeni/"><span data-l="ro">Termeni</span><span data-l="en">Terms</span><span data-l="es">Términos</span></a> · <a href="/parere/"><span data-l="ro">Părerea dumneavoastră</span><span data-l="en">Your feedback</span><span data-l="es">Su opinión</span></a></p>
+  <p style="font-size:14px"><span data-l="ro">Proiect independent al unor creștini ortodocși, fără legătură cu vreo eparhie sau parohie. Materialele nu înlocuiesc îndrumarea preotului paroh.</span><span data-l="en">An independent project of Orthodox Christians, not affiliated with any diocese or parish. The materials do not replace the guidance of the parish priest.</span><span data-l="es">Proyecto independiente de cristianos ortodoxos, sin relación con ninguna diócesis o parroquia. Los materiales no sustituyen la orientación del párroco.</span></p>
+</div></footer>
+<script>
+function setL(l){if(['en','ro','es'].indexOf(l)<0)l='en';var d=document.documentElement;d.lang=l;['en','ro','es'].forEach(function(x){var b=document.getElementById('b-'+x);if(b){b.setAttribute('aria-pressed',x===l?'true':'false');b.classList.toggle('on',x===l)}});var t=d.getAttribute('data-doctitle-'+l);if(t)document.title=t;['alt','title','placeholder','aria-label'].forEach(function(a){var s=document.querySelectorAll('[data-'+a+'-'+l+']');for(var i=0;i<s.length;i++)s[i].setAttribute(a,s[i].getAttribute('data-'+a+'-'+l))});var o=document.querySelectorAll('[data-text-'+l+']');for(var j=0;j<o.length;j++)o[j].textContent=o[j].getAttribute('data-text-'+l);try{localStorage.setItem('cp-lang',l)}catch(e){}}
+(function(){var l=null;try{l=new URLSearchParams(location.search).get('l')}catch(e){}if(['en','ro','es'].indexOf(l)<0){l=null;try{l=localStorage.getItem('cp-lang')}catch(e){}}if(!l){var n=(navigator.language||'').slice(0,2);l=(n==='ro'||n==='es')?n:'en'}setL(l)})();
+</script>
+<script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
