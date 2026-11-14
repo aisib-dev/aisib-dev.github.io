@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Părerea dumneavoastră · Candela Parohiei</title>
+<meta name="robots" content="noindex">
+<style>
+:root{--ivory:#FBF6EC;--navy:#0F2B54;--bronze:#8E6420;--wine:#7F2113;--line:#E4D6B8}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ivory);color:var(--navy);font-family:Georgia,"Times New Roman",serif;font-size:18px;line-height:1.55}
+.w{max-width:620px;margin:0 auto;padding:28px 18px 50px}
+h1{color:var(--wine);font-size:28px;margin:6px 0 6px;text-align:center}
+p.l{text-align:center;color:#4A5568;margin-top:0}
+form{background:#fff;border:1px solid var(--line);border-radius:10px;padding:22px}
+label{display:block;font-weight:bold;margin:16px 0 6px}
+select,textarea,input[type=email]{width:100%;padding:11px 12px;border:1px solid #C9B98F;border-radius:6px;font:inherit;font-size:16px;background:var(--ivory);color:var(--navy)}
+textarea{min-height:96px}
+.stele{display:flex;flex-direction:row-reverse;justify-content:center;gap:6px}
+.stele input{position:absolute;opacity:0;width:1px;height:1px}
+.stele label{margin:0;font-size:42px;line-height:1;color:#D9CDB0;cursor:pointer;font-weight:normal}
+.stele input:checked ~ label,.stele label:hover,.stele label:hover ~ label{color:#C9A24E}
+.stele input:focus-visible + label{outline:2px solid var(--navy);border-radius:4px}
+button{margin-top:20px;width:100%;background:var(--wine);color:#fff;border:0;padding:14px;border-radius:6px;font:inherit;font-weight:bold;cursor:pointer}
+.mic{font-size:14px;color:#4A5568;margin-top:12px}
+.hp{position:absolute;left:-9999px}
+</style>
+</head>
+<body><div class="w">
+<h1>Ne spuneți părerea?</h1>
+<p class="l">Ne ajută să facem materialele mai bune pentru copiii și familiile ortodoxe. Durează un minut.</p>
+<form action="https://formsubmit.co/aisib@proton.me" method="POST">
+<input type="hidden" name="_subject" value="Candela Parohiei: părere nouă">
+<input type="hidden" name="_template" value="table">
+<input type="hidden" name="_next" value="https://researchmind.org/parere/multumim.html">
+<input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+<label for="prod">Despre ce material?</label>
+<select id="prod" name="produs">
+<option>Drumul spre Betleem 2026 (calendarul copiilor)</option>
+<option>Afișele de Crăciun și de Post</option>
+<option>Diploma colindătorilor</option>
+<option>Alt material</option>
+</select>
+<label>Câte stele îi dați?</label>
+<div class="stele" role="radiogroup" aria-label="Nota de la 1 la 5 stele">
+<input type="radio" id="s5" name="stele" value="5" required><label for="s5" title="5 stele">★</label>
+<input type="radio" id="s4" name="stele" value="4"><label for="s4" title="4 stele">★</label>
+<input type="radio" id="s3" name="stele" value="3"><label for="s3" title="3 stele">★</label>
+<input type="radio" id="s2" name="stele" value="2"><label for="s2" title="2 stele">★</label>
+<input type="radio" id="s1" name="stele" value="1"><label for="s1" title="o stea">★</label>
+</div>
+<label for="bun">Ce v-a plăcut?</label>
+<textarea id="bun" name="ce_a_placut"></textarea>
+<label for="rau">Ce n-a mers sau ce ar trebui îmbunătățit?</label>
+<textarea id="rau" name="de_imbunatatit"></textarea>
+<label for="em">E-mail (doar dacă vreți răspuns)</label>
+<input type="email" id="em" name="email" autocomplete="email">
+<button type="submit">Trimite părerea</button>
+<p class="mic">Nu publicăm nimic fără acordul dumneavoastră. E-mailul îl folosim doar ca să vă răspundem.</p>
+</form>
+</div></body></html>
