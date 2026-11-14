@@ -8,16 +8,20 @@
 <meta property="og:title" content="Candela Parohiei · Orthodox parish templates">
 <meta property="og:image" content="https://researchmind.org/craciun.png">
 <meta name="description" content="Editable Canva templates for Orthodox parishes: service schedules, Nativity Fast, Theophany house blessings, carolers' diplomas. In English, Romanian, Italian, Spanish, French and German.">
+<link rel="icon" type="image/png" href="/favicon.png">
+<meta property="og:description" content="Orthodox calendars, posters and catechesis for parishes and families. Independent project.">
+<meta property="og:url" content="https://researchmind.org/">
+<meta name="twitter:card" content="summary_large_image">
 <style>
 :root{--ivory:#FBF6EC;--navy:#0F2B54;--bronze:#8E6420;--wine:#7F2113;--line:#E4D6B8;--muted:#4A5568}
 *{box-sizing:border-box}
 body{margin:0;background:var(--ivory);color:var(--navy);font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;font-size:18px;line-height:1.6}
 .wrap{max-width:1040px;margin:0 auto;padding:0 20px}
 header{border-bottom:1px solid var(--line)}
-.top{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+.top{display:flex;justify-content:space-between;align-items:center;padding-top:18px;padding-bottom:18px}
 .brand{font-family:"Palatino Linotype","Book Antiqua",Palatino,Georgia,serif;font-size:28px;font-weight:700;color:var(--navy);text-decoration:none}
 .brand span{color:var(--bronze)}
-.lang button{background:none;border:1px solid var(--line);color:var(--navy);padding:6px 12px;border-radius:20px;cursor:pointer;font:inherit;font-size:15px}
+.lang button{min-height:44px;min-width:44px;background:none;border:1px solid var(--line);color:var(--navy);padding:6px 12px;border-radius:20px;cursor:pointer;font:inherit;font-size:15px}
 .lang button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
 .hero{text-align:center;padding:64px 0 40px}
 .star{width:46px;height:46px;fill:var(--bronze)}
@@ -48,7 +52,7 @@ img{max-width:100%;height:auto}
 h1{overflow-wrap:anywhere}
 form.order{max-width:640px;margin:20px auto 0;background:#fff;border:1px solid var(--line);border-radius:10px;padding:24px}
 form.order label{display:block;font-weight:600;margin:14px 0 4px}
-form.order input,form.order select,form.order textarea{width:100%;padding:10px 12px;border:1px solid #C9B98F;border-radius:6px;font:inherit;font-size:16px;background:var(--ivory);color:var(--navy)}
+form.order input,form.order select,form.order textarea{width:100%;padding:10px 12px;border:1.5px solid #8E6420;border-radius:6px;font:inherit;font-size:16px;background:var(--ivory);color:var(--navy)}
 form.order textarea{min-height:120px}
 form.order button{margin-top:20px;background:var(--wine);color:#fff;border:0;padding:14px 28px;border-radius:6px;font:inherit;font-weight:600;cursor:pointer}
 form.order .small{font-size:14px;color:var(--muted);margin-top:12px}
@@ -59,9 +63,9 @@ form.order .small{font-size:14px;color:var(--muted);margin-top:12px}
 <header><div class="wrap top">
   <a class="brand" href="#">Candela <span>Parohiei</span></a>
   <div class="lang" role="group" aria-label="Language">
-    <button type="button" id="b-en" class="on" onclick="setL('en')">EN</button>
-    <button type="button" id="b-ro" onclick="setL('ro')">RO</button>
-    <button type="button" id="b-es" onclick="setL('es')">ES</button>
+    <button type="button" id="b-en" class="on" aria-pressed="true" onclick="setL('en')">EN</button>
+    <button type="button" id="b-ro" aria-pressed="false" onclick="setL('ro')">RO</button>
+    <button type="button" id="b-es" aria-pressed="false" onclick="setL('es')">ES</button>
   </div>
 </div></header>
 
@@ -74,9 +78,9 @@ form.order .small{font-size:14px;color:var(--muted);margin-top:12px}
     <p class="lead" data-l="en">Service schedules, feast-day posters, carolers' diplomas and social media posts. Byzantine in spirit, liturgically accurate, editable for free in Canva in two minutes.</p>
     <p class="lead" data-l="ro">Programul slujbelor, afișe de praznic, diplome pentru colindători și postări pentru rețele. În duh bizantin, corecte liturgic, editabile gratuit în Canva în două minute.</p>
     <p class="lead" data-l="es">Horarios de oficios, carteles para las fiestas, diplomas para los grupos de villancicos y publicaciones para redes sociales. De espíritu bizantino, litúrgicamente correctas, editables gratis en Canva en dos minutos.</p>
-    <a class="btn" href="https://payhip.com/CandelaParohiei" data-l="en">See the templates</a>
-    <a class="btn" href="https://payhip.com/CandelaParohiei" data-l="ro">Vezi șabloanele</a>
-    <a class="btn" href="https://payhip.com/CandelaParohiei" data-l="es">Ver las plantillas</a>
+    <a class="btn" href="https://candelaparohiei.gumroad.com" data-l="en">See the templates</a>
+    <a class="btn" href="https://candelaparohiei.gumroad.com" data-l="ro">Vezi șabloanele</a>
+    <a class="btn" href="https://candelaparohiei.gumroad.com" data-l="es">Ver las plantillas</a>
   </div>
 
   <section class="despre" id="despre">
@@ -104,10 +108,10 @@ form.order .small{font-size:14px;color:var(--muted);margin-top:12px}
 
   <section>
     <h2 data-l="en">In your parish's language</h2><h2 data-l="ro">În limba parohiei dumneavoastră</h2><h2 data-l="es">En la lengua de su parroquia</h2>
-    <ul class="langs"><li>English</li><li>Română</li><li>Italiano</li><li>Español</li><li>Français</li><li>Deutsch</li></ul>
-    <p class="lead" style="text-align:center" data-l="en">Bilingual editions for Romanian parishes in the UK, Italy, Spain, France and Germany. New and Old Calendar versions.</p>
-    <p class="lead" style="text-align:center" data-l="ro">Ediții bilingve pentru parohiile românești din Marea Britanie, Italia, Spania, Franța și Germania. Variante pe stil nou și pe stil vechi.</p>
-    <p class="lead" style="text-align:center" data-l="es">Ediciones bilingües para las parroquias rumanas del Reino Unido, Italia, España, Francia y Alemania. Versiones para el calendario nuevo y el antiguo.</p>
+    <ul class="langs"><li>Română</li><li>English</li><li>Italiano · <i>soon</i></li><li>Español · <i>soon</i></li><li>Français · <i>soon</i></li><li>Deutsch · <i>soon</i></li></ul>
+    <p class="lead" style="text-align:center" data-l="en">Bilingual editions for Romanian parishes in the UK, Italy, Spain, France and Germany. More languages and editions are coming.</p>
+    <p class="lead" style="text-align:center" data-l="ro">Ediții bilingve pentru parohiile românești din Marea Britanie, Italia, Spania, Franța și Germania. Alte limbi și ediții vin în curând.</p>
+    <p class="lead" style="text-align:center" data-l="es">Ediciones bilingües para las parroquias rumanas del Reino Unido, Italia, España, Francia y Alemania. Pronto, más idiomas y ediciones.</p>
   </section>
 
   <section>
@@ -128,12 +132,12 @@ form.order .small{font-size:14px;color:var(--muted);margin-top:12px}
     </div>
   </section>
   <section id="order">
-    <h2 data-l="en">Order or request a template</h2><h2 data-l="ro">Comandă sau cere un șablon</h2><h2 data-l="es">Pedido o plantilla a medida</h2>
+    <h2 data-l="en">Questions and requests</h2><h2 data-l="ro">Întrebări și cereri</h2><h2 data-l="es">Preguntas y solicitudes</h2>
     <p class="lead" style="text-align:center"><span data-l="en">Need your parish's own schedule, another language or a template for a different feast? Write to us.</span><span data-l="ro">Aveți nevoie de programul parohiei dumneavoastră, de altă limbă sau de un șablon pentru alt praznic? Scrieți-ne.</span><span data-l="es">¿Necesita el horario de su parroquia, otro idioma o una plantilla para otra fiesta? Escríbanos.</span></p>
     <form class="order" action="https://formsubmit.co/aisib@proton.me" method="POST">
-      <input type="hidden" name="_subject" value="Candela Parohiei: comandă nouă">
+      <input type="hidden" name="_subject" value="Candela Parohiei: întrebare nouă">
       <input type="hidden" name="_template" value="table">
-      <input type="hidden" name="_next" value="https://researchmind.org/#thanks">
+      <input type="hidden" name="_next" value="https://researchmind.org/parere/multumim.html">
       <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
       <label for="f-name"><span data-l="en">Name</span><span data-l="ro">Nume</span><span data-l="es">Nombre</span></label>
       <input id="f-name" name="name" required autocomplete="name">
@@ -145,11 +149,11 @@ form.order .small{font-size:14px;color:var(--muted);margin-top:12px}
       <select id="f-lang" name="language"><option>English</option><option>Română</option><option>Español</option><option>Italiano</option><option>Français</option><option>Deutsch</option><option>Română + Italiano</option><option>Română + Español</option><option>Română + Français</option><option>Română + Deutsch</option></select>
       <label for="f-msg"><span data-l="en">What do you need?</span><span data-l="ro">Ce vă trebuie?</span><span data-l="es">¿Qué necesita?</span></label>
       <textarea id="f-msg" name="message" required></textarea>
+      <p class="small"><span data-l="ro">Toate cumpărăturile se fac exclusiv prin platforma Gumroad, care este vânzătorul și emite documentele de plată. Formularul este doar pentru întrebări.</span><span data-l="en">All purchases are made only through the Gumroad platform, which is the seller and issues the receipts. This form is for questions only.</span><span data-l="es">Todas las compras se hacen solo a través de la plataforma Gumroad, que es el vendedor y emite los recibos. Este formulario es solo para preguntas.</span></p>
       <p class="small"><span data-l="ro">Trimițând formularul, sunteți de acord cu <a href="/confidentialitate/">Politica de confidențialitate</a>.</span><span data-l="en">By sending this form you agree to our <a href="/confidentialitate/">Privacy policy</a>.</span><span data-l="es">Al enviar el formulario acepta nuestra <a href="/confidentialitate/">Política de privacidad</a>.</span></p>
       <button type="submit"><span data-l="en">Send</span><span data-l="ro">Trimite</span><span data-l="es">Enviar</span></button>
       <p class="small"><span data-l="en">We reply by e-mail, usually within two days. Your details are used only to answer you.</span><span data-l="ro">Răspundem pe e-mail, de obicei în două zile. Datele dumneavoastră sunt folosite doar pentru răspuns.</span><span data-l="es">Respondemos por correo, normalmente en dos días. Sus datos solo se usan para responderle.</span></p>
     </form>
-    <p id="thanks" class="lead" style="text-align:center;margin-top:16px"><span data-l="en"></span><span data-l="ro"></span><span data-l="es"></span></p>
   </section>
 </main>
 
@@ -157,7 +161,7 @@ form.order .small{font-size:14px;color:var(--muted);margin-top:12px}
   <p>Candela Parohiei · <a href="mailto:aisib@proton.me">aisib@proton.me</a> · <a href="/confidentialitate/">Confidențialitate / Privacy</a> · <a href="/termeni/">Termeni / Terms</a> · <a href="/parere/">Părerea dumneavoastră</a></p><p style="font-size:13px">Proiect independent, fără legătură cu vreo eparhie sau parohie. / Independent project, not affiliated with any diocese or parish.</p>
 </div></footer>
 <script>
-function setL(l){document.documentElement.lang=l;document.getElementById('b-en').classList.toggle('on',l==='en');document.getElementById('b-ro').classList.toggle('on',l==='ro');document.getElementById('b-es').classList.toggle('on',l==='es');try{localStorage.setItem('cp-lang',l)}catch(e){}}
+function setL(l){document.documentElement.lang=l;['en','ro','es'].forEach(function(x){var b=document.getElementById('b-'+x);if(b)b.setAttribute('aria-pressed',x===l?'true':'false')});document.getElementById('b-en').classList.toggle('on',l==='en');document.getElementById('b-ro').classList.toggle('on',l==='ro');document.getElementById('b-es').classList.toggle('on',l==='es');try{localStorage.setItem('cp-lang',l)}catch(e){}}
 (function(){var l;try{l=localStorage.getItem('cp-lang')}catch(e){}if(!l){var n=(navigator.language||'').slice(0,2);l=(n==='ro'||n==='es')?n:'en'}setL(l)})();
 </script>
 </body>
