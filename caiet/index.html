@@ -69,6 +69,26 @@ footer a{color:var(--text)}
 html[lang=en] [data-l=en],html[lang=ro] [data-l=ro],html[lang=es] [data-l=es]{display:revert}
 img{max-width:100%;height:auto}
 @media (max-width:760px){.hero{flex-direction:column;align-items:center;gap:22px}.hero .cov{width:230px}.page{padding-top:30px}}
+.rasf{margin:46px auto 10px;max-width:860px}
+.rasf h2{text-align:center;margin-bottom:6px}
+.rasf p.sub{text-align:center;color:var(--muted);font-size:17px;margin:0 0 18px}
+.viz{display:flex;gap:18px;align-items:flex-start;justify-content:center}
+.mini{display:flex;flex-direction:column;gap:10px;flex:none}
+.mini button{display:block;width:70px;padding:0;border:2px solid transparent;background:#fff;cursor:pointer;line-height:0;box-shadow:0 0 0 1px var(--line)}
+.mini button img{width:100%;height:auto}
+.mini button.on,.mini button:hover{border-color:var(--aur)}
+.mare{flex:1;max-width:520px;text-align:center}
+.cadru{position:relative;background:#fff;box-shadow:0 0 0 2px var(--aurl),0 14px 30px rgba(20,35,74,.22)}
+.cadru img{display:block;width:100%;height:auto;cursor:zoom-in}
+.sag{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--aur);background:rgba(255,251,242,.95);color:var(--lapis);font-size:24px;line-height:1;cursor:pointer}
+.sag:hover{background:var(--aurl)}
+.sag.st{left:-22px}.sag.dr{right:-22px}
+.leg{margin-top:12px;font-size:17px}
+.leg .nr{color:var(--muted);font-size:15px;margin-left:6px}
+#lb{position:fixed;inset:0;background:rgba(10,18,40,.88);display:none;align-items:center;justify-content:center;z-index:50;padding:16px;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:100%;max-height:94vh;box-shadow:0 0 0 2px var(--aurl)}
+@media (max-width:760px){.viz{flex-direction:column-reverse;align-items:center}.mini{flex-direction:row;overflow-x:auto;max-width:100%;padding:2px}.mini button{width:58px}.sag.st{left:6px}.sag.dr{right:6px}}
 </style>
 </head>
 <body>
@@ -102,6 +122,39 @@ img{max-width:100%;height:auto}
     </div>
   </div>
 </div>
+
+<section class="rasf">
+<h2><span data-l="ro">Răsfoiți caietul</span><span data-l="en">Look inside the book</span><span data-l="es">Hojee el cuaderno</span></h2>
+<p class="sub"><span data-l="ro">Alegeți o pagină din stânga; apăsați pe pagina mare ca s-o vedeți pe tot ecranul.</span><span data-l="en">Pick a page on the left; tap the large page to see it full screen (Romanian edition).</span><span data-l="es">Elija una página a la izquierda; pulse la página grande para verla a pantalla completa (edición en rumano).</span></p>
+<div class="viz">
+  <div class="mini">
+    <button type="button" class="on" aria-label="Harta drumului: o stea pentru fiecare seară" data-aria-label-ro="Harta drumului: o stea pentru fiecare seară" data-aria-label-en="The road map: a star for every evening" data-aria-label-es="El mapa del camino: una estrella cada noche"><img src="pagini/pagina-1.jpg" width="760" height="1077" loading="lazy" alt=""></button>
+    <button type="button" aria-label="Ziua 1: gândul zilei, fapta bună, întrebarea serii" data-aria-label-ro="Ziua 1: gândul zilei, fapta bună, întrebarea serii" data-aria-label-en="Day 1: thought of the day, good deed, evening question" data-aria-label-es="Día 1: pensamiento, buena obra, pregunta de la noche"><img src="pagini/pagina-2.jpg" width="760" height="1077" loading="lazy" alt=""></button>
+    <button type="button" aria-label="Ziua 8: Îngerul vine la Fecioara Maria" data-aria-label-ro="Ziua 8: Îngerul vine la Fecioara Maria" data-aria-label-en="Day 8: the Angel comes to the Virgin Mary" data-aria-label-es="Día 8: el Ángel visita a la Virgen María"><img src="pagini/pagina-3.jpg" width="760" height="1077" loading="lazy" alt=""></button>
+    <button type="button" aria-label="Steaua de colindat, făcută acasă" data-aria-label-ro="Steaua de colindat, făcută acasă" data-aria-label-en="A carolling star, made at home" data-aria-label-es="Una estrella de villancicos, hecha en casa"><img src="pagini/pagina-4.jpg" width="760" height="1077" loading="lazy" alt=""></button>
+    <button type="button" aria-label="Diploma de la capătul drumului" data-aria-label-ro="Diploma de la capătul drumului" data-aria-label-en="The diploma at the end of the road" data-aria-label-es="El diploma al final del camino"><img src="pagini/pagina-5.jpg" width="760" height="1077" loading="lazy" alt=""></button>
+  </div>
+  <div class="mare">
+    <div class="cadru">
+      <img id="pm" src="pagini/pagina-1.jpg" width="760" height="1077" alt="Harta drumului: o stea pentru fiecare seară">
+      <button type="button" class="sag st" id="pst" aria-label="Pagina anterioară" data-aria-label-ro="Pagina anterioară" data-aria-label-en="Previous page" data-aria-label-es="Página anterior">&#8249;</button>
+      <button type="button" class="sag dr" id="pdr" aria-label="Pagina următoare" data-aria-label-ro="Pagina următoare" data-aria-label-en="Next page" data-aria-label-es="Página siguiente">&#8250;</button>
+    </div>
+    <div class="leg"><span class="lg"><span data-l="ro">Harta drumului: o stea pentru fiecare seară</span><span data-l="en">The road map: a star for every evening</span><span data-l="es">El mapa del camino: una estrella cada noche</span></span><span class="lg" hidden><span data-l="ro">Ziua 1: gândul zilei, fapta bună, întrebarea serii</span><span data-l="en">Day 1: thought of the day, good deed, evening question</span><span data-l="es">Día 1: pensamiento, buena obra, pregunta de la noche</span></span><span class="lg" hidden><span data-l="ro">Ziua 8: Îngerul vine la Fecioara Maria</span><span data-l="en">Day 8: the Angel comes to the Virgin Mary</span><span data-l="es">Día 8: el Ángel visita a la Virgen María</span></span><span class="lg" hidden><span data-l="ro">Steaua de colindat, făcută acasă</span><span data-l="en">A carolling star, made at home</span><span data-l="es">Una estrella de villancicos, hecha en casa</span></span><span class="lg" hidden><span data-l="ro">Diploma de la capătul drumului</span><span data-l="en">The diploma at the end of the road</span><span data-l="es">El diploma al final del camino</span></span><span class="nr" id="pnr">1 / 5</span></div>
+  </div>
+</div>
+</section>
+<div id="lb" role="dialog" aria-label="Pagină mărită"><img alt=""></div>
+<script>
+(function(){var b=[].slice.call(document.querySelectorAll('.mini button')),lg=[].slice.call(document.querySelectorAll('.leg .lg')),pm=document.getElementById('pm'),nr=document.getElementById('pnr'),lb=document.getElementById('lb'),li=lb.querySelector('img'),k=0,n=b.length;
+function ar(i){k=(i+n)%n;pm.src='pagini/pagina-'+(k+1)+'.jpg';pm.alt=b[k].getAttribute('aria-label');b.forEach(function(x,j){x.classList.toggle('on',j===k)});lg.forEach(function(x,j){x.hidden=j!==k});nr.textContent=(k+1)+' / '+n;li.src=pm.src}
+b.forEach(function(x,j){x.addEventListener('click',function(){ar(j)})});
+document.getElementById('pst').addEventListener('click',function(){ar(k-1)});
+document.getElementById('pdr').addEventListener('click',function(){ar(k+1)});
+pm.addEventListener('click',function(){li.src=pm.src;li.alt=pm.alt;lb.classList.add('on')});
+lb.addEventListener('click',function(){lb.classList.remove('on')});
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){lb.classList.remove('on');return}if(e.key==='ArrowRight')ar(k+1);else if(e.key==='ArrowLeft')ar(k-1)});})();
+</script>
 
 <div class="txt">
 <h2><span data-l="ro">În alte limbi, pentru copiii care cresc în diaspora</span><span data-l="en">In other languages, for children growing up abroad</span><span data-l="es">En otros idiomas, para los niños que crecen fuera de Rumanía</span></h2>
