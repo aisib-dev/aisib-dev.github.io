@@ -96,6 +96,28 @@ footer a{color:var(--text)}
 html[lang=en] [data-l=en],html[lang=ro] [data-l=ro],html[lang=es] [data-l=es]{display:revert}
 img{max-width:100%;height:auto}
 @media (max-width:600px){.hero{padding-top:110px}.hero-art{height:360px;width:84vw}.hero-art img{width:64%;top:40px}.hero .kicker{font-size:12px;letter-spacing:.14em}.hero .kicker:before,.hero .kicker:after{margin:0 8px 3px}}
+.prod .act{margin-top:auto;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.prod .act .go{margin-top:0}
+.rsf{background:none;border:1.5px solid var(--aur);color:var(--text);padding:10px 18px;border-radius:4px;font:inherit;font-weight:600;font-size:17px;cursor:pointer}
+.rsf:hover{background:var(--perg)}
+#rv{position:fixed;inset:0;background:rgba(10,18,40,.9);display:none;z-index:60;overflow:auto;padding:20px 12px}
+#rv.on{display:block}
+#rv .in{max-width:900px;margin:0 auto;background:var(--hartie);padding:18px 18px 22px;position:relative;box-shadow:0 0 0 2px var(--aurl)}
+#rv h4{font-family:'EB Garamond',Georgia,serif;font-size:24px;color:var(--lapis);margin:0 44px 14px 0}
+#rv .x{position:absolute;top:10px;right:10px;width:40px;height:40px;border-radius:50%;border:1px solid var(--aur);background:#fff;font-size:22px;cursor:pointer;color:var(--lapis)}
+#rv .viz{display:flex;gap:16px;align-items:flex-start;justify-content:center}
+#rv .mini{display:flex;flex-direction:column;gap:10px;flex:none;max-height:76vh;overflow:auto;padding:2px}
+#rv .mini button{width:64px;padding:0;border:2px solid transparent;background:#fff;cursor:pointer;line-height:0;box-shadow:0 0 0 1px var(--line)}
+#rv .mini button img{width:100%;height:auto}
+#rv .mini button.on,#rv .mini button:hover{border-color:var(--aur)}
+#rv .mare{flex:1;max-width:520px;text-align:center}
+#rv .cadru{position:relative;background:#fff;box-shadow:0 0 0 2px var(--aurl),0 10px 24px rgba(20,35,74,.22)}
+#rv .cadru img{display:block;width:100%;height:auto;max-height:76vh;object-fit:contain}
+#rv .sag{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;border:1px solid var(--aur);background:rgba(255,251,242,.95);color:var(--lapis);font-size:24px;line-height:1;cursor:pointer}
+#rv .sag.st{left:-20px}#rv .sag.dr{right:-20px}
+#rv .leg{margin-top:10px;font-size:17px}
+#rv .nr{color:var(--muted);font-size:15px;margin-left:6px}
+@media (max-width:760px){#rv .viz{flex-direction:column-reverse;align-items:center}#rv .mini{flex-direction:row;max-width:100%;max-height:none}#rv .mini button{width:54px}#rv .sag.st{left:6px}#rv .sag.dr{right:6px}}
 </style>
 </head>
 <body>
@@ -133,7 +155,7 @@ img{max-width:100%;height:auto}
           <h3>Drumul meu spre Betleem</h3>
           <p><span data-l="ro">40 de seri spre Crăciun: un gând, Scriptura, sfântul zilei, o faptă bună și o stea de colorat. Pe telefon sau de tipărit.</span><span data-l="en">40 evenings to Christmas: a thought, Scripture, the saint of the day, a good deed and a star to colour. Romanian edition.</span><span data-l="es">40 noches hacia la Navidad: un pensamiento, la Escritura, el santo del día, una buena obra y una estrella. Edición en rumano.</span></p>
           <div class="pret"><span data-l="ro">Gratuit</span><span data-l="en">Free</span><span data-l="es">Gratis</span></div>
-          <a class="go" href="/caiet/"><span data-l="ro">Descarcă</span><span data-l="en">Download</span><span data-l="es">Descargar</span></a>
+          <div class="act"><a class="go" href="/caiet/"><span data-l="ro">Descarcă</span><span data-l="en">Download</span><span data-l="es">Descargar</span></a><button type="button" class="rsf" data-r="caiet"><span data-l="ro">Răsfoiește</span><span data-l="en">Look inside</span><span data-l="es">Hojear</span></button></div>
         </div>
       </article>
 
@@ -147,6 +169,7 @@ img{max-width:100%;height:auto}
             <a href="https://candelaparohiei.gumroad.com/l/yvdqw">English</a><a href="https://candelaparohiei.gumroad.com/l/vczzep">Italiano</a><a href="https://candelaparohiei.gumroad.com/l/zvutxi">Español</a><a href="https://candelaparohiei.gumroad.com/l/idgzjj">Français</a><a href="https://candelaparohiei.gumroad.com/l/eadhj">Deutsch</a>
           </div>
           <div class="pret"><span data-l="ro">Plătiți cât doriți, chiar 0</span><span data-l="en">Pay what you want, even 0</span><span data-l="es">Pague lo que quiera, incluso 0</span></div>
+          <div class="act"><button type="button" class="rsf" data-r="limbi"><span data-l="ro">Răsfoiește</span><span data-l="en">Look inside</span><span data-l="es">Hojear</span></button></div>
         </div>
       </article>
 
@@ -161,7 +184,7 @@ img{max-width:100%;height:auto}
             <a href="https://candelaparohiei.gumroad.com/l/pdjfl">Română</a><a href="https://candelaparohiei.gumroad.com/l/tzaks">English</a><a href="https://candelaparohiei.gumroad.com/l/ldoxy">Italiano</a><a href="https://candelaparohiei.gumroad.com/l/whvzq">Español</a><a href="https://candelaparohiei.gumroad.com/l/wohtuh">Français</a><a href="https://candelaparohiei.gumroad.com/l/aidzhr">Deutsch</a>
           </div>
           <div class="pret"><span data-l="ro">Preț de lansare: 1,90 €</span><span data-l="en">Launch price: €1.90</span><span data-l="es">Precio de lanzamiento: 1,90 €</span></div>
-          <a class="go" href="https://candelaparohiei.gumroad.com/l/pdjfl" data-href-ro="https://candelaparohiei.gumroad.com/l/pdjfl" data-href-en="https://candelaparohiei.gumroad.com/l/tzaks" data-href-es="https://candelaparohiei.gumroad.com/l/whvzq"><span data-l="ro">Vezi caietul</span><span data-l="en">See the booklet</span><span data-l="es">Ver el cuaderno</span></a>
+          <div class="act"><a class="go" href="https://candelaparohiei.gumroad.com/l/pdjfl" data-href-ro="https://candelaparohiei.gumroad.com/l/pdjfl" data-href-en="https://candelaparohiei.gumroad.com/l/tzaks" data-href-es="https://candelaparohiei.gumroad.com/l/whvzq"><span data-l="ro">Vezi caietul</span><span data-l="en">See the booklet</span><span data-l="es">Ver el cuaderno</span></a><button type="button" class="rsf" data-r="careuri"><span data-l="ro">Răsfoiește</span><span data-l="en">Look inside</span><span data-l="es">Hojear</span></button></div>
         </div>
       </article>
 
@@ -172,7 +195,7 @@ img{max-width:100%;height:auto}
           <div class="eticheta"><span data-l="ro">Pentru parohii · Canva</span><span data-l="en">For parishes · Canva</span><span data-l="es">Para parroquias · Canva</span></div>
           <h3><span data-l="ro">Kitul de parohie</span><span data-l="en">The parish kit</span><span data-l="es">El kit parroquial</span></h3>
           <p><span data-l="ro">Programul slujbelor de Crăciun și din post, diploma pentru colindători, postări și felicitări, editabile gratuit în Canva.</span><span data-l="en">Christmas and Fast service schedules, a carolers' diploma, social posts and cards, editable for free in Canva.</span><span data-l="es">Horarios de oficios de Navidad y del Ayuno, diploma para los niños, publicaciones y tarjetas, editables gratis en Canva.</span></p>
-          <a class="go alt" href="/caiet/#abonare"><span data-l="ro">Anunțați-mă</span><span data-l="en">Notify me</span><span data-l="es">Avísenme</span></a>
+          <div class="act"><a class="go alt" href="/caiet/#abonare"><span data-l="ro">Anunțați-mă</span><span data-l="en">Notify me</span><span data-l="es">Avísenme</span></a><button type="button" class="rsf" data-r="kit"><span data-l="ro">Răsfoiește</span><span data-l="en">Look inside</span><span data-l="es">Hojear</span></button></div>
         </div>
       </article>
 
@@ -238,6 +261,50 @@ function setL(l){if(['en','ro','es'].indexOf(l)<0)l='en';var d=document.document
 document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||!window.goatcounter||!goatcounter.count)return;var h=a.getAttribute('href')||'',p=null;
 if(/\.pdf$/i.test(h))p='descarcare/'+h.split('/').pop();else{var m=h.match(/gumroad\.com\/l\/([a-z0-9-]+)/i);if(m)p='gumroad/'+m[1]}
 if(p)goatcounter.count({path:p,title:a.textContent.replace(/\s+/g,' ').trim().slice(0,60),event:true})});
+</script>
+<div id="rv" role="dialog" aria-modal="true"><div class="in">
+<button type="button" class="x" aria-label="Închide">&times;</button>
+<h4 id="rvt"></h4>
+<div class="viz"><div class="mini" id="rvm"></div>
+<div class="mare"><div class="cadru"><img id="rvi" alt=""><button type="button" class="sag st" aria-label="&lsaquo;">&#8249;</button><button type="button" class="sag dr" aria-label="&rsaquo;">&#8250;</button></div>
+<div class="leg"><span id="rvl"></span><span class="nr" id="rvn"></span></div></div></div>
+</div></div>
+<script>
+(function(){
+var R={
+caiet:{t:{ro:'Drumul meu spre Betleem: câteva pagini',en:'My Road to Bethlehem (Romanian edition): a look inside',es:'Mi camino a Belén (edición en rumano): algunas páginas'},p:[
+['/caiet/pagini/pagina-1.jpg',{ro:'Harta drumului: o stea pentru fiecare seară',en:'The road map: a star for every evening',es:'El mapa del camino: una estrella cada noche'}],
+['/caiet/pagini/pagina-2.jpg',{ro:'Ziua 1: gândul zilei, fapta bună, întrebarea serii',en:'Day 1: thought, good deed, evening question',es:'Día 1: pensamiento, buena obra, pregunta'}],
+['/caiet/pagini/pagina-3.jpg',{ro:'Ziua 8: Îngerul vine la Fecioara Maria',en:'Day 8: the Angel comes to the Virgin Mary',es:'Día 8: el Ángel visita a la Virgen María'}],
+['/caiet/pagini/pagina-4.jpg',{ro:'Steaua de colindat, făcută acasă',en:'A carolling star, made at home',es:'Una estrella de villancicos, hecha en casa'}],
+['/caiet/pagini/pagina-5.jpg',{ro:'Diploma de la capătul drumului',en:'The diploma at the end of the road',es:'El diploma al final del camino'}]]},
+limbi:{t:{ro:'Caietul în alte limbi: ziua 1 în fiecare ediție',en:'The book in your language: day 1 in each edition',es:'El cuaderno en su idioma: el día 1 en cada edición'},p:[
+['/img/rasfoire/limbi-EN.jpg',{ro:'English: My Road to Bethlehem',en:'English: My Road to Bethlehem',es:'English: My Road to Bethlehem'}],
+['/img/rasfoire/limbi-IT.jpg',{ro:'Italiano: Il mio cammino verso Betlemme',en:'Italiano: Il mio cammino verso Betlemme',es:'Italiano: Il mio cammino verso Betlemme'}],
+['/img/rasfoire/limbi-ES.jpg',{ro:'Español: Mi camino a Belén',en:'Español: Mi camino a Belén',es:'Español: Mi camino a Belén'}],
+['/img/rasfoire/limbi-FR.jpg',{ro:'Français: Mon chemin vers Bethléem',en:'Français: Mon chemin vers Bethléem',es:'Français: Mon chemin vers Bethléem'}],
+['/img/rasfoire/limbi-DE.jpg',{ro:'Deutsch: Mein Weg nach Betlehem',en:'Deutsch: Mein Weg nach Betlehem',es:'Deutsch: Mein Weg nach Betlehem'}]]},
+careuri:{t:{ro:'Găsește cuvântul: câteva pagini (ediția în română)',en:'Word Search: a look inside (Romanian edition shown)',es:'Sopa de letras: algunas páginas (edición en rumano)'},p:[
+['/img/rasfoire/careuri-1.jpg',{ro:'Coperta',en:'Cover',es:'Portada'}],
+['/img/rasfoire/careuri-2.jpg',{ro:'Pentru părinți: cum folosim caietul',en:'For parents: how to use the booklet',es:'Para los padres: cómo usar el cuaderno'}],
+['/img/rasfoire/careuri-3.jpg',{ro:'Careul 1: Postul Nașterii Domnului',en:'Puzzle 1: the Nativity Fast',es:'Sopa 1: el Ayuno de la Natividad'}],
+['/img/rasfoire/careuri-4.jpg',{ro:'Careul 8: Sfântul Apostol Andrei',en:'Puzzle 8: Saint Andrew the Apostle',es:'Sopa 8: San Andrés Apóstol'}]]},
+kit:{t:{ro:'Kitul de parohie: câteva șabloane (în pregătire)',en:'The parish kit: some templates (in preparation)',es:'El kit parroquial: algunas plantillas (en preparación)'},p:[
+['/craciun.png',{ro:'Afiș cu programul slujbelor de Crăciun',en:'Christmas service schedule poster',es:'Cartel con el horario de Navidad'}],
+['/post.png',{ro:'Felicitare pentru Postul Crăciunului',en:'Card for the Nativity Fast',es:'Tarjeta para el Ayuno de Navidad'}]]}
+};
+var rv=document.getElementById('rv'),m=document.getElementById('rvm'),im=document.getElementById('rvi'),lg=document.getElementById('rvl'),nr=document.getElementById('rvn'),tt=document.getElementById('rvt'),cur=null,k=0,last=null;
+function L(){var l=document.documentElement.lang;return (l==='en'||l==='es')?l:'ro'}
+function ar(i){var p=cur.p,n=p.length;k=(i+n)%n;im.src=p[k][0];im.alt=p[k][1][L()];lg.textContent=p[k][1][L()];nr.textContent=(k+1)+' / '+n;[].forEach.call(m.children,function(b,j){b.classList.toggle('on',j===k)})}
+function open(key,src){cur=R[key];last=src;tt.textContent=cur.t[L()];m.innerHTML='';cur.p.forEach(function(x,j){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label',x[1][L()]);var i=document.createElement('img');i.src=x[0];i.alt='';i.loading='lazy';b.appendChild(i);b.addEventListener('click',function(){ar(j)});m.appendChild(b)});ar(0);rv.classList.add('on');document.body.style.overflow='hidden';rv.querySelector('.x').focus();try{goatcounter.count({path:'rasfoire/'+key,title:'Răsfoiește '+key,event:true})}catch(e){}}
+function close(){rv.classList.remove('on');document.body.style.overflow='';if(last)last.focus()}
+document.querySelectorAll('.rsf').forEach(function(b){b.addEventListener('click',function(){open(b.getAttribute('data-r'),b)})});
+rv.querySelector('.x').addEventListener('click',close);
+rv.querySelector('.sag.st').addEventListener('click',function(){ar(k-1)});
+rv.querySelector('.sag.dr').addEventListener('click',function(){ar(k+1)});
+rv.addEventListener('click',function(e){if(e.target===rv)close()});
+document.addEventListener('keydown',function(e){if(!rv.classList.contains('on'))return;if(e.key==='Escape')close();else if(e.key==='ArrowRight')ar(k+1);else if(e.key==='ArrowLeft')ar(k-1)});
+})();
 </script>
 <script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
