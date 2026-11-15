@@ -118,6 +118,16 @@ img{max-width:100%;height:auto}
 #rv .leg{margin-top:10px;font-size:17px}
 #rv .nr{color:var(--muted);font-size:15px;margin-left:6px}
 @media (max-width:760px){#rv .viz{flex-direction:column-reverse;align-items:center}#rv .mini{flex-direction:row;max-width:100%;max-height:none}#rv .mini button{width:54px}#rv .sag.st{left:6px}#rv .sag.dr{right:6px}}
+.prod .img.c3{perspective:1100px;padding:30px 22px 34px}
+.carte{--w:176px;--h:249px;--g:12px;position:relative;width:var(--w);height:var(--h);transform-style:preserve-3d;transform:rotateY(-28deg) rotateX(2deg);transition:transform .5s ease}
+.prod:hover .carte{transform:rotateY(-12deg) rotateX(1deg)}
+.carte>img{position:absolute;inset:0;width:var(--w)!important;height:var(--h)!important;max-height:none!important;transform:translateZ(calc(var(--g)/2));box-shadow:none!important;border-radius:0 2px 2px 0}
+.carte>i{position:absolute;inset:0;transform:translateZ(calc(var(--g)/2 + .5px));background:linear-gradient(90deg,rgba(0,0,0,.28) 0,rgba(255,255,255,.18) 3%,rgba(0,0,0,.08) 6%,transparent 10%,transparent 92%,rgba(255,255,255,.08) 100%);pointer-events:none;border-radius:0 2px 2px 0}
+.carte:before{content:'';position:absolute;left:0;top:3px;width:calc(var(--g) - 2px);height:calc(var(--h) - 6px);transform:translateX(calc(var(--w) - var(--g)/2 - 3px)) rotateY(90deg);background:repeating-linear-gradient(90deg,#fffdf6 0,#fffdf6 1px,#e7dfcc 1px,#e7dfcc 2px)}
+.carte:after{content:'';position:absolute;inset:0;transform:translateZ(calc(var(--g)/-2));background:#0d1834;border-radius:0 2px 2px 0;box-shadow:-14px 10px 34px 4px rgba(0,0,0,.55)}
+@media (prefers-reduced-motion:reduce){.carte{transition:none}}
+.prod .img.clic{cursor:zoom-in}
+.prod .img.clic:focus-visible{outline:3px solid var(--aurl);outline-offset:-6px}
 </style>
 </head>
 <body>
@@ -149,7 +159,7 @@ img{max-width:100%;height:auto}
     <div class="grid">
 
       <article class="prod">
-        <div class="img"><img src="/caiet/coperta.jpg" alt="Drumul meu spre Betleem" data-alt-ro="Drumul meu spre Betleem" data-alt-en="Drumul meu spre Betleem (Romanian edition)" data-alt-es="Drumul meu spre Betleem (edición en rumano)" loading="lazy" width="176" height="250"></div>
+        <div class="img c3"><div class="carte"><img src="/caiet/coperta.jpg" alt="Drumul meu spre Betleem" data-alt-ro="Drumul meu spre Betleem" data-alt-en="Drumul meu spre Betleem (Romanian edition)" data-alt-es="Drumul meu spre Betleem (edición en rumano)" loading="lazy" width="176" height="249"><i></i></div></div>
         <div class="body">
           <div class="eticheta"><span data-l="ro">Caiet · 4-11 ani</span><span data-l="en">Activity book · ages 4-11</span><span data-l="es">Cuaderno · 4-11 años</span></div>
           <h3>Drumul meu spre Betleem</h3>
@@ -160,7 +170,7 @@ img{max-width:100%;height:auto}
       </article>
 
       <article class="prod">
-        <div class="img"><img src="/img/editie-EN.jpg" alt="My Road to Bethlehem" loading="lazy" width="250" height="250"></div>
+        <div class="img c3"><div class="carte"><img src="/img/coperta-EN.jpg" alt="My Road to Bethlehem" loading="lazy" width="176" height="249"><i></i></div></div>
         <div class="body">
           <div class="eticheta"><span data-l="ro">În 5 limbi · diaspora</span><span data-l="en">In 5 languages</span><span data-l="es">En 5 idiomas</span></div>
           <h3><span data-l="ro">Caietul în alte limbi</span><span data-l="en">The book in your language</span><span data-l="es">El cuaderno en su idioma</span></h3>
@@ -175,7 +185,7 @@ img{max-width:100%;height:auto}
 
       <article class="prod">
         <span class="curand"><span data-l="ro">Nou</span><span data-l="en">New</span><span data-l="es">Nuevo</span></span>
-        <div class="img"><img src="/img/gaseste.jpg" alt="Găsește cuvântul pe drumul spre Betleem" data-alt-ro="Găsește cuvântul pe drumul spre Betleem" data-alt-en="Word search book on the road to Bethlehem, in six languages" data-alt-es="Sopas de letras en el camino a Belén, en seis idiomas" loading="lazy" width="250" height="250"></div>
+        <div class="img c3"><div class="carte"><img src="/img/coperta-careuri.jpg" alt="Găsește cuvântul pe drumul spre Betleem" data-alt-ro="Găsește cuvântul pe drumul spre Betleem" data-alt-en="Word Search on the Road to Bethlehem (Romanian edition cover)" data-alt-es="Sopa de letras en el camino a Belén (portada de la edición en rumano)" loading="lazy" width="176" height="249"><i></i></div></div>
         <div class="body">
           <div class="eticheta"><span data-l="ro">Careuri · 7-11 ani</span><span data-l="en">Word search · ages 7-11</span><span data-l="es">Sopa de letras · 7-11 años</span></div>
           <h3><span data-l="ro">Găsește cuvântul</span><span data-l="en">Word Search on the Road to Bethlehem</span><span data-l="es">Sopa de letras en el camino a Belén</span></h3>
@@ -289,9 +299,14 @@ careuri:{t:{ro:'Găsește cuvântul: câteva pagini (ediția în română)',en:'
 ['/img/rasfoire/careuri-2.jpg',{ro:'Pentru părinți: cum folosim caietul',en:'For parents: how to use the booklet',es:'Para los padres: cómo usar el cuaderno'}],
 ['/img/rasfoire/careuri-3.jpg',{ro:'Careul 1: Postul Nașterii Domnului',en:'Puzzle 1: the Nativity Fast',es:'Sopa 1: el Ayuno de la Natividad'}],
 ['/img/rasfoire/careuri-4.jpg',{ro:'Careul 8: Sfântul Apostol Andrei',en:'Puzzle 8: Saint Andrew the Apostle',es:'Sopa 8: San Andrés Apóstol'}]]},
-kit:{t:{ro:'Kitul de parohie: câteva șabloane (în pregătire)',en:'The parish kit: some templates (in preparation)',es:'El kit parroquial: algunas plantillas (en preparación)'},p:[
-['/craciun.png',{ro:'Afiș cu programul slujbelor de Crăciun',en:'Christmas service schedule poster',es:'Cartel con el horario de Navidad'}],
-['/post.png',{ro:'Felicitare pentru Postul Crăciunului',en:'Card for the Nativity Fast',es:'Tarjeta para el Ayuno de Navidad'}]]}
+kit:{t:{ro:'Kitul de parohie: cele 7 șabloane (în pregătire)',en:'The parish kit: the 7 templates (in preparation)',es:'El kit parroquial: las 7 plantillas (en preparación)'},p:[
+['/img/rasfoire/kit-1.jpg',{ro:'Afiș cu programul slujbelor din Postul Nașterii',en:'Nativity Fast service schedule poster',es:'Cartel con el horario del Ayuno de Navidad'}],
+['/img/rasfoire/kit-2.jpg',{ro:'Felicitare de zi onomastică: La mulți ani!',en:'Name day card',es:'Tarjeta de onomástica'}],
+['/img/rasfoire/kit-3.jpg',{ro:'Afiș A4 cu programul slujbelor de Crăciun',en:'Christmas service schedule poster (A4)',es:'Cartel A4 con el horario de Navidad'}],
+['/img/rasfoire/kit-4.jpg',{ro:'Diplomă pentru copiii colindători',en:'Diploma for child carollers',es:'Diploma para los niños que cantan villancicos'}],
+['/img/rasfoire/kit-5.jpg',{ro:'Felicitare: Post binecuvântat!',en:'Card for the Nativity Fast',es:'Tarjeta para el Ayuno de Navidad'}],
+['/img/rasfoire/kit-6.jpg',{ro:'Postare: Un gând pentru astăzi',en:'Social post: a thought for today',es:'Publicación: un pensamiento para hoy'}],
+['/img/rasfoire/kit-7.jpg',{ro:'Postare pentru Postul Nașterii Domnului',en:'Social post for the Nativity Fast',es:'Publicación para el Ayuno de Navidad'}]]}
 };
 var rv=document.getElementById('rv'),m=document.getElementById('rvm'),im=document.getElementById('rvi'),lg=document.getElementById('rvl'),nr=document.getElementById('rvn'),tt=document.getElementById('rvt'),cur=null,k=0,last=null;
 function L(){var l=document.documentElement.lang;return (l==='en'||l==='es')?l:'ro'}
@@ -304,6 +319,7 @@ rv.querySelector('.sag.st').addEventListener('click',function(){ar(k-1)});
 rv.querySelector('.sag.dr').addEventListener('click',function(){ar(k+1)});
 rv.addEventListener('click',function(e){if(e.target===rv)close()});
 document.addEventListener('keydown',function(e){if(!rv.classList.contains('on'))return;if(e.key==='Escape')close();else if(e.key==='ArrowRight')ar(k+1);else if(e.key==='ArrowLeft')ar(k-1)});
+document.querySelectorAll('.prod').forEach(function(a){var r=a.querySelector('.rsf'),im=a.querySelector('.img');if(!r||!im)return;im.classList.add('clic');im.setAttribute('role','button');im.setAttribute('tabindex','0');im.setAttribute('aria-label',r.innerText.trim());im.addEventListener('click',function(){r.click()});im.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();r.click()}})});
 })();
 </script>
 <script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
