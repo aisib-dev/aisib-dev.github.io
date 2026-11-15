@@ -233,6 +233,12 @@ img{max-width:100%;height:auto}
 function setL(l){if(['en','ro','es'].indexOf(l)<0)l='en';var d=document.documentElement;d.lang=l;['en','ro','es'].forEach(function(x){var b=document.getElementById('b-'+x);if(b){b.setAttribute('aria-pressed',x===l?'true':'false');b.classList.toggle('on',x===l)}});var t=d.getAttribute('data-doctitle-'+l);if(t)document.title=t;['alt','title','placeholder','aria-label','href'].forEach(function(a){var s=document.querySelectorAll('[data-'+a+'-'+l+']');for(var i=0;i<s.length;i++)s[i].setAttribute(a,s[i].getAttribute('data-'+a+'-'+l))});var o=document.querySelectorAll('[data-text-'+l+']');for(var j=0;j<o.length;j++)o[j].textContent=o[j].getAttribute('data-text-'+l);try{localStorage.setItem('cp-lang',l)}catch(e){}}
 (function(){var l=null;try{l=new URLSearchParams(location.search).get('l')}catch(e){}if(['en','ro','es'].indexOf(l)<0){l=null;try{l=localStorage.getItem('cp-lang')}catch(e){}}if(!l){var n=(navigator.language||'').slice(0,2);l=(n==='ro'||n==='es')?n:'en'}setL(l)})();
 </script>
+<script>
+/* contor anonim al descarcarilor si al clicurilor spre Gumroad (fara cookie, fara date personale) */
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||!window.goatcounter||!goatcounter.count)return;var h=a.getAttribute('href')||'',p=null;
+if(/\.pdf$/i.test(h))p='descarcare/'+h.split('/').pop();else{var m=h.match(/gumroad\.com\/l\/([a-z0-9-]+)/i);if(m)p='gumroad/'+m[1]}
+if(p)goatcounter.count({path:p,title:a.textContent.replace(/\s+/g,' ').trim().slice(0,60),event:true})});
+</script>
 <script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
 </body>
 </html>
