@@ -1,0 +1,48 @@
+/* Candela Parohiei: stratul «jucăuș» comun tuturor paginilor (16 nov 2026).
+   Culorile de bază rămân cele ale site-ului (lapis, porfir, aur, cinabru, pergament).
+   Singurele nuanțe noi sunt fondul de iarnă (--cer, --cer2, --fulg), luate de pe coperta aprobată a caietelor «Popasuri de duminică». */
+:root{--lapis:#14234A;--lapis2:#1E3566;--text:#1B2A4A;--perg:#F7F0E1;--hartie:#FFFBF2;--aur:#B8892E;--aurl:#E3C77E;--aurt:#8A6420;--porfir:#5B2840;--cinabru:#9E2B25;--line:#E4D7BC;--muted:#4A5568;
+ --cer:#DCE5F2;--cer2:#E9EEF7;--fulg:#9DB0D6;--rotund:'Nunito','Trebuchet MS',Arial,sans-serif}
+body{background:var(--cer) url(/img/joc/fulgi.svg) 0 0/260px 260px}
+h1,h2,h3{font-family:var(--rotund);font-weight:800;letter-spacing:-.005em}
+.kicker{font-family:var(--rotund);font-weight:800;letter-spacing:.12em;color:var(--porfir)}
+.kicker:before,.kicker:after{border-radius:2px;background:var(--aur)}
+
+/* antet */
+.topbar{background:transparent;border-bottom:0}
+.brand{font-family:var(--rotund);font-weight:800;letter-spacing:.01em;font-size:23px;color:var(--lapis);display:inline-flex;align-items:center;gap:8px}
+.brand span{color:var(--porfir)}
+.brand:before{content:'';width:26px;height:26px;flex:none;background:url(/img/joc/candela.svg) center/contain no-repeat}
+.lang button{font-family:var(--rotund);font-weight:800;color:var(--lapis);background:#fff;border:2px solid var(--lapis);border-radius:999px}
+.lang button.on{background:var(--lapis);color:#fff;border-color:var(--lapis)}
+.lang button:focus-visible{outline:3px solid var(--aur);outline-offset:2px}
+
+/* panoul festonat (ca pe coperta caietelor) */
+.feston{border:16px solid transparent;border-image:url(/img/joc/feston.svg) 16 round;background-color:var(--hartie);background-clip:padding-box}
+.page{border:16px solid transparent;border-image:url(/img/joc/feston.svg) 16 round;background-color:var(--hartie);background-clip:padding-box;margin:10px auto 0;width:calc(100% - 24px)}
+@media (max-width:600px){.feston,.page{border-width:12px}}
+
+/* butoane rotunde, «de apăsat» */
+.btn,.go,form button,.box button,.dl a.prim{border-radius:999px!important;font-family:var(--rotund);font-weight:800;box-shadow:0 4px 0 rgba(20,35,74,.28);transition:transform .12s ease,box-shadow .12s ease}
+.btn:active,.go:active,form button:active,.box button:active{transform:translateY(3px);box-shadow:0 1px 0 rgba(20,35,74,.28)}
+.dl a{border-radius:18px;border-width:2px}
+.dl a.prim{border-radius:22px!important}
+details.alte summary{font-family:var(--rotund);font-weight:700}
+
+/* casete rotunjite */
+.box,.nota,.prev{border-radius:20px}
+.box:before{border:2px dashed var(--aurl);border-radius:14px}
+.prev{border:2px dashed var(--aurl);border-left:2px dashed var(--aurl)}
+input,select,textarea{border-radius:14px!important}
+.cadru{border-radius:12px;overflow:visible}
+.cadru img{border-radius:12px}
+.mini button{border-radius:8px;overflow:hidden}
+.sag{box-shadow:0 3px 0 rgba(20,35,74,.2)}
+.limbi a{border-radius:999px!important;border-width:2px!important;font-family:var(--rotund);font-weight:700;font-size:15px!important}
+.gratuit{font-family:var(--rotund);font-weight:800;letter-spacing:.08em;border-radius:999px;padding:5px 14px}
+
+/* subsol cu margine ondulată */
+footer{position:relative;background:var(--hartie);border-top:0;margin-top:70px}
+footer:before{content:'';position:absolute;left:0;right:0;top:-13px;height:14px;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='14' viewBox='0 0 32 14'%3E%3Cpath d='M0 8 Q8 0 16 8 T32 8 V14 H0Z' fill='%23FFFBF2'/%3E%3Cpath d='M0 8 Q8 0 16 8 T32 8' fill='none' stroke='%23B8892E' stroke-width='1.6'/%3E%3C/svg%3E") 0 0/32px 14px repeat-x}
+footer .social a{background:#fff;font-family:var(--rotund);font-weight:700;border-width:2px!important}
+@media (prefers-reduced-motion:reduce){.btn,.go,form button{transition:none}}
