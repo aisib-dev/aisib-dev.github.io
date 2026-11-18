@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Drumul meu spre Betleem: 40 de seri spre Crăciun, pe telefon · Candela Parohiei</title>
+<link rel="canonical" href="https://researchmind.org/drum/">
+<meta name="description" content="Varianta de pe telefon a caietului gratuit «Drumul meu spre Betleem»: o hartă cu 40 de stele, câte una pentru fiecare seară din Postul Nașterii Domnului 2026, cu versetul, sfântul zilei și fapta bună.">
+<meta property="og:title" content="Drumul meu spre Betleem: 40 de seri spre Crăciun">
+<meta property="og:description" content="În fiecare seară se deschide o stea: versetul, sfântul zilei și fapta bună. Gratuit, fără cont.">
+<meta property="og:image" content="https://researchmind.org/caiet/coperta.jpg">
+<meta property="og:url" content="https://researchmind.org/drum/">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#14234A">
+<link rel="manifest" href="/drum/manifest.webmanifest">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/drum/apple-touch-icon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/jucaus.css">
+<link rel="stylesheet" href="/drum/drum.css">
+</head>
+<body>
+<div class="topbar"><div class="wrap top">
+  <a class="brand" href="/">Candela <span>Parohiei</span></a>
+</div></div>
+
+<main>
+<section class="panou feston antet">
+  <span class="insigna" data-t="insigna">Postul Nașterii Domnului 2026</span>
+  <h1 data-t="titlu">Drumul meu spre Betleem</h1>
+  <p class="sub" data-t="subtitlu">40 de seri spre Crăciun</p>
+  <p class="intro" data-t="intro">În fiecare seară se aprinde pe hartă o stea nouă. Atinge-o: găsești versetul, sfântul zilei și fapta bună. Când ai făcut fapta bună, apasă «Am făcut-o» și steaua ta strălucește până la Betleem.</p>
+  <p class="stare" id="stare" aria-live="polite"></p>
+  <button type="button" class="mare" id="azi" hidden></button>
+</section>
+
+<section class="panou feston harta-panou" aria-labelledby="harta-titlu">
+  <h2 id="harta-titlu" class="ascuns" data-t="hartaTitlu">Harta drumului</h2>
+  <div id="harta" class="harta"></div>
+  <p class="legenda" data-t="legenda">Stelele aurii sunt faptele bune făcute. Stelele cu biserică sunt duminicile. Stelele stinse se deschid în serile lor.</p>
+</section>
+
+<section class="panou feston jos">
+  <a class="mare tipar" href="/caiet/drumul-spre-betleem-2026-a4.pdf" data-t="tipareste">Tipărește caietul</a>
+  <p class="mic"><a href="/caiet/?ref=drum" data-t="toateVariantele">Toate variantele caietului (telefon, broșură, A4, Letter) și edițiile în alte limbi</a></p>
+  <p class="parinti" data-t="parinti"><b>Pentru părinți:</b> pagina nu cere cont și nu colectează nimic despre copil. Stelele aprinse se păstrează doar pe acest dispozitiv. Numărăm doar anonim, fără cookie-uri, vizitele și stelele deschise.</p>
+  <p class="mic magazin"><span data-t="magazinInainte">Pentru serile Postului, în familie:</span> <a href="https://candelaparohiei.gumroad.com/?ref=site-drum" data-t="magazinLink">jocurile de masă și pachetele Candela Parohiei</a></p>
+</section>
+</main>
+
+<div class="fundal" id="fundal" hidden></div>
+<div class="fereastra" id="fereastra" role="dialog" aria-modal="true" aria-labelledby="f-titlu" hidden>
+  <button type="button" class="inchide" id="inchide" aria-label="Închide">&times;</button>
+  <div id="f-continut"></div>
+</div>
+<div class="toast" id="toast" role="status" aria-live="polite" hidden></div>
+
+<footer><div class="wrap">
+  <p>Candela Parohiei · <a href="mailto:aisib@proton.me">aisib@proton.me</a> · <a href="/confidentialitate/">Confidențialitate</a> · <a href="/termeni/">Termeni</a></p>
+  <p style="font-size:14px">Un proiect al unor creștini ortodocși, în slujba copiilor și a parohiilor. Materialele nu înlocuiesc îndrumarea preotului paroh și a duhovnicului.</p>
+  <p style="font-size:14px">© 2026 Candela Parohiei</p>
+</div></footer>
+
+<noscript><p class="nojs">Harta are nevoie de JavaScript. Caietul se poate descărca de aici: <a href="/caiet/">researchmind.org/caiet</a></p></noscript>
+<script src="/drum/zile-ro.js"></script>
+<script src="/drum/drum.js"></script>
+<script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>

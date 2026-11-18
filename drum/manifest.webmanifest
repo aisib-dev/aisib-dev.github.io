@@ -1,0 +1,15 @@
+{
+  "name": "Drumul meu spre Betleem",
+  "short_name": "Spre Betleem",
+  "description": "40 de seri spre Crăciun: versetul, sfântul zilei și fapta bună. Candela Parohiei.",
+  "lang": "ro",
+  "start_url": "/drum/",
+  "scope": "/drum/",
+  "display": "standalone",
+  "background_color": "#DCE5F2",
+  "theme_color": "#14234A",
+  "icons": [
+    {"src": "/drum/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+    {"src": "/drum/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"}
+  ]
+}
