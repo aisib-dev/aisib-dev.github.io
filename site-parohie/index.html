@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Site pentru parohie, gata de folosit · Candela Parohiei</title>
+<link rel="canonical" href="https://researchmind.org/site-parohie/">
+<meta name="description" content="Un site pentru parohia dumneavoastră: anunțurile le puneți singur, ca pe Facebook; programul slujbelor se face singur pe tot anul, după Pascalie; pomelnice și programări primite prin site. Încercați demo-ul în browser, fără să instalați nimic.">
+<meta property="og:title" content="Site pentru parohie, gata de folosit">
+<meta property="og:description" content="Anunțurile le puneți singur. Programul slujbelor se face singur, după Pascalie. Încercați demo-ul în browser.">
+<meta property="og:image" content="https://researchmind.org/site-parohie/acasa.jpg">
+<meta property="og:url" content="https://researchmind.org/site-parohie/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/jucaus.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:20px;line-height:1.65}
+a{color:var(--cinabru)}
+img{max-width:100%;height:auto}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px 8px;flex-wrap:wrap;gap:10px}
+.brand{text-decoration:none}
+.kicker{font-size:14px;text-transform:uppercase;text-align:center}
+.kicker:before,.kicker:after{content:'';display:inline-block;width:7px;height:7px;margin:0 12px 3px;transform:rotate(45deg)}
+h1,h2,h3{line-height:1.12;margin:0;color:var(--lapis)}
+.panou{max-width:1080px;margin:8px auto 0;width:calc(100% - 24px);padding:30px 34px 34px}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:34px;align-items:center}
+.hero h1{font-size:clamp(32px,4.4vw,50px);margin:14px 0 6px;line-height:1.05}
+.hero h1 em{display:block;font-style:normal;color:var(--porfir);font-size:.56em;margin-top:8px}
+.insigna{display:inline-block;background:var(--porfir);color:#fff;font-family:var(--rotund);font-weight:800;font-size:14px;letter-spacing:.06em;padding:4px 14px;border-radius:999px;transform:rotate(-2deg)}
+.ecran{display:block;border-radius:10px;box-shadow:0 14px 28px rgba(20,35,74,.3);overflow:hidden;line-height:0;background:#fff}
+.hero .tel{max-width:250px;margin:0 auto;transform:rotate(2deg);border-radius:26px;border:8px solid var(--lapis)}
+.descarca{display:inline-flex;align-items:center;gap:10px;margin-top:12px;background:var(--lapis);color:#fff;text-decoration:none;padding:14px 28px;font-size:19px;border-radius:999px;font-family:var(--rotund);font-weight:800;box-shadow:0 5px 0 rgba(20,35,74,.3)}
+.descarca:hover{background:var(--lapis2)}
+.btn2{display:inline-block;margin:12px 6px 0 0;padding:12px 22px;border-radius:999px;border:2.5px solid var(--lapis);color:var(--lapis);background:#fff;text-decoration:none;font-family:var(--rotund);font-weight:800;font-size:17px}
+.nota-mica{font-size:16px;color:var(--muted);margin-top:12px}
+.cap{max-width:1080px;margin:34px auto 0;width:calc(100% - 24px);padding:30px 40px 34px}
+.cap h2{font-size:clamp(26px,3.4vw,36px);text-align:center;margin:10px 0 22px}
+.cap p{margin:0 0 .8em}
+.grila{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media (max-width:1000px){.grila{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.grila{grid-template-columns:1fr}}
+.fapte{background:#fff;border:2.5px solid var(--lapis);border-radius:24px;padding:18px 22px 12px;box-shadow:0 6px 0 rgba(20,35,74,.14)}
+.fapte h3{font-size:19px;color:var(--lapis);margin-bottom:8px}
+.fapte p{font-size:18px;line-height:1.5;margin:0 0 .5em}
+.fapte ul{margin:0;padding:0;list-style:none}
+.fapte li{position:relative;padding-left:26px;margin:0 0 8px;line-height:1.45;font-size:18px}
+.fapte li:before{content:'';position:absolute;left:2px;top:.45em;width:11px;height:11px;border-radius:50%;background:var(--aurl);border:2px solid var(--aur)}
+.ecrane{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.ecrane figure{margin:0}
+.ecrane figcaption{font-family:var(--rotund);font-weight:700;font-size:15px;color:var(--muted);margin-top:10px;text-align:center}
+.pret{font-family:var(--rotund);font-weight:800;font-size:34px;color:var(--cinabru);line-height:1;margin:6px 0 10px}
+.pret small{font-size:15px;color:var(--muted);font-weight:700}
+.pas{counter-increment:pas}
+.pas h3:before{content:counter(pas);display:inline-grid;place-items:center;width:32px;height:32px;margin-right:10px;border-radius:50%;background:var(--lapis);color:#fff;font-size:17px}
+.pasi{counter-reset:pas}
+.final{max-width:860px;margin:34px auto 0;width:calc(100% - 24px);padding:28px 30px;text-align:center}
+footer{text-align:center;color:var(--muted);font-size:16px;padding:40px 20px 50px}
+@media (max-width:820px){.hero{grid-template-columns:1fr;gap:22px}.panou{padding:20px 16px 24px}.ecrane{grid-template-columns:1fr}.cap{padding:20px 16px 24px}body{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap top">
+  <a class="brand" href="/">Candela <span>Parohiei</span></a>
+</div></div>
+<main>
+
+<div class="panou feston">
+<div class="hero">
+  <div>
+    <span class="insigna">Pentru parohii</span>
+    <h1>Un site pentru parohia dumneavoastră<em>Anunțurile le puneți singur, programul se face singur</em></h1>
+    <p>Un site curat și demn, care se citește bine pe telefon. Anunțul de duminică îl scrieți la fel de ușor ca pe Facebook. Programul slujbelor îl stabiliți o dată, iar posturile, Săptămâna Mare și praznicele se așază singure în calendar, după Pascalie, an de an. Credincioșii vă pot trimite pomelnice și cereri de programare direct din site.</p>
+    <a class="descarca" href="https://playground.wordpress.net/?blueprint-url=https://researchmind.org/site-parohie/demo/site.blueprint.json" target="_blank" rel="noopener">Vedeți site-ul demonstrativ</a><br>
+    <a class="btn2" href="https://playground.wordpress.net/?blueprint-url=https://researchmind.org/site-parohie/demo/panou.blueprint.json" target="_blank" rel="noopener">Intrați în panoul preotului</a>
+    <p class="nota-mica">Demo-ul se deschide în browser în aproximativ jumătate de minut, fără nimic de instalat. Puteți scrie anunțuri și schimba programul în voie: nimic nu se salvează și nimic nu se trimite.</p>
+  </div>
+  <span class="ecran tel"><img src="telefon.jpg" width="780" height="1688" alt="Prima pagină a site-ului demonstrativ pe telefon: numele parohiei, câte zile mai sunt până la praznic, butoanele Programul slujbelor și Trimiteți un pomelnic, bara Sună, Program, Pomelnic"></span>
+</div>
+</div>
+
+<section class="cap feston">
+<div class="kicker">Ce primește parohia</div><h2>Tot ce caută credincioșii, într-un singur loc</h2>
+<div class="grila">
+  <div class="fapte"><h3>Programul slujbelor</h3><ul><li>Săptămâna obișnuită, stabilită o dată.</li><li>Posturile și Săptămâna Mare, calculate după Pascalie.</li><li>Praznicele și hramul, cu Liturghie adăugată singură.</li><li>Calendarul lunii și o listă de tipărit pentru avizier.</li></ul></div>
+  <div class="fapte"><h3>Anunțuri și articole</h3><ul><li>Anunțurile parohiei, separat de articolele de învățătură.</li><li>Fotografii de la slujbe și din viața parohiei.</li><li>Pagina se actualizează singură, fără să cereți cuiva.</li></ul></div>
+  <div class="fapte"><h3>Pomelnice și programări</h3><ul><li>Pomelnicul vine în panoul preotului, gata de tipărit.</li><li>Cereri pentru botez, cununie, sfeștanie sau parastas.</li><li>Datele se șterg singure după 40 de zile (GDPR).</li></ul></div>
+  <div class="fapte"><h3>Sprijin și contact</h3><ul><li>Contul parohiei, cu buton de copiere.</li><li>Formularul 230, pentru parohiile din România.</li><li>Hartă, telefon și un buton «Sună» pe telefon.</li><li>Pagini în limba țării, pentru parohiile din diaspora.</li></ul></div>
+</div>
+</section>
+
+<section class="cap feston">
+<div class="kicker">Cum arată</div><h2>Pentru credincioși și pentru preot</h2>
+<div class="ecrane">
+  <figure><span class="ecran"><img src="acasa.jpg" width="1280" height="760" alt="Prima pagină a site-ului demonstrativ pe calculator"></span><figcaption>Prima pagină</figcaption></figure>
+  <figure><span class="ecran"><img src="program.jpg" width="1280" height="760" alt="Calendarul lunii, cu slujbele fiecărei zile și perioada Postului Nașterii Domnului"></span><figcaption>Calendarul slujbelor, după Pascalie</figcaption></figure>
+  <figure><span class="ecran"><img src="panou.jpg" width="1280" height="600" alt="Panoul preotului: butoane mari pentru pomelnice, programări, program, anunț nou, articol nou, fotografii și mesaje"></span><figcaption>Panoul preotului: butoane mari, fără meniuri încurcate</figcaption></figure>
+  <div class="fapte"><h3>De ce un site, dacă avem Facebook?</h3><p>Pe Facebook, programul de săptămâna trecută se pierde sub postări noi, iar cine nu are cont nu vede aproape nimic. Pe site, programul, adresa și contul parohiei sunt mereu la un clic, iar cine caută parohia pe Google o găsește. Pagina de Facebook rămâne: anunțurile de pe site se pot distribui acolo.</p></div>
+</div>
+</section>
+
+<section class="cap feston" id="preturi">
+<div class="kicker">Prețuri</div><h2>Un preț o dată, apoi grija lunară, dacă doriți</h2>
+<div class="grila">
+  <div class="fapte"><h3>Lansare</h3><div class="pret">99 € <small>o dată</small></div><p>Pachetul Esențial, la preț redus, pentru primele trei parohii care ne lasă, la final, o scurtă recomandare scrisă.</p></div>
+  <div class="fapte"><h3>Esențial</h3><div class="pret">199 € <small>o dată</small></div><ul><li>Instalarea și datele parohiei.</li><li>Programul slujbelor, pregătit pe tot anul.</li><li>Pomelnic, programări, sprijin și contact.</li><li>Un ghid cu imagini pentru preot.</li></ul></div>
+  <div class="fapte"><h3>Plus</h3><div class="pret">299 € <small>o dată</small></div><ul><li>Tot ce are Esențial.</li><li>Mutarea a până la 20 de anunțuri sau articole de pe site-ul ori de pe pagina actuală.</li><li>O pagină în limba țării, pentru diaspora.</li><li>Sigla parohiei, desenată pentru site.</li></ul></div>
+  <div class="fapte"><h3>Grija lunară</h3><div class="pret">15 € <small>pe lună sau 150 € pe an</small></div><ul><li>Actualizări și copii de siguranță.</li><li>Răspuns la întrebări prin mail.</li><li>Ajutor la programul Postului Mare și al Paștilor.</li></ul></div>
+</div>
+<p class="nota-mica" style="text-align:center">Găzduirea și numele de domeniu (de obicei 30-60 € pe an) le plătește parohia direct furnizorului ales, astfel încât site-ul rămâne pe numele ei. Vă ajutăm să alegeți.</p>
+</section>
+
+<section class="cap feston pasi">
+<div class="kicker">Cum lucrăm</div><h2>De la mail la site, în aproximativ o săptămână</h2>
+<div class="grila">
+  <div class="fapte pas"><h3>Ne scrieți</h3><p>Ce pachet vă interesează și, dacă aveți deja, adresa site-ului sau a paginii de Facebook.</p></div>
+  <div class="fapte pas"><h3>Completați fișa</h3><p>Numele și hramul, adresa, programul obișnuit și contul parohiei: o singură pagină.</p></div>
+  <div class="fapte pas"><h3>Vedeți site-ul</h3><p>Îl primiți întâi spre verificare. Plata se face abia când sunteți mulțumit.</p></div>
+  <div class="fapte pas"><h3>Îl folosiți</h3><p>Cu ghidul cu imagini, primul anunț se pune în câteva minute.</p></div>
+</div>
+</section>
+
+<div class="final feston">
+  <h2 style="font-size:clamp(24px,3vw,32px);margin-bottom:10px">Cereți o ofertă</h2>
+  <p>Scrieți-ne câteva rânduri despre parohie. Răspundem în cel mult două zile lucrătoare, fără nicio obligație.</p>
+  <a class="descarca" href="mailto:aisib@proton.me?subject=Site%20pentru%20parohie">Scrieți-ne la aisib@proton.me</a>
+  <p class="nota-mica">Site-ul este construit pe WordPress, cea mai folosită platformă de site-uri din lume, cu cod deschis: parohia nu depinde de noi și poate lucra oricând cu altcineva.</p>
+</div>
+</main>
+<footer><div class="wrap">
+  <p>Candela Parohiei · <a href="mailto:aisib@proton.me">aisib@proton.me</a> · <a href="/confidentialitate/">Confidențialitate</a> · <a href="/termeni/">Termeni</a></p>
+  <p style="font-size:14px">Un proiect al unor creștini ortodocși, în slujba copiilor și a parohiilor.</p>
+</div></footer>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||!window.goatcounter||!goatcounter.count)return;var h=a.getAttribute('href')||'',p=null;
+if(h.indexOf('playground')>-1)p='demo/'+(h.indexOf('panou')>-1?'panou':'site');if(h.indexOf('mailto:')===0)p='oferta/mail';
+if(p)goatcounter.count({path:p,title:a.textContent.replace(/\s+/g,' ').trim().slice(0,60),event:true})});
+</script>
+<script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
