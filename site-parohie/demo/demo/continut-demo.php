@@ -112,6 +112,26 @@ foreach ( array( 'Despre parohie' => 'despre', 'Slujbe' => 'slujbe', 'Blog' => '
 		)
 	);
 }
+// Privacy page for the parish's visitors (the template every client site gets).
+$confidentialitate = wp_insert_post(
+	array(
+		'post_type'    => 'page',
+		'post_status'  => 'publish',
+		'post_title'   => 'Confidențialitate',
+		'post_name'    => 'confidentialitate',
+		'post_content' => candela_demo_par(
+			array(
+				'Parohia este operatorul datelor pe care le trimiteți prin acest site. Pentru orice întrebare despre ele, scrieți-ne prin pagina de contact.',
+				'Pomelnicul: numele de botez ale celor pomeniți și, dacă doriți, numele dumneavoastră. Cererea de programare: numele, telefonul sau e-mailul și detaliile slujbei. Le folosim doar ca să pomenim la slujbă sau să vă răspundem. Temeiul: cererea dumneavoastră (art. 6 alin. 1 lit. b GDPR).',
+				'Datele trimise prin formulare se șterg automat după 40 de zile. Le văd doar preotul și cei care întrețin site-ul, în numele parohiei. Nu le vindem și nu le dăm altora; notificările prin e-mail nu conțin datele dumneavoastră.',
+				'Site-ul nu folosește cookie-uri de urmărire sau de reclamă. Harta se încarcă de la OpenStreetMap doar dacă o cereți.',
+				'Aveți dreptul să cereți accesul la date, corectarea sau ștergerea lor și să depuneți plângere la autoritatea de protecție a datelor (în România: ANSPDCP).',
+			)
+		),
+	)
+);
+update_option( 'wp_page_for_privacy_policy', $confidentialitate );
+
 update_option( 'show_on_front', 'page' );
 update_option( 'page_on_front', $acasa );
 update_option( 'page_for_posts', $pagini['blog'] );

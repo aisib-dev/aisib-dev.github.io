@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fișa parohiei pentru site · Candela Parohiei</title>
+<link rel="canonical" href="https://researchmind.org/site-parohie/fisa/">
+<meta name="description" content="Fișa de o pagină din care facem site-ul parohiei: completați, apăsați «Trimite fișa», iar noi ne ocupăm de rest.">
+<meta name="robots" content="noindex">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/jucaus.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:19px;line-height:1.55}
+a{color:var(--cinabru)}
+.wrap{max-width:860px;margin:0 auto;padding:0 20px}
+.top{display:flex;align-items:center;padding:16px 20px 8px}
+.brand{text-decoration:none}
+h1,h2{color:var(--lapis);line-height:1.15;margin:0}
+.foaie{max-width:860px;margin:8px auto 30px;width:calc(100% - 24px);padding:28px 36px 34px;background:var(--hartie)}
+h1{font-size:clamp(28px,4vw,38px);margin:4px 0 8px}
+.sub{font-family:var(--rotund);font-weight:700;color:var(--lapis2);font-size:17px;margin:0 0 14px}
+fieldset{border:2px solid var(--line);border-radius:16px;padding:14px 18px 6px;margin:22px 0 0;background:#fff}
+legend{font-family:var(--rotund);font-weight:800;color:var(--lapis);font-size:18px;padding:0 8px}
+label{display:block;font-family:var(--rotund);font-weight:700;font-size:15px;color:var(--lapis2);margin:0 0 4px}
+.c{margin:0 0 14px}
+.ajutor{font-size:15px;color:var(--muted);margin:3px 0 0;font-family:inherit;font-weight:400}
+input[type=text],input[type=email],input[type=tel],textarea,select{width:100%;font:inherit;font-size:18px;padding:9px 12px;border:2px solid var(--line);border-radius:10px;background:#fff;color:var(--text)}
+input:focus,textarea:focus,select:focus{outline:3px solid var(--aurl);border-color:var(--lapis)}
+textarea{min-height:110px;resize:vertical}
+.doua{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.optiuni label{display:flex;gap:10px;align-items:flex-start;font-family:inherit;font-weight:400;font-size:18px;color:var(--text);margin:0 0 8px;cursor:pointer}
+.optiuni input{margin-top:6px;width:18px;height:18px;flex:none}
+.obl{color:var(--cinabru)}
+.butoane{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 26px;border-radius:999px;font-family:var(--rotund);font-weight:800;font-size:18px;cursor:pointer;border:2.5px solid var(--lapis);text-decoration:none}
+.btn.prim{background:var(--lapis);color:#fff;box-shadow:0 5px 0 rgba(20,35,74,.3)}
+.btn.sec{background:#fff;color:var(--lapis)}
+.mesaj{margin-top:16px;padding:12px 16px;border-radius:10px;background:#EEF3FA;border-left:5px solid var(--lapis);display:none}
+.mesaj.err{background:#FFF3E8;border-color:var(--cinabru)}
+.nota{font-size:15px;color:var(--muted);margin-top:14px}
+@media (max-width:640px){.foaie{padding:18px 14px 24px}.doua{grid-template-columns:1fr}body{font-size:18px}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap top"><a class="brand" href="/site-parohie/">Candela <span>Parohiei</span></a></div></div>
+<main class="foaie feston">
+<h1>Fișa parohiei</h1>
+<p class="sub">Din această fișă facem site-ul. Durează în jur de 10 minute. Câmpurile cu <span class="obl">*</span> sunt necesare; restul le puteți lăsa goale.</p>
+<p>La final apăsați <b>«Trimite fișa»</b>: se deschide un e-mail gata scris către noi, la care adăugați, dacă le aveți, <b>sigla</b> și <b>3-5 fotografii</b> ale bisericii. Fișa se păstrează în browserul dumneavoastră până o trimiteți, așa că o puteți completa în mai multe reprize.</p>
+
+<form id="fisa" novalidate>
+<fieldset><legend>1. Ce alegeți</legend>
+ <div class="c optiuni"><label><input type="radio" name="Pachet" value="Esențial (199 €)" checked> <span><b>Esențial</b>, 199 €: site-ul complet, cu programul pe tot anul</span></label>
+ <label><input type="radio" name="Pachet" value="Plus (299 €)"> <span><b>Plus</b>, 299 €: în plus, mutarea a până la 20 de articole, o pagină în limba țării și sigla desenată</span></label></div>
+ <div class="c optiuni"><label><input type="radio" name="Găzduire" value="Totul de la noi (25 €/lună sau 250 €/an)" checked> <span><b>Totul de la noi</b>: găzduirea și numele site-ului sunt incluse (25 € pe lună sau 250 € pe an)</span></label>
+ <label><input type="radio" name="Găzduire" value="Parohia își plătește găzduirea (+ grija: 15 €/lună sau 150 €/an, opțional)"> <span>Parohia își plătește singură găzduirea (<a href="../gazduire/">ghidul</a>); grija lunară, de 15 € pe lună, e opțională</span></label></div>
+ <div class="c"><label for="plata">Plata abonamentului</label><select id="plata" name="Plata abonamentului"><option>anual (mai avantajos)</option><option>lunar</option></select></div>
+</fieldset>
+
+<fieldset><legend>2. Parohia</legend>
+ <div class="c"><label for="nume">Numele oficial al parohiei <span class="obl">*</span></label><input type="text" id="nume" name="Numele parohiei" required placeholder="Parohia Ortodoxă Română «Sfântul Ierarh Nicolae»"></div>
+ <div class="doua">
+  <div class="c"><label for="hram">Hramul</label><input type="text" id="hram" name="Hramul" placeholder="Sfântul Ierarh Nicolae"></div>
+  <div class="c"><label for="hramdata">Data hramului</label><input type="text" id="hramdata" name="Data hramului" placeholder="6 decembrie"></div>
+ </div>
+ <div class="c"><label for="eparhie">Eparhia și protopopiatul</label><input type="text" id="eparhie" name="Eparhia" placeholder="Arhiepiscopia …, Protopopiatul …"></div>
+ <div class="c"><label for="adresa">Adresa bisericii <span class="obl">*</span></label><input type="text" id="adresa" name="Adresa" required placeholder="Strada, număr, localitate, țara"></div>
+ <div class="doua">
+  <div class="c"><label for="tel">Telefonul afișat pe site</label><input type="tel" id="tel" name="Telefon public"></div>
+  <div class="c"><label for="mailpub">E-mailul afișat pe site</label><input type="email" id="mailpub" name="E-mail public"></div>
+ </div>
+ <div class="c"><label for="fb">Pagina de Facebook sau site-ul actual</label><input type="text" id="fb" name="Facebook / site actual"></div>
+</fieldset>
+
+<fieldset><legend>3. Preotul și contul lui</legend>
+ <div class="doua">
+  <div class="c"><label for="preot">Numele preotului, cum apare pe site <span class="obl">*</span></label><input type="text" id="preot" name="Preotul" required placeholder="Pr. Ioan Popescu, paroh"></div>
+  <div class="c"><label for="mailpreot">E-mailul pentru contul de pe site <span class="obl">*</span></label><input type="email" id="mailpreot" name="E-mail cont preot" required><p class="ajutor">Nu apare pe site. Pe el vin pomelnicele și cererile.</p></div>
+ </div>
+</fieldset>
+
+<fieldset><legend>4. Numele site-ului</legend>
+ <div class="c"><label for="domeniu">2-3 variante, în ordinea preferinței</label><input type="text" id="domeniu" name="Nume dorite pentru site" placeholder="parohia-sf-nicolae.ro, biserica-sf-nicolae-roma.it"><p class="ajutor">Dacă parohia are deja un nume de site, scrieți-l pe acela.</p></div>
+</fieldset>
+
+<fieldset><legend>5. Programul slujbelor</legend>
+ <div class="c"><label for="program">Săptămâna obișnuită <span class="obl">*</span></label><textarea id="program" name="Program obișnuit" required placeholder="Sâmbătă 17:00 Vecernia și Spovedanie&#10;Duminică 9:00 Utrenia, 10:00 Sfânta Liturghie&#10;Miercuri 18:00 Paraclisul (în săptămânile 1 și 3)"></textarea></div>
+ <div class="c"><label for="posturi">În posturi și la praznice (dacă e diferit)</label><textarea id="posturi" name="Program în posturi" placeholder="Postul Mare: luni 18:00 Pavecernița Mare, miercuri 8:00 Liturghia Darurilor…&#10;La praznice: Sfânta Liturghie la 9:00"></textarea><p class="ajutor">Săptămâna Mare, Paștile și praznicele se calculează singure după Pascalie; spuneți-ne doar orele.</p></div>
+</fieldset>
+
+<fieldset><legend>6. Sprijin (opțional)</legend>
+ <div class="doua">
+  <div class="c"><label for="iban">IBAN-ul parohiei</label><input type="text" id="iban" name="IBAN"></div>
+  <div class="c"><label for="titular">Titularul contului</label><input type="text" id="titular" name="Titular cont"></div>
+ </div>
+ <div class="doua">
+  <div class="c"><label for="cif">CIF-ul parohiei (pentru Formularul 230, în România)</label><input type="text" id="cif" name="CIF"></div>
+  <div class="c"><label for="donatie">Link de donație online, dacă aveți</label><input type="text" id="donatie" name="Link donație"></div>
+ </div>
+</fieldset>
+
+<fieldset><legend>7. Cum să arate</legend>
+ <div class="c"><label for="culori">Culorile</label><select id="culori" name="Culori"><option>Albastru și auriu (ca demo-ul)</option><option>Purpuriu</option><option>Bizantin discret</option><option>Alb și albastru</option><option>Contrast mare (pentru cei cu vederea slabă)</option></select></div>
+ <div class="c"><label for="limba">Pagina în limba țării (diaspora)</label><input type="text" id="limba" name="Limba țării" placeholder="italiană / spaniolă / germană / engleză / nu e nevoie"></div>
+ <div class="c"><label for="alte">Altceva ce doriți pe site</label><textarea id="alte" name="Dorințe" placeholder="Istoricul bisericii, corul, cateheze, transmisiunea Liturghiei…"></textarea></div>
+</fieldset>
+
+<fieldset><legend>8. Acordul parohiei</legend>
+ <div class="c optiuni">
+  <label><input type="checkbox" name="Acord date" value="da" required> <span>Datele din fișă se folosesc doar pentru realizarea și întreținerea site-ului parohiei, potrivit <a href="../termeni/">termenilor serviciului</a>. <span class="obl">*</span></span></label>
+  <label><input type="checkbox" name="Acord domeniu" value="da"> <span>Pentru varianta «Totul de la noi»: sunteți de acord ca numele site-ului să fie înregistrat pe numele parohiei, cu datele de mai sus.</span></label>
+  <label><input type="checkbox" name="Drept fotografii" value="da"> <span>Parohia are dreptul să folosească sigla și fotografiile pe care ni le trimite.</span></label>
+ </div>
+</fieldset>
+
+<div class="butoane">
+ <button type="submit" class="btn prim">Trimite fișa</button>
+ <button type="button" class="btn sec" id="copiaza">Copiază textul fișei</button>
+ <button type="button" class="btn sec" id="descarca">Descarcă fișa</button>
+</div>
+<div class="mesaj" id="mesaj" role="status"></div>
+<p class="nota">Dacă nu se deschide niciun e-mail, apăsați «Copiază textul fișei» și lipiți-l într-un mesaj către <b>aisib@proton.me</b>. Fișa nu trece prin niciun server: rămâne în browserul dumneavoastră până o trimiteți chiar dumneavoastră.</p>
+</form>
+</main>
+<footer class="wrap" style="text-align:center;color:var(--muted);font-size:15px;padding:0 20px 40px">Candela Parohiei · <a href="/site-parohie/">Site pentru parohie</a> · <a href="../termeni/">Termeni</a> · <a href="/confidentialitate/">Confidențialitate</a></footer>
+<script>
+(function(){
+  var f=document.getElementById('fisa'),m=document.getElementById('mesaj'),CHEIE='candela-fisa';
+  function arata(t,err){m.textContent=t;m.className='mesaj'+(err?' err':'');m.style.display='block';}
+  function text(){
+    var linii=['FIȘA PAROHIEI PENTRU SITE',''],vazut={};
+    Array.prototype.forEach.call(f.elements,function(e){
+      if(!e.name||e.type==='submit'||e.type==='button')return;
+      if((e.type==='radio'||e.type==='checkbox')&&!e.checked){ if(e.type==='checkbox'&&!vazut[e.name]){linii.push(e.name+': nu');vazut[e.name]=1;} return; }
+      if(vazut[e.name]&&e.type==='checkbox'){ linii[linii.length-1]=e.name+': da'; return; }
+      var v=(e.value||'').trim(); if(!v)return; vazut[e.name]=1;
+      linii.push(e.tagName==='TEXTAREA'?e.name+':\n'+v:e.name+': '+v);
+    });
+    linii.push('','(Atașez sigla și fotografiile, dacă le am.)');
+    return linii.join('\n');
+  }
+  // Draft kept in this browser only (per-viewer convenience).
+  try{var s=JSON.parse(localStorage.getItem(CHEIE)||'{}');Array.prototype.forEach.call(f.elements,function(e){if(!e.name||!(e.name in s))return;if(e.type==='radio')e.checked=(s[e.name]===e.value);else if(e.type==='checkbox')e.checked=!!s[e.name];else e.value=s[e.name];});}catch(x){}
+  f.addEventListener('input',function(){try{var s={};Array.prototype.forEach.call(f.elements,function(e){if(!e.name)return;if(e.type==='radio'){if(e.checked)s[e.name]=e.value;}else if(e.type==='checkbox'){s[e.name]=e.checked;}else s[e.name]=e.value;});localStorage.setItem(CHEIE,JSON.stringify(s));}catch(x){}});
+  function lipsa(){var l=[];Array.prototype.forEach.call(f.querySelectorAll('[required]'),function(e){if(e.type==='checkbox'?!e.checked:!e.value.trim())l.push(e.closest('.c,label').querySelector('label')?e.closest('.c').querySelector('label').textContent.replace('*','').trim():'acordul pentru date');});return l;}
+  f.addEventListener('submit',function(ev){
+    ev.preventDefault();var l=lipsa();
+    if(l.length){arata('Mai trebuie completat: '+l.join('; ')+'.',true);return;}
+    var nume=(document.getElementById('nume').value||'').trim();
+    location.href='mailto:aisib@proton.me?subject='+encodeURIComponent('Fișa parohiei: '+nume)+'&body='+encodeURIComponent(text());
+    arata('S-a deschis un e-mail gata scris. Adăugați sigla și fotografiile, apoi apăsați «Trimite». Vă răspundem în cel mult două zile lucrătoare.');
+  });
+  document.getElementById('copiaza').addEventListener('click',function(){
+    var t=text();
+    if(navigator.clipboard){navigator.clipboard.writeText(t).then(function(){arata('Textul fișei a fost copiat. Lipiți-l într-un e-mail către aisib@proton.me.');},function(){arata('Nu s-a putut copia automat; folosiți «Descarcă fișa».',true);});}
+    else arata('Browserul nu permite copierea; folosiți «Descarcă fișa».',true);
+  });
+  document.getElementById('descarca').addEventListener('click',function(){
+    var b=new Blob([text()],{type:'text/plain;charset=utf-8'}),a=document.createElement('a');
+    a.href=URL.createObjectURL(b);a.download='fisa-parohiei.txt';document.body.appendChild(a);a.click();a.remove();
+    arata('Fișa a fost descărcată. Trimiteți-o atașată la un e-mail către aisib@proton.me.');
+  });
+})();
+</script>
+</body>
+</html>
