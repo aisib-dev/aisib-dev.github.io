@@ -209,7 +209,7 @@ foreach ( $articole as list( $titlu, $imagine, $paragrafe ) ) {
 
 // Sample entries, so the dashboard is not empty (fictional first names).
 $mostre = array(
-	array( 'pomelnic', array( 'pentru' => 'Pentru cei vii (sănătate și mântuire)', 'nume' => "Ioan\nMaria\nAndrei\nElena", 'slujba' => 'La Sfânta Liturghie', 'trimis_de' => '' ) ),
+	array( 'pomelnic', array( 'pentru' => 'Pentru cei vii (sănătate și mântuire)', 'nume' => "Ioan\nMaria\nGheorghe\nElena", 'slujba' => 'La Sfânta Liturghie', 'trimis_de' => '' ) ),
 	array( 'pomelnic', array( 'pentru' => 'Pentru cei adormiți (odihnă)', 'nume' => "Gheorghe\nAna", 'slujba' => 'La Sfânta Liturghie', 'trimis_de' => 'Maria' ) ),
 	array( 'programare', array( 'slujba' => 'Botez', 'data' => current_datetime()->modify( '+24 days' )->format( 'Y-m-d' ), 'moment' => 'Dimineața', 'nume' => 'Familia Exemplu', 'telefon' => '+39 000 000 001', 'email' => '', 'detalii' => 'Nașii vin din România.' ) ),
 );
