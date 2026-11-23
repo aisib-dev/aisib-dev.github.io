@@ -2,36 +2,36 @@
   "canale": {
     "stabil": {
       "candela-core": {
-        "versiune": "0.2.0",
-        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-core-0.2.0.zip",
-        "sha256": "3f344f6056ebff1728a142d8e74e2dcefaa622a0b64c347a2319afc010ac12eb"
+        "versiune": "0.3.0",
+        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-core-0.3.0.zip",
+        "sha256": "f948556a4df74d56f2b8bdc2d95344e7d641a4d0ca7b14afdb853a61b6f0d12c"
       },
       "candela-parohia": {
-        "versiune": "0.2.0",
-        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-parohia-0.2.0.zip",
-        "sha256": "8d43a0980046404e81bf680f67024b6c3a9408a6ff39908f78808140b9e1d66a"
+        "versiune": "0.3.0",
+        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-parohia-0.3.0.zip",
+        "sha256": "218fd23207373fa2ce4d7d9e2bfbded0612b4b969cff813732f13b76964345c3"
       },
       "candela": {
-        "versiune": "0.2.0",
-        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-0.2.0.zip",
-        "sha256": "fb43a83f26a597e3bb43364324c1370847c2304d15b53a99b2151c8d15db79b9"
+        "versiune": "0.3.0",
+        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-0.3.0.zip",
+        "sha256": "2895001f4eb13f415254a4c0f0d922893e471cf224ab8ec2623f3c0e7f9f4acb"
       }
     },
     "test": {
       "candela-core": {
-        "versiune": "0.2.0",
-        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-core-0.2.0.zip",
-        "sha256": "3f344f6056ebff1728a142d8e74e2dcefaa622a0b64c347a2319afc010ac12eb"
+        "versiune": "0.3.0",
+        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-core-0.3.0.zip",
+        "sha256": "f948556a4df74d56f2b8bdc2d95344e7d641a4d0ca7b14afdb853a61b6f0d12c"
       },
       "candela-parohia": {
-        "versiune": "0.2.0",
-        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-parohia-0.2.0.zip",
-        "sha256": "8d43a0980046404e81bf680f67024b6c3a9408a6ff39908f78808140b9e1d66a"
+        "versiune": "0.3.0",
+        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-parohia-0.3.0.zip",
+        "sha256": "218fd23207373fa2ce4d7d9e2bfbded0612b4b969cff813732f13b76964345c3"
       },
       "candela": {
-        "versiune": "0.2.0",
-        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-0.2.0.zip",
-        "sha256": "fb43a83f26a597e3bb43364324c1370847c2304d15b53a99b2151c8d15db79b9"
+        "versiune": "0.3.0",
+        "pachet": "https://researchmind.org/site-parohie/actualizari/candela-0.3.0.zip",
+        "sha256": "2895001f4eb13f415254a4c0f0d922893e471cf224ab8ec2623f3c0e7f9f4acb"
       }
     }
   }
