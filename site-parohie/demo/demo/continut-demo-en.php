@@ -126,7 +126,6 @@ $confidentialitate = wp_insert_post(
 					'Data sent through the forms is deleted automatically after 40 days. Only the priest and those who maintain the site on behalf of the parish can see it. We never sell it or pass it on; email notifications do not contain your data.',
 					'This website uses no tracking or advertising cookies. The map loads from OpenStreetMap only if you ask for it.',
 				)
-			)
 		),
 	)
 );
