@@ -1,0 +1,294 @@
+{
+ "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+ "meta": {
+  "title": "Parohia Ortodoxă Română «Sfinții și Drepții Părinți Ioachim și Ana», San Sebastian De Los Reyes (exemplu)",
+  "author": "Candela Parohiei"
+ },
+ "preferredVersions": {
+  "php": "8.3",
+  "wp": "6.9"
+ },
+ "landingPage": "/",
+ "features": {
+  "networking": false
+ },
+ "steps": [
+  {
+   "step": "setSiteLanguage",
+   "language": "ro_RO"
+  },
+  {
+   "step": "installPlugin",
+   "pluginData": {
+    "resource": "url",
+    "url": "https://researchmind.org/site-parohie/demo/candela-core.zip"
+   },
+   "options": {
+    "activate": true
+   }
+  },
+  {
+   "step": "installPlugin",
+   "pluginData": {
+    "resource": "url",
+    "url": "https://researchmind.org/site-parohie/demo/candela-parohia.zip"
+   },
+   "options": {
+    "activate": true
+   }
+  },
+  {
+   "step": "installTheme",
+   "themeData": {
+    "resource": "url",
+    "url": "https://researchmind.org/site-parohie/demo/candela.zip"
+   },
+   "options": {
+    "activate": true
+   }
+  },
+  {
+   "step": "mkdir",
+   "path": "/wordpress/wp-content/candela-demo"
+  },
+  {
+   "step": "mkdir",
+   "path": "/wordpress/wp-content/candela-demo/imagini"
+  },
+  {
+   "step": "writeFile",
+   "path": "/wordpress/wp-content/candela-demo/continut-demo.php",
+   "data": {
+    "resource": "url",
+    "url": "https://researchmind.org/site-parohie/demo/demo/continut-demo.php"
+   }
+  },
+  {
+   "step": "writeFile",
+   "path": "/wordpress/wp-content/candela-demo/imagini/cruce.jpg",
+   "data": {
+    "resource": "url",
+    "url": "https://researchmind.org/site-parohie/demo/demo/imagini/cruce.jpg"
+   }
+  },
+  {
+   "step": "writeFile",
+   "path": "/wordpress/wp-content/candela-demo/imagini/lumanare.jpg",
+   "data": {
+    "resource": "url",
+    "url": "https://researchmind.org/site-parohie/demo/demo/imagini/lumanare.jpg"
+   }
+  },
+  {
+   "step": "writeFile",
+   "path": "/wordpress/wp-content/candela-demo/imagini/psaltire.jpg",
+   "data": {
+    "resource": "url",
+    "url": "https://researchmind.org/site-parohie/demo/demo/imagini/psaltire.jpg"
+   }
+  },
+  {
+   "step": "writeFile",
+   "path": "/wordpress/wp-content/candela-demo/imagini/sigla-demo.png",
+   "data": {
+    "resource": "url",
+    "url": "https://researchmind.org/site-parohie/demo/demo/imagini/sigla-demo.png"
+   }
+  },
+  {
+   "step": "setSiteOptions",
+   "options": {
+    "blogname": "Parohia Sfântul Ierarh Nicolae",
+    "blogdescription": "Proiect demonstrativ",
+    "timezone_string": "Europe/Rome",
+    "date_format": "j F Y",
+    "time_format": "H:i",
+    "start_of_week": "1",
+    "candela_organizatie": {
+     "nume": "Parohia Ortodoxă Română «Sfântul Ierarh Nicolae»",
+     "hram": "Proiect demonstrativ al Candela Parohiei",
+     "hram_data": "12-06",
+     "adresa": "Via Esempio 1, Orașul Demo",
+     "telefon": "+39 000 000 000",
+     "preot_nume": "Pr. Ioan Exemplu, paroh",
+     "iban": "IT00X0000000000000000000000",
+     "titular_cont": "Parrocchia Ortodossa Romena San Nicola (demo)",
+     "link_donatie": "https://example.org/donatie",
+     "lat": "41.9128",
+     "lng": "12.4852",
+     "email": "parohie@example.org"
+    },
+    "candela_program": {
+     "ora_praznice": "09:00",
+     "sablon": [
+      {
+       "zi": "sambata",
+       "ora": "17:00",
+       "slujba": "Vecernia și Spovedanie"
+      },
+      {
+       "zi": "duminica",
+       "ora": "09:00",
+       "slujba": "Utrenia"
+      },
+      {
+       "zi": "duminica",
+       "ora": "10:00",
+       "slujba": "Sfânta Liturghie"
+      },
+      {
+       "zi": "miercuri",
+       "ora": "18:00",
+       "slujba": "Paraclisul Maicii Domnului",
+       "saptamani": [
+        1,
+        3
+       ]
+      }
+     ],
+     "perioade": [
+      {
+       "preset": "postul-mare",
+       "nume": "Postul Mare",
+       "de": "P-48",
+       "pana": "P-9",
+       "mod": "adauga",
+       "sablon": [
+        {
+         "zi": "luni",
+         "ora": "18:00",
+         "slujba": "Pavecernița Mare"
+        },
+        {
+         "zi": "miercuri",
+         "ora": "08:00",
+         "slujba": "Liturghia Darurilor mai înainte sfințite"
+        },
+        {
+         "zi": "vineri",
+         "ora": "18:00",
+         "slujba": "Acatistul Bunei Vestiri"
+        }
+       ]
+      },
+      {
+       "preset": "saptamana-mare",
+       "nume": "Săptămâna Mare",
+       "de": "P-6",
+       "pana": "P-1",
+       "mod": "inlocuieste",
+       "sablon": [
+        {
+         "zi": "luni",
+         "ora": "18:00",
+         "slujba": "Denia"
+        },
+        {
+         "zi": "marti",
+         "ora": "18:00",
+         "slujba": "Denia"
+        },
+        {
+         "zi": "miercuri",
+         "ora": "17:00",
+         "slujba": "Taina Sfântului Maslu"
+        },
+        {
+         "zi": "joi",
+         "ora": "08:00",
+         "slujba": "Liturghia Sfântului Vasile cel Mare"
+        },
+        {
+         "zi": "joi",
+         "ora": "18:00",
+         "slujba": "Denia celor 12 Evanghelii"
+        },
+        {
+         "zi": "vineri",
+         "ora": "18:00",
+         "slujba": "Prohodul Domnului"
+        },
+        {
+         "zi": "sambata",
+         "ora": "23:30",
+         "slujba": "Slujba Învierii"
+        }
+       ]
+      },
+      {
+       "preset": "postul-nasterii",
+       "nume": "Postul Nașterii Domnului",
+       "de": "11-15",
+       "pana": "12-24",
+       "mod": "adauga",
+       "sablon": [
+        {
+         "zi": "marti",
+         "ora": "18:30",
+         "slujba": "Cateheză: pregătirea pentru Spovedanie",
+         "categorie": "activitate",
+         "loc": "sala parohială"
+        },
+        {
+         "zi": "vineri",
+         "ora": "08:00",
+         "slujba": "Sfânta Liturghie"
+        },
+        {
+         "zi": "duminica",
+         "ora": "12:00",
+         "slujba": "Repetiție cu colindătorii",
+         "categorie": "activitate"
+        }
+       ]
+      }
+     ]
+    }
+   }
+  },
+  {
+   "step": "runPHP",
+   "code": "<?php require '/wordpress/wp-content/candela-demo/continut-demo.php';"
+  },
+  {
+   "step": "mkdir",
+   "path": "/wordpress/wp-content/mu-plugins"
+  },
+  {
+   "step": "writeFile",
+   "path": "/wordpress/wp-content/mu-plugins/candela-demo-fara-bara.php",
+   "data": "<?php\n// Demo only: the public demo shows the site as visitors see it.\nadd_filter( 'show_admin_bar', '__return_false' );\n"
+  },
+  {
+   "step": "writeFile",
+   "path": "/wordpress/wp-content/mu-plugins/candela-demo-fara-actualizari.php",
+   "data": "<?php\n// Demo only: no background updates (they put the demo into maintenance mode).\nadd_filter( 'automatic_updater_disabled', '__return_true' );\nadd_filter( 'auto_update_translation', '__return_false' );\nif ( file_exists( ABSPATH . '.maintenance' ) ) { @unlink( ABSPATH . '.maintenance' ); }\n"
+  },
+  {
+   "step": "runPHP",
+   "code": "<?php\nrequire_once '/wordpress/wp-load.php';\n$inloc = array( 'Parohia Ortodoxă Română «Sfântul Ierarh Nicolae» adună în fiecare duminică familiile de români din Orașul Demo și din împrejurimi. Este o parohie fictivă, creată pentru a arăta cum arată un site Candela Parohiei.' => 'Parohia Ortodoxă Română «Sfinții și Drepții Părinți Ioachim și Ana» adună în fiecare duminică familiile de români din San Sebastian De Los Reyes și din împrejurimi. Acesta este un exemplu pregătit pentru parohie: textele și fotografiile le pune parohia.', 'Ocrotitorul parohiei este Sfântul Ierarh Nicolae, arhiepiscopul Mirelor Lichiei, prăznuit pe 6 decembrie. În ajunul hramului, copiii parohiei primesc daruri după Vecernie.' => 'Ocrotitorul parohiei este Sfinții și Drepții Părinți Ioachim și Ana, prăznuit pe 9 septembrie. Aici parohia spune cum își prăznuiește hramul.' );\nforeach ( get_posts( array( 'post_type' => 'any', 'numberposts' => -1, 'post_status' => 'any' ) ) as $x ) {\n  $c = strtr( $x->post_content, $inloc );\n  if ( $c !== $x->post_content ) { wp_update_post( array( 'ID' => $x->ID, 'post_content' => $c ) ); }\n}\n$it = get_page_by_path( 'italiano' );\nif ( $it ) { wp_update_post( array( 'ID' => $it->ID, 'post_title' => 'En español', 'post_name' => 'espanol', 'post_content' => '<!-- wp:group {\"className\":\"candela-lang-es\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group candela-lang-es\"><!-- wp:paragraph --><p>La Parroquia Ortodoxa Rumana «Sfinții și Drepții Părinți Ioachim și Ana» acoge cada domingo a las familias rumanas de San Sebastian De Los Reyes y alrededores. La Divina Liturgia se celebra en rumano; todos son bienvenidos.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Para bautizos, bodas u otras celebraciones, puede escribirnos desde la página de Contacto o llamar al párroco.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Este es un ejemplo preparado para la parroquia; los textos y las fotografías los pone la propia parroquia.</p><!-- /wp:paragraph --><!-- wp:candela/contact /--></div><!-- /wp:group -->' ) ); }\n"
+  },
+  {
+   "step": "setSiteOptions",
+   "options": {
+    "blogname": "Parohia «Sfinții și Drepții Părinți Ioachim și Ana»",
+    "blogdescription": "San Sebastian De Los Reyes",
+    "timezone_string": "Europe/Madrid",
+    "candela_organizatie": {
+     "nume": "Parohia Ortodoxă Română «Sfinții și Drepții Părinți Ioachim și Ana»",
+     "hram": "Sfinții și Drepții Părinți Ioachim și Ana",
+     "hram_data": "09-09",
+     "adresa": "Adresa bisericii, San Sebastian De Los Reyes",
+     "telefon": "+34 ...",
+     "preot_nume": "Părintele paroh",
+     "iban": "",
+     "titular_cont": "",
+     "link_donatie": "",
+     "lat": "40.54736",
+     "lng": "-3.62605",
+     "email": ""
+    }
+   }
+  }
+ ]
+}
