@@ -249,6 +249,15 @@
     {
       "step": "runPHP",
       "code": "<?php require '/wordpress/wp-content/candela-demo/continut-demo.php';"
+    },
+    {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/mu-plugins"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/mu-plugins/candela-demo-fara-bara.php",
+      "data": "<?php\n// Demo only: the public demo shows the site as visitors see it.\nadd_filter( 'show_admin_bar', '__return_false' );\n"
     }
   ]
 }
