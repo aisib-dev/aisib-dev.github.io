@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A website for your Orthodox parish, ready to use · Candela Parohiei</title>
+<link rel="canonical" href="https://researchmind.org/site-parohie/en/">
+<link rel="alternate" hreflang="ro" href="https://researchmind.org/site-parohie/">
+<link rel="alternate" hreflang="en" href="https://researchmind.org/site-parohie/en/">
+<meta name="description" content="A website for your Orthodox parish: you post the announcements yourself, as easily as on Facebook; the service schedule builds itself for the whole year, with the fasts and Pascha; names for commemoration and requests arrive through the site. Try the demo in your browser.">
+<meta property="og:title" content="A website for your Orthodox parish, ready to use">
+<meta property="og:description" content="You post the announcements. The service schedule builds itself, with the fasts and Pascha. Try the demo in your browser.">
+<meta property="og:image" content="https://researchmind.org/site-parohie/acasa.jpg">
+<meta property="og:url" content="https://researchmind.org/site-parohie/en/">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="stylesheet" href="/fonts/fonts.css">
+<link rel="stylesheet" href="/jucaus.css">
+<style>
+*{box-sizing:border-box}
+body{margin:0;color:var(--text);font-family:'EB Garamond',Georgia,serif;font-size:20px;line-height:1.65}
+a{color:var(--cinabru)}
+img{max-width:100%;height:auto}
+.wrap{max-width:1080px;margin:0 auto;padding:0 20px}
+.top{display:flex;justify-content:space-between;align-items:center;padding:16px 20px 8px;flex-wrap:wrap;gap:10px}
+.brand{text-decoration:none}
+.kicker{font-size:14px;text-transform:uppercase;text-align:center}
+.kicker:before,.kicker:after{content:'';display:inline-block;width:7px;height:7px;margin:0 12px 3px;transform:rotate(45deg)}
+h1,h2,h3{line-height:1.12;margin:0;color:var(--lapis)}
+.panou{max-width:1080px;margin:8px auto 0;width:calc(100% - 24px);padding:30px 34px 34px}
+.hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:34px;align-items:center}
+.hero h1{font-size:clamp(32px,4.4vw,50px);margin:14px 0 6px;line-height:1.05}
+.hero h1 em{display:block;font-style:normal;color:var(--porfir);font-size:.56em;margin-top:8px}
+.insigna{display:inline-block;background:var(--porfir);color:#fff;font-family:var(--rotund);font-weight:800;font-size:14px;letter-spacing:.06em;padding:4px 14px;border-radius:999px;transform:rotate(-2deg)}
+.ecran{display:block;border-radius:10px;box-shadow:0 14px 28px rgba(20,35,74,.3);overflow:hidden;line-height:0;background:#fff}
+.hero .tel{max-width:250px;margin:0 auto;transform:rotate(2deg);border-radius:26px;border:8px solid var(--lapis)}
+.descarca{display:inline-flex;align-items:center;gap:10px;margin-top:12px;background:var(--lapis);color:#fff;text-decoration:none;padding:14px 28px;font-size:19px;border-radius:999px;font-family:var(--rotund);font-weight:800;box-shadow:0 5px 0 rgba(20,35,74,.3)}
+.descarca:hover{background:var(--lapis2)}
+.btn2{display:inline-block;margin:12px 6px 0 0;padding:12px 22px;border-radius:999px;border:2.5px solid var(--lapis);color:var(--lapis);background:#fff;text-decoration:none;font-family:var(--rotund);font-weight:800;font-size:17px}
+.nota-mica{font-size:16px;color:var(--muted);margin-top:12px}
+.cap{max-width:1080px;margin:34px auto 0;width:calc(100% - 24px);padding:30px 40px 34px}
+.cap h2{font-size:clamp(26px,3.4vw,36px);text-align:center;margin:10px 0 22px}
+.cap p{margin:0 0 .8em}
+.grila{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+@media (max-width:1000px){.grila{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:600px){.grila{grid-template-columns:1fr}}
+.fapte{background:#fff;border:2.5px solid var(--lapis);border-radius:24px;padding:18px 22px 12px;box-shadow:0 6px 0 rgba(20,35,74,.14)}
+.fapte h3{font-size:19px;color:var(--lapis);margin-bottom:8px}
+.fapte p{font-size:18px;line-height:1.5;margin:0 0 .5em}
+.fapte ul{margin:0;padding:0;list-style:none}
+.fapte li{position:relative;padding-left:26px;margin:0 0 8px;line-height:1.45;font-size:18px}
+.fapte li:before{content:'';position:absolute;left:2px;top:.45em;width:11px;height:11px;border-radius:50%;background:var(--aurl);border:2px solid var(--aur)}
+.ecrane{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+.ecrane figure{margin:0}
+.ecrane figcaption{font-family:var(--rotund);font-weight:700;font-size:15px;color:var(--muted);margin-top:10px;text-align:center}
+.pret{font-family:var(--rotund);font-weight:800;font-size:34px;color:var(--cinabru);line-height:1;margin:6px 0 10px}
+.pret small{font-size:15px;color:var(--muted);font-weight:700}
+.pas{counter-increment:pas}
+.pas h3:before{content:counter(pas);display:inline-grid;place-items:center;width:32px;height:32px;margin-right:10px;border-radius:50%;background:var(--lapis);color:#fff;font-size:17px}
+.pasi{counter-reset:pas}
+.final{max-width:860px;margin:34px auto 0;width:calc(100% - 24px);padding:28px 30px;text-align:center}
+footer{text-align:center;color:var(--muted);font-size:16px;padding:40px 20px 50px}
+@media (max-width:820px){.hero{grid-template-columns:1fr;gap:22px}.panou{padding:20px 16px 24px}.ecrane{grid-template-columns:1fr}.cap{padding:20px 16px 24px}body{font-size:19px}}
+</style>
+</head>
+<body>
+<div class="topbar"><div class="wrap top">
+  <a class="brand" href="/">Candela <span>Parohiei</span></a>
+  <a href="/site-parohie/" style="font-family:var(--rotund);font-weight:800;font-size:15px">Română</a>
+</div></div>
+<main>
+
+<div class="panou feston">
+<div class="hero">
+  <div>
+    <span class="insigna">For Orthodox parishes</span>
+    <h1>A website for your parish<em>You post the announcements, the service schedule builds itself</em></h1>
+    <p>A clean, dignified website that reads well on a phone. You write Sunday's announcement as easily as a Facebook post. You set the usual weekly schedule once, and the fasts, Holy Week and the great feasts fall into the calendar by themselves every year, from the date of Pascha. Parishioners can send names for commemoration and requests for services straight from the site.</p>
+    <a class="descarca" href="https://playground.wordpress.net/?blueprint-url=https://researchmind.org/site-parohie/demo/site.blueprint.json" target="_blank" rel="noopener">See the demo site</a><br>
+    <a class="btn2" href="https://playground.wordpress.net/?blueprint-url=https://researchmind.org/site-parohie/demo/panou.blueprint.json" target="_blank" rel="noopener">Open the priest's dashboard</a>
+    <p class="nota-mica">The demo opens in your browser in about half a minute, with nothing to install. It shows a sample Romanian parish; your site is set up in English (or in both languages). You can write announcements and change the schedule freely: nothing is saved and nothing is sent.</p>
+  </div>
+  <span class="ecran tel"><img src="../telefon.jpg" width="780" height="1688" alt="Home page of the demo site on a phone: parish name, days left until the feast, buttons for the service schedule and for sending names, and a Call / Schedule bar"></span>
+</div>
+</div>
+
+<section class="cap feston">
+<div class="kicker">What the parish gets</div><h2>Everything parishioners look for, in one place</h2>
+<div class="grila">
+  <div class="fapte"><h3>Service schedule</h3><ul><li>The ordinary week, set once.</li><li>The fasts and Holy Week, added by themselves every year.</li><li>Great feasts and the parish feast, with the Divine Liturgy added automatically.</li><li>A monthly calendar and a printable list for the church noticeboard.</li></ul></div>
+  <div class="fapte"><h3>Announcements and articles</h3><ul><li>Parish announcements, kept apart from teaching articles.</li><li>Photos from services and parish life.</li><li>You update the site yourself, without asking anyone.</li></ul></div>
+  <div class="fapte"><h3>Names and requests</h3><ul><li>Names for commemoration arrive in the priest's dashboard, ready to print.</li><li>Requests for baptisms, weddings, house blessings or memorial services.</li><li>Personal data deleted automatically after 40 days (GDPR).</li></ul></div>
+  <div class="fapte"><h3>Support and contact</h3><ul><li>The parish account details, with a copy button.</li><li>Map, phone number and a «Call» button on phones.</li><li>Pages in a second language for mixed communities.</li></ul></div>
+</div>
+</section>
+
+<section class="cap feston">
+<div class="kicker">How it looks</div><h2>For parishioners and for the priest</h2>
+<div class="ecrane">
+  <figure><span class="ecran"><img src="../acasa.jpg" width="1280" height="760" alt="Home page of the demo site on a computer"></span><figcaption>Home page</figcaption></figure>
+  <figure><span class="ecran"><img src="../program.jpg" width="1280" height="760" alt="Monthly calendar with the services of each day and the Nativity Fast"></span><figcaption>Service calendar, with the fasts filled in automatically</figcaption></figure>
+  <figure><span class="ecran"><img src="../panou.jpg" width="1280" height="600" alt="The priest's dashboard: large buttons for names, requests, schedule, new announcement, new article, photos and messages"></span><figcaption>The priest's dashboard: large buttons, no confusing menus</figcaption></figure>
+  <div class="fapte"><h3>Why a website, if we have Facebook?</h3><p>On Facebook, last week's schedule gets buried under new posts, and people without an account see almost nothing. On the website, the schedule, the address and the donation details are always one click away, and anyone searching for the parish on Google finds it. The Facebook page stays: announcements from the site can be shared there.</p></div>
+</div>
+</section>
+
+<section class="cap feston" id="prices">
+<div class="kicker">Prices</div><h2>One price once, then monthly care if you wish</h2>
+<div class="grila">
+  <div class="fapte"><h3>Launch</h3><div class="pret">€99 <small>once</small></div><p>The Essential package at a reduced price, for the first three parishes that leave us a short written recommendation at the end.</p></div>
+  <div class="fapte"><h3>Essential</h3><div class="pret">€199 <small>once</small></div><ul><li>Installation and the parish details.</li><li>The service schedule, prepared for the whole year.</li><li>Names, requests, support and contact.</li><li>An illustrated guide for the priest.</li></ul></div>
+  <div class="fapte"><h3>Plus</h3><div class="pret">€299 <small>once</small></div><ul><li>Everything in Essential.</li><li>Moving up to 20 announcements or articles from your current site or page.</li><li>A second-language page.</li><li>The parish logo, drawn for the site.</li></ul></div>
+  <div class="fapte"><h3>Monthly care</h3><div class="pret">€15 <small>a month or €150 a year</small></div><ul><li>Updates and backups.</li><li>Answers to questions by email.</li><li>Help with the Great Lent and Pascha schedule.</li></ul></div>
+</div>
+<div class="fapte" style="margin-top:20px;border-color:var(--cinabru)"><h3>All from us · €25 a month or €250 a year</h3><p>You handle nothing technical. Hosting and the web address are included, and the address is registered in the parish's name. You get everything in monthly care. If you ever wish to leave, we hand over the site and the domain free of charge.</p></div>
+<p class="nota-mica" style="text-align:center">If you prefer to pay for hosting and the web address yourselves (usually €40-60 a year), they stay directly in the parish's name. All payments to us are made online through Gumroad, by card or PayPal; subscriptions can be cancelled at any time.</p>
+</section>
+
+<section class="cap feston pasi">
+<div class="kicker">How we work</div><h2>From an email to a website, in about a week</h2>
+<div class="grila">
+  <div class="fapte pas"><h3>Write to us</h3><p>Which package you are interested in and, if you have one, the address of your current site or Facebook page.</p></div>
+  <div class="fapte pas"><h3>Send the parish details</h3><p>Name and patron saint, address, the usual service schedule, the calendar you follow (New or Old) and the donation details.</p></div>
+  <div class="fapte pas"><h3>Review the site</h3><p>You see it first. You pay only when you are happy with it, online, by card or PayPal; the receipt comes by email.</p></div>
+  <div class="fapte pas"><h3>Use it</h3><p>With the illustrated guide, the first announcement takes a few minutes.</p></div>
+</div>
+</section>
+
+<div class="final feston">
+  <h2 style="font-size:clamp(24px,3vw,32px);margin-bottom:10px">Ask for an offer</h2>
+  <p>Write us a few lines about your parish. We answer within two working days, with no obligation.</p>
+  <a class="descarca" href="mailto:aisib@proton.me?subject=Parish%20website">Write to aisib@proton.me</a>
+  <p class="nota-mica">The site is built on WordPress, the most widely used open-source website platform: the parish does not depend on us and can work with anyone else at any time. <a href="../termeni/">Terms of service</a> (in Romanian; an English summary on request).</p>
+</div>
+</main>
+<footer><div class="wrap">
+  <p>Candela Parohiei · <a href="mailto:aisib@proton.me">aisib@proton.me</a> · <a href="/confidentialitate/">Privacy</a></p>
+  <p style="font-size:14px">A project of a few Orthodox Christians, serving children and parishes.</p>
+</div></footer>
+<script>
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a');if(!a||!window.goatcounter||!goatcounter.count)return;var h=a.getAttribute('href')||'',p=null;
+if(h.indexOf('playground')>-1)p='demo-en/'+(h.indexOf('panou')>-1?'panou':'site');if(h.indexOf('mailto:')===0)p='oferta-en/mail';
+if(p)goatcounter.count({path:p,title:a.textContent.replace(/\s+/g,' ').trim().slice(0,60),event:true})});
+</script>
+<script data-goatcounter="https://candelaparohiei.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
