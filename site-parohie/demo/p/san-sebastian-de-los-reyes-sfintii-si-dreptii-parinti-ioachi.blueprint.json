@@ -1,7 +1,7 @@
 {
  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
  "meta": {
-  "title": "Parohia Ortodoxă Română «Sfinții și Drepții Părinți Ioachim și Ana», San Sebastian De Los Reyes (exemplu)",
+  "title": "Parohia Ortodoxă Română «Sfinții și Drepții Părinți Ioachim și Ana», San Sebastián de los Reyes (exemplu)",
   "author": "Candela Parohiei"
  },
  "preferredVersions": {
@@ -266,19 +266,19 @@
   },
   {
    "step": "runPHP",
-   "code": "<?php\nrequire_once '/wordpress/wp-load.php';\n$inloc = array( 'Parohia Ortodoxă Română «Sfântul Ierarh Nicolae» adună în fiecare duminică familiile de români din Orașul Demo și din împrejurimi. Este o parohie fictivă, creată pentru a arăta cum arată un site Candela Parohiei.' => 'Parohia Ortodoxă Română «Sfinții și Drepții Părinți Ioachim și Ana» adună în fiecare duminică familiile de români din San Sebastian De Los Reyes și din împrejurimi. Acesta este un exemplu pregătit pentru parohie: textele și fotografiile le pune parohia.', 'Ocrotitorul parohiei este Sfântul Ierarh Nicolae, arhiepiscopul Mirelor Lichiei, prăznuit pe 6 decembrie. În ajunul hramului, copiii parohiei primesc daruri după Vecernie.' => 'Ocrotitorul parohiei este Sfinții și Drepții Părinți Ioachim și Ana, prăznuit pe 9 septembrie. Aici parohia spune cum își prăznuiește hramul.' );\nforeach ( get_posts( array( 'post_type' => 'any', 'numberposts' => -1, 'post_status' => 'any' ) ) as $x ) {\n  $c = strtr( $x->post_content, $inloc );\n  if ( $c !== $x->post_content ) { wp_update_post( array( 'ID' => $x->ID, 'post_content' => $c ) ); }\n}\n$it = get_page_by_path( 'italiano' );\nif ( $it ) { wp_update_post( array( 'ID' => $it->ID, 'post_title' => 'En español', 'post_name' => 'espanol', 'post_content' => '<!-- wp:group {\"className\":\"candela-lang-es\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group candela-lang-es\"><!-- wp:paragraph --><p>La Parroquia Ortodoxa Rumana «Sfinții și Drepții Părinți Ioachim și Ana» acoge cada domingo a las familias rumanas de San Sebastian De Los Reyes y alrededores. La Divina Liturgia se celebra en rumano; todos son bienvenidos.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Para bautizos, bodas u otras celebraciones, puede escribirnos desde la página de Contacto o llamar al párroco.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Este es un ejemplo preparado para la parroquia; los textos y las fotografías los pone la propia parroquia.</p><!-- /wp:paragraph --><!-- wp:candela/contact /--></div><!-- /wp:group -->' ) ); }\n"
+   "code": "<?php\nrequire_once '/wordpress/wp-load.php';\n$inloc = array( 'Parohia Ortodoxă Română «Sfântul Ierarh Nicolae» adună în fiecare duminică familiile de români din Orașul Demo și din împrejurimi. Este o parohie fictivă, creată pentru a arăta cum arată un site Candela Parohiei.' => 'Parohia Ortodoxă Română «Sfinții și Drepții Părinți Ioachim și Ana» adună în fiecare duminică familiile de români din San Sebastián de los Reyes și din împrejurimi. Acesta este un exemplu pregătit pentru parohie: textele și fotografiile le pune parohia.', 'Ocrotitorul parohiei este Sfântul Ierarh Nicolae, arhiepiscopul Mirelor Lichiei, prăznuit pe 6 decembrie. În ajunul hramului, copiii parohiei primesc daruri după Vecernie.' => 'Ocrotitorul parohiei este Sfinții și Drepții Părinți Ioachim și Ana, prăznuit pe 9 septembrie. Aici parohia spune cum își prăznuiește hramul.' );\nforeach ( get_posts( array( 'post_type' => 'any', 'numberposts' => -1, 'post_status' => 'any' ) ) as $x ) {\n  $c = strtr( $x->post_content, $inloc );\n  if ( $c !== $x->post_content ) { wp_update_post( array( 'ID' => $x->ID, 'post_content' => $c ) ); }\n}\n$it = get_page_by_path( 'italiano' );\nif ( $it ) { wp_update_post( array( 'ID' => $it->ID, 'post_title' => 'En español', 'post_name' => 'espanol', 'post_content' => '<!-- wp:group {\"className\":\"candela-lang-es\",\"layout\":{\"type\":\"constrained\"}} --><div class=\"wp-block-group candela-lang-es\"><!-- wp:paragraph --><p>La Parroquia Ortodoxa Rumana «Sfinții și Drepții Părinți Ioachim și Ana» acoge cada domingo a las familias rumanas de San Sebastián de los Reyes y alrededores. La Divina Liturgia se celebra en rumano; todos son bienvenidos.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Para bautizos, bodas u otras celebraciones, puede escribirnos desde la página de Contacto o llamar al párroco.</p><!-- /wp:paragraph --><!-- wp:paragraph --><p>Este es un ejemplo preparado para la parroquia; los textos y las fotografías los pone la propia parroquia.</p><!-- /wp:paragraph --><!-- wp:candela/contact /--></div><!-- /wp:group -->' ) ); }\n"
   },
   {
    "step": "setSiteOptions",
    "options": {
     "blogname": "Parohia «Sfinții și Drepții Părinți Ioachim și Ana»",
-    "blogdescription": "San Sebastian De Los Reyes",
+    "blogdescription": "San Sebastián de los Reyes",
     "timezone_string": "Europe/Madrid",
     "candela_organizatie": {
      "nume": "Parohia Ortodoxă Română «Sfinții și Drepții Părinți Ioachim și Ana»",
-     "hram": "San Sebastian De Los Reyes · exemplu de site pentru parohie",
+     "hram": "San Sebastián de los Reyes · exemplu de site pentru parohie",
      "hram_data": "09-09",
-     "adresa": "Adresa bisericii, San Sebastian De Los Reyes",
+     "adresa": "Adresa bisericii, San Sebastián de los Reyes",
      "telefon": "+34 ...",
      "preot_nume": "Părintele paroh",
      "iban": "",
